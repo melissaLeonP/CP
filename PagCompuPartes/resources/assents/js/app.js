@@ -20,6 +20,18 @@ window.Vue = require('vue');
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('ropa-component', require('./components/Ropa.vue').default);
+Vue.component('accesorios-component', require('./components/Accesorios.vue').default);
+Vue.component('cosmeticos-component', require('./components/Cosmeticos.vue').default);
+// Vue.component('productost-component', require('./components/ProductosT.vue').default);
+
+Vue.component('subcategorias-component', require('./consoleComponents/Subcategorias.vue').default);
+Vue.component('sliders-component', require('./consoleComponents/Sliders.vue').default);
+Vue.component('productos-component', require('./consoleComponents/Productos.vue').default);
+Vue.component('colores-component', require('./consoleComponents/Colores.vue').default);
+
+
+
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -29,4 +41,7 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 
 const app = new Vue({
     el: '#app',
+    data :{
+        menu : 0
+    }
 });
