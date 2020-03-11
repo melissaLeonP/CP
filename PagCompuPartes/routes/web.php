@@ -14,3 +14,5 @@
 Route::get('/consola', function () {
     return view('contenido/consola');
 });
+
+Route::get('categoria','CategoriaController@index');
