@@ -12,7 +12,7 @@
 */
 
 Route::get('/consola', function () {
-    return view('contenido/consola');
+    return view('components/ExampleComponent');
 });
 
 Route::get('categoria','CategoriaController@index');
