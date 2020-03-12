@@ -11,8 +11,6 @@
 |
 */
 
-Route::get('/consola', function () {
-    return view('components/ExampleComponent');
+Route::get('/', function () {
+    return view('consolaPrincipal');
 });
-
-Route::get('categoria','CategoriaController@index');
