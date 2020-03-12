@@ -104,8 +104,8 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-!(function webpackMissingModule() { var e = new Error("Cannot find module '/Users/admin/Desktop/Proyectos/cp/CP/PagCompuPartes/resources/js/app.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
-module.exports = __webpack_require__(/*! /Users/admin/Desktop/Proyectos/cp/CP/PagCompuPartes/resources/sass/app.scss */"./resources/sass/app.scss");
+!(function webpackMissingModule() { var e = new Error("Cannot find module '/Users/jazminvalencia/Desktop/Proyectos/CP/PagCompuPartes/resources/js/app.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+module.exports = __webpack_require__(/*! /Users/jazminvalencia/Desktop/Proyectos/CP/PagCompuPartes/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
