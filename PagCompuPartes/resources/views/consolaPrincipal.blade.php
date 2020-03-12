@@ -22,11 +22,7 @@
    <body>
      <div id="app">
   
-       <!-- @include('plantilla.consolaNavbar')       -->
-        
-       <!--Inicia Contenido Principal-->
-         <!-- @yield('consola') -->
-       <!--Termina Contenido Principal-->
+      
      </div>
 
       <footer class="page-footer deep-orange lighten-4">
