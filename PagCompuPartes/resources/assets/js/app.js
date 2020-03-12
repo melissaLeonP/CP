@@ -22,7 +22,7 @@ window.Vue = require('vue');
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 // Vue.component('ropa-component', require('./components/Ropa.vue').default);
 // Vue.component('accesorios-component', require('./components/Accesorios.vue').default);
-// Vue.component('cosmeticos-component', require('./components/Cosmeticos.vue').default);
+// Vue.component('cosmeticos-component', require('./components/Cosmeticos.vue').default);g
 // Vue.component('productost-component', require('./components/ProductosT.vue').default);
 
 // Vue.component('subcategorias-component', require('./consoleComponents/Subcategorias.vue').default);
