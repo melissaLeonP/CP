@@ -2,7 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Slider;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\DB; 
+
+use File;
+use Request as Peticion ;
 
 class SliderController extends Controller
 {
@@ -13,7 +19,8 @@ class SliderController extends Controller
      */
     public function index()
     {
-        //
+        $slider = Slider::limit(5)->orderBy('idSlider','desc')->get();
+        return $slider;
     }
 
     /**
@@ -23,7 +30,7 @@ class SliderController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -34,7 +41,19 @@ class SliderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $slider = new Slider();
+        $imagen = Peticion::file('file');
+        
+        $extension = $imagen->guessExtension();
+        $date = date('d-m-Y_h-i-s-ms-a');
+        $prefijo = 'Image';
+        $nombreImagen = $prefijo.'_'.$date.'.'.$extension;
+        $imagen->move('img', $nombreImagen);
+       
+        $slider->Imagen = $nombreImagen;
+        $slider->texto = $texto;
+        $slider->titulo = $titulo;
+        $slider->save();
     }
 
     /**
@@ -68,7 +87,20 @@ class SliderController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $slider = Slider::findOrFail($request->id);
+
+        $imagen = Peticion::file('file');
+        $extension = $imagen -> guessExtension();
+        $date = date('d-m-Y_h-i-s-ms-a');
+        $prefijo = 'Image';
+        $nombreImagen = $prefijo.'_'.$date.'.'.$extension;
+        $imagen->move('img', $nombreImagen);
+        File::delete('img/' . $slider->Imagen);
+
+        $slider->Imagen = $nombreImagen;
+        $slider->texto = $texto;
+        $slider->titulo = $titulo;
+        $slider->save(); 
     }
 
     /**
@@ -80,5 +112,17 @@ class SliderController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function desactivar(Request $request){
+        $slider = slider::findOrFail($request->id);
+        $slider->status = "0";
+        $slider->save(); 
+    }
+
+    public function activar(Request $request){
+        $slider = slider::findOrFail($request->id);
+        $slider->status = "0";
+        $slider->save(); 
     }
 }
