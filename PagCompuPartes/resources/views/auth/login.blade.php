@@ -1,7 +1,7 @@
 @extends('auth.contenido')
 @section('login')
 
-<form class="col s12 l12 was-validated" method="POST" action="{{ route('login') }}">
+<form class="col s12 l12 was-validated " method="POST" action="{{ route('login') }}">
 {{ csrf_field() }}
 <div class="row" >
          <div class="center input-field col s12 l6  offset-l3 {{ $errors->has('usuario' ? 'has-error' : '' ) }}">
@@ -23,7 +23,7 @@
         </div>
     </div>
         <div class="col s6 center">
-        <button type="submit" class="waves-effect  btn  deep-orange lighten-4  black-text">Ingresar</button>
+        <button type="submit" class="waves-effect  btn  deep-orange lighten-4  white-text">Ingresar</button>
 
         </div>
 </form>

@@ -15,7 +15,13 @@ Route::get('/', function () {
     return view('contenido/consola');
 });
 
-// Route::get('categoria','CategoriaController@index');
+Route::get('/categoria','CategoriaController@index');
+Route::get('/categoria/registrar','CategoriaController@update');
+Route::get('/categoria/actualizar','CategoriaController@actualizar');
+Route::get('/categoria/desactivar','CategoriaController@desactivar');
+Route::get('/categoria/activar','CategoriaController@activar');
+
+
 
 Auth::routes();
 
