@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('consolaPrincipal');
+    return view('contenido/consola');
 });
 
 // Route::get('categoria','CategoriaController@index');
