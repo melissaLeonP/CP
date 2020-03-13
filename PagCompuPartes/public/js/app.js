@@ -1988,14 +1988,37 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       idCategoria: 0,
-      Nombre: '',
+      nombre: '',
       status: true,
       arrayCategoria: [],
-      arrayCaracteristica: [],
+      idCaracteristica: 0,
+      arrayCaracteristicas: [],
       modal: 0,
       tituloModal: 'Registrar Categorias',
       cambio: 0,
@@ -2023,7 +2046,7 @@ __webpack_require__.r(__webpack_exports__);
     limpiar: function limpiar() {
       var me = this;
       me.idCategoria = 0;
-      me.Nombre = '';
+      me.nombre = '';
       me.status = true;
       me.tipoAccion = 0;
       me.errorCategoria = 0;
@@ -2041,7 +2064,7 @@ __webpack_require__.r(__webpack_exports__);
 
       var formData = new FormData(); // formData.append('idCate', me.idCate);
 
-      formData.append('Nombre', me.Nombre); //Registramos la informacion
+      formData.append('nombre', me.nombre); //Registramos la informacion
 
       axios.post('/categoria/registrar', formData, {
         headers: {
@@ -2073,7 +2096,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     cerrarModal: function cerrarModal() {
       this.modal = 0;
-      this.Nombre = "";
+      this.nombre = "";
       this.Status = '1';
       this.tituloModal = '';
       this.errorCategoria = 0;
@@ -2088,8 +2111,8 @@ __webpack_require__.r(__webpack_exports__);
               case 'registrar':
                 {
                   this.modal = 1;
-                  this.Nombre = '';
-                  this.Status = '';
+                  this.nombre = '';
+                  this.status = '';
                   this.tipoAccion = 1;
                   this.tituloModal = 'Registrar Categoria';
                   break;
@@ -2100,9 +2123,9 @@ __webpack_require__.r(__webpack_exports__);
                   this.modal = 1;
                   this.tipoAccion = 2;
                   this.idCategoria = data['idCategoria'];
-                  this.Nombre = data['Nombre'];
-                  this.idCategoria = data['idCategoria'];
-                  this.tituloModal = 'Actualizar Sub categoria';
+                  this.nombre = data['nombre']; // this.idCategoria= data['idCategoria'];
+
+                  this.tituloModal = 'Actualizar Categoría';
                   break;
                 }
             }
@@ -2112,7 +2135,7 @@ __webpack_require__.r(__webpack_exports__);
     actualizarCategoria: function actualizarCategoria(idCategoria) {
       var me = this;
       var formData = new FormData();
-      formData.append('Nombre', me.Nombre);
+      formData.append('nombre', me.nombre);
       formData.append('idCategoria', idCategoria); //Registramos la informacion
 
       axios.post('/categoria/actualizar', formData, {
@@ -38282,8 +38305,8 @@ var render = function() {
                     {
                       name: "model",
                       rawName: "v-model",
-                      value: _vm.Nombre,
-                      expression: "Nombre"
+                      value: _vm.nombre,
+                      expression: "nombre"
                     }
                   ],
                   staticClass: "validate",
@@ -38292,13 +38315,13 @@ var render = function() {
                     type: "text",
                     placeholder: "Nombre Categoria"
                   },
-                  domProps: { value: _vm.Nombre },
+                  domProps: { value: _vm.nombre },
                   on: {
                     input: function($event) {
                       if ($event.target.composing) {
                         return
                       }
-                      _vm.Nombre = $event.target.value
+                      _vm.nombre = $event.target.value
                     }
                   }
                 }),
@@ -38358,7 +38381,7 @@ var render = function() {
                             }
                           }
                         },
-                        [_vm._v(_vm._s(cara.Nombre))]
+                        [_vm._v(_vm._s(cara.nombre))]
                       )
                     })
                   ],
@@ -38386,7 +38409,7 @@ var render = function() {
                 _c(
                   "div",
                   { staticClass: "text-center text-error" },
-                  _vm._l(_vm.errorMostrarMsjCaractegoria, function(error) {
+                  _vm._l(_vm.errorMostrarMsjCategoria, function(error) {
                     return _c("div", {
                       key: error,
                       domProps: { textContent: _vm._s(error) }
@@ -38450,7 +38473,41 @@ var render = function() {
       ]
     ),
     _vm._v(" "),
+    _vm._m(0),
+    _vm._v(" "),
     _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col s10 l10 centro" }, [
+        _c(
+          "table",
+          [
+            _vm._m(1),
+            _vm._v(" "),
+            _vm._l(_vm.arrayCategoria, function(categoria) {
+              return _c("tbody", { key: categoria.idCategoria }, [
+                _c("tr", [
+                  _c("td", {
+                    domProps: { textContent: _vm._s(categoria.nombre) }
+                  }),
+                  _vm._v(" "),
+                  _c("td", {
+                    domProps: { textContent: _vm._s(categoria.status) }
+                  })
+                ])
+              ])
+            })
+          ],
+          2
+        )
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col s12 l12" }, [
         _c("h3", { staticClass: "center" }, [_vm._v("Categorías")]),
         _vm._v(" "),
@@ -38458,203 +38515,30 @@ var render = function() {
           _c(
             "a",
             {
-              staticClass:
-                "btn-floating btn-large waves-effect waves-light deep-orange lighten-4 right",
-              on: {
-                click: function($event) {
-                  return _vm.abrirModal("Categoria", "registrar")
-                }
-              }
+              staticClass: "waves-effect btn-large light-blue darken-3  right"
             },
             [
-              _c("i", { staticClass: "brown-text material-icons" }, [
-                _vm._v("add")
-              ])
+              _c("i", { staticClass: "material-icons left" }, [_vm._v("add")]),
+              _vm._v("Nueva categoría")
             ]
           )
         ])
       ])
-    ]),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "row" },
-      _vm._l(_vm.arrayCategoria, function(categoria) {
-        return _c(
-          "ul",
-          { key: categoria.idCategoria, staticClass: "collection col s12 l12" },
-          [
-            _c("li", { staticClass: "collection-item avatar" }, [
-              _c("p", { domProps: { textContent: _vm._s(categoria.Nombre) } }),
-              _vm._v(" "),
-              _c("p", [_vm._v("Categoría: " + _vm._s(categoria.Nombre))]),
-              _vm._v(" "),
-              categoria.Status == 1
-                ? _c("a", { staticClass: "secondary-content" }, [
-                    _c("i", { staticClass: "switch" }, [
-                      _c("label", [
-                        _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: categoria.Status,
-                              expression: "categoria.Status"
-                            }
-                          ],
-                          attrs: {
-                            type: "checkbox",
-                            checked: "checked",
-                            name: "status"
-                          },
-                          domProps: {
-                            checked: Array.isArray(categoria.Status)
-                              ? _vm._i(categoria.Status, null) > -1
-                              : categoria.Status
-                          },
-                          on: {
-                            click: function($event) {
-                              return _vm.desactivarCategoria(
-                                categoria.idCategoria
-                              )
-                            },
-                            change: function($event) {
-                              var $$a = categoria.Status,
-                                $$el = $event.target,
-                                $$c = $$el.checked ? true : false
-                              if (Array.isArray($$a)) {
-                                var $$v = null,
-                                  $$i = _vm._i($$a, $$v)
-                                if ($$el.checked) {
-                                  $$i < 0 &&
-                                    _vm.$set(
-                                      categoria,
-                                      "Status",
-                                      $$a.concat([$$v])
-                                    )
-                                } else {
-                                  $$i > -1 &&
-                                    _vm.$set(
-                                      categoria,
-                                      "Status",
-                                      $$a
-                                        .slice(0, $$i)
-                                        .concat($$a.slice($$i + 1))
-                                    )
-                                }
-                              } else {
-                                _vm.$set(categoria, "Status", $$c)
-                              }
-                            }
-                          }
-                        }),
-                        _c("span", { staticClass: "lever" })
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "i",
-                      {
-                        staticClass: "material-icons brown-text ",
-                        on: {
-                          click: function($event) {
-                            return _vm.abrirModal(
-                              "Categoria",
-                              "actualizar",
-                              categoria
-                            )
-                          }
-                        }
-                      },
-                      [_vm._v("create")]
-                    )
-                  ])
-                : _vm._e(),
-              _vm._v(" "),
-              categoria.Status == 0
-                ? _c("a", { staticClass: "secondary-content" }, [
-                    _c("i", { staticClass: "switch" }, [
-                      _c("label", [
-                        _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: categoria.Status,
-                              expression: "categoria.Status"
-                            }
-                          ],
-                          attrs: { type: "checkbox", name: "status" },
-                          domProps: {
-                            checked: Array.isArray(categoria.Status)
-                              ? _vm._i(categoria.Status, null) > -1
-                              : categoria.Status
-                          },
-                          on: {
-                            click: function($event) {
-                              return _vm.activarCategoria(categoria.idCategoria)
-                            },
-                            change: function($event) {
-                              var $$a = categoria.Status,
-                                $$el = $event.target,
-                                $$c = $$el.checked ? true : false
-                              if (Array.isArray($$a)) {
-                                var $$v = null,
-                                  $$i = _vm._i($$a, $$v)
-                                if ($$el.checked) {
-                                  $$i < 0 &&
-                                    _vm.$set(
-                                      categoria,
-                                      "Status",
-                                      $$a.concat([$$v])
-                                    )
-                                } else {
-                                  $$i > -1 &&
-                                    _vm.$set(
-                                      categoria,
-                                      "Status",
-                                      $$a
-                                        .slice(0, $$i)
-                                        .concat($$a.slice($$i + 1))
-                                    )
-                                }
-                              } else {
-                                _vm.$set(categoria, "Status", $$c)
-                              }
-                            }
-                          }
-                        }),
-                        _c("span", { staticClass: "lever" })
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "i",
-                      {
-                        staticClass: "material-icons brown-text ",
-                        on: {
-                          click: function($event) {
-                            return _vm.abrirModal(
-                              "Categoria",
-                              "actualizar",
-                              categoria
-                            )
-                          }
-                        }
-                      },
-                      [_vm._v("create")]
-                    )
-                  ])
-                : _vm._e()
-            ])
-          ]
-        )
-      }),
-      0
-    )
-  ])
-}
-var staticRenderFns = []
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", [_vm._v("Nombre")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Status")])
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
