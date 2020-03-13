@@ -10,14 +10,14 @@
                     <div class="input-field ">
                             <!-- input para el nombre de la Categoria -->
                         
-                        <input  id="nombre" type="text" v-model="Nombre" placeholder="Nombre Categoria" class="validate">
+                        <input  id="nombre" type="text" v-model="nombre" placeholder="Nombre Categoria" class="validate">
                             <label class="activate" for="nombre"></label>
 
                         <br> 
                             <!-- select Características -->                        
                         <select name="LeaveType" class="browser-default" v-model="idCaracteristica">
                             <option value="" disabled selected>Selecciona las Características</option>
-                            <option  v-on:change="(event) => console.log(event)" v-for="cara in arrayCaracteristicas" :value="cate.idCategorias" :key="cara.idCaracteristicas">{{ cara.Nombre }}</option>
+                            <option  v-on:change="(event) => console.log(event)" v-for="cara in arrayCaracteristicas" :value="cate.idCategorias" :key="cara.idCaracteristicas">{{ cara.nombre }}</option>
                             
                         </select> 
                         <br>
@@ -26,7 +26,7 @@
                 </div>
                 <div v-show="errorCategoria" class="form-group row div-error">
                     <div class="text-center text-error">
-                        <div v-for="error in errorMostrarMsjCaractegoria" :key="error" v-text="error">
+                        <div v-for="error in errorMostrarMsjCategoria" :key="error" v-text="error">
 
                         </div>
                     </div>
@@ -40,38 +40,60 @@
          </div>
        <!-- Termina modal  agregar/actualizar Categoria-->
 
-       <!-- Mostrar Categoria -->
 
+     <!-- Botón para agregar categorías -->
         <div class="row">
             <div class="col s12 l12">  
                 <h3 class="center">Categorías</h3>  
                 <div class="right col s2 l4">
-                    <a class="btn-floating btn-large waves-effect waves-light deep-orange lighten-4 right" @click="abrirModal('Categoria','registrar')"><i class="brown-text material-icons">add</i></a>
+                    <a class="waves-effect btn-large light-blue darken-3  right"><i class="material-icons left">add</i>Nueva categoría</a>
+                    <!-- <a class="btn light-blue darken-3 white-text right" @click="abrirModal('Categoria','registrar')"><i class="brown-text material-icons">add</i></a> -->
                 </div>
             </div>
         </div>
+     <!-- ermina botón para agregar categorías -->
+
+       <!-- Mostrar Categoria -->
                
         <div class="row">
-                <ul class="collection col s12 l12" v-for="categoria in arrayCategoria" :key="categoria.idCategoria">
+            <div class="col s10 l10 centro">
+                 <table>
+                    <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Status</th>
+                    </tr>
+                    </thead>
+                    <tbody v-for="categoria in arrayCategoria" :key="categoria.idCategoria">
+                    <tr>
+                        <td v-text="categoria.nombre"></td>
+                        <td v-text="categoria.status"></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <!-- <ul class="collection with-header" >
+                   <li class="collection-header"><h4>Categorías</h4></li>
                     <li class="collection-item avatar">
-                        <p v-text="categoria.Nombre"></p>
-                        <p>Categoría: {{ categoria.Nombre }}</p>
+                        <p v-text="categoria.nombre"></p>
+                        <p>Categoría: {{ categoria.nombre }}</p>
                         <a class="secondary-content" v-if="categoria.Status == 1">
                             <i class="switch">
-                                <label><input type="checkbox" checked="checked" name="status" v-model="categoria.Status" @click="desactivarCategoria(categoria.idCategoria)"><span class="lever"></span></label>
+                                <label><input type="checkbox" checked="checked" name="status" v-model="categoria.status" @click="desactivarCategoria(categoria.idCategoria)"><span class="lever"></span></label>
                             </i>
                             <i class="material-icons brown-text " @click="abrirModal('Categoria','actualizar',categoria)">create</i>
                         </a>
-                        <a class="secondary-content" v-if="categoria.Status == 0">
+                        <a class="secondary-content" v-if="categoria.status == 0">
                             <i class="switch">
-                                <label><input type="checkbox"  name="status" v-model="categoria.Status" @click="activarCategoria(categoria.idCategoria)"><span class="lever"></span></label>
-                            </i>
+                                <label><input type="checkbox"  name="status" v-model="categoria.status" @click="activarCategoria(categoria.idCategoria)"><span class="lever"></span></label>
+                            </i> -->
                         <!-- </a>  
                          <a class="secondary-content"> -->
-                            <i class="material-icons brown-text " @click="abrirModal('Categoria','actualizar',categoria)">create</i>
+                            <!-- <i class="material-icons brown-text " @click="abrirModal('Categoria','actualizar',categoria)">create</i>
                         </a>                      
                     </li>
-                </ul>
+                </ul> -->
+            </div>
+                
         </div>
        <!-- Termina mostrar Categoria -->
     
@@ -84,16 +106,17 @@
         data(){
             return{
                 idCategoria: 0,
-                Nombre: '',
+                nombre: '',
                 status : true,
                 arrayCategoria:[],
-                arrayCaracteristica: [],
+                idCaracteristica: 0,
+                arrayCaracteristicas: [],
                 modal : 0,
                 tituloModal : 'Registrar Categorias' ,
                 cambio : 0,
                 tipoAccion: 0,
                 errorCategoria : 0,
-                errorMostrarMsjCategoria : [],
+                errorMostrarMsjCategoria : []
             }
         },
         methods: {
@@ -116,7 +139,7 @@
             limpiar() {
                 let me = this;
                 me.idCategoria=0;
-                me.Nombre= '';
+                me.nombre= '';
                 me.status = true;
                 me.tipoAccion= 0;
                 me.errorCategoria = 0;
@@ -133,7 +156,7 @@
                 //     if (valid) {
                 let formData = new FormData();
                 // formData.append('idCate', me.idCate);
-                formData.append('Nombre', me.Nombre);
+                formData.append('nombre', me.nombre);
                 //Registramos la informacion
                 axios.post('/categoria/registrar', formData, {
                     
@@ -165,7 +188,7 @@
             },
             cerrarModal(){
                 this.modal=0;
-                this.Nombre="";
+                this.nombre="";
                 this.Status='1';
                 this.tituloModal='';
 		        this.errorCategoria=0;
@@ -177,8 +200,8 @@
                             case 'registrar':
                                 {
                                     this.modal = 1;
-                                    this.Nombre = '';
-                                    this.Status = '';
+                                    this.nombre = '';
+                                    this.status = '';
                                     this.tipoAccion = 1;
                                     this.tituloModal = 'Registrar Categoria';
                                     break;
@@ -188,9 +211,9 @@
                                     this.modal = 1;
                                     this.tipoAccion = 2;
                                     this.idCategoria = data['idCategoria'];
-                                    this.Nombre = data['Nombre'];
-                                    this.idCategoria= data['idCategoria'];
-                                    this.tituloModal = 'Actualizar Sub categoria';
+                                    this.nombre = data['nombre'];
+                                    // this.idCategoria= data['idCategoria'];
+                                    this.tituloModal = 'Actualizar Categoría';
                                     break;
                                 }
                         }
@@ -200,7 +223,7 @@
             actualizarCategoria(idCategoria){
                 let me = this;
                 let formData = new FormData();
-                formData.append('Nombre', me.Nombre);
+                formData.append('nombre', me.nombre);
                 formData.append('idCategoria',idCategoria);
                 //Registramos la informacion
                 axios.post('/categoria/actualizar',formData,{
