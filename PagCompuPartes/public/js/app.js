@@ -49518,7 +49518,7 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 
 Vue.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/assets/js/components/ExampleComponent.vue")["default"]); // Vue.component('ropa-component', require('./components/Ropa.vue').default);
 // Vue.component('accesorios-component', require('./components/Accesorios.vue').default);
-// Vue.component('cosmeticos-component', require('./components/Cosmeticos.vue').default);
+// Vue.component('cosmeticos-component', require('./components/Cosmeticos.vue').default);g
 // Vue.component('productost-component', require('./components/ProductosT.vue').default);
 // Vue.component('subcategorias-component', require('./consoleComponents/Subcategorias.vue').default);
 // Vue.component('sliders-component', require('./consoleComponents/Sliders.vue').default);
@@ -49661,7 +49661,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/admin/Desktop/Proyectos/cp/CP/PagCompuPartes/resources/assets/js/app.js */"./resources/assets/js/app.js");
+module.exports = __webpack_require__(/*! /Users/jazminvalencia/Desktop/Proyectos/CP/PagCompuPartes/resources/assets/js/app.js */"./resources/assets/js/app.js");
 
 
 /***/ })
