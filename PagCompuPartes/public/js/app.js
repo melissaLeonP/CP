@@ -38280,7 +38280,7 @@ var render = function() {
                 attrs: {
                   id: "nombre",
                   type: "text",
-                  placeholder: "Nombre SubCategoria"
+                  placeholder: "Titulo Slider"
                 },
                 domProps: { value: _vm.titulo },
                 on: {
@@ -38313,7 +38313,7 @@ var render = function() {
                 attrs: {
                   id: "nombre",
                   type: "text",
-                  placeholder: "Nombre SubCategoria"
+                  placeholder: "Texto Slider"
                 },
                 domProps: { value: _vm.texto },
                 on: {

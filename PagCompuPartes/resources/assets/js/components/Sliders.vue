@@ -8,11 +8,11 @@
                     <div class="col s5 center">
                         <img v-if="tipoAccion==2" :src="'img/'+img"  class="imagenEdit" alt="">
                     </div>
-                    <input  id="nombre" type="text" v-model="titulo" placeholder="Nombre SubCategoria" class="validate">
+                    <input  id="nombre" type="text" v-model="titulo" placeholder="Titulo Slider" class="validate">
                             <label class="activate" for="Titulo"></label>
 
                     <br> 
-                    <input  id="nombre" type="text" v-model="texto" placeholder="Nombre SubCategoria" class="validate">
+                    <input  id="nombre" type="text" v-model="texto" placeholder="Texto Slider" class="validate">
                             <label class="activate" for="Texto"></label>
 
                     <br> 
