@@ -26,13 +26,13 @@
       </style>
    </head>
 
-   <nav>
-    <div class="nav-wrapper ">
+   <!-- <nav>
+    <div class="nav-wrapper "> -->
       <!-- <a href="#" src="img/logoBlanco.png" class="brand-logo"></a> -->
-      <a href="#"><img id="navImagen" class="" src="img/logoBlanco.png" style="" alt=""></a>
-      <ul id="nav-mobile" class="right ">
+      <!-- <a href="#"><img id="navImagen" class="" src="img/logoBlanco.png" style="" alt=""></a>
+      <ul id="nav-mobile" class="right "> -->
       <!-- <li><img class="" src="img/logoBlanco.png" alt=""></li> -->
-        <li><a href="sass.html"></a></li>
+        <!-- <li><a href="sass.html"></a></li>
         <li><a href="badges.html">slider</a></li>
         <li><a href="collapsible.html">productos</a></li>
         <li><a href="collapsible.html">categorias</a></li>
@@ -40,15 +40,24 @@
         <li><a href="collapsible.html">cerrar</a></li>
       </ul>
     </div>
+<<<<<<< HEAD
   </nav>
 
 
+=======
+  </nav> -->
+ 
+  
+>>>>>>> master
   <body>
      <div id="app">
 
       
        <br>
 
+       @include('plantilla.consolaNavbar')
+
+       @yield('consola')
      </div>
     <footer class=" ">
 

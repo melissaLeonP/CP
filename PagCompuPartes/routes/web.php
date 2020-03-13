@@ -12,5 +12,14 @@
 */
 
 Route::get('/', function () {
-    return view('consolaPrincipal');
+    return view('contenido/consola');
 });
+<<<<<<< HEAD
+=======
+
+// Route::get('categoria','CategoriaController@index');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+>>>>>>> master
