@@ -16,14 +16,7 @@ a{
     height: 300px;
     border-radius: 50%;
 }
-.imagenEdit{
-  width: 30%;
-  height: 30%;
-}
-.productos{
-  margin-top: 40px;
- 
-}
+
 .logoNav{
   width: 80px;  
 }
@@ -31,17 +24,6 @@ a{
     height:200px;
     width: 500px;
 
- }
- .textoArribos{
-   margin-top: -23px;
- }
- .centerText{
-     margin-left: 30px;
- }
- .menuCentrado{
-     /* margin-left: 13%; */
-     padding-right: 37%;
-  
  }
 
  
@@ -164,6 +146,19 @@ nav.clean .breadcrumb {
 .productosCard {
   margin-left: 5% !important;
 }
+
+.opacity{
+  background-color : white;
+  width:900px;
+  height:600px;
+}
+
+.padre {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @media only screen and (max-width: 768px) {
   .productosCard {
     margin-left:0% !important;

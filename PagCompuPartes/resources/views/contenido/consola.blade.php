@@ -9,6 +9,7 @@
     </template>
     <template v-if="menu==2">
         <h1>Categorías</h1>
+        <categorias-component></categorias-component>
     </template>
     <template v-if="menu==3">
         <h1>Cambiar contraseña</h1>

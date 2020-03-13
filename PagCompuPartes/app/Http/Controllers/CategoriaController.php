@@ -30,7 +30,10 @@ class CategoriaController extends Controller
         //
     }
 
-   
+    public function registrar(Request $request)
+    {
+        //
+    }
 
     /**
      * Update the specified resource in storage.
