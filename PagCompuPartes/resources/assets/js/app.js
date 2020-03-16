@@ -21,6 +21,9 @@ window.Vue = require('vue');
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4d3389287621c42ccdf0d6d0014e87bfce499170
 Vue.component('slider-component', require('./components/Sliders.vue').default);
 Vue.component('productos-component', require('./components/Productos.vue').default);
 // Vue.component('ropa-component', require('./components/Ropa.vue').default);
@@ -32,12 +35,15 @@ Vue.component('productos-component', require('./components/Productos.vue').defau
 // Vue.component('sliders-component', require('./components/Sliders.vue').default);
 // Vue.component('productos-component', require('./consoleComponents/Productos.vue').default);
 // Vue.component('colores-component', require('./consoleComponents/Colores.vue').default);
+<<<<<<< HEAD
 =======
 
 Vue.component('categorias-component', require('./components/Categorias.vue').default);
 // Vue.component('sliders-component', require('./components/Sliders.vue').default);
 // Vue.component('productos-component', require('./components/Productos.vue').default);
 >>>>>>> origin
+=======
+>>>>>>> 4d3389287621c42ccdf0d6d0014e87bfce499170
 
 
 
