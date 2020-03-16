@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use app\Categoria;
+use App\Categoria;
 
 class CategoriaController extends Controller
 {
@@ -30,7 +30,10 @@ class CategoriaController extends Controller
         //
     }
 
-   
+    public function registrar(Request $request)
+    {
+        //
+    }
 
     /**
      * Update the specified resource in storage.
