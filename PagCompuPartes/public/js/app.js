@@ -39443,8 +39443,7 @@ var render = function() {
           _c(
             "a",
             {
-              staticClass:
-                "btn-floating btn-large waves-effect waves-light deep-orange lighten-4 right",
+              staticClass: "waves-effect light-blue darken-3 btn right",
               on: {
                 click: function($event) {
                   return _vm.abrirModal("sliders", "registrar")
@@ -39452,9 +39451,8 @@ var render = function() {
               }
             },
             [
-              _c("i", { staticClass: "brown-text material-icons" }, [
-                _vm._v("add")
-              ])
+              _c("i", { staticClass: "material-icons left" }, [_vm._v("add")]),
+              _vm._v("Registrar Slider")
             ]
           )
         ])
