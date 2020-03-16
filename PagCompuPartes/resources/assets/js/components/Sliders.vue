@@ -174,7 +174,7 @@ export default {
             .then(function (response) {
                 me.listarSliders();
                 me.cerrarModal();
-            
+                me.limpiar();
             })
             .catch(function (error) {
                 console.log(error);
