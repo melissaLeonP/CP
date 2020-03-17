@@ -22,10 +22,10 @@ Route::get('/categoria/desactivar','CategoriaController@desactivar');
 Route::get('/categoria/activar','CategoriaController@activar');
 
 Route::get('/slider','SliderController@index');
-Route::get('/slider/registrar','SliderController@update');
-Route::get('/slider/actualizar','SliderController@actualizar');
-Route::get('/slider/desactivar','SliderController@desactivar');
-Route::get('/slider/activar','SliderController@activar');
+Route::get('/slider/registrar','SliderController@store');
+Route::get('/slider/actualizar','SliderController@update');
+// Route::get('/slider/desactivar','SliderController@desactivar');
+// Route::get('/slider/activar','SliderController@activar');
 
 Auth::routes();
 

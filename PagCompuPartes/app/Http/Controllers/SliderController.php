@@ -114,15 +114,15 @@ class SliderController extends Controller
         //
     }
 
-    public function desactivar(Request $request){
-        $slider = slider::findOrFail($request->id);
-        $slider->status = "0";
-        $slider->save(); 
-    }
+    // public function desactivar(Request $request){
+    //     $slider = slider::findOrFail($request->id);
+    //     $slider->status = "0";
+    //     $slider->save(); 
+    // }
 
-    public function activar(Request $request){
-        $slider = slider::findOrFail($request->id);
-        $slider->status = "0";
-        $slider->save(); 
-    }
+    // public function activar(Request $request){
+    //     $slider = slider::findOrFail($request->id);
+    //     $slider->status = "0";
+    //     $slider->save(); 
+    // }
 }
