@@ -7126,7 +7126,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.modal-content{\n    width: 100% !important;\n    position: absolute !important;\n    height: 600px;\n}\n.mostrar{\n    display: list-item !important;\n    opacity: 1 !important;\n    position: absolute !important;\n    z-index: 100;\n}\n.centrado{\n    max-height:560px !important;\n     margin-left: 20% !important;\n     margin-right: 30% ;\n}\n.espacioButton{\n    margin-left: 10px !important;\n}\n\n", ""]);
+exports.push([module.i, "\n.modal-content{\n    width: 100% !important;\n    position: absolute !important;\n    height: 600px;\n}\n.mostrar{\n    display: list-item !important;\n    opacity: 1 !important;\n    position: absolute !important;\n    z-index: 100;\n}\n.centrado{\n    max-height:560px !important;\n     margin-left: 20% !important;\n     margin-right: 30% ;\n}\n.espacioButton{\n    margin-left: 10px !important;\n}\n.color{\n     background-color: #0277bd !important;\n}\n\n", ""]);
 
 // exports
 
@@ -39320,10 +39320,7 @@ var render = function() {
                   _c("div", { staticClass: "file-field input-field" }, [
                     _c(
                       "div",
-                      {
-                        staticClass:
-                          "waves-effect waves-light btn deep-orange lighten-4 brown-text"
-                      },
+                      { staticClass: "waves-effect waves-light btn color " },
                       [
                         _c("span", [_vm._v("Imagen")]),
                         _vm._v(" "),
@@ -39385,7 +39382,7 @@ var render = function() {
                       "button",
                       {
                         staticClass:
-                          "espacioButton waves-effect waves-light btn deep-orange lighten-4 brown-text",
+                          "color espacioButton waves-effect waves-light btn",
                         attrs: { type: "button" },
                         on: {
                           click: function($event) {
@@ -39402,7 +39399,7 @@ var render = function() {
                       "button",
                       {
                         staticClass:
-                          "espacioButton waves-effect waves-light btn deep-orange lighten-4 brown-text",
+                          "color espacioButton waves-effect waves-light",
                         attrs: { type: "button" },
                         on: {
                           click: function($event) {
@@ -39418,7 +39415,7 @@ var render = function() {
                   "button",
                   {
                     staticClass:
-                      "espacioButton waves-effect waves-light btn deep-orange lighten-4 brown-text",
+                      "color espacioButton waves-effect waves-light btn ",
                     attrs: { type: "button" },
                     on: {
                       click: function($event) {
@@ -39443,7 +39440,7 @@ var render = function() {
           _c(
             "a",
             {
-              staticClass: "waves-effect light-blue darken-3 btn right",
+              staticClass: "waves-effect color btn right",
               on: {
                 click: function($event) {
                   return _vm.abrirModal("sliders", "registrar")
