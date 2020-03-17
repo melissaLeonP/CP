@@ -6,6 +6,7 @@
     </template>
     <template v-if="menu==1">
         <h1>Productos</h1>
+        <productos-component></productos-component>
     </template>
     <template v-if="menu==2">
         <categorias-component></categorias-component>

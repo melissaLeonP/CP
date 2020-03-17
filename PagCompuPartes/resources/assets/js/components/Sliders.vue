@@ -8,18 +8,18 @@
                     <div class="col s5 center">
                         <img v-if="tipoAccion==2" :src="'img/'+img"  class="imagenEdit" alt="">
                     </div>
-                    <input  id="nombre" type="text" v-model="titulo" placeholder="Nombre SubCategoria" class="validate">
+                    <input  id="nombre" type="text" v-model="titulo" placeholder="Titulo Slider" class="validate">
                             <label class="activate" for="Titulo"></label>
 
                     <br> 
-                    <input  id="nombre" type="text" v-model="texto" placeholder="Nombre SubCategoria" class="validate">
+                    <input  id="nombre" type="text" v-model="texto" placeholder="Texto Slider" class="validate">
                             <label class="activate" for="Texto"></label>
 
                     <br> 
                     <div class="form-group row">
                         <div class="col s10 center">
                             <div class="file-field input-field">
-                                <div class="waves-effect waves-light btn deep-orange lighten-4 brown-text">
+                                <div class="waves-effect waves-light btn color">
                                     <span>Imagen</span>
                                     <input id="file" ref="filea"  type="file" data-vv-scope="new"  required="true" aria-required="true"  v-on:change="seleccionarImagen(1)" class="sliderAlta">
                                 </div>
@@ -37,9 +37,9 @@
                             </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" v-if="tipoAccion==1" class="espacioButton waves-effect waves-light btn deep-orange lighten-4 brown-text" @click="nuevoSlider()">Guardar</button>
-                        <button type="button" v-if="tipoAccion==2" class="espacioButton waves-effect waves-light btn deep-orange lighten-4 brown-text" @click="actualizarSlider(idSlider)">Actualizar</button>
-                        <button type="button" class="espacioButton waves-effect waves-light btn deep-orange lighten-4 brown-text" @click="cerrarModal()">Cerrar</button>
+                        <button type="button" v-if="tipoAccion==1" class="color espacioButton waves-effect waves-light btn" @click="nuevoSlider()">Guardar</button>
+                        <button type="button" v-if="tipoAccion==2" class="color espacioButton waves-effect waves-light" @click="actualizarSlider(idSlider)">Actualizar</button>
+                        <button type="button" class="color espacioButton waves-effect waves-light btn " @click="cerrarModal()">Cerrar</button>
                     </div>
                 </div>
             </div>
@@ -50,7 +50,7 @@
             <div class="col s12 l12">
                 <h3 class="center">Sliders</h3>
                 <div class="right col s2 l4">
-                    <a class="btn-floating btn-large waves-effect waves-light deep-orange lighten-4 right" @click="abrirModal('sliders','registrar')"><i class="brown-text material-icons">add</i></a>
+                    <a class="waves-effect color btn right" @click="abrirModal('sliders','registrar')"><i class="material-icons left">add</i>Registrar Slider</a>
                 </div>
             </div>
         </div>
@@ -174,7 +174,7 @@ export default {
             .then(function (response) {
                 me.listarSliders();
                 me.cerrarModal();
-            
+                me.limpiar();
             })
             .catch(function (error) {
                 console.log(error);
@@ -252,5 +252,6 @@ export default {
 .espacioButton{
     margin-left: 10px !important;
 }
+
 
 </style>
