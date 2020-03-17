@@ -39043,7 +39043,7 @@ var render = function() {
                   attrs: {
                     id: "nombre",
                     type: "text",
-                    placeholder: "Nombre Categoria"
+                    placeholder: "Nombre de la categoría"
                   },
                   domProps: { value: _vm.nombre },
                   on: {
@@ -39156,7 +39156,7 @@ var render = function() {
                     "a",
                     {
                       staticClass:
-                        " espacioButton waves-effect waves-light btn deep-orange lighten-4 brown-text",
+                        " espacioButton waves-effect waves-light btn ",
                       on: {
                         click: function($event) {
                           return _vm.nuevaCategoria()
@@ -39172,7 +39172,7 @@ var render = function() {
                     "a",
                     {
                       staticClass:
-                        " espacioButton waves-effect waves-light btn deep-orange lighten-4 brown-text",
+                        " espacioButton waves-effect waves-light btn ",
                       on: {
                         click: function($event) {
                           return _vm.actualizarCategoria(_vm.idCategoria)
@@ -39186,8 +39186,7 @@ var render = function() {
               _c(
                 "button",
                 {
-                  staticClass:
-                    " espacioButton btn btn-secondary deep-orange lighten-4 brown-text",
+                  staticClass: " espacioButton btn btn-secondary",
                   attrs: { type: "button" },
                   on: {
                     click: function($event) {
@@ -39203,14 +39202,36 @@ var render = function() {
       ]
     ),
     _vm._v(" "),
-    _vm._m(0),
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col s12 l12" }, [
+        _c("h3", { staticClass: "center" }, [_vm._v("Categorías")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "right col s2 l4" }, [
+          _c(
+            "a",
+            {
+              staticClass: "waves-effect btn-large light-blue darken-3  right",
+              on: {
+                click: function($event) {
+                  return _vm.abrirModal("Categoria", "registrar")
+                }
+              }
+            },
+            [
+              _c("i", { staticClass: "material-icons left" }, [_vm._v("add")]),
+              _vm._v("Nueva categoría")
+            ]
+          )
+        ])
+      ])
+    ]),
     _vm._v(" "),
     _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col s10 l10 centro" }, [
         _c(
           "table",
           [
-            _vm._m(1),
+            _vm._m(0),
             _vm._v(" "),
             _vm._l(_vm.arrayCategoria, function(categoria) {
               return _c("tbody", { key: categoria.idCategoria }, [
@@ -39233,29 +39254,6 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col s12 l12" }, [
-        _c("h3", { staticClass: "center" }, [_vm._v("Categorías")]),
-        _vm._v(" "),
-        _c("div", { staticClass: "right col s2 l4" }, [
-          _c(
-            "a",
-            {
-              staticClass: "waves-effect btn-large light-blue darken-3  right"
-            },
-            [
-              _c("i", { staticClass: "material-icons left" }, [_vm._v("add")]),
-              _vm._v("Nueva categoría")
-            ]
-          )
-        ])
-      ])
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement

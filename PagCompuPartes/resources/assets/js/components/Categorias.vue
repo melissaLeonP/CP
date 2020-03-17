@@ -10,7 +10,7 @@
                     <div class="input-field ">
                             <!-- input para el nombre de la Categoria -->
                         
-                        <input  id="nombre" type="text" v-model="nombre" placeholder="Nombre Categoria" class="validate">
+                        <input  id="nombre" type="text" v-model="nombre" placeholder="Nombre de la categoría" class="validate">
                             <label class="activate" for="nombre"></label>
 
                         <br> 
@@ -32,9 +32,9 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <a class=" espacioButton waves-effect waves-light btn deep-orange lighten-4 brown-text" v-if="tipoAccion==1"  @click="nuevaCategoria()">Guardar</a>
-                    <a class=" espacioButton waves-effect waves-light btn deep-orange lighten-4 brown-text" v-if="tipoAccion==2"  @click="actualizarCategoria(idCategoria)">Actualizar</a>
-                    <button type="button" class=" espacioButton btn btn-secondary deep-orange lighten-4 brown-text" @click="cerrarModal()">Cerrar</button>
+                    <a class=" espacioButton waves-effect waves-light btn " v-if="tipoAccion==1"  @click="nuevaCategoria()">Guardar</a>
+                    <a class=" espacioButton waves-effect waves-light btn " v-if="tipoAccion==2"  @click="actualizarCategoria(idCategoria)">Actualizar</a>
+                    <button type="button" class=" espacioButton btn btn-secondary" @click="cerrarModal()">Cerrar</button>
                 </div>
             </div>
          </div>
@@ -46,12 +46,12 @@
             <div class="col s12 l12">  
                 <h3 class="center">Categorías</h3>  
                 <div class="right col s2 l4">
-                    <a class="waves-effect btn-large light-blue darken-3  right"><i class="material-icons left">add</i>Nueva categoría</a>
+                    <a class="waves-effect btn-large light-blue darken-3  right" @click="abrirModal('Categoria','registrar')"><i class="material-icons left">add</i>Nueva categoría</a>
                     <!-- <a class="btn light-blue darken-3 white-text right" @click="abrirModal('Categoria','registrar')"><i class="brown-text material-icons">add</i></a> -->
                 </div>
             </div>
         </div>
-     <!-- ermina botón para agregar categorías -->
+     <!-- Termina botón para agregar categorías -->
 
        <!-- Mostrar Categoria -->
                
