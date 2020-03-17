@@ -50,7 +50,7 @@
      <div id="app">
        <br>
 
-       @include('contenido.consola')
+       @include('plantilla.consolaNavBar')
 
        @yield('consola')
      </div>
