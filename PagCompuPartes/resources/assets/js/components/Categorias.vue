@@ -46,7 +46,7 @@
             <div class="col s12 l12">  
                 <h3 class="center">Categorías</h3>  
                 <div class="right col s2 l4">
-                    <a class="waves-effect btn-large light-blue darken-3  right" @click="abrirModal('Categoria','registrar')"><i class="material-icons left">add</i>Nueva categoría</a>
+                    <a class="waves-effect btn-large color right" @click="abrirModal('Categoria','registrar')"><i class="material-icons left">add</i>Nueva categoría</a>
                     <!-- <a class="btn light-blue darken-3 white-text right" @click="abrirModal('Categoria','registrar')"><i class="brown-text material-icons">add</i></a> -->
                 </div>
             </div>
