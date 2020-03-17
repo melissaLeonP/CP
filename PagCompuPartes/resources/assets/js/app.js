@@ -22,8 +22,7 @@ window.Vue = require('vue');
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('slider-component', require('./components/Sliders.vue').default);
 Vue.component('productos-component', require('./components/Productos.vue').default);
-// Vue.component('categorias-component', require('./components/Categorias.vue').default);
-
+Vue.component('categorias-component', require('./components/Categorias.vue').default);
 
 // Vue.component('ropa-component', require('./components/Ropa.vue').default);
 // Vue.component('accesorios-component', require('./components/Accesorios.vue').default);
