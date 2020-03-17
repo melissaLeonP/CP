@@ -30,7 +30,7 @@
                         <!-- input para la imagen del producto --> 
                         <div class="col s10 center" v-if="tipoAccion==1" >
                             <div class="file-field input-field">
-                                <div class="waves-effect waves-light btn deep-orange lighten-4 brown-text">
+                                <div class="waves-effect waves-light btn color">
                                     <span>Imagen</span>
                                     <input id="file" ref="filea"  type="file" data-vv-scope="new"  v-on:change="seleccionarImagen(1)" class="productoAlta">
                                 </div>
@@ -47,9 +47,9 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" v-if="tipoAccion==1" class="espacioButton waves-effect waves-light btn deep-orange lighten-4 brown-text" @click="nuevoProducto()">Guardar</button>
-                        <button type="button" v-if="tipoAccion==2" class="espacioButton waves-effect waves-light btn deep-orange lighten-4 brown-text" @click="actualizarProducto(idProducto)">Actualizar</button>
-                        <button type="button" class="espacioButton waves-effect waves-light btn deep-orange lighten-4 brown-text" @click="cerrarModal()">Cerrar</button>
+                        <button type="button" v-if="tipoAccion==1" class="espacioButton waves-effect waves-light btn color" @click="nuevoProducto()">Guardar</button>
+                        <button type="button" v-if="tipoAccion==2" class="espacioButton waves-effect waves-light btn color" @click="actualizarProducto(idProducto)">Actualizar</button>
+                        <button type="button" class="espacioButton waves-effect waves-light btn color" @click="cerrarModal()">Cerrar</button>
                     </div>
                 </div>
             </div>
@@ -61,7 +61,7 @@
             <div class="col s12 l12 ">
                 <h3 class="center">Productos</h3>
                 <div class="right col s2 l4">
-                    <a class="waves-effect waves-light btn right" @click="abrirModal('productos','registrar')"><i class="material-icons left">add</i>Registrar Productos</a>
+                    <a class="waves-effect waves-light btn right color" @click="abrirModal('productos','registrar')"><i class="material-icons left">add</i>Registrar Productos</a>
                     </div>
             </div>
         </div>

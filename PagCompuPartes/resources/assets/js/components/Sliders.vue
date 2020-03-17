@@ -19,7 +19,7 @@
                     <div class="form-group row">
                         <div class="col s10 center">
                             <div class="file-field input-field">
-                                <div class="waves-effect waves-light btn color ">
+                                <div class="waves-effect waves-light btn color">
                                     <span>Imagen</span>
                                     <input id="file" ref="filea"  type="file" data-vv-scope="new"  required="true" aria-required="true"  v-on:change="seleccionarImagen(1)" class="sliderAlta">
                                 </div>
@@ -252,8 +252,6 @@ export default {
 .espacioButton{
     margin-left: 10px !important;
 }
-.color{
-     background-color: #0277bd !important;
-}
+
 
 </style>
