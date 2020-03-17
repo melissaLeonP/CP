@@ -39210,7 +39210,7 @@ var render = function() {
           _c(
             "a",
             {
-              staticClass: "waves-effect btn-large light-blue darken-3  right",
+              staticClass: "waves-effect btn-large color right",
               on: {
                 click: function($event) {
                   return _vm.abrirModal("Categoria", "registrar")
