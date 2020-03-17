@@ -21,7 +21,11 @@ Route::get('/categoria/actualizar','CategoriaController@actualizar');
 Route::get('/categoria/desactivar','CategoriaController@desactivar');
 Route::get('/categoria/activar','CategoriaController@activar');
 
-
+Route::get('/slider','SliderController@index');
+Route::get('/slider/registrar','SliderController@store');
+Route::get('/slider/actualizar','SliderController@update');
+// Route::get('/slider/desactivar','SliderController@desactivar');
+// Route::get('/slider/activar','SliderController@activar');
 
 Auth::routes();
 
