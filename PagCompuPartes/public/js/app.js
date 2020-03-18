@@ -2413,9 +2413,9 @@ document.addEventListener('DOMContentLoaded', function () {
     return {
       idProducto: 0,
       idCate: '',
-      img: '',
-      Nombre: '',
-      Descripcion: '',
+      imagen: '',
+      nombre: '',
+      descripcion: '',
       status: true,
       tipoAccion: 0,
       arrayProducto: [],
@@ -2430,7 +2430,7 @@ document.addEventListener('DOMContentLoaded', function () {
   methods: {
     listarProductos: function listarProductos() {
       var me = this;
-      var url = '/selectProductos';
+      var url = '/productos';
       axios.get(url).then(function (response) {
         me.arrayProducto = response.data;
         me.status = response.status.data;
@@ -2456,12 +2456,12 @@ document.addEventListener('DOMContentLoaded', function () {
               case 'registrar':
                 {
                   this.modal = 1;
-                  this.Nombre = '';
-                  this.Descripcion = '';
-                  this.img = 'Selecciona imagen';
-                  this.arrayCategoria = 'Selecciona la categoria';
+                  this.nombre = '';
+                  this.descripcion = '';
+                  this.imagen = 'Selecciona imagen'; // this.arrayCategoria= 'Selecciona la categoria';
+
                   this.tipoAccion = 1;
-                  this.tituloModal = 'Registrar Producto';
+                  this.tituloModal = 'Registrar producto';
                   break;
                 }
 
@@ -2470,24 +2470,11 @@ document.addEventListener('DOMContentLoaded', function () {
                   this.modal = 2;
                   this.idProducto = data['idProducto'];
                   this.tipoAccion = 2;
-                  this.img = data['Imagen'];
-                  this.Nombre = data['Nombre'];
-                  this.Descripcion = data['Descripcion'];
-                  this.tituloModal = 'Actualizar Producto';
-                  this.idCate = data['idSubCate'];
-                  var urld = '/producto_color?id=' + id;
-                  axios.get(urld).then(function (response) {
-                    console.log('estoy asignando los datos al array');
-                    m.arrayIdColor = response.data;
-                  })["catch"](function (error) {
-                    console.log(error);
-                  });
-                  var urld = '/producto_talla?id=' + id;
-                  axios.get(urld).then(function (response) {
-                    m.arrayIdTalla = response.data;
-                  })["catch"](function (error) {
-                    console.log(error);
-                  });
+                  this.imagen = data['imagen'];
+                  this.nombre = data['nombre'];
+                  this.descripcion = data['descripcion'];
+                  this.tituloModal = 'Actualizar producto';
+                  this.idCate = data['idCate'];
                 }
             }
           }
@@ -2502,8 +2489,8 @@ document.addEventListener('DOMContentLoaded', function () {
       var formData = new FormData();
       formData.append('file', me.file);
       formData.append('idCate', me.idCate);
-      formData.append('Nombre', me.Nombre);
-      formData.append('Descripcion', me.Descripcion); // Registramos la informacion
+      formData.append('nombre', me.nombre);
+      formData.append('descripcion', me.descripcion); // Registramos la informacion
 
       axios.post('/productos/registrar', formData, {
         headers: {
@@ -2523,8 +2510,8 @@ document.addEventListener('DOMContentLoaded', function () {
       formData.append('file', me.file);
       formData.append('idProducto', idProducto);
       formData.append('idCate', me.idCate);
-      formData.append('Nombre', me.Nombre);
-      formData.append('Descripcion', me.Descripcion); // Regresamos la informacion
+      formData.append('nombre', me.nombre);
+      formData.append('descripcion', me.descripcion); // Regresamos la informacion
 
       axios.post('/productos/actualizar', formData, {
         headers: {
@@ -2541,8 +2528,8 @@ document.addEventListener('DOMContentLoaded', function () {
     cerrarModal: function cerrarModal() {
       this.modal = 0;
       this.tituloModal = '';
-      this.Nombre = "";
-      this.Descripcion = "";
+      this.nombre = "";
+      this.descripcion = "";
       this.idCate = "";
       this.tipoAccion = 0;
       this.errorProducto = 0;
@@ -2553,21 +2540,20 @@ document.addEventListener('DOMContentLoaded', function () {
       me.errors.clear('new');
       me.errors.clear('update');
       me.img = '';
-      me.Descripcion = '';
-      me.Nombre = '';
+      me.descripcion = '';
+      me.nombre = '';
       me.idCate = '';
     },
     verSelects: function verSelects() {
-      var me = this;
-      me.listado = 2; //Obtener los datos del ingreso de sub categorias
+      var me = this; //Obtener los datos del ingreso de categorias
 
       var url = '/categoria';
       axios.get(url).then(function (response) {
         var arrayCategoria = response.data;
         me.arrayCategoria = arrayCategoria.map(function (object) {
           return {
-            idCate: object.idCate,
-            NombreSub: object.Nombre
+            idCategoria: object.idCategoria,
+            nombre: object.nombre
           };
         });
       })["catch"](function (error) {
@@ -2665,19 +2651,12 @@ document.addEventListener('DOMContentLoaded', function () {
       this.errorProducto = 0;
       this.errorMostrarMsjProducto = [];
       if (this.arrayCategoria == 0) this.errorMostrarMsjProducto.push("Seleccione una Categoria.");
-      if (!this.Nombre) this.errorMostrarMsjProducto.push("El nombre del Producto no puede estar vacío.");
-      if (!this.Descripcion) this.errorMostrarMsjProducto.push("La descripción del Producto no puede estar vacía.");
-      if (!isNaN(this.Nombre)) this.errorMostrarMsjProducto.push("El nombre del producto no puede ser numérico.");
-      if (!isNaN(this.Descripcion)) this.errorMostrarMsjProducto.push("La descripción del producto no puede ser numérico.");
+      if (!this.nombre) this.errorMostrarMsjProducto.push("El nombre del Producto no puede estar vacío.");
+      if (!this.descripcion) this.errorMostrarMsjProducto.push("La descripción del Producto no puede estar vacía.");
+      if (!isNaN(this.nombre)) this.errorMostrarMsjProducto.push("El nombre del producto no puede ser numérico.");
+      if (!isNaN(this.descripcion)) this.errorMostrarMsjProducto.push("La descripción del producto no puede ser numérico.");
       if (this.errorMostrarMsjProducto.length) this.errorProducto = 1;
       return this.errorProducto;
-    },
-    updateSelected: function updateSelected(newSelected) {
-      this.selected = newSelected;
-    },
-    addTag: function addTag(newTag) {
-      this.idColor.push(tag);
-      this.idTalla.push(tag);
     }
   },
   components: {// Multiselect
@@ -39418,8 +39397,8 @@ var render = function() {
                     {
                       name: "model",
                       rawName: "v-model",
-                      value: _vm.Nombre,
-                      expression: "Nombre"
+                      value: _vm.nombre,
+                      expression: "nombre"
                     }
                   ],
                   staticClass: "validate",
@@ -39428,13 +39407,13 @@ var render = function() {
                     type: "text",
                     placeholder: "Nombre Producto"
                   },
-                  domProps: { value: _vm.Nombre },
+                  domProps: { value: _vm.nombre },
                   on: {
                     input: function($event) {
                       if ($event.target.composing) {
                         return
                       }
-                      _vm.Nombre = $event.target.value
+                      _vm.nombre = $event.target.value
                     }
                   }
                 }),
@@ -39446,8 +39425,8 @@ var render = function() {
                     {
                       name: "model",
                       rawName: "v-model",
-                      value: _vm.Descripcion,
-                      expression: "Descripcion"
+                      value: _vm.descripcion,
+                      expression: "descripcion"
                     }
                   ],
                   staticClass: "validate",
@@ -39456,13 +39435,13 @@ var render = function() {
                     type: "text",
                     placeholder: "Descripcion"
                   },
-                  domProps: { value: _vm.Descripcion },
+                  domProps: { value: _vm.descripcion },
                   on: {
                     input: function($event) {
                       if ($event.target.composing) {
                         return
                       }
-                      _vm.Descripcion = $event.target.value
+                      _vm.descripcion = $event.target.value
                     }
                   }
                 }),
@@ -39502,26 +39481,19 @@ var render = function() {
                     _c(
                       "option",
                       { attrs: { value: "", disabled: "", selected: "" } },
-                      [_vm._v("Selecciona la Categoria")]
+                      [_vm._v("Selecciona la categoría")]
                     ),
                     _vm._v(" "),
-                    _vm._l(_vm.arrayCategoria, function(categoria) {
+                    _vm._l(_vm.arrayCategoria, function(cate) {
                       return _c(
                         "option",
                         {
-                          key: categoria.idCate,
-                          domProps: { value: categoria.idSubCategorias },
-                          on: {
-                            change: function(event) {
-                              return _vm.console.log(event)
-                            }
-                          }
+                          key: cate.idCategoria,
+                          domProps: { value: cate.idCategoria }
                         },
-                        [_vm._v(_vm._s(categoria.Nombre))]
+                        [_vm._v(_vm._s(cate.nombre))]
                       )
-                    }),
-                    _vm._v(" "),
-                    _c("label", [_vm._v("Seleccione la SubCategoría")])
+                    })
                   ],
                   2
                 ),
@@ -39684,13 +39656,13 @@ var render = function() {
                 }),
                 _vm._v(" "),
                 _c("h5", {
-                  domProps: { textContent: _vm._s(producto.Nombre) }
+                  domProps: { textContent: _vm._s(producto.nombre) }
                 }),
                 _vm._v(" "),
                 _c("h6", [_vm._v("Descripción: ")]),
                 _vm._v(" "),
                 _c("h6", {
-                  domProps: { textContent: _vm._s(producto.Descripcion) }
+                  domProps: { textContent: _vm._s(producto.descripcion) }
                 }),
                 _vm._v(" "),
                 producto.Status == 1
