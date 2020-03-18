@@ -2,20 +2,20 @@
     <main class="main">
         
         <!-- Inicia modal agregar/actualizar Categoria -->
-    
+         <!--     
         <div class="modal fade" tabindex="-1" :class="{'mostrar' : modal}" role="dialog" aria-labelledby="myModalLabel" style="display: none;" aria-hidden="true">
             <div class="modal-dialog modal-primary modal-lg" role="document">
                 <div class="container">
                     <h3 v-text="tituloModal"></h3>
-                    <div class="input-field ">
+                    <div class="input-field "> -->
                             <!-- input para el nombre de la Categoria -->
-                        
+         <!--                         
                         <input  id="nombre" type="text" v-model="nombre" placeholder="Nombre de la categoría" class="validate">
                             <label class="activate" for="nombre"></label>
 
-                        <br> 
+                        <br>  -->
                             <!-- select Características -->                        
-                        <select name="LeaveType" class="browser-default" v-model="idCaracteristica">
+                        <!-- <select name="LeaveType" class="browser-default" v-model="idCaracteristica">
                             <option value="" disabled selected>Selecciona las Características</option>
                             <option  v-on:change="(event) => console.log(event)" v-for="cara in arrayCaracteristicas" :value="cate.idCategorias" :key="cara.idCaracteristicas">{{ cara.nombre }}</option>
                             
@@ -37,17 +37,53 @@
                     <button type="button" class=" espacioButton btn btn-secondary" @click="cerrarModal()">Cerrar</button>
                 </div>
             </div>
-         </div>
+         </div> -->
        <!-- Termina modal  agregar/actualizar Categoria-->
 
+    <!-- abre modal -->
+        <div class="modal fade" tabindex="-1" :class="{'mostrar' : modal}" role="dialog" aria-labelledby="myModalLabel" style="display: none;" aria-hidden="true">
+            <div class="modal-dialog modal-primary modal-lg " role="document">
+                <div class = "container">
+                    <br>
+                    <div class="center">
+                        <h3 v-text="tituloModal"></h3>
+                    </div>
+                   
+                    <div class="form-group row">
+                        <!-- input para el nombre del producto --> 
+                        <input id="nombre" type="text" v-model="Nombre" placeholder="Nombre Producto"  class="validate" >
+                        <!-- <label  for="nombre">Nombre</label> -->
+                        <br>  
+                        <!-- select Subcategorias --> 
+                        <select name="LeaveType" class="browser-default" v-model="idCate">
+                            <option value="" disabled selected>Selecciona la Categoria</option>
+                            <option v-on:change="(event) => console.log(event)" v-for="categoria in arrayCategoria" :value="categoria.idSubCategorias" :key="categoria.idCate">{{ categoria.Nombre }}</option>
+                        <label>Seleccione la SubCategoría</label>
+                        </select> 
+                        <br>
+                    </div> 
+                    <div v-show="errorProducto" class="form-group row div-error">
+                        <div class="text-center text-error">
+                            <div v-for="error in errorMostrarMsjProducto" :key="error" v-text="error">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                       <a class=" espacioButton waves-effect waves-light btn color" v-if="tipoAccion==1"  @click="nuevaCategoria()">Guardar</a>
+                       <a class=" espacioButton waves-effect waves-light btn color" v-if="tipoAccion==2"  @click="actualizarCategoria(idCategoria)">Actualizar</a>
+                       <button type="button" class=" espacioButton btn btn-secondary color" @click="cerrarModal()">Cerrar</button>
+               </div>
+                </div>
+            </div>
+        </div>  
+    <!-- cierra modal -->
 
      <!-- Botón para agregar categorías -->
         <div class="row">
             <div class="col s12 l12">  
                 <h3 class="center">Categorías</h3>  
                 <div class="right col s2 l4">
-                    <a class="waves-effect btn-large color right" @click="abrirModal('Categoria','registrar')"><i class="material-icons left">add</i>Nueva categoría</a>
-                    <!-- <a class="btn light-blue darken-3 white-text right" @click="abrirModal('Categoria','registrar')"><i class="brown-text material-icons">add</i></a> -->
+                    <a class="waves-effect btn color right" @click="abrirModal('Categoria','registrar')"><i class="material-icons left">add</i>Nueva categoría</a>
                 </div>
             </div>
         </div>
@@ -336,11 +372,22 @@
     };
 </script>
 <style>
+    .modal-content{
+        width: 100% !important;
+        position: absolute !important;
+        height: 600px;
+    }
     .mostrar{
         display: list-item !important;
-        opacity: 1 !important; 
+        opacity: 1 !important;
         position: absolute !important;
-    }  
+        z-index: 100;
+    }
+    .centrado{
+        height:560px;
+        margin-left: 20%;
+        margin-right: 30%;
+    }
     .espacioButton{
         margin-left: 10px !important;
     }
