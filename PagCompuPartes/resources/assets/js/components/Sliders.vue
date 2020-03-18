@@ -38,7 +38,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" v-if="tipoAccion==1" class="color espacioButton waves-effect waves-light btn" @click="nuevoSlider()">Guardar</button>
-                        <button type="button" v-if="tipoAccion==2" class="color espacioButton waves-effect waves-light" @click="actualizarSlider(idSlider)">Actualizar</button>
+                        <button type="button" v-if="tipoAccion==2" class="color espacioButton waves-effect waves-light btn" @click="actualizarSlider(idSlider)">Actualizar</button>
                         <button type="button" class="color espacioButton waves-effect waves-light btn " @click="cerrarModal()">Cerrar</button>
                     </div>
                 </div>
@@ -55,15 +55,17 @@
             </div>
         </div>
         <!-- empieza la actualizacion de sliders-->
-        <div class="row">
-            <div class="col s6 offset-s3">
-                <div class="card " v-for="slider in arraySliders" :key="slider.idSlider">
+
+        <div class="row cardsSlider">
+            <div class="col 12">
+                <div class="card" v-for="slider in arraySliders" :key="slider.idSlider">
                     <div class="card-image small">
-                        <img :src="'img/'+slider.imagen" >
+                        <img :src="'img/'+slider.img">
                         <a  class="btn-floating halfway-fab waves-effect waves-light red" @click="abrirModal('sliders','actualizar',slider)"><i class="material-icons" >create</i></a>
                     </div>
                     <div class="card-content">
-                        <p></p>
+                        <h4>{{slider.titulo}}</h4>
+                        <p>{{slider.texto}}</p>
                     </div>
                 </div> 
             </div>
@@ -139,9 +141,10 @@ export default {
             let me = this;
             let formData = new FormData();
 
-            formData.append('texto', me.texto);
+            formData.append('file', me.file);
             formData.append('titulo', me.titulo);
-            formData.append('img', me.file);
+            formData.append('texto', me.texto);
+            
             axios.post('/slider/registrar', formData, {
             headers: {
                 'Content-Type': 'multipart/form-data'

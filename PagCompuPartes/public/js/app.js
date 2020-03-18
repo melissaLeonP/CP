@@ -2735,6 +2735,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2802,9 +2804,9 @@ __webpack_require__.r(__webpack_exports__);
     nuevoSlider: function nuevoSlider() {
       var me = this;
       var formData = new FormData();
-      formData.append('texto', me.texto);
+      formData.append('file', me.file);
       formData.append('titulo', me.titulo);
-      formData.append('img', me.file);
+      formData.append('texto', me.texto);
       axios.post('/slider/registrar', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
@@ -40056,7 +40058,7 @@ var render = function() {
                       "button",
                       {
                         staticClass:
-                          "color espacioButton waves-effect waves-light",
+                          "color espacioButton waves-effect waves-light btn",
                         attrs: { type: "button" },
                         on: {
                           click: function($event) {
@@ -40113,14 +40115,14 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "row" }, [
+    _c("div", { staticClass: "row cardsSlider" }, [
       _c(
         "div",
-        { staticClass: "col s6 offset-s3" },
+        { staticClass: "col 12" },
         _vm._l(_vm.arraySliders, function(slider) {
-          return _c("div", { key: slider.idSlider, staticClass: "card " }, [
+          return _c("div", { key: slider.idSlider, staticClass: "card" }, [
             _c("div", { staticClass: "card-image small" }, [
-              _c("img", { attrs: { src: "img/" + slider.imagen } }),
+              _c("img", { attrs: { src: "img/" + slider.img } }),
               _vm._v(" "),
               _c(
                 "a",
@@ -40137,7 +40139,11 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _vm._m(1, true)
+            _c("div", { staticClass: "card-content" }, [
+              _c("h4", [_vm._v(_vm._s(slider.titulo))]),
+              _vm._v(" "),
+              _c("p", [_vm._v(_vm._s(slider.texto))])
+            ])
           ])
         }),
         0
@@ -40156,12 +40162,6 @@ var staticRenderFns = [
         attrs: { type: "text" }
       })
     ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "card-content" }, [_c("p")])
   }
 ]
 render._withStripped = true
