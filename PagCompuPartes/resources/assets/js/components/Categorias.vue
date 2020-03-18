@@ -12,15 +12,21 @@
                    
                     <div class="form-group row">
                         <!-- input para el nombre del producto --> 
-                        <input id="nombre" type="text" v-model="nombre" placeholder="Nombre Producto"  class="validate" >
+                        <input id="nombre" type="text" v-model="nombre" placeholder="Nombre de la categoría"  class="validate" >
                         <!-- <label  for="nombre">Nombre</label> -->
                         <br>  
                         <!-- select Subcategorias --> 
-                        <select name="LeaveType" class="browser-default" v-model="arrayCaracteristicas">
+                        <div>
+                            <label class="typo__label">Selecciona las características</label>
+                            <multiselect v-model="arrayIdCaracteristica" :options="arrayCaracteristicas" label="nombre" track-by="idCaracteristica" :multiple="true">
+                                <!-- <pre class="language-json"><code>{{ idTalla.Talla }}</code></pre> -->
+                            </multiselect>
+                        </div>
+                        <!-- <select name="LeaveType" class="browser-default" v-model="arrayCaracteristicas">
                             <option value="" disabled selected>Selecciona las características</option>
                             <option v-on:change="(event) => console.log(event)" v-for="caracteristica in arrayCaracteristicas " :value="caracteristica.idCaracteristica" :key="caracteristica.idCaracteristica">{{ caracteristica.nombre }}</option>
                         <label>Seleccione las características</label>
-                        </select> 
+                        </select>  -->
                         <br>
                     </div> 
                     <div v-show="errorCategoria" class="form-group row div-error">
@@ -118,6 +124,12 @@
 </template>
 
 <script>
+import Multiselect from 'vue-multiselect'
+
+document.addEventListener('DOMContentLoaded', function() {
+                        var elems = document.querySelectorAll('select');
+                        var instances = M.FormSelect.init(elems);
+                    });
 
     export default {
         data(){
@@ -128,6 +140,7 @@
                 arrayCategoria:[],
                 idCaracteristica: 0,
                 arrayCaracteristicas: [],
+                arrayIdCaracteristica:[],
                 modal : 0,
                 tituloModal : 'Registrar Categorias' ,
                 cambio : 0,
@@ -196,7 +209,7 @@
                 //Obtener los datos del ingreso de sub categorias
                 var url= '/caracteristicas';
                 axios.get(url).then(function (response) {
-                    var arrayCaracteristicas= response.data;
+                    var arrayCaracteristicas = response.data;
                     me.arrayCaracteristicas = arrayCaracteristicas.map(object => ({idCaracteristica: object.idCaracteristica, nombre: object.nombre})); 
                 })
                 .catch(function (error) {
@@ -344,10 +357,21 @@
                 if(!isNaN(this.NombreSub))this.errorMostrarMsjCategoria.push("El nombre de la Categoría no puede ser numérico.");
                 if (this.errorMostrarMsjCategoria.length) this.errorCategoria = 1;
                 return this.errorCategoria;
+            },
+            updateSelected: function (newSelected) {
+                this.selected = newSelected
+            },
+            addTag (newTag) {
+                this.idColor.push(tag);
+                this.idTalla.push(tag);
             }
-        },mounted(){
+        
+        },components: {
+            Multiselect
+        }
+            ,mounted(){
             this.listarCategoria();
-            // this.verSelects();
+            this.verSelects();
           
         }
     };

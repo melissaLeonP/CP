@@ -45,6 +45,9 @@ Route::group(['middleware'=>['auth']],function(){
     Route::get('/productos/actualizar','ProductoController@update');
     Route::get('/productos/desactivar','ProductoController@desactivar');
     Route::get('/productos/activar','ProductoController@activar');
+
+    Route::get('/caracteristicas','CaracteristicaController@index');
+
 });
 
 // Route::get('/slider/desactivar','SliderController@desactivar');
