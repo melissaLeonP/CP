@@ -9286,6 +9286,9 @@ nav.clean .breadcrumb {
 .color{
   background-color: #0277bd !important;
 }
+.color-text{
+  color:  #0277bd !important;
+}
 
 
 @media only screen and (max-width: 768px) {

@@ -12,7 +12,7 @@
         <categorias-component></categorias-component>
     </template>
     <template v-if="menu==3">
-        <h1>Cambiar contraseña</h1>
+        <contraseña-component></contraseña-component>
     </template>
     <template v-if="menu==4">
         <h1>menu 4</h1>

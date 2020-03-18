@@ -2,46 +2,7 @@
     <main class="main">
         
         <!-- Inicia modal agregar/actualizar Categoria -->
-         <!--     
-        <div class="modal fade" tabindex="-1" :class="{'mostrar' : modal}" role="dialog" aria-labelledby="myModalLabel" style="display: none;" aria-hidden="true">
-            <div class="modal-dialog modal-primary modal-lg" role="document">
-                <div class="container">
-                    <h3 v-text="tituloModal"></h3>
-                    <div class="input-field "> -->
-                            <!-- input para el nombre de la Categoria -->
-         <!--                         
-                        <input  id="nombre" type="text" v-model="nombre" placeholder="Nombre de la categoría" class="validate">
-                            <label class="activate" for="nombre"></label>
-
-                        <br>  -->
-                            <!-- select Características -->                        
-                        <!-- <select name="LeaveType" class="browser-default" v-model="idCaracteristica">
-                            <option value="" disabled selected>Selecciona las Características</option>
-                            <option  v-on:change="(event) => console.log(event)" v-for="cara in arrayCaracteristicas" :value="cate.idCategorias" :key="cara.idCaracteristicas">{{ cara.nombre }}</option>
-                            
-                        </select> 
-                        <br>
-                
-                    </div>
-                </div>
-                <div v-show="errorCategoria" class="form-group row div-error">
-                    <div class="text-center text-error">
-                        <div v-for="error in errorMostrarMsjCategoria" :key="error" v-text="error">
-
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <a class=" espacioButton waves-effect waves-light btn " v-if="tipoAccion==1"  @click="nuevaCategoria()">Guardar</a>
-                    <a class=" espacioButton waves-effect waves-light btn " v-if="tipoAccion==2"  @click="actualizarCategoria(idCategoria)">Actualizar</a>
-                    <button type="button" class=" espacioButton btn btn-secondary" @click="cerrarModal()">Cerrar</button>
-                </div>
-            </div>
-         </div> -->
-       <!-- Termina modal  agregar/actualizar Categoria-->
-
-    <!-- abre modal -->
-        <div class="modal fade" tabindex="-1" :class="{'mostrar' : modal}" role="dialog" aria-labelledby="myModalLabel" style="display: none;" aria-hidden="true">
+               <div class="modal fade" tabindex="-1" :class="{'mostrar' : modal}" role="dialog" aria-labelledby="myModalLabel" style="display: none;" aria-hidden="true">
             <div class="modal-dialog modal-primary modal-lg " role="document">
                 <div class = "container">
                     <br>
@@ -51,20 +12,20 @@
                    
                     <div class="form-group row">
                         <!-- input para el nombre del producto --> 
-                        <input id="nombre" type="text" v-model="Nombre" placeholder="Nombre Producto"  class="validate" >
+                        <input id="nombre" type="text" v-model="nombre" placeholder="Nombre Producto"  class="validate" >
                         <!-- <label  for="nombre">Nombre</label> -->
                         <br>  
                         <!-- select Subcategorias --> 
-                        <select name="LeaveType" class="browser-default" v-model="idCate">
+                        <select name="LeaveType" class="browser-default" v-model="idCategorias">
                             <option value="" disabled selected>Selecciona la Categoria</option>
-                            <option v-on:change="(event) => console.log(event)" v-for="categoria in arrayCategoria" :value="categoria.idSubCategorias" :key="categoria.idCate">{{ categoria.Nombre }}</option>
+                            <option v-on:change="(event) => console.log(event)" v-for="categoria in arrayCategoria" :value="categoria.idSubCategorias" :key="categoria.idCategorias">{{ categoria.Nombre }}</option>
                         <label>Seleccione la SubCategoría</label>
                         </select> 
                         <br>
                     </div> 
-                    <div v-show="errorProducto" class="form-group row div-error">
+                    <div v-show="errorCategoria" class="form-group row div-error">
                         <div class="text-center text-error">
-                            <div v-for="error in errorMostrarMsjProducto" :key="error" v-text="error">
+                            <div v-for="error in errorMostrarMsjCategoria" :key="error" v-text="error">
                             </div>
                         </div>
                     </div>
@@ -75,8 +36,8 @@
                </div>
                 </div>
             </div>
-        </div>  
-    <!-- cierra modal -->
+         </div>  
+       <!-- Termina modal  agregar/actualizar Categoria-->
 
      <!-- Botón para agregar categorías -->
         <div class="row">
@@ -93,17 +54,37 @@
                
         <div class="row">
             <div class="col s10 l10 centro">
-                 <table>
+                 <table class="centered">
                     <thead>
                     <tr>
                         <th>Nombre</th>
                         <th>Status</th>
+                        <th>Editar</th>
+                        <th>Desactivar/Activar</th>
+
+
                     </tr>
                     </thead>
-                    <tbody v-for="categoria in arrayCategoria" :key="categoria.idCategoria">
+                    <tbody  v-for="categoria in arrayCategoria" :key="categoria.idCategoria">
                     <tr>
                         <td v-text="categoria.nombre"></td>
-                        <td v-text="categoria.status"></td>
+                        <td v-if="categoria.status == 1">Activado</td>
+                        <td v-if="categoria.status == 0">Desactivado</td>
+                        <td>
+                            <i class="material-icons color-text " @click="abrirModal('Categoria','actualizar',categoria,categoria.idCategoria)">create</i>
+                        </td>
+                        <td >
+                            <a href="#!" class="secondary-content" v-if="categoria.status == 1">
+                                <i class="switch">
+                                    <label><input type="checkbox" checked="checked" name="status" v-model="categoria.status" @click="desactivarColor(categoria.idCategoria)"><span class="lever"></span></label>
+                                </i>
+                            </a>
+                            <a href="#!" class="secondary-content" v-if="categoria.status == 0">
+                                <i class="switch">
+                                    <label><input type="checkbox"  name="status" v-model="categoria.status" @click="activarColor(categoria.idCategoria)"><span class="lever"></span></label>
+                                </i>
+                            </a>
+                        </td>
                     </tr>
                     </tbody>
                 </table>
@@ -239,7 +220,7 @@
                                     this.nombre = '';
                                     this.status = '';
                                     this.tipoAccion = 1;
-                                    this.tituloModal = 'Registrar Categoria';
+                                    this.tituloModal = 'Registrar categoria';
                                     break;
                                 }
                             case 'actualizar':
@@ -249,7 +230,7 @@
                                     this.idCategoria = data['idCategoria'];
                                     this.nombre = data['nombre'];
                                     // this.idCategoria= data['idCategoria'];
-                                    this.tituloModal = 'Actualizar Categoría';
+                                    this.tituloModal = 'Actualizar categoría';
                                     break;
                                 }
                         }
