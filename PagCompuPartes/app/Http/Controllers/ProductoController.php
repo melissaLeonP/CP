@@ -60,15 +60,14 @@ class ProductoController extends Controller
         $prefijo = 'Image';
         $nombreImagen = $prefijo.'_'.$date.'.'.$extension;
         $img->move('img', $nombreImagen);
-    
 
         //    Inserción a productos
         $producto->nombre = $request->nombre;
         $producto->descripcion = $request->descripcion;
         $producto->imagen = $nombreImagen ;
         $producto->idCate = $request->idCate;
-        $producto->status = '1';
-        return $producto->save();
+        $producto->status = 1;
+        $producto->save();
     }
 
     /**
@@ -102,7 +101,24 @@ class ProductoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        if (!$request->ajax()) return redirect('/administrador');
+        
+        $idProducto = $request->idProducto;
+        $producto = Producto::findOrFail($idProducto);
+        $producto->nombre = $request->nombre;
+        $producto->descripcion = $request->descripcion;
+        $producto->idCate = $request->idCate;
+        
+        $img = Peticion::file('file');
+        $extension = $img -> guessExtension();
+        $date = date('d-m-Y_h-i-s-ms-a');
+        $prefijo = 'Image';
+        $nombreImagen = $prefijo.'_'.$date.'.'.$extension;
+        $img->move('img', $nombreImagen);
+        File::delete('img/' . $slider->img);
+
+        $slider->img = $nombreImagen;
+        $producto->save();
     }
 
     /**

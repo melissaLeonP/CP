@@ -54,7 +54,6 @@ class SliderController extends Controller
         $slider->titulo = $request->titulo;
         $slider->texto = $request->texto;
         $slider->save();
-        return $slider->save();
     }
 
     /**

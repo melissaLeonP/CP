@@ -48,7 +48,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" v-if="tipoAccion==1" class="espacioButton waves-effect waves-light btn color" @click="nuevoProducto()">Guardar</button>
-                        <button type="button" v-if="tipoAccion==2" class="espacioButton waves-effect waves-light btn color" @click="actualizarProducto(idProducto)">Actualizar</button>
+                        <button type="button" v-if="tipoAccion==2" class="color espacioButton waves-effect waves-light btn" @click="actualizarProducto(idProducto)">Actualizar</button>
                         <button type="button" class="espacioButton waves-effect waves-light btn color" @click="cerrarModal()">Cerrar</button>
                     </div>
                 </div>
@@ -71,7 +71,7 @@
                <div class="center col s12  l12">
                     <ul class="collection " v-for="producto in arrayProducto" :key="producto.idProducto">
                         <li class="collection-item avatar">
-                        <img :src="'img/'+producto.Imagen" class="circle">
+                        <img :src="'img/'+producto.imagen" class="circle">
 
                             <h5 v-text="producto.nombre"></h5>
                             <h6>Descripción: </h6>
@@ -114,7 +114,7 @@
                 nombre: '',
                 descripcion:'',
                 status : true,
-                tipoAccion:0,
+                tipoAccion: 0,
                 arrayProducto:[],
                 arrayCategoria:[],
                 modal : 0,
@@ -151,7 +151,7 @@
                                 this.nombre = '';
                                 this.descripcion = '';
                                 this.imagen= 'Selecciona imagen';
-                                // this.arrayCategoria= 'Selecciona la categoria';
+                                this.arrayCategoria= 'Selecciona la categoria';
                                 this.tipoAccion = 1;
                                 this.tituloModal = 'Registrar producto';
                                 break;

@@ -2458,8 +2458,8 @@ document.addEventListener('DOMContentLoaded', function () {
                   this.modal = 1;
                   this.nombre = '';
                   this.descripcion = '';
-                  this.imagen = 'Selecciona imagen'; // this.arrayCategoria= 'Selecciona la categoria';
-
+                  this.imagen = 'Selecciona imagen';
+                  this.arrayCategoria = 'Selecciona la categoria';
                   this.tipoAccion = 1;
                   this.tituloModal = 'Registrar producto';
                   break;
@@ -39583,7 +39583,7 @@ var render = function() {
                       "button",
                       {
                         staticClass:
-                          "espacioButton waves-effect waves-light btn color",
+                          "color espacioButton waves-effect waves-light btn",
                         attrs: { type: "button" },
                         on: {
                           click: function($event) {
@@ -39652,7 +39652,7 @@ var render = function() {
               _c("li", { staticClass: "collection-item avatar" }, [
                 _c("img", {
                   staticClass: "circle",
-                  attrs: { src: "img/" + producto.Imagen }
+                  attrs: { src: "img/" + producto.imagen }
                 }),
                 _vm._v(" "),
                 _c("h5", {
