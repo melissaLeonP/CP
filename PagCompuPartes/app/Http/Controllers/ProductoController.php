@@ -13,7 +13,15 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        //
+
+        if (!$request->ajax()) return redirect('/administrador');
+
+        return  $productos = DB::table('producto')
+        ->join('categorias','categorias.idCategoria', '=','producto.idCate')
+        ->select('producto.Nombre','producto.Descripcion','producto.Status',
+        'productos.imagen','categorias.idCategorias','categorias.Nombre')
+        ->distinct()
+        ->get();
     }
 
     /**
@@ -80,5 +88,18 @@ class ProductoController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function ProductosSelect(Request $request){
+        if (!$request->ajax()) return redirect('/administrador');
+
+
+        return  $productos = DB::table('producto')
+        ->join('categorias','categorias.idCategoria', '=','producto.idCate')
+        ->select('producto.Nombre','producto.Descripcion','producto.Status',
+        'productos.imagen','categorias.idCategorias','categorias.Nombre')
+        ->where('producto.Status','=',1)
+        ->distinct()
+        ->get();
     }
 }
