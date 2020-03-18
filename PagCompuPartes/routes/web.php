@@ -39,6 +39,12 @@ Route::group(['middleware'=>['auth']],function(){
     Route::get('/slider','SliderController@index');
     Route::post('/slider/registrar','SliderController@store');
     Route::post('/slider/actualizar','SliderController@update');
+
+    Route::get('/productos','ProductoController@index');
+    Route::post('/productos/registrar','ProductoController@store');
+    Route::get('/productos/actualizar','ProductoController@update');
+    Route::get('/productos/desactivar','ProductoController@desactivar');
+    Route::get('/productos/activar','ProductoController@activar');
 });
 
 // Route::get('/slider/desactivar','SliderController@desactivar');

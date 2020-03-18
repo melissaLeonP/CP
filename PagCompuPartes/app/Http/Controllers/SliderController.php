@@ -42,17 +42,17 @@ class SliderController extends Controller
     public function store(Request $request)
     {
         $slider = new Slider();
-        $imagen = Peticion::file('file');
+        $img = Peticion::file('file');
         
-        $extension = $imagen->guessExtension();
+        $extension = $img->guessExtension();
         $date = date('d-m-Y_h-i-s-ms-a');
         $prefijo = 'Image';
         $nombreImagen = $prefijo.'_'.$date.'.'.$extension;
-        $imagen->move('img', $nombreImagen);
+        $img->move('img', $nombreImagen);
        
-        $slider->Imagen = $nombreImagen;
-        $slider->texto = $texto;
-        $slider->titulo = $titulo;
+        $slider->img = $nombreImagen;
+        $slider->titulo = $request->titulo;
+        $slider->texto = $request->texto;
         $slider->save();
     }
 
@@ -89,15 +89,15 @@ class SliderController extends Controller
     {
         $slider = Slider::findOrFail($request->id);
 
-        $imagen = Peticion::file('file');
-        $extension = $imagen -> guessExtension();
+        $img = Peticion::file('file');
+        $extension = $img -> guessExtension();
         $date = date('d-m-Y_h-i-s-ms-a');
         $prefijo = 'Image';
         $nombreImagen = $prefijo.'_'.$date.'.'.$extension;
-        $imagen->move('img', $nombreImagen);
-        File::delete('img/' . $slider->Imagen);
+        $img->move('img', $nombreImagen);
+        File::delete('img/' . $slider->img);
 
-        $slider->Imagen = $nombreImagen;
+        $slider->img = $nombreImagen;
         $slider->texto = $texto;
         $slider->titulo = $titulo;
         $slider->save(); 
