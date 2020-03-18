@@ -2098,13 +2098,13 @@ __webpack_require__.r(__webpack_exports__);
       var me = this;
       me.listado = 2; //Obtener los datos del ingreso de sub categorias
 
-      var url = '/categoria';
+      var url = '/caracteristicas';
       axios.get(url).then(function (response) {
-        var arrayCategorias = response.data;
-        me.arrayCategorias = arrayCategorias.map(function (object) {
+        var arrayCaracteristicas = response.data;
+        me.arrayCaracteristicas = arrayCaracteristicas.map(function (object) {
           return {
-            idCategoria: object.idCategoria,
-            Nombre: object.Nombre
+            idCaracteristica: object.idCaracteristica,
+            nombre: object.nombre
           };
         });
       })["catch"](function (error) {
@@ -2278,6 +2278,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return _defineProperty({
@@ -2342,6 +2348,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     validarContra: function validarContra() {
       this.errorContra = 0;
       this.errorMostrarMsjContra = [];
+      if (this.password.length < 5) this.errorContra = 'La contraseña debe de tener más de 5 carácteres';
       if (this.errorMostrarMsjContra.length) this.errorContra = 1;
       return this.errorContra;
     }
@@ -39196,8 +39203,8 @@ var render = function() {
                       {
                         name: "model",
                         rawName: "v-model",
-                        value: _vm.idCategorias,
-                        expression: "idCategorias"
+                        value: _vm.arrayCaracteristicas,
+                        expression: "arrayCaracteristicas"
                       }
                     ],
                     staticClass: "browser-default",
@@ -39212,7 +39219,7 @@ var render = function() {
                             var val = "_value" in o ? o._value : o.value
                             return val
                           })
-                        _vm.idCategorias = $event.target.multiple
+                        _vm.arrayCaracteristicas = $event.target.multiple
                           ? $$selectedVal
                           : $$selectedVal[0]
                       }
@@ -39222,26 +39229,26 @@ var render = function() {
                     _c(
                       "option",
                       { attrs: { value: "", disabled: "", selected: "" } },
-                      [_vm._v("Selecciona la Categoria")]
+                      [_vm._v("Selecciona las características")]
                     ),
                     _vm._v(" "),
-                    _vm._l(_vm.arrayCategoria, function(categoria) {
+                    _vm._l(_vm.arrayCaracteristicas, function(caracteristica) {
                       return _c(
                         "option",
                         {
-                          key: categoria.idCategorias,
-                          domProps: { value: categoria.idSubCategorias },
+                          key: caracteristica.idCaracteristica,
+                          domProps: { value: caracteristica.idCaracteristica },
                           on: {
                             change: function(event) {
                               return _vm.console.log(event)
                             }
                           }
                         },
-                        [_vm._v(_vm._s(categoria.Nombre))]
+                        [_vm._v(_vm._s(caracteristica.nombre))]
                       )
                     }),
                     _vm._v(" "),
-                    _c("label", [_vm._v("Seleccione la SubCategoría")])
+                    _c("label", [_vm._v("Seleccione las características")])
                   ],
                   2
                 ),
@@ -39587,9 +39594,15 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "col s12 center " }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col s7" }, [
+  return _c("div", { staticClass: "row contraseñas" }, [
+    _c("h3", { staticClass: "center" }, [_vm._v("Cambio de contraseña")]),
+    _vm._v(" "),
+    _c("br"),
+    _vm._v(" "),
+    _c("div", { staticClass: "col s12 m12 g12" }, [
+      _c("div", { staticClass: "input-field" }, [
+        _c("i", { staticClass: "material-icons prefix" }, [_vm._v("email")]),
+        _vm._v(" "),
         _c("input", {
           directives: [
             {
@@ -39600,7 +39613,7 @@ var render = function() {
             }
           ],
           staticClass: "validate",
-          attrs: { id: "email", type: "text" },
+          attrs: { id: "correo", type: "text" },
           domProps: { value: _vm.email },
           on: {
             input: function($event) {
@@ -39612,10 +39625,12 @@ var render = function() {
           }
         }),
         _vm._v(" "),
-        _c("label", { attrs: { for: "email" } }, [_vm._v("Correo")])
+        _c("label", { attrs: { for: "correo" } }, [_vm._v("Correo")])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "col s7" }, [
+      _c("div", { staticClass: "input-field" }, [
+        _c("i", { staticClass: "material-icons prefix" }, [_vm._v("lock")]),
+        _vm._v(" "),
         _c("input", {
           directives: [
             {
@@ -39644,19 +39659,16 @@ var render = function() {
       _vm._m(0)
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "center col s2 l4 " }, [
+    _c("br"),
+    _vm._v(" "),
+    _c("div", { staticClass: "botonContraseña" }, [
       _c(
         "a",
         {
-          staticClass: "waves-effect btn color right",
+          staticClass: "waves-effect btn-large color ",
           on: { click: _vm.nuevaContra }
         },
-        [
-          _c("i", { staticClass: "material-icons left" }, [
-            _vm._v("lock_open")
-          ]),
-          _vm._v("Cambiar contra")
-        ]
+        [_vm._v("Actualizar")]
       )
     ])
   ])
@@ -39666,7 +39678,9 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col s7" }, [
+    return _c("div", { staticClass: "input-field" }, [
+      _c("i", { staticClass: "material-icons prefix" }, [_vm._v("lock")]),
+      _vm._v(" "),
       _c("input", {
         staticClass: "validate",
         attrs: { id: "passwordConfirm", type: "password" }

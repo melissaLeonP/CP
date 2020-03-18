@@ -16,10 +16,10 @@
                         <!-- <label  for="nombre">Nombre</label> -->
                         <br>  
                         <!-- select Subcategorias --> 
-                        <select name="LeaveType" class="browser-default" v-model="idCategorias">
-                            <option value="" disabled selected>Selecciona la Categoria</option>
-                            <option v-on:change="(event) => console.log(event)" v-for="categoria in arrayCategoria" :value="categoria.idSubCategorias" :key="categoria.idCategorias">{{ categoria.Nombre }}</option>
-                        <label>Seleccione la SubCategoría</label>
+                        <select name="LeaveType" class="browser-default" v-model="arrayCaracteristicas">
+                            <option value="" disabled selected>Selecciona las características</option>
+                            <option v-on:change="(event) => console.log(event)" v-for="caracteristica in arrayCaracteristicas " :value="caracteristica.idCaracteristica" :key="caracteristica.idCaracteristica">{{ caracteristica.nombre }}</option>
+                        <label>Seleccione las características</label>
                         </select> 
                         <br>
                     </div> 
@@ -194,10 +194,10 @@
                 let me=this;
                 me.listado=2;
                 //Obtener los datos del ingreso de sub categorias
-                var url= '/categoria';
+                var url= '/caracteristicas';
                 axios.get(url).then(function (response) {
-                    var arrayCategorias= response.data;
-                    me.arrayCategorias = arrayCategorias.map(object => ({idCategoria: object.idCategoria, Nombre: object.Nombre})); 
+                    var arrayCaracteristicas= response.data;
+                    me.arrayCaracteristicas = arrayCaracteristicas.map(object => ({idCaracteristica: object.idCaracteristica, nombre: object.nombre})); 
                 })
                 .catch(function (error) {
                     console.log(error);

@@ -166,6 +166,15 @@ nav.clean .breadcrumb {
   color:  #0277bd !important;
 }
 
+.contraseñas{
+  padding-left: 30%;
+  padding-right: 30%;
+}
+.botonContraseña{
+  padding-right: 35%;
+  padding-left: 35%;
+}
+
 
 @media only screen and (max-width: 768px) {
   .productosCard {
