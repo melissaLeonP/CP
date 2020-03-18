@@ -2804,7 +2804,7 @@ __webpack_require__.r(__webpack_exports__);
       var formData = new FormData();
       formData.append('texto', me.texto);
       formData.append('titulo', me.titulo);
-      formData.append('file', me.file);
+      formData.append('img', me.file);
       axios.post('/slider/registrar', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
