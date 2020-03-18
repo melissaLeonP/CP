@@ -11,22 +11,38 @@
 |
 */
 
-Route::get('/', function () {
-    return view('contenido/consola');
+Route::group(['middleware'=>['guest']],function(){
+    Route::get('/login','Auth\LoginController@showLoginForm');
+    
 });
 
-Route::get('/categoria','CategoriaController@index');
-Route::get('/categoria/registrar','CategoriaController@update');
-Route::get('/categoria/actualizar','CategoriaController@actualizar');
-Route::get('/categoria/desactivar','CategoriaController@desactivar');
-Route::get('/categoria/activar','CategoriaController@activar');
-
-Route::get('/slider','SliderController@index');
-Route::get('/slider/registrar','SliderController@store');
-Route::get('/slider/actualizar','SliderController@update');
-// Route::get('/slider/desactivar','SliderController@desactivar');
-// Route::get('/slider/activar','SliderController@activar');
+Route::get('/', function () {
+    return view('contenido/contenido');
+});
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::group(['middleware'=>['auth']],function(){
+
+    Route::get('/consola', function () {
+        return view('contenido/consola');
+    })->name('consola');
+
+    Route::get('/logout','Auth\LoginController@logout')->name('logout');
+
+    Route::get('/categoria','CategoriaController@index');
+    Route::get('/categoria/registrar','CategoriaController@update');
+    Route::get('/categoria/actualizar','CategoriaController@actualizar');
+    Route::get('/categoria/desactivar','CategoriaController@desactivar');
+    Route::get('/categoria/activar','CategoriaController@activar');
+    
+    Route::get('/slider','SliderController@index');
+    Route::post('/slider/registrar','SliderController@store');
+    Route::post('/slider/actualizar','SliderController@update');
+});
+
+// Route::get('/slider/desactivar','SliderController@desactivar');
+// Route::get('/slider/activar','SliderController@activar');
+
+
+// Route::get('/home', 'HomeController@index')->name('home');

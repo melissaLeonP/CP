@@ -4,11 +4,11 @@
 <form class="col s12 l12 was-validated " method="POST" action="{{ route('login') }}">
 {{ csrf_field() }}
 <div class="row" >
-         <div class="center input-field col s12 l6  offset-l3 {{ $errors->has('usuario' ? 'has-error' : '' ) }}">
+         <div class="center input-field col s12 l6  offset-l3 {{ $errors->has('email' ? 'has-error' : '' ) }}">
             <i class="material-icons prefix black-text">person</i>
-             <input  value="{{old('usuario')}}"  name="usuario" id="usuario" type="text" class="validate" autofocus>
-             <label for="id">Usuario</label>
-             {!! $errors->first('usuario','<span class="help-block">:message</span>') !!}
+             <input  value="{{old('email')}}"  name="email" id="email" type="text" class="validate" autofocus>
+             <label for="email">Correo</label>
+             {!! $errors->first('email','<span class="help-block">:message</span>') !!}
         </div>
     </div>
     <div class="row">

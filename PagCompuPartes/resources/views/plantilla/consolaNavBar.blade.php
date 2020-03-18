@@ -11,9 +11,11 @@
         <li><a @click="menu=3">Cambiar contraseña </a></li>
         <!-- <li><a href="collapsible.html">cerrar</a></li> -->
         <li>
-<a class="black-text"  >Cerrar Sesión</a>
+          <a onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Cerrar Sesión</a>
             </li>
-     
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" >
+            {{ csrf_field() }}
+            </form>
       </ul>
     </div>
   </nav>
