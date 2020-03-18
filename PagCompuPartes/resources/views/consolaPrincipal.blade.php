@@ -48,8 +48,6 @@
   
   <body>
      <div id="app">
-       <br>
-
        @include('plantilla.consolaNavBar')
 
        @yield('consola')
