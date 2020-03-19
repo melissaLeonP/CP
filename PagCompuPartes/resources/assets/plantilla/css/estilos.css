@@ -162,6 +162,9 @@ nav.clean .breadcrumb {
 .color{
   background-color: #0277bd !important;
 }
+.color-text{
+  color:  #0277bd !important;
+}
 
 .cardsSlider{
   padding-left: 20%;
