@@ -61,10 +61,10 @@
                 <div class="card" v-for="slider in arraySliders" :key="slider.idSlider">
                     <div class="card-image small">
                         <img :src="'img/'+slider.img">
-                        <a  class="btn-floating halfway-fab waves-effect waves-light red" @click="abrirModal('sliders','actualizar',slider)"><i class="material-icons" >create</i></a>
+                        <a  class="btn-floating halfway-fab waves-effect waves-light red" @click="abrirModal('sliders','actualizar',slider)"><i class="material-icons">create</i></a>
                     </div>
                     <div class="card-content">
-                        <h4>{{slider.titulo}}</h4>
+                        <p>{{slider.titulo}}</p>
                         <p>{{slider.texto}}</p>
                     </div>
                 </div> 

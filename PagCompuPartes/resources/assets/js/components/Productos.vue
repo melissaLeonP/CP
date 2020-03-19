@@ -9,7 +9,7 @@
                         <h3 v-text="tituloModal"></h3>
                     </div>
                     <div class="col s5 center">
-                        <img v-if="tipoAccion==2" :src="'img'/imagen"  class="imagenEdit" alt="">
+                        <img v-if="tipoAccion==2" :src="'img/'+imagen"  class="imagenEdit" alt="">
                     </div>
                     <div class="form-group row">
                         <!-- input para el nombre del producto --> 
@@ -23,7 +23,7 @@
                         <!-- select Subcategorias --> 
                         <select name="LeaveType" class="browser-default" v-model="idCate">
                             <option value="" disabled selected>Selecciona la categoría</option>
-                            <option   v-for="cate in arrayCategoria" :value="cate.idCategoria" :key="cate.idCategoria">{{ cate.nombre }}</option>
+                            <option   v-for="cate in arrayCategoria" :value="cate.idCategoria"  :key="cate.idCategoria">{{ cate.nombre }}</option>
                             
                         </select> 
                         <br>
@@ -111,7 +111,7 @@
     </main>
 </template>
     <script>
-    // import Swal from 'sweetalert2';
+    import Swal from 'sweetalert2';
     // import Multiselect from 'vue-multiselect'
 
     
@@ -175,11 +175,12 @@
                                 this.modal = 2;
                                 this.idProducto = data['idProducto'];
                                 this.tipoAccion = 2;
-                                // this.imagen=data['imagen'];
+                                this.imagen=data['imagen'];
                                 this.nombre=data['nombre'];
+                                this.idCate=data['idCategoria'];
                                 this.descripcion=data['descripcion'];
                                 this.tituloModal = 'Actualizar producto';
-                                this.idCate=data['idCate'];
+                                // this.idCate=data['idCate'];
                             }
                         }
                     }
@@ -194,7 +195,6 @@
                 let formData = new FormData();
 
                 formData.append('file', me.file);
-
                 formData.append('idCate', me.idCate);
                 formData.append('nombre', me.nombre);
                 formData.append('descripcion', me.descripcion);
@@ -217,11 +217,12 @@
                 });
             },
             actualizarProducto(idProducto){
-                console.log('--------idProducto',idProducto)
+                
                 let me = this;
-                let formData = new FormData();
 
-                formData.append('file', me.imagen);
+                let formData = new FormData();
+                
+                formData.append('file', me.file);
                 formData.append('idProducto',idProducto);
                 formData.append('idCate', me.idCate);
                 formData.append('nombre', me.nombre);
@@ -318,8 +319,9 @@
                 }).then((result) => {
                     if (result.value) {
 
+                        console.log('id de producto', id);
                         axios.put('/productos/desactivar',{
-                            'id': id
+                            'idProducto': id
                         }).then(function (response) {
                             me.listarProductos();
                             Swal.fire(
@@ -357,7 +359,7 @@
                 }).then((result) => {
                 if (result.value) {
                     axios.put('/productos/activar',{
-                        'id': id
+                        'idProducto': id
                     }).then(function (response) {
                         me.listarProductos();
                         Swal.fire(

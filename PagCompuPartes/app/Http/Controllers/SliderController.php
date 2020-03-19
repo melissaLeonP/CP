@@ -85,9 +85,9 @@ class SliderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        $slider = Slider::findOrFail($request->id);
+        $slider = Slider::findOrFail($request->idSlider);
 
         $imagen = Peticion::file('file');
         $extension = $imagen -> guessExtension();
@@ -96,7 +96,8 @@ class SliderController extends Controller
         $nombreImagen = $prefijo.'_'.$date.'.'.$extension;
         $imagen->move('img', $nombreImagen);
         File::delete('img/' . $slider->Imagen);
-        $slider->imagen = $nombreImagen;
+
+        $slider->img = $nombreImagen;
         $slider->texto = $texto;
         $slider->titulo = $titulo;
 

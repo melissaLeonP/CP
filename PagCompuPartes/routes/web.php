@@ -43,8 +43,8 @@ Route::group(['middleware'=>['auth']],function(){
     Route::get('/productos','ProductoController@index');
     Route::post('/productos/registrar','ProductoController@store');
     Route::post('/productos/actualizar','ProductoController@update');
-    Route::get('/productos/desactivar','ProductoController@desactivar');
-    Route::get('/productos/activar','ProductoController@activar');
+    Route::put('/productos/desactivar','ProductoController@desactivar');
+    Route::put('/productos/activar','ProductoController@activar');
 });
 
 // Route::get('/slider/desactivar','SliderController@desactivar');
