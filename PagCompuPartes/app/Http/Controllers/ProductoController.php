@@ -99,7 +99,7 @@ class ProductoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
         if (!$request->ajax()) return redirect('/administrador');
         
@@ -117,7 +117,7 @@ class ProductoController extends Controller
         $img->move('img', $nombreImagen);
         File::delete('img/' . $slider->img);
 
-        $slider->img = $nombreImagen;
+        $producto->imagen = $nombreImagen;
         $producto->save();
     }
 

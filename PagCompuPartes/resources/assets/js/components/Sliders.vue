@@ -163,7 +163,7 @@ export default {
             let me = this;
             let formData = new FormData();
 
-            formData.append('file', me.file);
+            formData.append('file', me.img);
             formData.append('texto',me.texto);
             formData.append('titulo',me.titulo);
             formData.append('idSlider',idSlider)

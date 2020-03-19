@@ -9,7 +9,7 @@
                         <h3 v-text="tituloModal"></h3>
                     </div>
                     <div class="col s5 center">
-                        <img v-if="tipoAccion==2" :src="'img/'+img"  class="imagenEdit" alt="">
+                        <img v-if="tipoAccion==2" :src="'img'/imagen"  class="imagenEdit" alt="">
                     </div>
                     <div class="form-group row">
                         <!-- input para el nombre del producto --> 
@@ -28,7 +28,7 @@
                         </select> 
                         <br>
                         <!-- input para la imagen del producto --> 
-                        <div class="col s10 center" v-if="tipoAccion==1" >
+                        <div class="col s10 center">
                             <div class="file-field input-field">
                                 <div class="waves-effect waves-light btn color">
                                     <span>Imagen</span>
@@ -78,8 +78,6 @@
                         <th>Status</th>
                         <th>Editar</th>
                         <th>Desactivar/Activar</th>
-
-
                     </tr>
                     </thead>
                     <tbody  v-for="producto in arrayProducto" :key="producto.idProducto">
@@ -177,7 +175,7 @@
                                 this.modal = 2;
                                 this.idProducto = data['idProducto'];
                                 this.tipoAccion = 2;
-                                this.imagen=data['imagen'];
+                                // this.imagen=data['imagen'];
                                 this.nombre=data['nombre'];
                                 this.descripcion=data['descripcion'];
                                 this.tituloModal = 'Actualizar producto';
@@ -219,10 +217,11 @@
                 });
             },
             actualizarProducto(idProducto){
+                console.log('--------idProducto',idProducto)
                 let me = this;
                 let formData = new FormData();
 
-                formData.append('file', me.file);
+                formData.append('file', me.imagen);
                 formData.append('idProducto',idProducto);
                 formData.append('idCate', me.idCate);
                 formData.append('nombre', me.nombre);
@@ -258,7 +257,7 @@
                 let me = this;
                 me.errors.clear('new');
                 me.errors.clear('update');
-                me.img = '';
+                me.imagen = '';
                 me.descripcion='';
                 me.nombre='';
                 me.idCate='';

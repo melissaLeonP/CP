@@ -42,7 +42,7 @@ Route::group(['middleware'=>['auth']],function(){
 
     Route::get('/productos','ProductoController@index');
     Route::post('/productos/registrar','ProductoController@store');
-    Route::get('/productos/actualizar','ProductoController@update');
+    Route::post('/productos/actualizar','ProductoController@update');
     Route::get('/productos/desactivar','ProductoController@desactivar');
     Route::get('/productos/activar','ProductoController@activar');
 });

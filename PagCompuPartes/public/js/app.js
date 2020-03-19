@@ -2492,8 +2492,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 // import Swal from 'sweetalert2';
 // import Multiselect from 'vue-multiselect'
 document.addEventListener('DOMContentLoaded', function () {
@@ -2561,8 +2559,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 {
                   this.modal = 2;
                   this.idProducto = data['idProducto'];
-                  this.tipoAccion = 2;
-                  this.imagen = data['imagen'];
+                  this.tipoAccion = 2; // this.imagen=data['imagen'];
+
                   this.nombre = data['nombre'];
                   this.descripcion = data['descripcion'];
                   this.tituloModal = 'Actualizar producto';
@@ -2597,9 +2595,10 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     },
     actualizarProducto: function actualizarProducto(idProducto) {
+      console.log('--------idProducto', idProducto);
       var me = this;
       var formData = new FormData();
-      formData.append('file', me.file);
+      formData.append('file', me.imagen);
       formData.append('idProducto', idProducto);
       formData.append('idCate', me.idCate);
       formData.append('nombre', me.nombre);
@@ -2631,7 +2630,7 @@ document.addEventListener('DOMContentLoaded', function () {
       var me = this;
       me.errors.clear('new');
       me.errors.clear('update');
-      me.img = '';
+      me.imagen = '';
       me.descripcion = '';
       me.nombre = '';
       me.idCate = '';
@@ -2929,7 +2928,7 @@ __webpack_require__.r(__webpack_exports__);
     actualizarSlider: function actualizarSlider(idSlider) {
       var me = this;
       var formData = new FormData();
-      formData.append('file', me.file);
+      formData.append('file', me.img);
       formData.append('texto', me.texto);
       formData.append('titulo', me.titulo);
       formData.append('idSlider', idSlider); //Regresamos la informacion
@@ -39768,7 +39767,7 @@ var render = function() {
                 _vm.tipoAccion == 2
                   ? _c("img", {
                       staticClass: "imagenEdit",
-                      attrs: { src: "img/" + _vm.img, alt: "" }
+                      attrs: { src: "img" / _vm.imagen, alt: "" }
                     })
                   : _vm._e()
               ]),
@@ -39882,36 +39881,34 @@ var render = function() {
                 _vm._v(" "),
                 _c("br"),
                 _vm._v(" "),
-                _vm.tipoAccion == 1
-                  ? _c("div", { staticClass: "col s10 center" }, [
-                      _c("div", { staticClass: "file-field input-field" }, [
-                        _c(
-                          "div",
-                          { staticClass: "waves-effect waves-light btn color" },
-                          [
-                            _c("span", [_vm._v("Imagen")]),
-                            _vm._v(" "),
-                            _c("input", {
-                              ref: "filea",
-                              staticClass: "productoAlta",
-                              attrs: {
-                                id: "file",
-                                type: "file",
-                                "data-vv-scope": "new"
-                              },
-                              on: {
-                                change: function($event) {
-                                  return _vm.seleccionarImagen(1)
-                                }
-                              }
-                            })
-                          ]
-                        ),
+                _c("div", { staticClass: "col s10 center" }, [
+                  _c("div", { staticClass: "file-field input-field" }, [
+                    _c(
+                      "div",
+                      { staticClass: "waves-effect waves-light btn color" },
+                      [
+                        _c("span", [_vm._v("Imagen")]),
                         _vm._v(" "),
-                        _vm._m(0)
-                      ])
-                    ])
-                  : _vm._e()
+                        _c("input", {
+                          ref: "filea",
+                          staticClass: "productoAlta",
+                          attrs: {
+                            id: "file",
+                            type: "file",
+                            "data-vv-scope": "new"
+                          },
+                          on: {
+                            change: function($event) {
+                              return _vm.seleccionarImagen(1)
+                            }
+                          }
+                        })
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _vm._m(0)
+                  ])
+                ])
               ]),
               _vm._v(" "),
               _c(
@@ -53238,7 +53235,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/admin/Desktop/Proyectos/cp/CP/PagCompuPartes/resources/assets/js/app.js */"./resources/assets/js/app.js");
+module.exports = __webpack_require__(/*! /Users/jazminvalencia/Desktop/Proyectos/CP/PagCompuPartes/resources/assets/js/app.js */"./resources/assets/js/app.js");
 
 
 /***/ })

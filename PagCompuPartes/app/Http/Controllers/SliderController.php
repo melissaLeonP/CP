@@ -19,7 +19,7 @@ class SliderController extends Controller
      */
     public function index()
     {
-        $slider = Slider::limit(5)->orderBy('idSlider','desc')->get();
+        $slider = Slider::all();
         return $slider;
     }
 
@@ -89,17 +89,17 @@ class SliderController extends Controller
     {
         $slider = Slider::findOrFail($request->id);
 
-        $img = Peticion::file('file');
-        $extension = $img -> guessExtension();
+        $imagen = Peticion::file('file');
+        $extension = $imagen -> guessExtension();
         $date = date('d-m-Y_h-i-s-ms-a');
         $prefijo = 'Image';
         $nombreImagen = $prefijo.'_'.$date.'.'.$extension;
-        $img->move('img', $nombreImagen);
-        File::delete('img/' . $slider->img);
-
-        $slider->img = $nombreImagen;
+        $imagen->move('img', $nombreImagen);
+        File::delete('img/' . $slider->Imagen);
+        $slider->imagen = $nombreImagen;
         $slider->texto = $texto;
         $slider->titulo = $titulo;
+
         $slider->save(); 
     }
 
