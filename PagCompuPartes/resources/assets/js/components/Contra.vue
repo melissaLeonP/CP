@@ -15,13 +15,20 @@
                  </div>
                  <div class="input-field"> 
                      <i class="material-icons prefix">lock</i>
-                     <input id="passwordConfirm" type="password"  class="validate" >
+                     <input id="passwordConfirm" type="password" v-model="passwordConfirm" class="validate" >
                      <label  for="passwordConfirm">Confirmar contraseña</label>
                  </div>
             </div>
             <br>
+            <div v-show="errorContra" class="form-group row div-error">
+                        <div class="text-center text-error">
+                            <div v-for="error in errorMostrarMsjContra" :key="error" v-text="error">
+                            </div>
+                        </div>
+                    </div>
+            <br>
             <div class="botonContraseña">
-                <a class="waves-effect btn-large color " @click="nuevaContra">Actualizar</a>
+                <a class="waves-effect btn-large color" @click="nuevaContra()">Actualizar</a>
             </div>
         </div>
 
@@ -38,7 +45,7 @@
                 password: '',
                 passwordConfirm:'',
                 errorContra : 0,
-                errorContra: []
+                errorMostrarMsjContra: []
             }
         },
         methods: {
@@ -83,7 +90,7 @@
                 formData.append('password', me.password);
 
                 //Registramos la informacion
-                axios.post('/password/registrar', formData, {
+                axios.post('/password/actualizar', formData, {
                     
                     headers: {
                         'Content-Type': 'multipart/form-data'
@@ -101,8 +108,11 @@
              validarContra(){
                 this.errorContra=0;
                 this.errorMostrarMsjContra =[];
-                if(this.password.length < 5 ) this.errorContra = 'La contraseña debe de tener más de 5 carácteres';
+                if (!this.password) this.errorMostrarMsjContra.push("La contraseña no puede estar vacía.");
+                if(this.password.length < 5 ) this.errorMostrarMsjContra.push('La contraseña debe de tener más de 5 carácteres');
+                if(this.password != this.passwordConfirm)  this.errorMostrarMsjContra.push('Las contraseñas no coinciden');
                 if (this.errorMostrarMsjContra.length) this.errorContra = 1;
+
                 return this.errorContra;
             }
         },mounted(){

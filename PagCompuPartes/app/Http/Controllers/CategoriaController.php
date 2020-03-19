@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Categoria;
+use App\Caracteristica_categoria;
+
 
 class CategoriaController extends Controller
 {

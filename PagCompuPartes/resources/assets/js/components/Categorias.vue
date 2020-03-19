@@ -22,11 +22,6 @@
                                 <!-- <pre class="language-json"><code>{{ idTalla.Talla }}</code></pre> -->
                             </multiselect>
                         </div>
-                        <!-- <select name="LeaveType" class="browser-default" v-model="arrayCaracteristicas">
-                            <option value="" disabled selected>Selecciona las características</option>
-                            <option v-on:change="(event) => console.log(event)" v-for="caracteristica in arrayCaracteristicas " :value="caracteristica.idCaracteristica" :key="caracteristica.idCaracteristica">{{ caracteristica.nombre }}</option>
-                        <label>Seleccione las características</label>
-                        </select>  -->
                         <br>
                     </div> 
                     <div v-show="errorCategoria" class="form-group row div-error">
@@ -82,39 +77,18 @@
                         <td class="center">
                             <a href="#!" class="secondary-content" v-if="categoria.status == 1">
                                 <i class="switch">
-                                    <label><input type="checkbox" checked="checked" name="status" v-model="categoria.status" @click="desactivarColor(categoria.idCategoria)"><span class="lever"></span></label>
+                                    <label><input type="checkbox" checked="checked" name="status" v-model="categoria.status" @click="desactivarCategoria(categoria.idCategoria)"><span class="lever"></span></label>
                                 </i>
                             </a>
                             <a href="#!" class="secondary-content" v-if="categoria.status == 0">
                                 <i class="switch">
-                                    <label><input type="checkbox"  name="status" v-model="categoria.status" @click="activarColor(categoria.idCategoria)"><span class="lever"></span></label>
+                                    <label><input type="checkbox"  name="status" v-model="categoria.status" @click="activarCategoria(categoria.idCategoria)"><span class="lever"></span></label>
                                 </i>
                             </a>
                         </td>
                     </tr>
                     </tbody>
                 </table>
-                <!-- <ul class="collection with-header" >
-                   <li class="collection-header"><h4>Categorías</h4></li>
-                    <li class="collection-item avatar">
-                        <p v-text="categoria.nombre"></p>
-                        <p>Categoría: {{ categoria.nombre }}</p>
-                        <a class="secondary-content" v-if="categoria.Status == 1">
-                            <i class="switch">
-                                <label><input type="checkbox" checked="checked" name="status" v-model="categoria.status" @click="desactivarCategoria(categoria.idCategoria)"><span class="lever"></span></label>
-                            </i>
-                            <i class="material-icons brown-text " @click="abrirModal('Categoria','actualizar',categoria)">create</i>
-                        </a>
-                        <a class="secondary-content" v-if="categoria.status == 0">
-                            <i class="switch">
-                                <label><input type="checkbox"  name="status" v-model="categoria.status" @click="activarCategoria(categoria.idCategoria)"><span class="lever"></span></label>
-                            </i> -->
-                        <!-- </a>  
-                         <a class="secondary-content"> -->
-                            <!-- <i class="material-icons brown-text " @click="abrirModal('Categoria','actualizar',categoria)">create</i>
-                        </a>                      
-                    </li>
-                </ul> -->
             </div>
                 
         </div>
@@ -124,6 +98,7 @@
 </template>
 
 <script>
+import Swal from 'sweetalert2';
 import Multiselect from 'vue-multiselect'
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -181,12 +156,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     return;
                 }
                 let me = this;
-                //Validamos si la informacion modificada es correcta
-                // me.$validator.validateAll('new').then(valid => {
-                //     if (valid) {
+                
                 let formData = new FormData();
-                // formData.append('idCate', me.idCate);
                 formData.append('nombre', me.nombre);
+                formData.append('idCarac', me.arrayIdCaracteristica.map(item => item.idCaracteristica).join(','));
+
                 //Registramos la informacion
                 axios.post('/categoria/registrar', formData, {
                     
@@ -353,7 +327,7 @@ document.addEventListener('DOMContentLoaded', function() {
             validarCategoria(){
                 this.errorCategoria=0;
                 this.errorMostrarMsjCategoria =[];
-                if (!this.Nombre) this.errorMostrarMsjCategoria.push("El nombre de la Categoría no puede estar vacío.");
+                // if (!this.Nombre) this.errorMostrarMsjCategoria.push("El nombre de la Categoría no puede estar vacío.");
                 if(!isNaN(this.NombreSub))this.errorMostrarMsjCategoria.push("El nombre de la Categoría no puede ser numérico.");
                 if (this.errorMostrarMsjCategoria.length) this.errorCategoria = 1;
                 return this.errorCategoria;
@@ -362,8 +336,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 this.selected = newSelected
             },
             addTag (newTag) {
-                this.idColor.push(tag);
-                this.idTalla.push(tag);
+                this.idCaracteristica.push(tag);
+                // this.idTalla.push(tag);
             }
         
         },components: {
