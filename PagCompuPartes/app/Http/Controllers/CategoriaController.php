@@ -27,7 +27,42 @@ class CategoriaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if (!$request->ajax()) return redirect('/administrador');
+       
+        $categoria = new Categoria();        
+        
+        // $img = Peticion::file('file');
+        // $extension = $img -> guessExtension();
+        // $date = date('d-m-Y_h-i-s-ms-a');
+        // $prefijo = 'Image';
+        // $nombreImagen = $prefijo.'_'.$date.'.'.$extension;
+        // $img->move('img', $nombreImagen);
+        // $imagenes->Imagen = $nombreImagen;        
+        // $imagenes->Tipo = 'P';
+        // $imagenes->save();
+        // $idImg = $imagenes->idImagen;
+
+
+
+        
+        //    Inserción a productos
+        $categoria->nombre = $request->nombre;
+        
+        // $producto->idColor = $request->idColor;
+        // $producto->idTalla = $request->idTalla;
+        // $producto->idImg = $idImg ;
+        $categoria->Status = '1';
+        $categoria->save();
+        $idCate = $categoria->idCategoria;
+        $data = explode(",", $request->idCarac);
+
+        foreach ($data as $idCarac){
+            $caracteristica = new Caracteristica_categoria();
+            $caracteristica->idCate = $idCate;
+            $caracteristica->idCarac = $idCarac;
+            $caracteristica->save();
+        }
+        
     }
 
     public function registrar(Request $request)

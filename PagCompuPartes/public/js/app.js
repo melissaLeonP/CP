@@ -2320,29 +2320,29 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }, "errorContra", []);
   },
   methods: {
-    listarCategoria: function listarCategoria() {
-      var m = this;
-      axios.get('/categoria').then(function (response) {
-        m.arrayCategoria = response.data;
-        m.status = response.status.data;
-
-        if (status == true) {
-          status = 1;
-        } else {
-          status = 0;
-        }
-      })["catch"](function (error) {
-        console.log(error);
-      });
-    },
+    // listarCategoria(){
+    //  let m=this;
+    //  axios.get('/categoria').then(function (response){
+    //         m.arrayCategoria = response.data;
+    //         m.status = response.status.data;
+    //         if(status == true){
+    //             status = 1
+    //         }else{
+    //             status = 0
+    //         }
+    //     })
+    //     .catch(function(error){
+    //         console.log(error);
+    //     });
+    // },
     limpiar: function limpiar() {
       var me = this;
-      me.idCategoria = 0;
-      me.correo = '';
+      me.email = ''; // me.correo= '';
+
       me.password = '';
       me.passwordConfirm = '';
-      me.status = true;
-      me.tipoAccion = 0;
+      me.status = true; // me.tipoAccion= 0;
+
       me.errorContra = 0;
       me.errorContra = [];
     },
@@ -2357,15 +2357,15 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
       var formData = new FormData(); // formData.append('idCate', me.idCate);
 
-      formData.append('email', me.email); //Registramos la informacion
+      formData.append('email', me.email);
+      formData.append('password', me.password); //Registramos la informacion
 
       axios.post('/password/registrar', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
       }).then(function (response) {
-        me.cerrarModal();
-        me.listarCategoria();
+        me.limpiar(); // me.listarCategoria();
       })["catch"](function (error) {
         console.log(error);
       });
@@ -39379,7 +39379,7 @@ var render = function() {
                     )
                   ]),
                   _vm._v(" "),
-                  _c("td", [
+                  _c("td", { staticClass: "center" }, [
                     categoria.status == 1
                       ? _c(
                           "a",

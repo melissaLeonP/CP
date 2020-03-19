@@ -79,7 +79,7 @@
                         <td>
                             <i class="material-icons color-text " @click="abrirModal('Categoria','actualizar',categoria,categoria.idCategoria)">create</i>
                         </td>
-                        <td >
+                        <td class="center">
                             <a href="#!" class="secondary-content" v-if="categoria.status == 1">
                                 <i class="switch">
                                     <label><input type="checkbox" checked="checked" name="status" v-model="categoria.status" @click="desactivarColor(categoria.idCategoria)"><span class="lever"></span></label>

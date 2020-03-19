@@ -42,30 +42,30 @@
             }
         },
         methods: {
-            listarCategoria(){
-             let m=this;
-             axios.get('/categoria').then(function (response){
-                    m.arrayCategoria = response.data;
-                    m.status = response.status.data;
-                    if(status == true){
-                        status = 1
-                    }else{
-                        status = 0
-                    }
+            // listarCategoria(){
+            //  let m=this;
+            //  axios.get('/categoria').then(function (response){
+            //         m.arrayCategoria = response.data;
+            //         m.status = response.status.data;
+            //         if(status == true){
+            //             status = 1
+            //         }else{
+            //             status = 0
+            //         }
                   
-                })
-                .catch(function(error){
-                    console.log(error);
-                });
-            },
+            //     })
+            //     .catch(function(error){
+            //         console.log(error);
+            //     });
+            // },
             limpiar() {
                 let me = this;
-                me.idCategoria=0;
-                me.correo= '';
+                me.email='';
+                // me.correo= '';
                 me.password = '';
                 me.passwordConfirm = '';
                 me.status = true;
-                me.tipoAccion= 0;
+                // me.tipoAccion= 0;
                 me.errorContra = 0;
                 me.errorContra = [];
             },
@@ -80,6 +80,8 @@
                 let formData = new FormData();
                 // formData.append('idCate', me.idCate);
                 formData.append('email', me.email);
+                formData.append('password', me.password);
+
                 //Registramos la informacion
                 axios.post('/password/registrar', formData, {
                     
@@ -88,8 +90,8 @@
                     }
                 })
                 .then(function (response) {
-                    me.cerrarModal();
-                    me.listarCategoria();
+                    me.limpiar();
+                    // me.listarCategoria();
                 })
                 .catch(function (error) {
                     console.log(error);
