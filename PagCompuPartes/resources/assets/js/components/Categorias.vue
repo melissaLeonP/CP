@@ -197,7 +197,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 this.tituloModal='';
 		        this.errorCategoria=0;
             },
-            abrirModal(modelo,accion, data = []){
+            abrirModal(modelo,accion, data = [],idCaracteristica){
                 switch(modelo){
                     case "Categoria":{
                         switch(accion){
@@ -217,8 +217,19 @@ document.addEventListener('DOMContentLoaded', function() {
                                     this.idCategoria = data['idCategoria'];
                                     this.nombre = data['nombre'];
                                     // this.idCategoria= data['idCategoria'];
+                                    this.arrayIdCaracteristica=data['idCarac']
                                     this.tituloModal = 'Actualizar categoría';
-                                    break;
+
+                                var urld= '/caracteristica_categoria?idCategoria='+idCategoria;
+                                axios.get(urld).then(function (response) {
+                                    console.log('estoy asignando los datos al array');
+                                    m.arrayIdCaracteristica = response.data;
+                                })
+                                .catch(function (error) {
+                                    console.log(error);
+                                });
+
+                                    // break;
                                 }
                         }
                     }

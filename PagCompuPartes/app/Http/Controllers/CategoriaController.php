@@ -79,19 +79,28 @@ class CategoriaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        
     }
 
-    public function activar( $id)
+    public function desactivar(Request $request)
     {
-        //
-    }
+        if (!$request->ajax()) return redirect('/administrador');
 
-    public function desactivar( $id)
+        $categoria = Categoria::findOrFail($request->idCategoria);
+        $categoria->status = 0;
+        $categoria->save(); 
+        
+    }
+    
+    
+    public function activar(Request $request)
     {
-        //
+        if (!$request->ajax()) return redirect('/administrador');
+        $categoria = Categoria::findOrFail($request->idCategoria);
+        $categoria->status = 1;
+        $categoria->save();
     }
    
 }

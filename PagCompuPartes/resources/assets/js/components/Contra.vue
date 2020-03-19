@@ -81,6 +81,41 @@
                     return;
                 }
                 let me = this;
+                //  Swal.fire({
+                // title: '¿Está seguro de actualizar la contraseña?',
+                // type: 'warning',
+                // showCancelButton: true,
+                // confirmButtonColor: '#3085d6',
+                // cancelButtonColor: '#d33',
+                // confirmButtonText: 'Aceptar!',
+                // cancelButtonText: 'Cancelar',
+                // confirmButtonClass: 'btn btn-success',
+                // cancelButtonClass: 'btn btn-danger',
+                // buttonsStyling: false,
+                // reverseButtons: true
+                // }).then((result) => {
+                //     if (result.value) {
+ 
+                //         axios.put('/password/actualizar',{
+                //             'idCategoria': idCategoria
+                //         }).then(function (response) {
+                //             Swal.fire(
+                //                 'Desactivado!',
+                //                 'La categoría ha sido desactivada con éxito.',
+                //                 'success'
+                //             )
+                //           me.listarCategoria();
+                //         }).catch(function (error) {
+                //             console.log(error);
+                //         });                    
+                //     } else if  (
+                            // Read more about handling dismissals
+                //             result.dismiss === Swal.DismissReason.cancel
+                //         ) {
+                //           me.listarCategoria();
+                        
+                //     } 
+                // })
                 //Validamos si la informacion modificada es correcta
                 // me.$validator.validateAll('new').then(valid => {
                 //     if (valid) {

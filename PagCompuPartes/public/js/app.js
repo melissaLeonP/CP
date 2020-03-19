@@ -1908,8 +1908,8 @@ module.exports = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
-/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var vue_multiselect__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-multiselect */ "./node_modules/vue-multiselect/dist/vue-multiselect.min.js");
 /* harmony import */ var vue_multiselect__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue_multiselect__WEBPACK_IMPORTED_MODULE_1__);
 //
@@ -2110,6 +2110,7 @@ document.addEventListener('DOMContentLoaded', function () {
     },
     abrirModal: function abrirModal(modelo, accion) {
       var data = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : [];
+      var idCaracteristica = arguments.length > 3 ? arguments[3] : undefined;
 
       switch (modelo) {
         case "Categoria":
@@ -2132,8 +2133,15 @@ document.addEventListener('DOMContentLoaded', function () {
                   this.idCategoria = data['idCategoria'];
                   this.nombre = data['nombre']; // this.idCategoria= data['idCategoria'];
 
+                  this.arrayIdCaracteristica = data['idCarac'];
                   this.tituloModal = 'Actualizar categoría';
-                  break;
+                  var urld = '/caracteristica_categoria?idCategoria=' + idCategoria;
+                  axios.get(urld).then(function (response) {
+                    console.log('estoy asignando los datos al array');
+                    m.arrayIdCaracteristica = response.data;
+                  })["catch"](function (error) {
+                    console.log(error);
+                  }); // break;
                 }
             }
           }
@@ -2159,7 +2167,7 @@ document.addEventListener('DOMContentLoaded', function () {
     },
     desactivarCategoria: function desactivarCategoria(idCategoria) {
       var me = this;
-      sweetalert2__WEBPACK_IMPORTED_MODULE_2___default.a.fire({
+      sweetalert2__WEBPACK_IMPORTED_MODULE_0___default.a.fire({
         title: '¿Está seguro de desactivar esta Categoria?',
         type: 'warning',
         showCancelButton: true,
@@ -2176,20 +2184,20 @@ document.addEventListener('DOMContentLoaded', function () {
           axios.put('/categoria/desactivar', {
             'idCategoria': idCategoria
           }).then(function (response) {
-            sweetalert2__WEBPACK_IMPORTED_MODULE_2___default.a.fire('Desactivado!', 'La categoría ha sido desactivada con éxito.', 'success');
+            sweetalert2__WEBPACK_IMPORTED_MODULE_0___default.a.fire('Desactivado!', 'La categoría ha sido desactivada con éxito.', 'success');
             me.listarCategoria();
           })["catch"](function (error) {
             console.log(error);
           });
         } else if ( // Read more about handling dismissals
-        result.dismiss === sweetalert2__WEBPACK_IMPORTED_MODULE_2___default.a.DismissReason.cancel) {
+        result.dismiss === sweetalert2__WEBPACK_IMPORTED_MODULE_0___default.a.DismissReason.cancel) {
           me.listarCategoria();
         }
       });
     },
     activarCategoria: function activarCategoria(idCategoria) {
       var me = this;
-      sweetalert2__WEBPACK_IMPORTED_MODULE_2___default.a.fire({
+      sweetalert2__WEBPACK_IMPORTED_MODULE_0___default.a.fire({
         title: '¿Está seguro de activar esta Categoría?',
         type: 'warning',
         showCancelButton: true,
@@ -2206,13 +2214,13 @@ document.addEventListener('DOMContentLoaded', function () {
           axios.put('/categoria/activar', {
             'idCategoria': idCategoria
           }).then(function (response) {
-            sweetalert2__WEBPACK_IMPORTED_MODULE_2___default.a.fire('Activado!', 'La categoría ha sido activada con éxito.', 'success');
+            sweetalert2__WEBPACK_IMPORTED_MODULE_0___default.a.fire('Activado!', 'La categoría ha sido activada con éxito.', 'success');
             me.listarCategoria();
           })["catch"](function (error) {
             console.log(error);
           });
         } else if ( // Read more about handling dismissals
-        result.dismiss === sweetalert2__WEBPACK_IMPORTED_MODULE_2___default.a.DismissReason.cancel) {
+        result.dismiss === sweetalert2__WEBPACK_IMPORTED_MODULE_0___default.a.DismissReason.cancel) {
           me.listarCategoria();
         }
       });
@@ -2332,7 +2340,40 @@ __webpack_require__.r(__webpack_exports__);
         return;
       }
 
-      var me = this; //Validamos si la informacion modificada es correcta
+      var me = this; //  Swal.fire({
+      // title: '¿Está seguro de actualizar la contraseña?',
+      // type: 'warning',
+      // showCancelButton: true,
+      // confirmButtonColor: '#3085d6',
+      // cancelButtonColor: '#d33',
+      // confirmButtonText: 'Aceptar!',
+      // cancelButtonText: 'Cancelar',
+      // confirmButtonClass: 'btn btn-success',
+      // cancelButtonClass: 'btn btn-danger',
+      // buttonsStyling: false,
+      // reverseButtons: true
+      // }).then((result) => {
+      //     if (result.value) {
+      //         axios.put('/password/actualizar',{
+      //             'idCategoria': idCategoria
+      //         }).then(function (response) {
+      //             Swal.fire(
+      //                 'Desactivado!',
+      //                 'La categoría ha sido desactivada con éxito.',
+      //                 'success'
+      //             )
+      //           me.listarCategoria();
+      //         }).catch(function (error) {
+      //             console.log(error);
+      //         });                    
+      //     } else if  (
+      // Read more about handling dismissals
+      //             result.dismiss === Swal.DismissReason.cancel
+      //         ) {
+      //           me.listarCategoria();
+      //     } 
+      // })
+      //Validamos si la informacion modificada es correcta
       // me.$validator.validateAll('new').then(valid => {
       //     if (valid) {
 

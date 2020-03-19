@@ -52,6 +52,9 @@ Route::group(['middleware'=>['auth']],function(){
 
     Route::post('/password/actualizar','PasswordController@update');
 
+    Route::get('/caracteristica_categoria','CaracteristicaCategoriaController@index');
+
+
 
 });
 

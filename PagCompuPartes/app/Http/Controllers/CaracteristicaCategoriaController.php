@@ -11,9 +11,21 @@ class CaracteristicaCategoriaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        if (!$request->ajax()) return redirect('/administrador');
+
+        $id = $request->idCategoria;
+
+        return  $caracteristicas = DB::table('caracteristica_categoria')
+        ->join('categoria','categoria.idCategoria', '=','caracteristica_categoria.idCate')
+        ->join('caracteristicas','caracteristicas.idCaracteristica', '=','caracteristica_categoria.idCarac')
+        ->select('categoria.idCategoria','caracteristica_categoria.idCarac','caracteristicas.nombre AS nombreCaracteristicas')
+        ->where([
+            ['categoria.idCategoria','=',$id],
+            ['categoria.status','=',1]   
+        ])
+        ->get();
     }
 
     /**

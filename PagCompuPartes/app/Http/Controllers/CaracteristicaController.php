@@ -84,4 +84,21 @@ class CaracteristicaController extends Controller
     {
         //
     }
+
+    public function desactivar(Request $request)
+    {
+        $producto = Producto::findOrFail($request->id);
+        $producto->status = 0;
+        $producto->save(); 
+        
+    }
+    
+    
+    public function activar(Request $request)
+    {
+        if (!$request->ajax()) return redirect('/administrador');
+        $producto = Producto::findOrFail($request->id);
+        $producto->status = 1;
+        $producto->save();
+    }
 }
