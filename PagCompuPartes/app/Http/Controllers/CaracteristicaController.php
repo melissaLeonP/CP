@@ -13,7 +13,8 @@ class CaracteristicaController extends Controller
      */
     public function index()
     {
-        //
+        $caracteristica = Caracteristica::all();
+        return $caracteristica;
     }
 
     /**

@@ -1,23 +1,29 @@
 <template>
-         <div class="col s12 center ">
-             <div class="row">
-                 <div class="col s7">
-                     <input id="email" type="text" v-model="email" class="validate" >
-                     <label  for="email">Correo</label>
+        <div class="row contraseñas">
+                <h3 class="center">Cambio de contraseña</h3>  
+                <br>
+            <div class="col s12 m12 g12">
+                 <div class="input-field">
+                     <i class="material-icons prefix">email</i>
+                     <input id="correo" type="text" v-model="email" class="validate" >
+                     <label  for="correo">Correo</label>
                  </div>
-                 <div class="col s7">
+                 <div class="input-field">
+                     <i class="material-icons prefix">lock</i>
                      <input id="password" type="password" v-model="password" class="validate" >
                      <label  for="password">Contraseña</label>
                  </div>
-                 <div class="col s7">
+                 <div class="input-field"> 
+                     <i class="material-icons prefix">lock</i>
                      <input id="passwordConfirm" type="password"  class="validate" >
                      <label  for="passwordConfirm">Confirmar contraseña</label>
                  </div>
-             </div>
-             <div class="center col s2 l4 ">
-                      <a class="waves-effect btn color right" @click="nuevaContra"><i class="material-icons left">lock_open</i>Cambiar contra</a>
-                </div>
-         </div>
+            </div>
+            <br>
+            <div class="botonContraseña">
+                <a class="waves-effect btn-large color " @click="nuevaContra">Actualizar</a>
+            </div>
+        </div>
 
                 
 
@@ -93,6 +99,7 @@
              validarContra(){
                 this.errorContra=0;
                 this.errorMostrarMsjContra =[];
+                if(this.password.length < 5 ) this.errorContra = 'La contraseña debe de tener más de 5 carácteres';
                 if (this.errorMostrarMsjContra.length) this.errorContra = 1;
                 return this.errorContra;
             }
