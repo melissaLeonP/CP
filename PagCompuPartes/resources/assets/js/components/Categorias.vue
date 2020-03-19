@@ -56,14 +56,12 @@
             <div class="col s10 l10 centro">
                  <table class="centered">
                     <thead>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Status</th>
-                        <th>Editar</th>
-                        <th>Desactivar/Activar</th>
-
-
-                    </tr>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Status</th>
+                            <th>Editar</th>
+                            <th>Desactivar/Activar</th>
+                        </tr>
                     </thead>
                     <tbody  v-for="categoria in arrayCategoria" :key="categoria.idCategoria">
                     <tr>
@@ -88,27 +86,7 @@
                     </tr>
                     </tbody>
                 </table>
-                <!-- <ul class="collection with-header" >
-                   <li class="collection-header"><h4>Categorías</h4></li>
-                    <li class="collection-item avatar">
-                        <p v-text="categoria.nombre"></p>
-                        <p>Categoría: {{ categoria.nombre }}</p>
-                        <a class="secondary-content" v-if="categoria.Status == 1">
-                            <i class="switch">
-                                <label><input type="checkbox" checked="checked" name="status" v-model="categoria.status" @click="desactivarCategoria(categoria.idCategoria)"><span class="lever"></span></label>
-                            </i>
-                            <i class="material-icons brown-text " @click="abrirModal('Categoria','actualizar',categoria)">create</i>
-                        </a>
-                        <a class="secondary-content" v-if="categoria.status == 0">
-                            <i class="switch">
-                                <label><input type="checkbox"  name="status" v-model="categoria.status" @click="activarCategoria(categoria.idCategoria)"><span class="lever"></span></label>
-                            </i> -->
-                        <!-- </a>  
-                         <a class="secondary-content"> -->
-                            <!-- <i class="material-icons brown-text " @click="abrirModal('Categoria','actualizar',categoria)">create</i>
-                        </a>                      
-                    </li>
-                </ul> -->
+           
             </div>
                 
         </div>

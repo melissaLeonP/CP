@@ -2005,28 +2005,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2493,6 +2471,22 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 // import Swal from 'sweetalert2';
 // import Multiselect from 'vue-multiselect'
 document.addEventListener('DOMContentLoaded', function () {
@@ -2549,8 +2543,8 @@ document.addEventListener('DOMContentLoaded', function () {
                   this.modal = 1;
                   this.nombre = '';
                   this.descripcion = '';
-                  this.imagen = 'Selecciona imagen';
-                  this.arrayCategoria = 'Selecciona la categoria';
+                  this.imagen = 'Selecciona imagen'; // this.arrayCategoria= 'Selecciona la categoria';
+
                   this.tipoAccion = 1;
                   this.tituloModal = 'Registrar producto';
                   break;
@@ -40015,211 +40009,207 @@ var render = function() {
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "row" }, [
-      _c(
-        "div",
-        { staticClass: "center col s12  l12" },
-        _vm._l(_vm.arrayProducto, function(producto) {
-          return _c(
-            "ul",
-            { key: producto.idProducto, staticClass: "collection " },
-            [
-              _c("li", { staticClass: "collection-item avatar" }, [
-                _c("img", {
-                  staticClass: "circle",
-                  attrs: { src: "img/" + producto.imagen }
-                }),
-                _vm._v(" "),
-                _c("h5", {
-                  domProps: { textContent: _vm._s(producto.nombre) }
-                }),
-                _vm._v(" "),
-                _c("h6", [_vm._v("Descripción: ")]),
-                _vm._v(" "),
-                _c("h6", {
-                  domProps: { textContent: _vm._s(producto.descripcion) }
-                }),
-                _vm._v(" "),
-                producto.Status == 1
-                  ? _c(
-                      "a",
+      _c("div", { staticClass: "col s10 l10 centro" }, [
+        _c(
+          "table",
+          { staticClass: "centered" },
+          [
+            _vm._m(1),
+            _vm._v(" "),
+            _vm._l(_vm.arrayProducto, function(producto) {
+              return _c("tbody", { key: producto.idProducto }, [
+                _c("tr", [
+                  _c("td", [
+                    _c("img", {
+                      staticClass: "circle",
+                      attrs: { src: "img/" + producto.imagen }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("td", {
+                    domProps: { textContent: _vm._s(producto.nombre) }
+                  }),
+                  _vm._v(" "),
+                  _c("td", {
+                    domProps: { textContent: _vm._s(producto.descripcion) }
+                  }),
+                  _vm._v(" "),
+                  producto.status == 1
+                    ? _c("td", [_vm._v("Activado")])
+                    : _vm._e(),
+                  _vm._v(" "),
+                  producto.status == 0
+                    ? _c("td", [_vm._v("Desactivado")])
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _c("td", [
+                    _c(
+                      "i",
                       {
-                        staticClass: "secondary-content",
-                        attrs: { href: "#!" }
+                        staticClass: "material-icons color-text ",
+                        on: {
+                          click: function($event) {
+                            return _vm.abrirModal(
+                              "productos",
+                              "actualizar",
+                              producto,
+                              producto.idProducto
+                            )
+                          }
+                        }
                       },
-                      [
-                        _c("i", { staticClass: "switch" }, [
-                          _c("label", [
-                            _c("input", {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value: producto.Status,
-                                  expression: "producto.Status"
-                                }
-                              ],
-                              attrs: {
-                                type: "checkbox",
-                                checked: "checked",
-                                name: "status"
-                              },
-                              domProps: {
-                                checked: Array.isArray(producto.Status)
-                                  ? _vm._i(producto.Status, null) > -1
-                                  : producto.Status
-                              },
-                              on: {
-                                click: function($event) {
-                                  return _vm.desactivarProducto(
-                                    producto.idProducto
-                                  )
-                                },
-                                change: function($event) {
-                                  var $$a = producto.Status,
-                                    $$el = $event.target,
-                                    $$c = $$el.checked ? true : false
-                                  if (Array.isArray($$a)) {
-                                    var $$v = null,
-                                      $$i = _vm._i($$a, $$v)
-                                    if ($$el.checked) {
-                                      $$i < 0 &&
-                                        _vm.$set(
-                                          producto,
-                                          "Status",
-                                          $$a.concat([$$v])
-                                        )
-                                    } else {
-                                      $$i > -1 &&
-                                        _vm.$set(
-                                          producto,
-                                          "Status",
-                                          $$a
-                                            .slice(0, $$i)
-                                            .concat($$a.slice($$i + 1))
-                                        )
-                                    }
-                                  } else {
-                                    _vm.$set(producto, "Status", $$c)
-                                  }
-                                }
-                              }
-                            }),
-                            _c("span", { staticClass: "lever" })
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "i",
-                          {
-                            staticClass: "material-icons brown-text ",
-                            on: {
-                              click: function($event) {
-                                return _vm.abrirModal(
-                                  "productos",
-                                  "actualizar",
-                                  producto,
-                                  producto.idProducto
-                                )
-                              }
-                            }
-                          },
-                          [_vm._v("create")]
-                        )
-                      ]
+                      [_vm._v("create")]
                     )
-                  : _vm._e(),
-                _vm._v(" "),
-                producto.Status == 0
-                  ? _c(
-                      "a",
-                      {
-                        staticClass: "secondary-content",
-                        attrs: { href: "#!" }
-                      },
-                      [
-                        _c("i", { staticClass: "switch" }, [
-                          _c("label", [
-                            _c("input", {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value: producto.Status,
-                                  expression: "producto.Status"
-                                }
-                              ],
-                              attrs: { type: "checkbox", name: "status" },
-                              domProps: {
-                                checked: Array.isArray(producto.Status)
-                                  ? _vm._i(producto.Status, null) > -1
-                                  : producto.Status
-                              },
-                              on: {
-                                click: function($event) {
-                                  return _vm.activarProducto(
-                                    producto.idProducto
-                                  )
-                                },
-                                change: function($event) {
-                                  var $$a = producto.Status,
-                                    $$el = $event.target,
-                                    $$c = $$el.checked ? true : false
-                                  if (Array.isArray($$a)) {
-                                    var $$v = null,
-                                      $$i = _vm._i($$a, $$v)
-                                    if ($$el.checked) {
-                                      $$i < 0 &&
-                                        _vm.$set(
-                                          producto,
-                                          "Status",
-                                          $$a.concat([$$v])
-                                        )
-                                    } else {
-                                      $$i > -1 &&
-                                        _vm.$set(
-                                          producto,
-                                          "Status",
-                                          $$a
-                                            .slice(0, $$i)
-                                            .concat($$a.slice($$i + 1))
-                                        )
-                                    }
-                                  } else {
-                                    _vm.$set(producto, "Status", $$c)
-                                  }
-                                }
-                              }
-                            }),
-                            _c("span", { staticClass: "lever" })
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "i",
+                  ]),
+                  _vm._v(" "),
+                  _c("td", [
+                    producto.status == 1
+                      ? _c(
+                          "a",
                           {
-                            staticClass: "material-icons brown-text ",
-                            on: {
-                              click: function($event) {
-                                return _vm.abrirModal(
-                                  "productos",
-                                  "actualizar",
-                                  producto,
-                                  producto.idProducto
-                                )
-                              }
-                            }
+                            staticClass: "secondary-content",
+                            attrs: { href: "#!" }
                           },
-                          [_vm._v("create")]
+                          [
+                            _c("i", { staticClass: "switch" }, [
+                              _c("label", [
+                                _c("input", {
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model",
+                                      value: producto.status,
+                                      expression: "producto.status"
+                                    }
+                                  ],
+                                  attrs: {
+                                    type: "checkbox",
+                                    checked: "checked",
+                                    name: "status"
+                                  },
+                                  domProps: {
+                                    checked: Array.isArray(producto.status)
+                                      ? _vm._i(producto.status, null) > -1
+                                      : producto.status
+                                  },
+                                  on: {
+                                    click: function($event) {
+                                      return _vm.desactivarProducto(
+                                        producto.idProducto
+                                      )
+                                    },
+                                    change: function($event) {
+                                      var $$a = producto.status,
+                                        $$el = $event.target,
+                                        $$c = $$el.checked ? true : false
+                                      if (Array.isArray($$a)) {
+                                        var $$v = null,
+                                          $$i = _vm._i($$a, $$v)
+                                        if ($$el.checked) {
+                                          $$i < 0 &&
+                                            _vm.$set(
+                                              producto,
+                                              "status",
+                                              $$a.concat([$$v])
+                                            )
+                                        } else {
+                                          $$i > -1 &&
+                                            _vm.$set(
+                                              producto,
+                                              "status",
+                                              $$a
+                                                .slice(0, $$i)
+                                                .concat($$a.slice($$i + 1))
+                                            )
+                                        }
+                                      } else {
+                                        _vm.$set(producto, "status", $$c)
+                                      }
+                                    }
+                                  }
+                                }),
+                                _c("span", { staticClass: "lever" })
+                              ])
+                            ])
+                          ]
                         )
-                      ]
-                    )
-                  : _vm._e()
+                      : _vm._e(),
+                    _vm._v(" "),
+                    producto.status == 0
+                      ? _c(
+                          "a",
+                          {
+                            staticClass: "secondary-content",
+                            attrs: { href: "#!" }
+                          },
+                          [
+                            _c("i", { staticClass: "switch" }, [
+                              _c("label", [
+                                _c("input", {
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model",
+                                      value: producto.status,
+                                      expression: "producto.status"
+                                    }
+                                  ],
+                                  attrs: { type: "checkbox", name: "status" },
+                                  domProps: {
+                                    checked: Array.isArray(producto.status)
+                                      ? _vm._i(producto.status, null) > -1
+                                      : producto.status
+                                  },
+                                  on: {
+                                    click: function($event) {
+                                      return _vm.activarProducto(
+                                        producto.idProducto
+                                      )
+                                    },
+                                    change: function($event) {
+                                      var $$a = producto.status,
+                                        $$el = $event.target,
+                                        $$c = $$el.checked ? true : false
+                                      if (Array.isArray($$a)) {
+                                        var $$v = null,
+                                          $$i = _vm._i($$a, $$v)
+                                        if ($$el.checked) {
+                                          $$i < 0 &&
+                                            _vm.$set(
+                                              producto,
+                                              "status",
+                                              $$a.concat([$$v])
+                                            )
+                                        } else {
+                                          $$i > -1 &&
+                                            _vm.$set(
+                                              producto,
+                                              "status",
+                                              $$a
+                                                .slice(0, $$i)
+                                                .concat($$a.slice($$i + 1))
+                                            )
+                                        }
+                                      } else {
+                                        _vm.$set(producto, "status", $$c)
+                                      }
+                                    }
+                                  }
+                                }),
+                                _c("span", { staticClass: "lever" })
+                              ])
+                            ])
+                          ]
+                        )
+                      : _vm._e()
+                  ])
+                ])
               ])
-            ]
-          )
-        }),
-        0
-      )
+            })
+          ],
+          2
+        )
+      ])
     ])
   ])
 }
@@ -40233,6 +40223,26 @@ var staticRenderFns = [
         staticClass: "file-path validate",
         attrs: { type: "text" }
       })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", [_vm._v("imagen")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Nombre")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Descripcion")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Status")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Editar")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Desactivar/Activar")])
+      ])
     ])
   }
 ]

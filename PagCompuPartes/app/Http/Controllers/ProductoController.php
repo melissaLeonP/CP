@@ -50,7 +50,7 @@ class ProductoController extends Controller
      */
     public function store(Request $request)
     {
-       
+        if (!$request->ajax()) return redirect('/administrador');
         $producto = new Producto();        
         
         $img = Peticion::file('file');
@@ -144,4 +144,22 @@ class ProductoController extends Controller
         ->distinct()
         ->get();
     }
+
+    public function desactivar(Request $request)
+    {
+        $producto = Producto::findOrFail($request->id);
+        $producto->status = '0';
+        $producto->save(); 
+        
+    }
+    
+    
+    public function activar(Request $request)
+    {
+        if (!$request->ajax()) return redirect('/administrador');
+        $producto = Producto::findOrFail($request->id);
+        $producto->status = '1';
+        $producto->save();
+    }
+
 }

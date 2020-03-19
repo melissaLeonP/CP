@@ -66,34 +66,50 @@
             </div>
         </div>
     <!-- fin boton abrir modal -->
-    
-       <div class="row">
-               <div class="center col s12  l12">
-                    <ul class="collection " v-for="producto in arrayProducto" :key="producto.idProducto">
-                        <li class="collection-item avatar">
-                        <img :src="'img/'+producto.imagen" class="circle">
+    <!-- tabla de productos -->
+        <div class="row">
+            <div class="col s10 l10 centro">
+                 <table class="centered">
+                    <thead>
+                    <tr>
+                        <th>imagen</th>
+                        <th>Nombre</th>
+                        <th>Descripcion</th>
+                        <th>Status</th>
+                        <th>Editar</th>
+                        <th>Desactivar/Activar</th>
 
-                            <h5 v-text="producto.nombre"></h5>
-                            <h6>Descripción: </h6>
-                            <h6 v-text="producto.descripcion"></h6>
-                            <a href="#!" class="secondary-content" v-if="producto.Status == 1">
-                                <i class="switch">
-                                    <label><input type="checkbox" checked="checked" name="status" v-model="producto.Status" @click="desactivarProducto(producto.idProducto)"><span class="lever"></span></label>
-                                </i>
-                                      <i class="material-icons brown-text " @click="abrirModal('productos','actualizar',producto,producto.idProducto)">create</i>
 
-                            </a>
-                            <a href="#!" class="secondary-content" v-if="producto.Status == 0">
-                                <i class="switch">
-                                    <label><input type="checkbox"  name="status" v-model="producto.Status" @click="activarProducto(producto.idProducto)"><span class="lever"></span></label>
-                                </i>
-                                    <i class="material-icons brown-text " @click="abrirModal('productos','actualizar',producto,producto.idProducto)">create</i>
-                            </a>
-                        </li>
-                    </ul>
-           </div> 
-        </div> 
-
+                    </tr>
+                    </thead>
+                    <tbody  v-for="producto in arrayProducto" :key="producto.idProducto">
+                        <tr>
+                            <td ><img :src="'img/'+producto.imagen" class="circle"></td>
+                            <td v-text="producto.nombre"></td>
+                            <td v-text="producto.descripcion"></td>
+                            <td v-if="producto.status == 1">Activado</td>
+                            <td v-if="producto.status == 0">Desactivado</td>
+                            <td>
+                                <i class="material-icons color-text " @click="abrirModal('productos','actualizar',producto,producto.idProducto)">create</i>
+                            </td>
+                            <td >
+                                <a href="#!" class="secondary-content" v-if="producto.status == 1">
+                                    <i class="switch">
+                                        <label><input type="checkbox" checked="checked" name="status" v-model="producto.status" @click="desactivarProducto(producto.idProducto)"><span class="lever"></span></label>
+                                    </i>
+                                </a>
+                                <a href="#!" class="secondary-content" v-if="producto.status == 0">
+                                    <i class="switch">
+                                        <label><input type="checkbox"  name="status" v-model="producto.status" @click="activarProducto(producto.idProducto)"><span class="lever"></span></label>
+                                    </i>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>  
+        </div>
+        <!-- fin de la tabla de productos -->
     </main>
 </template>
     <script>
@@ -151,7 +167,7 @@
                                 this.nombre = '';
                                 this.descripcion = '';
                                 this.imagen= 'Selecciona imagen';
-                                this.arrayCategoria= 'Selecciona la categoria';
+                                // this.arrayCategoria= 'Selecciona la categoria';
                                 this.tipoAccion = 1;
                                 this.tituloModal = 'Registrar producto';
                                 break;
