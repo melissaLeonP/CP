@@ -170,7 +170,11 @@ nav.clean .breadcrumb {
   padding-right: 20%;
   /* border: 1px solid red; */
 }
-
+.tablaProductos{
+  padding-left: 5%;
+  padding-right: 5%;
+  border: 1px solid red;
+}
 .card .card-image img {
   /* width: auto; */
   /* border: 1px solid blue; */

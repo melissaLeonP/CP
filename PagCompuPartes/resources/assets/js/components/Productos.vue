@@ -67,7 +67,7 @@
         </div>
     <!-- fin boton abrir modal -->
     <!-- tabla de productos -->
-        <div class="row">
+        <div class="row tablaProductos">
             <div class="col s2 m10 l10 centro">
                  <table class="centered">
                     <thead>

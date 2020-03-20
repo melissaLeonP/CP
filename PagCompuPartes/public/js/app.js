@@ -43086,7 +43086,7 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "row" }, [
+    _c("div", { staticClass: "row tablaProductos" }, [
       _c("div", { staticClass: "col s2 m10 l10 centro" }, [
         _c(
           "table",
