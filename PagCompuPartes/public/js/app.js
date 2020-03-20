@@ -2965,16 +2965,19 @@ __webpack_require__.r(__webpack_exports__);
               case 'registrar':
                 {
                   this.modal = 1;
-                  this.nombre = '';
+                  this.texto = '';
+                  this.texto = '';
                   this.tipoAccion = 1;
                   this.tituloModal = 'Registrar Sliders';
+                  this.img = '';
                   break;
                 }
 
               case 'actualizar':
                 {
                   this.modal = 2;
-                  this.nombre = '';
+                  this.titulo = data['titulo'];
+                  this.texto = data['texto'];
                   this.tipoAccion = 2;
                   this.tituloModal = 'Actualizar Slider';
                   this.idSlider = data['idSlider'];
@@ -43076,7 +43079,7 @@ var render = function() {
             },
             [
               _c("i", { staticClass: "material-icons left" }, [_vm._v("add")]),
-              _vm._v("Registrar Productos")
+              _vm._v("Nuevo Productos")
             ]
           )
         ])
@@ -43084,7 +43087,7 @@ var render = function() {
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col s10 m10 l10 centro" }, [
+      _c("div", { staticClass: "col s2 m10 l10 centro" }, [
         _c(
           "table",
           { staticClass: "centered" },
@@ -43576,7 +43579,7 @@ var render = function() {
             },
             [
               _c("i", { staticClass: "material-icons left" }, [_vm._v("add")]),
-              _vm._v("Registrar Slider")
+              _vm._v(" Slider")
             ]
           )
         ])

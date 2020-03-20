@@ -61,14 +61,14 @@
             <div class="col s12 l12 ">
                 <h3 class="center">Productos</h3>
                 <div class="right col s2 l4">
-                    <a class="waves-effect waves-light btn right color" @click="abrirModal('productos','registrar')"><i class="material-icons left">add</i>Registrar Productos</a>
-                    </div>
+                    <a class="waves-effect waves-light btn right color" @click="abrirModal('productos','registrar')"><i class="material-icons left">add</i>Nuevo Productos</a>
+                </div>
             </div>
         </div>
     <!-- fin boton abrir modal -->
     <!-- tabla de productos -->
         <div class="row">
-            <div class="col s10 m10 l10 centro">
+            <div class="col s2 m10 l10 centro">
                  <table class="centered">
                     <thead>
                     <tr>

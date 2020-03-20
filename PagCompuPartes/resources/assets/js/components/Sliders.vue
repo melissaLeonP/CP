@@ -50,7 +50,7 @@
             <div class="col s12 l12">
                 <h3 class="center">Sliders</h3>
                 <div class="right col s2 l4">
-                    <a class="waves-effect color btn right" @click="abrirModal('sliders','registrar')"><i class="material-icons left">add</i>Registrar Slider</a>
+                    <a class="waves-effect color btn right" @click="abrirModal('sliders','registrar')"><i class="material-icons left">add</i> Slider</a>
                 </div>
             </div>
         </div>
@@ -200,14 +200,17 @@ export default {
                     switch(accion){
                         case 'registrar':{
                             this.modal = 1;
-                            this.nombre = '';
+                            this.texto ='';
+                            this.texto = '';
                             this.tipoAccion = 1;
                             this.tituloModal = 'Registrar Sliders';
+                            this.img = '';
                             break;
                         }
                         case 'actualizar':{
                             this.modal = 2;
-                            this.nombre = '';
+                            this.titulo = data['titulo'];
+                            this.texto = data['texto'];
                             this.tipoAccion = 2;
                             this.tituloModal = 'Actualizar Slider';
                             this.idSlider=data['idSlider'];
