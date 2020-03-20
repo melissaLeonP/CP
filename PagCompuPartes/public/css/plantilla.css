@@ -9302,7 +9302,7 @@ nav.clean .breadcrumb {
 .cardsSlider{
   padding-left: 20%;
   padding-right: 20%;
-  /* border: 1px solid red; */
+  border: 1px solid red;
 }
 
 .card .card-image img {
@@ -9314,7 +9314,8 @@ nav.clean .breadcrumb {
   top: 0;
   bottom: 0;
   width: 100%;
-  height: 300px;
+  height: 15%;
+  border: 1px solid blue;
 }
 @media only screen and (max-width: 768px) {
   .productosCard {

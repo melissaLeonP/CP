@@ -98,8 +98,8 @@ class SliderController extends Controller
         File::delete('img/' . $slider->Imagen);
 
         $slider->img = $nombreImagen;
-        $slider->texto = $texto;
-        $slider->titulo = $titulo;
+        $slider->titulo = $request->titulo;
+        $slider->texto = $request->texto;
 
         $slider->save(); 
     }

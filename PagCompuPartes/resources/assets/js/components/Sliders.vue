@@ -159,31 +159,33 @@ export default {
                 console.log(error);
             });
         },
-        actualizarSlider(idSlider){
-            let me = this;
-            let formData = new FormData();
+       actualizarSlider(idSlider){
+                
+                let me = this;
 
-            formData.append('file', me.img);
-            formData.append('texto',me.texto);
-            formData.append('titulo',me.titulo);
-            formData.append('idSlider',idSlider)
-    
-            //Regresamos la informacion
-            axios.post('/slider/actualizar', formData, {
-                headers: {
-                    'Content-Type': 'multipart/form-data'
+                let formData = new FormData();
+                
+                formData.append('file', me.file);
+                formData.append('idSlider',idSlider);
+                formData.append('texto', me.texto);
+                formData.append('titulo', me.titulo);
+
+                // Regresamos la informacion
+                axios.post('/slider/actualizar', formData,{
+                    headers: {
+                        'Content-Type': 'multipart/form-data'
                     }
-            })
-            .then(function (response) {
-                me.listarSliders();
-                me.cerrarModal();
-                me.limpiar();
-            })
-            .catch(function (error) {
-                console.log(error);
-
-            });             
-        },
+                })
+                .then(function (response) {
+                    me.listarSliders();
+                    me.cerrarModal();
+                    me.limpiar();
+                
+                })
+                .catch(function (error) {
+                    console.log(error);
+                    });
+            },
         cerrarModal(){
             this.modal=0;
             this.tituloModal='';

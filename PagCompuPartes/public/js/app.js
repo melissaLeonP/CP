@@ -2930,10 +2930,10 @@ __webpack_require__.r(__webpack_exports__);
     actualizarSlider: function actualizarSlider(idSlider) {
       var me = this;
       var formData = new FormData();
-      formData.append('file', me.img);
+      formData.append('file', me.file);
+      formData.append('idSlider', idSlider);
       formData.append('texto', me.texto);
-      formData.append('titulo', me.titulo);
-      formData.append('idSlider', idSlider); //Regresamos la informacion
+      formData.append('titulo', me.titulo); // Regresamos la informacion
 
       axios.post('/slider/actualizar', formData, {
         headers: {
