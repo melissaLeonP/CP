@@ -43084,7 +43084,7 @@ var render = function() {
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col s10 l10 centro" }, [
+      _c("div", { staticClass: "col s10 m10 l10 centro" }, [
         _c(
           "table",
           { staticClass: "centered" },
@@ -43586,11 +43586,14 @@ var render = function() {
     _c("div", { staticClass: "row cardsSlider" }, [
       _c(
         "div",
-        { staticClass: "col 12" },
+        { staticClass: "col s12 m12 lg12" },
         _vm._l(_vm.arraySliders, function(slider) {
           return _c("div", { key: slider.idSlider, staticClass: "card" }, [
-            _c("div", { staticClass: "card-image small" }, [
-              _c("img", { attrs: { src: "img/" + slider.img } }),
+            _c("div", { staticClass: "card-image" }, [
+              _c("img", {
+                staticClass: "responsive-img",
+                attrs: { src: "img/" + slider.img }
+              }),
               _vm._v(" "),
               _c(
                 "a",

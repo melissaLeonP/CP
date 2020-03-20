@@ -57,10 +57,10 @@
         <!-- empieza la actualizacion de sliders-->
 
         <div class="row cardsSlider">
-            <div class="col 12">
+            <div class="col s12 m12 lg12">
                 <div class="card" v-for="slider in arraySliders" :key="slider.idSlider">
-                    <div class="card-image small">
-                        <img :src="'img/'+slider.img">
+                    <div class="card-image">
+                        <img class="responsive-img" :src="'img/'+slider.img">
                         <a  class="btn-floating halfway-fab waves-effect waves-light red" @click="abrirModal('sliders','actualizar',slider)"><i class="material-icons">create</i></a>
                     </div>
                     <div class="card-content">
