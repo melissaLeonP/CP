@@ -50,7 +50,7 @@
             <div class="col s12 l12">
                 <h3 class="center">Sliders</h3>
                 <div class="right col s2 l4">
-                    <a class="waves-effect color btn right" @click="abrirModal('sliders','registrar')"><i class="material-icons left">add</i> Slider</a>
+                    <a class="waves-effect color btn right" @click="abrirModal('sliders','registrar')"><i class="material-icons left">add</i>Nuevo Slider</a>
                 </div>
             </div>
         </div>

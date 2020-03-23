@@ -75,22 +75,22 @@
                         <th>imagen</th>
                         <th>Nombre</th>
                         <th>Descripcion</th>
-                        <th>Status</th>
-                        <th>Editar</th>
-                        <th>Desactivar/Activar</th>
+                        <th class="hide-on-small-only">Status</th>
+                        <th class="hide-on-small-only" >Editar</th>
+                        <th class="hide-on-small-only" >Desactivar/Activar</th>
                     </tr>
                     </thead>
                     <tbody  v-for="producto in arrayProducto" :key="producto.idProducto">
                         <tr>
-                            <td ><img :src="'img/'+producto.imagen" class="circle"></td>
+                            <td><img :src="'img/'+producto.imagen" class="circle"></td>
                             <td v-text="producto.nombre"></td>
-                            <td v-text="producto.descripcion"></td>
-                            <td v-if="producto.status == 1">Activado</td>
-                            <td v-if="producto.status == 0">Desactivado</td>
-                            <td>
+                            <td v-text="producto.descripcion" ></td>
+                            <td v-if="producto.status == 1" class="hide-on-small-only">Activado</td>
+                            <td v-if="producto.status == 0" class="hide-on-small-only">Desactivado</td>
+                            <td class="hide-on-small-only" >
                                 <i class="material-icons color-text " @click="abrirModal('productos','actualizar',producto,producto.idProducto)">create</i>
                             </td>
-                            <td >
+                            <td class="hide-on-small-only"  >
                                 <a href="#!" class="secondary-content" v-if="producto.status == 1">
                                     <i class="switch">
                                         <label><input type="checkbox" checked="checked" name="status" v-model="producto.status" @click="desactivarProducto(producto.idProducto)"><span class="lever"></span></label>

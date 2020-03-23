@@ -43113,14 +43113,18 @@ var render = function() {
                   }),
                   _vm._v(" "),
                   producto.status == 1
-                    ? _c("td", [_vm._v("Activado")])
+                    ? _c("td", { staticClass: "hide-on-small-only" }, [
+                        _vm._v("Activado")
+                      ])
                     : _vm._e(),
                   _vm._v(" "),
                   producto.status == 0
-                    ? _c("td", [_vm._v("Desactivado")])
+                    ? _c("td", { staticClass: "hide-on-small-only" }, [
+                        _vm._v("Desactivado")
+                      ])
                     : _vm._e(),
                   _vm._v(" "),
-                  _c("td", [
+                  _c("td", { staticClass: "hide-on-small-only" }, [
                     _c(
                       "i",
                       {
@@ -43140,7 +43144,7 @@ var render = function() {
                     )
                   ]),
                   _vm._v(" "),
-                  _c("td", [
+                  _c("td", { staticClass: "hide-on-small-only" }, [
                     producto.status == 1
                       ? _c(
                           "a",
@@ -43315,11 +43319,13 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", [_vm._v("Descripcion")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Status")]),
+        _c("th", { staticClass: "hide-on-small-only" }, [_vm._v("Status")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Editar")]),
+        _c("th", { staticClass: "hide-on-small-only" }, [_vm._v("Editar")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Desactivar/Activar")])
+        _c("th", { staticClass: "hide-on-small-only" }, [
+          _vm._v("Desactivar/Activar")
+        ])
       ])
     ])
   }
@@ -43579,7 +43585,7 @@ var render = function() {
             },
             [
               _c("i", { staticClass: "material-icons left" }, [_vm._v("add")]),
-              _vm._v(" Slider")
+              _vm._v("Nuevo Slider")
             ]
           )
         ])
