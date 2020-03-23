@@ -43600,7 +43600,7 @@ var render = function() {
           return _c("div", { key: slider.idSlider, staticClass: "card" }, [
             _c("div", { staticClass: "card-image" }, [
               _c("img", {
-                staticClass: "responsive-img",
+                staticClass: "responsiveImg",
                 attrs: { src: "img/" + slider.img }
               }),
               _vm._v(" "),

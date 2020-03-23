@@ -76,8 +76,8 @@
                         <th>Nombre</th>
                         <th>Descripcion</th>
                         <th class="hide-on-small-only">Status</th>
-                        <th class="hide-on-small-only" >Editar</th>
-                        <th class="hide-on-small-only" >Desactivar/Activar</th>
+                        <th class="hide-on-small-only">Editar</th>
+                        <th class="hide-on-small-only">Desactivar/Activar</th>
                     </tr>
                     </thead>
                     <tbody  v-for="producto in arrayProducto" :key="producto.idProducto">

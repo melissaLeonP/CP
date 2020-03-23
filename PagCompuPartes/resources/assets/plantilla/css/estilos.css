@@ -179,6 +179,10 @@ nav.clean .breadcrumb {
   /* width: auto; */
   /* border: 1px solid blue; */
 }
+.responsiveImg{
+  max-width: 100%;
+  height: 70%;
+}
 @media only screen and (max-width: 768px) {
   .productosCard {
     margin-left:0% !important;
