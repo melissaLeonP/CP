@@ -30,7 +30,7 @@ Route::group(['middleware'=>['auth']],function(){
 
     Route::get('/logout','Auth\LoginController@logout')->name('logout');
 
-    Route::get('/categoria','CategoriaController@index');
+    Route::get('/categoria','CategoriaController@selectCategorias');
     Route::post('/categoria/registrar','CategoriaController@store');
     Route::post('/categoria/actualizar','CategoriaController@update');
     Route::put('/categoria/desactivar','CategoriaController@desactivar');
@@ -53,6 +53,9 @@ Route::group(['middleware'=>['auth']],function(){
     Route::post('/password/actualizar','PasswordController@update');
 
     Route::get('/caracteristica_categoria','CaracteristicaCategoriaController@index');
+    Route::get('/caracteristicasDeCategoria','CaracteristicaCategoriaController@selectCaracteristicasCategorias');
+
+    
 
 
 

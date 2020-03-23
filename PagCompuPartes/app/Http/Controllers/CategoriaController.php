@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Categoria;
 use App\Caracteristica_categoria;
+use Illuminate\Support\Facades\DB;
 
 
 class CategoriaController extends Controller
@@ -20,6 +21,15 @@ class CategoriaController extends Controller
         return $categorias;
     }
  
+    public function selectCategorias()
+    {
+        return  $categorias = DB::table('categorias')
+        ->join('caracteristica_categoria','caracteristica_categoria.idCate','=','categorias.idCategoria')
+        ->join('caracteristicas','caracteristicas.idCaracteristica', '=','caracteristica_categoria.idCarac')
+        ->select('categorias.idCategoria','categorias.nombre','categorias.status','caracteristicas.nombre AS nombreCaracteristica')
+        ->distinct()
+        ->get();
+    }
 
     /**
      * Store a newly created resource in storage.

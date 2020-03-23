@@ -2011,6 +2011,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -2027,6 +2031,7 @@ document.addEventListener('DOMContentLoaded', function () {
       idCaracteristica: 0,
       arrayCaracteristicas: [],
       arrayIdCaracteristica: [],
+      arrayCaracteristicaCategoria: [],
       modal: 0,
       tituloModal: 'Registrar Categorias',
       cambio: 0,
@@ -2049,7 +2054,12 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       })["catch"](function (error) {
         console.log(error);
-      });
+      }); // axios.get('/caracteristicasDeCategoria').then(function(response){
+      //     m.arrayCaracteristicaCategoria = response.data;
+      // })
+      // .catch(function(error){
+      //     console.log(error);
+      // });
     },
     limpiar: function limpiar() {
       var me = this;
@@ -2107,10 +2117,12 @@ document.addEventListener('DOMContentLoaded', function () {
       this.Status = '1';
       this.tituloModal = '';
       this.errorCategoria = 0;
+      this.arrayIdCaracteristica = [];
     },
     abrirModal: function abrirModal(modelo, accion) {
       var data = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : [];
-      var idCaracteristica = arguments.length > 3 ? arguments[3] : undefined;
+      var idCategoria = arguments.length > 3 ? arguments[3] : undefined;
+      var m = this;
 
       switch (modelo) {
         case "Categoria":
@@ -2131,9 +2143,8 @@ document.addEventListener('DOMContentLoaded', function () {
                   this.modal = 1;
                   this.tipoAccion = 2;
                   this.idCategoria = data['idCategoria'];
-                  this.nombre = data['nombre']; // this.idCategoria= data['idCategoria'];
+                  this.nombre = data['nombre']; // this.arrayIdCaracteristica = data['idCaracteristica']
 
-                  this.arrayIdCaracteristica = data['idCarac'];
                   this.tituloModal = 'Actualizar categoría';
                   var urld = '/caracteristica_categoria?idCategoria=' + idCategoria;
                   axios.get(urld).then(function (response) {
@@ -2260,6 +2271,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_0__);
 //
 //
 //
@@ -2297,6 +2310,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2333,64 +2349,66 @@ __webpack_require__.r(__webpack_exports__);
       me.status = true; // me.tipoAccion= 0;
 
       me.errorContra = 0;
-      me.errorContra = [];
+      me.errorMostrarMsjContra = [];
     },
     nuevaContra: function nuevaContra() {
       if (this.validarContra()) {
         return;
       }
 
-      var me = this; //  Swal.fire({
-      // title: '¿Está seguro de actualizar la contraseña?',
-      // type: 'warning',
-      // showCancelButton: true,
-      // confirmButtonColor: '#3085d6',
-      // cancelButtonColor: '#d33',
-      // confirmButtonText: 'Aceptar!',
-      // cancelButtonText: 'Cancelar',
-      // confirmButtonClass: 'btn btn-success',
-      // cancelButtonClass: 'btn btn-danger',
-      // buttonsStyling: false,
-      // reverseButtons: true
-      // }).then((result) => {
-      //     if (result.value) {
-      //         axios.put('/password/actualizar',{
-      //             'idCategoria': idCategoria
-      //         }).then(function (response) {
-      //             Swal.fire(
-      //                 'Desactivado!',
-      //                 'La categoría ha sido desactivada con éxito.',
-      //                 'success'
-      //             )
-      //           me.listarCategoria();
-      //         }).catch(function (error) {
-      //             console.log(error);
-      //         });                    
-      //     } else if  (
-      // Read more about handling dismissals
-      //             result.dismiss === Swal.DismissReason.cancel
-      //         ) {
-      //           me.listarCategoria();
-      //     } 
-      // })
-      //Validamos si la informacion modificada es correcta
+      var me = this;
+      sweetalert2__WEBPACK_IMPORTED_MODULE_0___default.a.fire({
+        title: '¿Está seguro de actualizar la contraseña?',
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Aceptar!',
+        cancelButtonText: 'Cancelar',
+        confirmButtonClass: 'btn btn-success',
+        cancelButtonClass: 'btn btn-danger',
+        buttonsStyling: false,
+        reverseButtons: true
+      }).then(function (result) {
+        if (result.value) {
+          var formData = new FormData(); // formData.append('idCate', me.idCate);
+
+          formData.append('email', me.email);
+          formData.append('password', me.password); //Registramos la informacion
+
+          axios.post('/password/actualizar', formData, {
+            headers: {
+              'Content-Type': 'multipart/form-data'
+            }
+          }).then(function (response) {
+            sweetalert2__WEBPACK_IMPORTED_MODULE_0___default.a.fire('Actualizada!', 'La contraseña ha sido actualizada con éxito.', 'success');
+            me.limpiar();
+          })["catch"](function (error) {
+            console.log(error);
+          });
+        } else if ( // Read more about handling dismissals
+        result.dismiss === sweetalert2__WEBPACK_IMPORTED_MODULE_0___default.a.DismissReason.cancel) {//   me.limpiar();
+        }
+      }); //Validamos si la informacion modificada es correcta
       // me.$validator.validateAll('new').then(valid => {
       //     if (valid) {
-
-      var formData = new FormData(); // formData.append('idCate', me.idCate);
-
-      formData.append('email', me.email);
-      formData.append('password', me.password); //Registramos la informacion
-
-      axios.post('/password/actualizar', formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data'
-        }
-      }).then(function (response) {
-        me.limpiar(); // me.listarCategoria();
-      })["catch"](function (error) {
-        console.log(error);
-      });
+      // let formData = new FormData();
+      // formData.append('idCate', me.idCate);
+      // formData.append('email', me.email);
+      // formData.append('password', me.password);
+      //Registramos la informacion
+      // axios.post('/password/actualizar', formData, {
+      //     headers: {
+      //         'Content-Type': 'multipart/form-data'
+      //     }
+      // })
+      // .then(function (response) {
+      //     me.limpiar();
+      // me.listarCategoria();
+      // })
+      // .catch(function (error) {
+      //     console.log(error);
+      // });
     },
     validarContra: function validarContra() {
       this.errorContra = 0;
@@ -42309,88 +42327,88 @@ var render = function() {
                         },
                         expression: "arrayIdCaracteristica"
                       }
-                    })
+                    }),
+                    _vm._v(" "),
+                    _c("br")
                   ],
                   1
                 ),
                 _vm._v(" "),
-                _c("br")
-              ]),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  directives: [
-                    {
-                      name: "show",
-                      rawName: "v-show",
-                      value: _vm.errorCategoria,
-                      expression: "errorCategoria"
-                    }
-                  ],
-                  staticClass: "form-group row div-error"
-                },
-                [
-                  _c(
-                    "div",
-                    { staticClass: "text-center text-error" },
-                    _vm._l(_vm.errorMostrarMsjCategoria, function(error) {
-                      return _c("div", {
-                        key: error,
-                        domProps: { textContent: _vm._s(error) }
-                      })
-                    }),
-                    0
-                  )
-                ]
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "modal-footer" }, [
-                _vm.tipoAccion == 1
-                  ? _c(
-                      "a",
-                      {
-                        staticClass:
-                          " espacioButton waves-effect waves-light btn color",
-                        on: {
-                          click: function($event) {
-                            return _vm.nuevaCategoria()
-                          }
-                        }
-                      },
-                      [_vm._v("Guardar")]
-                    )
-                  : _vm._e(),
-                _vm._v(" "),
-                _vm.tipoAccion == 2
-                  ? _c(
-                      "a",
-                      {
-                        staticClass:
-                          " espacioButton waves-effect waves-light btn color",
-                        on: {
-                          click: function($event) {
-                            return _vm.actualizarCategoria(_vm.idCategoria)
-                          }
-                        }
-                      },
-                      [_vm._v("Actualizar")]
-                    )
-                  : _vm._e(),
-                _vm._v(" "),
                 _c(
-                  "button",
+                  "div",
                   {
-                    staticClass: " espacioButton btn btn-secondary color",
-                    attrs: { type: "button" },
-                    on: {
-                      click: function($event) {
-                        return _vm.cerrarModal()
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.errorCategoria,
+                        expression: "errorCategoria"
                       }
-                    }
+                    ],
+                    staticClass: "form-group row div-error"
                   },
-                  [_vm._v("Cerrar")]
-                )
+                  [
+                    _c(
+                      "div",
+                      { staticClass: "text-center text-error" },
+                      _vm._l(_vm.errorMostrarMsjCategoria, function(error) {
+                        return _c("div", {
+                          key: error,
+                          domProps: { textContent: _vm._s(error) }
+                        })
+                      }),
+                      0
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "modal-footer" }, [
+                  _vm.tipoAccion == 1
+                    ? _c(
+                        "a",
+                        {
+                          staticClass:
+                            " espacioButton waves-effect waves-light btn color",
+                          on: {
+                            click: function($event) {
+                              return _vm.nuevaCategoria()
+                            }
+                          }
+                        },
+                        [_vm._v("Guardar")]
+                      )
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _vm.tipoAccion == 2
+                    ? _c(
+                        "a",
+                        {
+                          staticClass:
+                            " espacioButton waves-effect waves-light btn color",
+                          on: {
+                            click: function($event) {
+                              return _vm.actualizarCategoria(_vm.idCategoria)
+                            }
+                          }
+                        },
+                        [_vm._v("Actualizar")]
+                      )
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: " espacioButton btn btn-secondary color",
+                      attrs: { type: "button" },
+                      on: {
+                        click: function($event) {
+                          return _vm.cerrarModal()
+                        }
+                      }
+                    },
+                    [_vm._v("Cerrar")]
+                  )
+                ])
               ])
             ])
           ]
@@ -42435,6 +42453,12 @@ var render = function() {
                 _c("tr", [
                   _c("td", {
                     domProps: { textContent: _vm._s(categoria.nombre) }
+                  }),
+                  _vm._v(" "),
+                  _c("td", {
+                    domProps: {
+                      textContent: _vm._s(categoria.nombreCaracteristica)
+                    }
                   }),
                   _vm._v(" "),
                   categoria.status == 1
@@ -42625,6 +42649,8 @@ var staticRenderFns = [
       _c("tr", [
         _c("th", [_vm._v("Nombre")]),
         _vm._v(" "),
+        _c("th", [_vm._v("características")]),
+        _vm._v(" "),
         _c("th", [_vm._v("Status")]),
         _vm._v(" "),
         _c("th", [_vm._v("Editar")]),
@@ -42780,11 +42806,24 @@ var render = function() {
     _vm._v(" "),
     _c("br"),
     _vm._v(" "),
-    _c("div", { staticClass: "botonContraseña" }, [
+    _c("div", { staticClass: "center" }, [
       _c(
         "a",
         {
-          staticClass: "waves-effect btn-large color",
+          staticClass: "waves-effect btn color",
+          on: {
+            click: function($event) {
+              return _vm.limpiar()
+            }
+          }
+        },
+        [_vm._v("Limpiar")]
+      ),
+      _vm._v(" "),
+      _c(
+        "a",
+        {
+          staticClass: "waves-effect btn color",
           on: {
             click: function($event) {
               return _vm.nuevaContra()

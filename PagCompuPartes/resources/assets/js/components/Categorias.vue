@@ -21,7 +21,7 @@
                             <multiselect v-model="arrayIdCaracteristica" :options="arrayCaracteristicas" label="nombre" track-by="idCaracteristica" :multiple="true">
                                 <!-- <pre class="language-json"><code>{{ idTalla.Talla }}</code></pre> -->
                             </multiselect>
-                        </div>
+                        <!-- </div> -->
                         <br>
                     </div> 
                     <div v-show="errorCategoria" class="form-group row div-error">
@@ -34,10 +34,12 @@
                        <a class=" espacioButton waves-effect waves-light btn color" v-if="tipoAccion==1"  @click="nuevaCategoria()">Guardar</a>
                        <a class=" espacioButton waves-effect waves-light btn color" v-if="tipoAccion==2"  @click="actualizarCategoria(idCategoria)">Actualizar</a>
                        <button type="button" class=" espacioButton btn btn-secondary color" @click="cerrarModal()">Cerrar</button>
-               </div>
+                     </div>
                 </div>
             </div>
          </div>  
+         </div>  
+
        <!-- Termina modal  agregar/actualizar Categoria-->
 
      <!-- Botón para agregar categorías -->
@@ -59,6 +61,7 @@
                     <thead>
                     <tr>
                         <th>Nombre</th>
+                        <th>características</th>
                         <th>Status</th>
                         <th>Editar</th>
                         <th>Desactivar/Activar</th>
@@ -68,7 +71,8 @@
                     </thead>
                     <tbody  v-for="categoria in arrayCategoria" :key="categoria.idCategoria">
                     <tr>
-                        <td v-text="categoria.nombre"></td>
+                        <td v-text="categoria.nombre"></td> 
+                        <td v-text="categoria.nombreCaracteristica"></td>
                         <td v-if="categoria.status == 1">Activado</td>
                         <td v-if="categoria.status == 0">Desactivado</td>
                         <td>
@@ -116,6 +120,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 idCaracteristica: 0,
                 arrayCaracteristicas: [],
                 arrayIdCaracteristica:[],
+                arrayCaracteristicaCategoria:[],
                 modal : 0,
                 tituloModal : 'Registrar Categorias' ,
                 cambio : 0,
@@ -140,6 +145,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 .catch(function(error){
                     console.log(error);
                 });
+
+                // axios.get('/caracteristicasDeCategoria').then(function(response){
+                //     m.arrayCaracteristicaCategoria = response.data;
+
+                // })
+                // .catch(function(error){
+                //     console.log(error);
+                // });
             },
             limpiar() {
                 let me = this;
@@ -195,9 +208,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 this.nombre="";
                 this.Status='1';
                 this.tituloModal='';
-		        this.errorCategoria=0;
+                this.errorCategoria=0;
+               this. arrayIdCaracteristica=[];
+                
+
             },
-            abrirModal(modelo,accion, data = [],idCaracteristica){
+            abrirModal(modelo,accion, data = [],idCategoria){
+                let m=this;
                 switch(modelo){
                     case "Categoria":{
                         switch(accion){
@@ -216,14 +233,14 @@ document.addEventListener('DOMContentLoaded', function() {
                                     this.tipoAccion = 2;
                                     this.idCategoria = data['idCategoria'];
                                     this.nombre = data['nombre'];
-                                    // this.idCategoria= data['idCategoria'];
-                                    this.arrayIdCaracteristica=data['idCarac']
+                                    // this.arrayIdCaracteristica = data['idCaracteristica']
                                     this.tituloModal = 'Actualizar categoría';
 
                                 var urld= '/caracteristica_categoria?idCategoria='+idCategoria;
                                 axios.get(urld).then(function (response) {
                                     console.log('estoy asignando los datos al array');
                                     m.arrayIdCaracteristica = response.data;
+
                                 })
                                 .catch(function (error) {
                                     console.log(error);

@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Categoria;
+use App\Caracteristica_categoria;
+use Illuminate\Support\Facades\DB;
 class CaracteristicaCategoriaController extends Controller
 {
     /**
@@ -18,15 +20,32 @@ class CaracteristicaCategoriaController extends Controller
         $id = $request->idCategoria;
 
         return  $caracteristicas = DB::table('caracteristica_categoria')
-        ->join('categoria','categoria.idCategoria', '=','caracteristica_categoria.idCate')
+        ->join('categorias','categorias.idCategoria', '=','caracteristica_categoria.idCate')
         ->join('caracteristicas','caracteristicas.idCaracteristica', '=','caracteristica_categoria.idCarac')
-        ->select('categoria.idCategoria','caracteristica_categoria.idCarac','caracteristicas.nombre AS nombreCaracteristicas')
+        ->select('categorias.idCategoria','caracteristica_categoria.idCarac AS idCaracteristica','caracteristicas.nombre AS nombreCaracteristicas')
         ->where([
-            ['categoria.idCategoria','=',$id],
-            ['categoria.status','=',1]   
+            ['categorias.idCategoria','=',$id],
+            ['categorias.status','=',1]   
         ])
         ->get();
     }
+
+    public function selectCaracteristicasCategorias(Request $request)
+    {
+        if (!$request->ajax()) return redirect('/administrador');
+
+       
+
+        return  $caracteristicas = DB::table('caracteristica_categoria')
+        ->join('categorias','categorias.idCategoria', '=','caracteristica_categoria.idCate')
+        ->join('caracteristicas','caracteristicas.idCaracteristica', '=','caracteristica_categoria.idCarac')
+        ->select('categorias.idCategoria','caracteristica_categoria.idCarac','caracteristicas.nombre AS nombreCaracteristicas')
+        ->where([
+            ['categorias.status','=',1]   
+        ])
+        ->get();
+    }
+
 
     /**
      * Show the form for creating a new resource.
