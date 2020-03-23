@@ -43099,7 +43099,7 @@ var render = function() {
                 _c("tr", [
                   _c("td", [
                     _c("img", {
-                      staticClass: "circle",
+                      staticClass: "square",
                       attrs: { src: "img/" + producto.imagen }
                     })
                   ]),
