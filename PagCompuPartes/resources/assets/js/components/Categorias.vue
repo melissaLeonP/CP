@@ -17,6 +17,7 @@
                         <br>  
                         <!-- select Subcategorias --> 
                         <div>
+                            
                             <label class="typo__label">Selecciona las características</label>
                             <multiselect v-model="arrayIdCaracteristica" :options="arrayCaracteristicas" label="nombre" track-by="idCaracteristica" :multiple="true">
                                 <!-- <pre class="language-json"><code>{{ idTalla.Talla }}</code></pre> -->
