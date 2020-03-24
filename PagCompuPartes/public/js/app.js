@@ -1904,11 +1904,6 @@ module.exports = {
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/assets/js/components/Categorias.vue?vue&type=script&lang=js& ***!
   \****************************************************************************************************************************************************************************/
 /*! exports provided: default */
-<<<<<<< HEAD
-/***/ (function(module, exports) {
-
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/jazminvalencia/Desktop/Proyectos/CP/PagCompuPartes/package.json: Error while parsing JSON - Unexpected token < in JSON at position 1191\n    at JSON.parse (<anonymous>)\n    at /Users/jazminvalencia/Desktop/Proyectos/CP/PagCompuPartes/node_modules/@babel/core/lib/config/files/package.js:57:20\n    at /Users/jazminvalencia/Desktop/Proyectos/CP/PagCompuPartes/node_modules/@babel/core/lib/config/files/utils.js:37:12\n    at Generator.next (<anonymous>)\n    at Function.<anonymous> (/Users/jazminvalencia/Desktop/Proyectos/CP/PagCompuPartes/node_modules/@babel/core/lib/gensync-utils/async.js:26:3)\n    at Generator.next (<anonymous>)\n    at evaluateSync (/Users/jazminvalencia/Desktop/Proyectos/CP/PagCompuPartes/node_modules/gensync/index.js:244:28)\n    at Function.sync (/Users/jazminvalencia/Desktop/Proyectos/CP/PagCompuPartes/node_modules/gensync/index.js:84:14)\n    at sync (/Users/jazminvalencia/Desktop/Proyectos/CP/PagCompuPartes/node_modules/@babel/core/lib/gensync-utils/async.js:66:25)\n    at sync (/Users/jazminvalencia/Desktop/Proyectos/CP/PagCompuPartes/node_modules/gensync/index.js:177:19)\n    at onFirstPause (/Users/jazminvalencia/Desktop/Proyectos/CP/PagCompuPartes/node_modules/gensync/index.js:204:19)\n    at Generator.next (<anonymous>)\n    at cachedFunction (/Users/jazminvalencia/Desktop/Proyectos/CP/PagCompuPartes/node_modules/@babel/core/lib/config/caching.js:68:46)\n    at cachedFunction.next (<anonymous>)\n    at findPackageData (/Users/jazminvalencia/Desktop/Proyectos/CP/PagCompuPartes/node_modules/@babel/core/lib/config/files/package.js:33:18)\n    at findPackageData.next (<anonymous>)\n    at buildRootChain (/Users/jazminvalencia/Desktop/Proyectos/CP/PagCompuPartes/node_modules/@babel/core/lib/config/config-chain.js:105:92)\n    at buildRootChain.next (<anonymous>)\n    at loadPrivatePartialConfig (/Users/jazminvalencia/Desktop/Proyectos/CP/PagCompuPartes/node_modules/@babel/core/lib/config/partial.js:95:62)\n    at loadPrivatePartialConfig.next (<anonymous>)\n    at Function.<anonymous> (/Users/jazminvalencia/Desktop/Proyectos/CP/PagCompuPartes/node_modules/@babel/core/lib/config/partial.js:120:25)\n    at Generator.next (<anonymous>)\n    at evaluateSync (/Users/jazminvalencia/Desktop/Proyectos/CP/PagCompuPartes/node_modules/gensync/index.js:244:28)\n    at Function.sync (/Users/jazminvalencia/Desktop/Proyectos/CP/PagCompuPartes/node_modules/gensync/index.js:84:14)\n    at Object.<anonymous> (/Users/jazminvalencia/Desktop/Proyectos/CP/PagCompuPartes/node_modules/@babel/core/lib/config/index.js:41:61)\n    at Object.<anonymous> (/Users/jazminvalencia/Desktop/Proyectos/CP/PagCompuPartes/node_modules/babel-loader/lib/index.js:144:26)\n    at Generator.next (<anonymous>)\n    at asyncGeneratorStep (/Users/jazminvalencia/Desktop/Proyectos/CP/PagCompuPartes/node_modules/babel-loader/lib/index.js:3:103)\n    at _next (/Users/jazminvalencia/Desktop/Proyectos/CP/PagCompuPartes/node_modules/babel-loader/lib/index.js:5:194)\n    at /Users/jazminvalencia/Desktop/Proyectos/CP/PagCompuPartes/node_modules/babel-loader/lib/index.js:5:364\n    at new Promise (<anonymous>)\n    at Object.<anonymous> (/Users/jazminvalencia/Desktop/Proyectos/CP/PagCompuPartes/node_modules/babel-loader/lib/index.js:5:97)\n    at Object.loader (/Users/jazminvalencia/Desktop/Proyectos/CP/PagCompuPartes/node_modules/babel-loader/lib/index.js:60:18)\n    at Object.<anonymous> (/Users/jazminvalencia/Desktop/Proyectos/CP/PagCompuPartes/node_modules/babel-loader/lib/index.js:55:12)");
-=======
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2268,7 +2263,6 @@ document.addEventListener('DOMContentLoaded', function () {
     this.verSelects();
   }
 });
->>>>>>> melissa
 
 /***/ }),
 
@@ -2325,39 +2319,14 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
-<<<<<<< HEAD
-    return _defineProperty({
-=======
     return {
->>>>>>> melissa
       email: '',
       status: true,
       password: '',
-      passwordConfirm: '',
-<<<<<<< HEAD
-      errorContra: 0
-    }, "errorContra", []);
-=======
-      errorContra: 0,
-      errorMostrarMsjContra: []
-    };
-  },
-  methods: {
-    // listarCategoria(){
-    //  let m=this;
-    //  axios.get('/categoria').then(function (response){
-    //         m.arrayCategoria = response.data;
-    //         m.status = response.status.data;
-    //         if(status == true){
-    //             status = 1
-    //         }else{
-    //             status = 0
-    //         }
-    //     })
-    //     .catch(function(error){
-    //         console.log(error);
-    //     });
-    // },
+      passwordConfirm: ''
+    });
+    },
+  
     limpiar: function limpiar() {
       var me = this;
       me.email = ''; // me.correo= '';
@@ -2955,12 +2924,10 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     // listarCategoria(){
-    //  let m=this;
     //  axios.get('/categoria').then(function (response){
     //         m.arrayCategoria = response.data;
     //         m.status = response.status.data;
     //         if(status == true){
-    //             status = 1
     //         }else{
     //             status = 0
     //         }
