@@ -12,7 +12,7 @@
                    
                     <div class="form-group row">
                         <!-- input para el nombre del producto --> 
-                        <input id="nombre" type="text" v-model="nombre" placeholder="Nombre de la categoría"  class="validate" >
+                        <input id="nombreCategoria" type="text" v-model="nombreCategoria" placeholder="Nombre de la categoría"  class="validate" >
                         <!-- <label  for="nombre">Nombre</label> -->
                         <br>  
                         <!-- select Subcategorias --> 
@@ -21,12 +21,7 @@
                             <multiselect v-model="arrayIdCaracteristica" :options="arrayCaracteristicas" label="nombre" track-by="idCaracteristica" :multiple="true">
                                 <!-- <pre class="language-json"><code>{{ idTalla.Talla }}</code></pre> -->
                             </multiselect>
-                        </div>
-                        <!-- <select name="LeaveType" class="browser-default" v-model="arrayCaracteristicas">
-                            <option value="" disabled selected>Selecciona las características</option>
-                            <option v-on:change="(event) => console.log(event)" v-for="caracteristica in arrayCaracteristicas " :value="caracteristica.idCaracteristica" :key="caracteristica.idCaracteristica">{{ caracteristica.nombre }}</option>
-                        <label>Seleccione las características</label>
-                        </select>  -->
+                        <!-- </div> -->
                         <br>
                     </div> 
                     <div v-show="errorCategoria" class="form-group row div-error">
@@ -39,10 +34,12 @@
                        <a class=" espacioButton waves-effect waves-light btn color" v-if="tipoAccion==1"  @click="nuevaCategoria()">Guardar</a>
                        <a class=" espacioButton waves-effect waves-light btn color" v-if="tipoAccion==2"  @click="actualizarCategoria(idCategoria)">Actualizar</a>
                        <button type="button" class=" espacioButton btn btn-secondary color" @click="cerrarModal()">Cerrar</button>
-               </div>
+                     </div>
                 </div>
             </div>
          </div>  
+         </div>  
+
        <!-- Termina modal  agregar/actualizar Categoria-->
 
      <!-- Botón para agregar categorías -->
@@ -62,16 +59,20 @@
             <div class="col s10 l10 centro">
                  <table class="centered">
                     <thead>
-                        <tr>
-                            <th>Nombre</th>
-                            <th>Status</th>
-                            <th>Editar</th>
-                            <th>Desactivar/Activar</th>
-                        </tr>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>características</th>
+                        <th>Status</th>
+                        <th>Editar</th>
+                        <th>Desactivar/Activar</th>
+
+
+                    </tr>
                     </thead>
                     <tbody  v-for="categoria in arrayCategoria" :key="categoria.idCategoria">
                     <tr>
-                        <td v-text="categoria.nombre"></td>
+                        <td v-text="categoria.nombre"></td> 
+                        <td v-text="categoria.nombreCaracteristica"></td>
                         <td v-if="categoria.status == 1">Activado</td>
                         <td v-if="categoria.status == 0">Desactivado</td>
                         <td>
@@ -80,19 +81,18 @@
                         <td class="center">
                             <a href="#!" class="secondary-content" v-if="categoria.status == 1">
                                 <i class="switch">
-                                    <label><input type="checkbox" checked="checked" name="status" v-model="categoria.status" @click="desactivarColor(categoria.idCategoria)"><span class="lever"></span></label>
+                                    <label><input type="checkbox" checked="checked" name="status" v-model="categoria.status" @click="desactivarCategoria(categoria.idCategoria)"><span class="lever"></span></label>
                                 </i>
                             </a>
                             <a href="#!" class="secondary-content" v-if="categoria.status == 0">
                                 <i class="switch">
-                                    <label><input type="checkbox"  name="status" v-model="categoria.status" @click="activarColor(categoria.idCategoria)"><span class="lever"></span></label>
+                                    <label><input type="checkbox"  name="status" v-model="categoria.status" @click="activarCategoria(categoria.idCategoria)"><span class="lever"></span></label>
                                 </i>
                             </a>
                         </td>
                     </tr>
                     </tbody>
                 </table>
-           
             </div>
                 
         </div>
@@ -102,6 +102,7 @@
 </template>
 
 <script>
+import Swal from 'sweetalert2';
 import Multiselect from 'vue-multiselect'
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -119,6 +120,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 idCaracteristica: 0,
                 arrayCaracteristicas: [],
                 arrayIdCaracteristica:[],
+                arrayCaracteristicaCategoria:[],
                 modal : 0,
                 tituloModal : 'Registrar Categorias' ,
                 cambio : 0,
@@ -143,6 +145,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 .catch(function(error){
                     console.log(error);
                 });
+
+                // axios.get('/caracteristicasDeCategoria').then(function(response){
+                //     m.arrayCaracteristicaCategoria = response.data;
+
+                // })
+                // .catch(function(error){
+                //     console.log(error);
+                // });
             },
             limpiar() {
                 let me = this;
@@ -159,12 +169,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     return;
                 }
                 let me = this;
-                //Validamos si la informacion modificada es correcta
-                // me.$validator.validateAll('new').then(valid => {
-                //     if (valid) {
+                
                 let formData = new FormData();
-                // formData.append('idCate', me.idCate);
                 formData.append('nombre', me.nombre);
+                formData.append('idCarac', me.arrayIdCaracteristica.map(item => item.idCaracteristica).join(','));
+
                 //Registramos la informacion
                 axios.post('/categoria/registrar', formData, {
                     
@@ -199,9 +208,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 this.nombre="";
                 this.Status='1';
                 this.tituloModal='';
-		        this.errorCategoria=0;
+                this.errorCategoria=0;
+               this. arrayIdCaracteristica=[];
+                
+
             },
-            abrirModal(modelo,accion, data = []){
+            abrirModal(modelo,accion, data = [],idCategoria){
+                let m=this;
                 switch(modelo){
                     case "Categoria":{
                         switch(accion){
@@ -211,28 +224,44 @@ document.addEventListener('DOMContentLoaded', function() {
                                     this.nombre = '';
                                     this.status = '';
                                     this.tipoAccion = 1;
-                                    this.tituloModal = 'Registrar categoria';
+                                    this.tituloModal = 'Registrar categoría';
                                     break;
                                 }
                             case 'actualizar':
                                 {
-                                    this.modal = 1;
+                                    this.modal = 2;
                                     this.tipoAccion = 2;
                                     this.idCategoria = data['idCategoria'];
                                     this.nombre = data['nombre'];
-                                    // this.idCategoria= data['idCategoria'];
+                                    this.idCaracteristica=data['idCaracteristica'];
                                     this.tituloModal = 'Actualizar categoría';
-                                    break;
+
+                                var urld= '/caracteristica_categoria?idCategoria='+idCategoria;
+                                axios.get(urld).then(function (response) {
+                                    console.log('estoy asignando los datos al array');
+                                    m.arrayIdCaracteristica = response.data;
+
+                                })
+                                .catch(function (error) {
+                                    console.log(error);
+                                });
+
+                                    // break;
                                 }
                         }
                     }
                 }
             },
             actualizarCategoria(idCategoria){
+
                 let me = this;
                 let formData = new FormData();
-                formData.append('nombre', me.nombre);
+                formData.append('nombre', me.nombreCategoria);
                 formData.append('idCategoria',idCategoria);
+                formData.append('idCarac',me.arrayIdCaracteristica.map(item => item.idCaracteristica).join(','));
+
+                console.log("estoy entrando a categoria actualizar",me.arrayIdCaracteristica);
+
                 //Registramos la informacion
                 axios.post('/categoria/actualizar',formData,{
                     headers: {
@@ -331,7 +360,7 @@ document.addEventListener('DOMContentLoaded', function() {
             validarCategoria(){
                 this.errorCategoria=0;
                 this.errorMostrarMsjCategoria =[];
-                if (!this.Nombre) this.errorMostrarMsjCategoria.push("El nombre de la Categoría no puede estar vacío.");
+                // if (!this.Nombre) this.errorMostrarMsjCategoria.push("El nombre de la Categoría no puede estar vacío.");
                 if(!isNaN(this.NombreSub))this.errorMostrarMsjCategoria.push("El nombre de la Categoría no puede ser numérico.");
                 if (this.errorMostrarMsjCategoria.length) this.errorCategoria = 1;
                 return this.errorCategoria;
@@ -340,8 +369,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 this.selected = newSelected
             },
             addTag (newTag) {
-                this.idColor.push(tag);
-                this.idTalla.push(tag);
+                this.idCaracteristica.push(tag);
+                // this.idTalla.push(tag);
             }
         
         },components: {

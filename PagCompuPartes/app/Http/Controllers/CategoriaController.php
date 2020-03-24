@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Categoria;
+use App\Caracteristica_categoria;
+use Illuminate\Support\Facades\DB;
+
 
 class CategoriaController extends Controller
 {
@@ -18,6 +21,16 @@ class CategoriaController extends Controller
         return $categorias;
     }
  
+    public function selectCategorias()
+    {
+        return  $categorias = DB::table('categorias')
+        ->join('caracteristica_categoria','caracteristica_categoria.idCate','=','categorias.idCategoria')
+        ->join('caracteristicas','caracteristicas.idCaracteristica', '=','caracteristica_categoria.idCarac')
+        ->select('categorias.idCategoria','categorias.nombre','categorias.status', DB::raw('group_concat(caracteristicas.nombre) as nombreCaracteristica'))
+        ->groupBy('categorias.idCategoria','categorias.nombre','categorias.status')
+        ->distinct()
+        ->get();
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -77,19 +90,49 @@ class CategoriaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        if (!$request->ajax()) return redirect('/consola');
+        
+        $idCategoria = $request->idCategoria;
+        $categoria = Categoria::findOrFail($idCategoria);
+        $categoria->nombre = $request->nombre;
+     
+
+        $categoria->save();
+        $idCate = $categoria->idCategoria;
+
+        $data = explode(",", $request->idCarac);
+        DB::table('caracteristica_categoria')->where('idCate', $idCate)->delete();
+        foreach ($data as $idCarac){
+                       
+
+
+            $caracteristicaCategoria = new Caracteristica_categoria();
+            $caracteristicaCategoria->idCate = $idCate;
+            $caracteristicaCategoria->idCarac = $idCarac;
+            $caracteristicaCategoria->save();
+        }
+       
     }
 
-    public function activar( $id)
+    public function desactivar(Request $request)
     {
-        //
-    }
+        if (!$request->ajax()) return redirect('/administrador');
 
-    public function desactivar( $id)
+        $categoria = Categoria::findOrFail($request->idCategoria);
+        $categoria->status = 0;
+        $categoria->save(); 
+        
+    }
+    
+    
+    public function activar(Request $request)
     {
-        //
+        if (!$request->ajax()) return redirect('/administrador');
+        $categoria = Categoria::findOrFail($request->idCategoria);
+        $categoria->status = 1;
+        $categoria->save();
     }
    
 }

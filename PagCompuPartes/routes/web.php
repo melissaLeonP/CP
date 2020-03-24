@@ -30,11 +30,11 @@ Route::group(['middleware'=>['auth']],function(){
 
     Route::get('/logout','Auth\LoginController@logout')->name('logout');
 
-    Route::get('/categoria','CategoriaController@index');
-    Route::get('/categoria/registrar','CategoriaController@update');
-    Route::get('/categoria/actualizar','CategoriaController@actualizar');
-    Route::get('/categoria/desactivar','CategoriaController@desactivar');
-    Route::get('/categoria/activar','CategoriaController@activar');
+    Route::get('/categoria','CategoriaController@selectCategorias');
+    Route::post('/categoria/registrar','CategoriaController@store');
+    Route::post('/categoria/actualizar','CategoriaController@update');
+    Route::put('/categoria/desactivar','CategoriaController@desactivar');
+    Route::put('/categoria/activar','CategoriaController@activar');
     
     Route::get('/slider','SliderController@index');
     Route::post('/slider/registrar','SliderController@store');
@@ -42,9 +42,23 @@ Route::group(['middleware'=>['auth']],function(){
 
     Route::get('/productos','ProductoController@index');
     Route::post('/productos/registrar','ProductoController@store');
-    Route::post('/productos/actualizar','ProductoController@update');
-    Route::put('/productos/desactivar','ProductoController@desactivar');
-    Route::put('/productos/activar','ProductoController@activar');
+    Route::get('/productos/actualizar','ProductoController@update');
+    Route::get('/productos/desactivar','ProductoController@desactivar');
+    Route::get('/productos/activar','ProductoController@activar');
+
+    Route::get('/caracteristicas','CaracteristicaController@index');
+
+
+
+    Route::post('/password/actualizar','PasswordController@update');
+
+    Route::get('/caracteristica_categoria','CaracteristicaCategoriaController@index');
+    Route::get('/caracteristicasDeCategoria','CaracteristicaCategoriaController@selectCaracteristicasCategorias');
+
+    
+
+
+
 });
 
 // Route::get('/slider/desactivar','SliderController@desactivar');
