@@ -2161,7 +2161,7 @@ document.addEventListener('DOMContentLoaded', function () {
     actualizarCategoria: function actualizarCategoria(idCategoria) {
       var me = this;
       var formData = new FormData();
-      formData.append('nombre', me.nombre);
+      formData.append('nombre', me.nombreCategoria);
       formData.append('idCategoria', idCategoria);
       formData.append('idCarac', me.arrayIdCaracteristica.map(function (item) {
         return item.idCaracteristica;
@@ -42293,7 +42293,7 @@ var render = function() {
                   ],
                   staticClass: "validate",
                   attrs: {
-                    id: "nombre",
+                    id: "nombreCategoria",
                     type: "text",
                     placeholder: "Nombre de la categoría"
                   },
