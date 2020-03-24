@@ -22,12 +22,15 @@ class CaracteristicaCategoriaController extends Controller
         return  $caracteristicas = DB::table('caracteristica_categoria')
         ->join('categorias','categorias.idCategoria', '=','caracteristica_categoria.idCate')
         ->join('caracteristicas','caracteristicas.idCaracteristica', '=','caracteristica_categoria.idCarac')
-        ->select('categorias.idCategoria','caracteristica_categoria.idCarac AS idCaracteristica','caracteristicas.nombre AS nombreCaracteristicas')
+        ->select('categorias.idCategoria','caracteristica_categoria.idCarac AS idCaracteristica','caracteristicas.nombre')
         ->where([
             ['categorias.idCategoria','=',$id],
-            ['categorias.status','=',1]   
+            // ['categorias.status','=',1]   
         ])
         ->get();
+
+
+
     }
 
     public function selectCaracteristicasCategorias(Request $request)

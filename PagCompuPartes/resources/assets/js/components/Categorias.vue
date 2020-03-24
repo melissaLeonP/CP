@@ -12,7 +12,7 @@
                    
                     <div class="form-group row">
                         <!-- input para el nombre del producto --> 
-                        <input id="nombre" type="text" v-model="nombre" placeholder="Nombre de la categoría"  class="validate" >
+                        <input id="nombreCategoria" type="text" v-model="nombreCategoria" placeholder="Nombre de la categoría"  class="validate" >
                         <!-- <label  for="nombre">Nombre</label> -->
                         <br>  
                         <!-- select Subcategorias --> 
@@ -224,16 +224,16 @@ document.addEventListener('DOMContentLoaded', function() {
                                     this.nombre = '';
                                     this.status = '';
                                     this.tipoAccion = 1;
-                                    this.tituloModal = 'Registrar categoria';
+                                    this.tituloModal = 'Registrar categoría';
                                     break;
                                 }
                             case 'actualizar':
                                 {
-                                    this.modal = 1;
+                                    this.modal = 2;
                                     this.tipoAccion = 2;
                                     this.idCategoria = data['idCategoria'];
                                     this.nombre = data['nombre'];
-                                    // this.arrayIdCaracteristica = data['idCaracteristica']
+                                    this.idCaracteristica=data['idCaracteristica'];
                                     this.tituloModal = 'Actualizar categoría';
 
                                 var urld= '/caracteristica_categoria?idCategoria='+idCategoria;
@@ -253,10 +253,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             },
             actualizarCategoria(idCategoria){
+
                 let me = this;
                 let formData = new FormData();
-                formData.append('nombre', me.nombre);
+                formData.append('nombre', me.nombreCategoria);
                 formData.append('idCategoria',idCategoria);
+                formData.append('idCarac',me.arrayIdCaracteristica.map(item => item.idCaracteristica).join(','));
+
+                console.log("estoy entrando a categoria actualizar",me.arrayIdCaracteristica);
+
                 //Registramos la informacion
                 axios.post('/categoria/actualizar',formData,{
                     headers: {

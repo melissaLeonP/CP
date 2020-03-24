@@ -26,7 +26,8 @@ class CategoriaController extends Controller
         return  $categorias = DB::table('categorias')
         ->join('caracteristica_categoria','caracteristica_categoria.idCate','=','categorias.idCategoria')
         ->join('caracteristicas','caracteristicas.idCaracteristica', '=','caracteristica_categoria.idCarac')
-        ->select('categorias.idCategoria','categorias.nombre','categorias.status','caracteristicas.nombre AS nombreCaracteristica')
+        ->select('categorias.idCategoria','categorias.nombre','categorias.status', DB::raw('group_concat(caracteristicas.nombre) as nombreCaracteristica'))
+        ->groupBy('categorias.idCategoria','categorias.nombre','categorias.status')
         ->distinct()
         ->get();
     }
@@ -91,7 +92,28 @@ class CategoriaController extends Controller
      */
     public function update(Request $request)
     {
+        if (!$request->ajax()) return redirect('/consola');
         
+        $idCategoria = $request->idCategoria;
+        $categoria = Categoria::findOrFail($idCategoria);
+        $categoria->nombre = $request->nombre;
+     
+
+        $categoria->save();
+        $idCate = $categoria->idCategoria;
+
+        $data = explode(",", $request->idCarac);
+        DB::table('caracteristica_categoria')->where('idCate', $idCate)->delete();
+        foreach ($data as $idCarac){
+                       
+
+
+            $caracteristicaCategoria = new Caracteristica_categoria();
+            $caracteristicaCategoria->idCate = $idCate;
+            $caracteristicaCategoria->idCarac = $idCarac;
+            $caracteristicaCategoria->save();
+        }
+       
     }
 
     public function desactivar(Request $request)

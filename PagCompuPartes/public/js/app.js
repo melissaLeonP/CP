@@ -2134,17 +2134,17 @@ document.addEventListener('DOMContentLoaded', function () {
                   this.nombre = '';
                   this.status = '';
                   this.tipoAccion = 1;
-                  this.tituloModal = 'Registrar categoria';
+                  this.tituloModal = 'Registrar categoría';
                   break;
                 }
 
               case 'actualizar':
                 {
-                  this.modal = 1;
+                  this.modal = 2;
                   this.tipoAccion = 2;
                   this.idCategoria = data['idCategoria'];
-                  this.nombre = data['nombre']; // this.arrayIdCaracteristica = data['idCaracteristica']
-
+                  this.nombre = data['nombre'];
+                  this.idCaracteristica = data['idCaracteristica'];
                   this.tituloModal = 'Actualizar categoría';
                   var urld = '/caracteristica_categoria?idCategoria=' + idCategoria;
                   axios.get(urld).then(function (response) {
@@ -2162,7 +2162,11 @@ document.addEventListener('DOMContentLoaded', function () {
       var me = this;
       var formData = new FormData();
       formData.append('nombre', me.nombre);
-      formData.append('idCategoria', idCategoria); //Registramos la informacion
+      formData.append('idCategoria', idCategoria);
+      formData.append('idCarac', me.arrayIdCaracteristica.map(function (item) {
+        return item.idCaracteristica;
+      }).join(','));
+      console.log("estoy entrando a categoria actualizar", me.arrayIdCaracteristica); //Registramos la informacion
 
       axios.post('/categoria/actualizar', formData, {
         headers: {
