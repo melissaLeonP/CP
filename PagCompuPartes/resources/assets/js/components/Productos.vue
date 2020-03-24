@@ -68,29 +68,29 @@
     <!-- fin boton abrir modal -->
     <!-- tabla de productos -->
         <div class="row tablaProductos">
-            <div class="col s2 m10 l10 centro">
+            <div class="col s4 m10 l10 centro">
                  <table class="centered">
                     <thead>
                     <tr>
-                        <th>imagen</th>
+                        <th class="hide-on-small-only">imagen</th>
                         <th>Nombre</th>
-                        <th>Descripcion</th>
+                        <th class="hide-on-small-only">Descripcion</th>
                         <th class="hide-on-small-only">Status</th>
-                        <th class="hide-on-small-only">Editar</th>
-                        <th class="hide-on-small-only">Desactivar/Activar</th>
+                        <th>Editar</th>
+                        <th>Desactivar/Activar</th>
                     </tr>
                     </thead>
                     <tbody  v-for="producto in arrayProducto" :key="producto.idProducto">
                         <tr>
-                            <td><img :src="'img/'+producto.imagen" class="square"></td>
+                            <td class="hide-on-small-only" ><img :src="'img/'+producto.imagen" class="square"></td>
                             <td v-text="producto.nombre"></td>
-                            <td v-text="producto.descripcion" ></td>
-                            <td v-if="producto.status == 1" class="hide-on-small-only">Activado</td>
-                            <td v-if="producto.status == 0" class="hide-on-small-only">Desactivado</td>
-                            <td class="hide-on-small-only" >
+                            <td class="hide-on-small-only" v-text="producto.descripcion" ></td>
+                            <td class="hide-on-small-only"  v-if="producto.status == 1">Activado</td>
+                            <td class="hide-on-small-only"  v-if="producto.status == 0">Desactivado</td>
+                            <td>
                                 <i class="material-icons color-text " @click="abrirModal('productos','actualizar',producto,producto.idProducto)">create</i>
                             </td>
-                            <td class="hide-on-small-only"  >
+                            <td>
                                 <a href="#!" class="secondary-content" v-if="producto.status == 1">
                                     <i class="switch">
                                         <label><input type="checkbox" checked="checked" name="status" v-model="producto.status" @click="desactivarProducto(producto.idProducto)"><span class="lever"></span></label>

@@ -43087,7 +43087,7 @@ var render = function() {
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "row tablaProductos" }, [
-      _c("div", { staticClass: "col s2 m10 l10 centro" }, [
+      _c("div", { staticClass: "col s4 m10 l10 centro" }, [
         _c(
           "table",
           { staticClass: "centered" },
@@ -43097,7 +43097,7 @@ var render = function() {
             _vm._l(_vm.arrayProducto, function(producto) {
               return _c("tbody", { key: producto.idProducto }, [
                 _c("tr", [
-                  _c("td", [
+                  _c("td", { staticClass: "hide-on-small-only" }, [
                     _c("img", {
                       staticClass: "square",
                       attrs: { src: "img/" + producto.imagen }
@@ -43109,6 +43109,7 @@ var render = function() {
                   }),
                   _vm._v(" "),
                   _c("td", {
+                    staticClass: "hide-on-small-only",
                     domProps: { textContent: _vm._s(producto.descripcion) }
                   }),
                   _vm._v(" "),
@@ -43124,7 +43125,7 @@ var render = function() {
                       ])
                     : _vm._e(),
                   _vm._v(" "),
-                  _c("td", { staticClass: "hide-on-small-only" }, [
+                  _c("td", [
                     _c(
                       "i",
                       {
@@ -43144,7 +43145,7 @@ var render = function() {
                     )
                   ]),
                   _vm._v(" "),
-                  _c("td", { staticClass: "hide-on-small-only" }, [
+                  _c("td", [
                     producto.status == 1
                       ? _c(
                           "a",
@@ -43313,19 +43314,19 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("thead", [
       _c("tr", [
-        _c("th", [_vm._v("imagen")]),
+        _c("th", { staticClass: "hide-on-small-only" }, [_vm._v("imagen")]),
         _vm._v(" "),
         _c("th", [_vm._v("Nombre")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Descripcion")]),
+        _c("th", { staticClass: "hide-on-small-only" }, [
+          _vm._v("Descripcion")
+        ]),
         _vm._v(" "),
         _c("th", { staticClass: "hide-on-small-only" }, [_vm._v("Status")]),
         _vm._v(" "),
-        _c("th", { staticClass: "hide-on-small-only" }, [_vm._v("Editar")]),
+        _c("th", [_vm._v("Editar")]),
         _vm._v(" "),
-        _c("th", { staticClass: "hide-on-small-only" }, [
-          _vm._v("Desactivar/Activar")
-        ])
+        _c("th", [_vm._v("Desactivar/Activar")])
       ])
     ])
   }
