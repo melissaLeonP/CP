@@ -84,9 +84,9 @@
                         <tr>
                             <td class="hide-on-small-only" ><img :src="'img/'+producto.imagen" class="square"></td>
                             <td v-text="producto.nombre"></td>
-                            <td class="hide-on-small-only" v-text="producto.descripcion" ></td>
-                            <td class="hide-on-small-only"  v-if="producto.status == 1">Activado</td>
-                            <td class="hide-on-small-only"  v-if="producto.status == 0">Desactivado</td>
+                            <td class="hide-on-small-only" v-text="producto.descripcion"></td>
+                            <td class="hide-on-small-only" v-if="producto.status == 1">Activado</td>
+                            <td class="hide-on-small-only" v-if="producto.status == 0">Desactivado</td>
                             <td>
                                 <i class="material-icons color-text " @click="abrirModal('productos','actualizar',producto,producto.idProducto)">create</i>
                             </td>
