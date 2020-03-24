@@ -9307,6 +9307,12 @@ nav.clean .breadcrumb {
   max-width: 100%;
   height: 70%;
 }
+.desactivarActivar{
+  height: 40%;
+  width: 10%;
+  padding-right: 10%;
+  padding-left: 10%;
+}
 @media only screen and (max-width: 768px) {
   .productosCard {
     margin-left:0% !important;

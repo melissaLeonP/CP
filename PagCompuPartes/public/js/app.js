@@ -43145,7 +43145,7 @@ var render = function() {
                     )
                   ]),
                   _vm._v(" "),
-                  _c("td", [
+                  _c("td", { staticClass: "desactivarActivar" }, [
                     producto.status == 1
                       ? _c(
                           "a",

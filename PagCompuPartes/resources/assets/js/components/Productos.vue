@@ -90,7 +90,7 @@
                             <td>
                                 <i class="material-icons color-text " @click="abrirModal('productos','actualizar',producto,producto.idProducto)">create</i>
                             </td>
-                            <td>
+                            <td class="desactivarActivar">
                                 <a href="#!" class="secondary-content" v-if="producto.status == 1">
                                     <i class="switch">
                                         <label><input type="checkbox" checked="checked" name="status" v-model="producto.status" @click="desactivarProducto(producto.idProducto)"><span class="lever"></span></label>
