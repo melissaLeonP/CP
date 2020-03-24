@@ -50,21 +50,21 @@
             <div class="col s12 l12">
                 <h3 class="center">Sliders</h3>
                 <div class="right col s2 l4">
-                    <a class="waves-effect color btn right" @click="abrirModal('sliders','registrar')"><i class="material-icons left">add</i>Registrar Slider</a>
+                    <a class="waves-effect color btn right" @click="abrirModal('sliders','registrar')"><i class="material-icons left">add</i>Nuevo Slider</a>
                 </div>
             </div>
         </div>
         <!-- empieza la actualizacion de sliders-->
 
         <div class="row cardsSlider">
-            <div class="col 12">
+            <div class="col s12 m12 lg12">
                 <div class="card" v-for="slider in arraySliders" :key="slider.idSlider">
-                    <div class="card-image small">
-                        <img :src="'img/'+slider.img">
-                        <a  class="btn-floating halfway-fab waves-effect waves-light red" @click="abrirModal('sliders','actualizar',slider)"><i class="material-icons" >create</i></a>
+                    <div class="card-image">
+                        <img class="responsiveImg" :src="'img/'+slider.img">
+                        <a  class="btn-floating halfway-fab waves-effect waves-light red" @click="abrirModal('sliders','actualizar',slider)"><i class="material-icons">create</i></a>
                     </div>
                     <div class="card-content">
-                        <h4>{{slider.titulo}}</h4>
+                        <p>{{slider.titulo}}</p>
                         <p>{{slider.texto}}</p>
                     </div>
                 </div> 
@@ -159,31 +159,33 @@ export default {
                 console.log(error);
             });
         },
-        actualizarSlider(idSlider){
-            let me = this;
-            let formData = new FormData();
+       actualizarSlider(idSlider){
+                
+                let me = this;
 
-            formData.append('file', me.file);
-            formData.append('texto',me.texto);
-            formData.append('titulo',me.titulo);
-            formData.append('idSlider',idSlider)
-    
-            //Regresamos la informacion
-            axios.post('/slider/actualizar', formData, {
-                headers: {
-                    'Content-Type': 'multipart/form-data'
+                let formData = new FormData();
+                
+                formData.append('file', me.file);
+                formData.append('idSlider',idSlider);
+                formData.append('texto', me.texto);
+                formData.append('titulo', me.titulo);
+
+                // Regresamos la informacion
+                axios.post('/slider/actualizar', formData,{
+                    headers: {
+                        'Content-Type': 'multipart/form-data'
                     }
-            })
-            .then(function (response) {
-                me.listarSliders();
-                me.cerrarModal();
-                me.limpiar();
-            })
-            .catch(function (error) {
-                console.log(error);
-
-            });             
-        },
+                })
+                .then(function (response) {
+                    me.listarSliders();
+                    me.cerrarModal();
+                    me.limpiar();
+                
+                })
+                .catch(function (error) {
+                    console.log(error);
+                    });
+            },
         cerrarModal(){
             this.modal=0;
             this.tituloModal='';
@@ -198,14 +200,17 @@ export default {
                     switch(accion){
                         case 'registrar':{
                             this.modal = 1;
-                            this.nombre = '';
+                            this.texto ='';
+                            this.texto = '';
                             this.tipoAccion = 1;
                             this.tituloModal = 'Registrar Sliders';
+                            this.img = '';
                             break;
                         }
                         case 'actualizar':{
                             this.modal = 2;
-                            this.nombre = '';
+                            this.titulo = data['titulo'];
+                            this.texto = data['texto'];
                             this.tipoAccion = 2;
                             this.tituloModal = 'Actualizar Slider';
                             this.idSlider=data['idSlider'];

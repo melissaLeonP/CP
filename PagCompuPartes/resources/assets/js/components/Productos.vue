@@ -9,7 +9,7 @@
                         <h3 v-text="tituloModal"></h3>
                     </div>
                     <div class="col s5 center">
-                        <img v-if="tipoAccion==2" :src="'img/'+img"  class="imagenEdit" alt="">
+                        <img v-if="tipoAccion==2" :src="'img/'+imagen"  class="imagenEdit" alt="">
                     </div>
                     <div class="form-group row">
                         <!-- input para el nombre del producto --> 
@@ -23,12 +23,12 @@
                         <!-- select Subcategorias --> 
                         <select name="LeaveType" class="browser-default" v-model="idCate">
                             <option value="" disabled selected>Selecciona la categoría</option>
-                            <option   v-for="cate in arrayCategoria" :value="cate.idCategoria" :key="cate.idCategoria">{{ cate.nombre }}</option>
+                            <option   v-for="cate in arrayCategoria" :value="cate.idCategoria"  :key="cate.idCategoria">{{ cate.nombre }}</option>
                             
                         </select> 
                         <br>
                         <!-- input para la imagen del producto --> 
-                        <div class="col s10 center" v-if="tipoAccion==1" >
+                        <div class="col s10 center">
                             <div class="file-field input-field">
                                 <div class="waves-effect waves-light btn color">
                                     <span>Imagen</span>
@@ -61,43 +61,57 @@
             <div class="col s12 l12 ">
                 <h3 class="center">Productos</h3>
                 <div class="right col s2 l4">
-                    <a class="waves-effect waves-light btn right color" @click="abrirModal('productos','registrar')"><i class="material-icons left">add</i>Registrar Productos</a>
-                    </div>
+                    <a class="waves-effect waves-light btn right color" @click="abrirModal('productos','registrar')"><i class="material-icons left">add</i>Nuevo Productos</a>
+                </div>
             </div>
         </div>
     <!-- fin boton abrir modal -->
-    
-       <div class="row">
-               <div class="center col s12  l12">
-                    <ul class="collection " v-for="producto in arrayProducto" :key="producto.idProducto">
-                        <li class="collection-item avatar">
-                        <img :src="'img/'+producto.imagen" class="circle">
-
-                            <h5 v-text="producto.nombre"></h5>
-                            <h6>Descripción: </h6>
-                            <h6 v-text="producto.descripcion"></h6>
-                            <a href="#!" class="secondary-content" v-if="producto.Status == 1">
-                                <i class="switch">
-                                    <label><input type="checkbox" checked="checked" name="status" v-model="producto.Status" @click="desactivarProducto(producto.idProducto)"><span class="lever"></span></label>
-                                </i>
-                                      <i class="material-icons brown-text " @click="abrirModal('productos','actualizar',producto,producto.idProducto)">create</i>
-
-                            </a>
-                            <a href="#!" class="secondary-content" v-if="producto.Status == 0">
-                                <i class="switch">
-                                    <label><input type="checkbox"  name="status" v-model="producto.Status" @click="activarProducto(producto.idProducto)"><span class="lever"></span></label>
-                                </i>
-                                    <i class="material-icons brown-text " @click="abrirModal('productos','actualizar',producto,producto.idProducto)">create</i>
-                            </a>
-                        </li>
-                    </ul>
-           </div> 
-        </div> 
-
+    <!-- tabla de productos -->
+        <div class="row tablaProductos">
+            <div class="col s4 m10 l10 centro">
+                 <table class="centered">
+                    <thead>
+                    <tr>
+                        <th class="hide-on-small-only">imagen</th>
+                        <th>Nombre</th>
+                        <th class="hide-on-small-only">Descripcion</th>
+                        <th class="hide-on-small-only">Status</th>
+                        <th>Editar</th>
+                        <th>Desactivar/Activar</th>
+                    </tr>
+                    </thead>
+                    <tbody  v-for="producto in arrayProducto" :key="producto.idProducto">
+                        <tr>
+                            <td class="hide-on-small-only" ><img :src="'img/'+producto.imagen" class="square"></td>
+                            <td v-text="producto.nombre"></td>
+                            <td class="hide-on-small-only" v-text="producto.descripcion"></td>
+                            <td class="hide-on-small-only" v-if="producto.status == 1">Activado</td>
+                            <td class="hide-on-small-only" v-if="producto.status == 0">Desactivado</td>
+                            <td>
+                                <i class="material-icons color-text " @click="abrirModal('productos','actualizar',producto,producto.idProducto)">create</i>
+                            </td>
+                            <td class="desactivarActivar">
+                                <a href="#!" class="secondary-content" v-if="producto.status == 1">
+                                    <i class="switch">
+                                        <label><input type="checkbox" checked="checked" name="status" v-model="producto.status" @click="desactivarProducto(producto.idProducto)"><span class="lever"></span></label>
+                                    </i>
+                                </a>
+                                <a href="#!" class="secondary-content" v-if="producto.status == 0">
+                                    <i class="switch">
+                                        <label><input type="checkbox"  name="status" v-model="producto.status" @click="activarProducto(producto.idProducto)"><span class="lever"></span></label>
+                                    </i>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>  
+        </div>
+        <!-- fin de la tabla de productos -->
     </main>
 </template>
     <script>
-    // import Swal from 'sweetalert2';
+    import Swal from 'sweetalert2';
     // import Multiselect from 'vue-multiselect'
 
     
@@ -151,7 +165,7 @@
                                 this.nombre = '';
                                 this.descripcion = '';
                                 this.imagen= 'Selecciona imagen';
-                                this.arrayCategoria= 'Selecciona la categoria';
+                                // this.arrayCategoria= 'Selecciona la categoria';
                                 this.tipoAccion = 1;
                                 this.tituloModal = 'Registrar producto';
                                 break;
@@ -163,9 +177,10 @@
                                 this.tipoAccion = 2;
                                 this.imagen=data['imagen'];
                                 this.nombre=data['nombre'];
+                                this.idCate=data['idCategoria'];
                                 this.descripcion=data['descripcion'];
                                 this.tituloModal = 'Actualizar producto';
-                                this.idCate=data['idCate'];
+                                // this.idCate=data['idCate'];
                             }
                         }
                     }
@@ -180,7 +195,6 @@
                 let formData = new FormData();
 
                 formData.append('file', me.file);
-
                 formData.append('idCate', me.idCate);
                 formData.append('nombre', me.nombre);
                 formData.append('descripcion', me.descripcion);
@@ -203,9 +217,11 @@
                 });
             },
             actualizarProducto(idProducto){
+                
                 let me = this;
-                let formData = new FormData();
 
+                let formData = new FormData();
+                
                 formData.append('file', me.file);
                 formData.append('idProducto',idProducto);
                 formData.append('idCate', me.idCate);
@@ -242,7 +258,7 @@
                 let me = this;
                 me.errors.clear('new');
                 me.errors.clear('update');
-                me.img = '';
+                me.imagen = '';
                 me.descripcion='';
                 me.nombre='';
                 me.idCate='';
@@ -303,8 +319,9 @@
                 }).then((result) => {
                     if (result.value) {
 
+                        console.log('id de producto', id);
                         axios.put('/productos/desactivar',{
-                            'id': id
+                            'idProducto': id
                         }).then(function (response) {
                             me.listarProductos();
                             Swal.fire(
@@ -342,7 +359,7 @@
                 }).then((result) => {
                 if (result.value) {
                     axios.put('/productos/activar',{
-                        'id': id
+                        'idProducto': id
                     }).then(function (response) {
                         me.listarProductos();
                         Swal.fire(
