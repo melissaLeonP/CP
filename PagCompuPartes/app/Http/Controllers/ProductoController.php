@@ -10,9 +10,7 @@ use App\Producto;
 use Illuminate\Support\Facades\Log;
 use Request as Peticion;
 
-
 use File;
-
 
 class ProductoController extends Controller
 {
@@ -26,8 +24,8 @@ class ProductoController extends Controller
 
         return  $productos = DB::table('productos')
         ->join('categorias','categorias.idCategoria', '=','productos.idCate')
-        ->select('productos.nombre','productos.descripcion','productos.status',
-        'productos.imagen','categorias.idCategoria','categorias.nombre')
+        ->select('productos.idProducto','productos.nombre','productos.descripcion','productos.status',
+        'productos.imagen','categorias.idCategoria','categorias.nombre AS nombreCategoria')
         ->distinct()
         ->get();
     }
@@ -50,7 +48,7 @@ class ProductoController extends Controller
      */
     public function store(Request $request)
     {
-       
+        if (!$request->ajax()) return redirect('/administrador');
         $producto = new Producto();        
         
         $img = Peticion::file('file');
@@ -99,15 +97,14 @@ class ProductoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
         if (!$request->ajax()) return redirect('/administrador');
         
         $idProducto = $request->idProducto;
         $producto = Producto::findOrFail($idProducto);
-        $producto->nombre = $request->nombre;
-        $producto->descripcion = $request->descripcion;
-        $producto->idCate = $request->idCate;
+       
+       
         
         $img = Peticion::file('file');
         $extension = $img -> guessExtension();
@@ -115,9 +112,12 @@ class ProductoController extends Controller
         $prefijo = 'Image';
         $nombreImagen = $prefijo.'_'.$date.'.'.$extension;
         $img->move('img', $nombreImagen);
-        File::delete('img/' . $slider->img);
-
-        $slider->img = $nombreImagen;
+        File::delete('img/' . $producto->img);
+       
+        $producto->nombre = $request->nombre;
+        $producto->descripcion = $request->descripcion;
+        $producto->idCate = $request->idCate;
+        $producto->imagen = $nombreImagen;
         $producto->save();
     }
 
@@ -144,4 +144,22 @@ class ProductoController extends Controller
         ->distinct()
         ->get();
     }
+
+    public function desactivar(Request $request)
+    {
+        $producto = Producto::findOrFail($request->idProducto);
+        $producto->status = 0;
+        $producto->save(); 
+        
+    }
+    
+    
+    public function activar(Request $request)
+    {
+        if (!$request->ajax()) return redirect('/administrador');
+        $producto = Producto::findOrFail($request->idProducto);
+        $producto->status = 1;
+        $producto->save();
+    }
+
 }

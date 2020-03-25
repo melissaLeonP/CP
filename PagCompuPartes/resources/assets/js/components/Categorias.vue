@@ -60,15 +60,12 @@
             <div class="col s10 l10 centro">
                  <table class="centered">
                     <thead>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>características</th>
-                        <th>Status</th>
-                        <th>Editar</th>
-                        <th>Desactivar/Activar</th>
-
-
-                    </tr>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Status</th>
+                            <th>Editar</th>
+                            <th>Desactivar/Activar</th>
+                        </tr>
                     </thead>
                     <tbody  v-for="categoria in arrayCategoria" :key="categoria.idCategoria">
                     <tr>
@@ -94,6 +91,7 @@
                     </tr>
                     </tbody>
                 </table>
+           
             </div>
                 
         </div>
@@ -104,7 +102,7 @@
 
 <script>
 import Swal from 'sweetalert2';
-import Multiselect from 'vue-multiselect'
+import Multiselect from 'vue-multiselect';
 
 document.addEventListener('DOMContentLoaded', function() {
                         var elems = document.querySelectorAll('select');
