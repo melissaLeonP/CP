@@ -62,7 +62,7 @@
                     <thead>
                     <tr>
                         <th >Nombre</th>
-                        <th class="hide-on-small-only"  >características</th>
+                        <th class="hide-on-small-only"  >Características</th>
                         <th class="hide-on-small-only"  >Status</th>
                         <th>Editar</th>
                         <th>Desactivar/Activar</th>

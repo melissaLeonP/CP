@@ -42684,7 +42684,7 @@ var staticRenderFns = [
         _c("th", [_vm._v("Nombre")]),
         _vm._v(" "),
         _c("th", { staticClass: "hide-on-small-only" }, [
-          _vm._v("características")
+          _vm._v("Características")
         ]),
         _vm._v(" "),
         _c("th", { staticClass: "hide-on-small-only" }, [_vm._v("Status")]),
