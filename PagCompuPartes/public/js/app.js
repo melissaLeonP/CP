@@ -2161,8 +2161,9 @@ document.addEventListener('DOMContentLoaded', function () {
     },
     actualizarCategoria: function actualizarCategoria(idCategoria) {
       var me = this;
+      console.log("estoy entrando a categoria actualizar", me.nombre);
       var formData = new FormData();
-      formData.append('nombre', me.nombreCategoria);
+      formData.append('nombre', me.nombre);
       formData.append('idCategoria', idCategoria);
       formData.append('idCarac', me.arrayIdCaracteristica.map(function (item) {
         return item.idCaracteristica;
@@ -42314,7 +42315,7 @@ var render = function() {
                   ],
                   staticClass: "validate",
                   attrs: {
-                    id: "nombreCategoria",
+                    id: "nombre",
                     type: "text",
                     placeholder: "Nombre de la categoría"
                   },
@@ -56451,7 +56452,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/jazminvalencia/Desktop/Proyectos/CP/PagCompuPartes/resources/assets/js/app.js */"./resources/assets/js/app.js");
+module.exports = __webpack_require__(/*! /Users/admin/Desktop/Proyectos/cp/CP/PagCompuPartes/resources/assets/js/app.js */"./resources/assets/js/app.js");
 
 
 /***/ })

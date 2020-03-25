@@ -12,7 +12,7 @@
                    
                     <div class="form-group row">
                         <!-- input para el nombre del producto --> 
-                        <input id="nombreCategoria" type="text" v-model="nombre" placeholder="Nombre de la categoría"  class="validate" >
+                        <input id="nombre" type="text" v-model="nombre" placeholder="Nombre de la categoría"  class="validate" >
                         <!-- <label  for="nombre">Nombre</label> -->
                         <br>  
                         <!-- select Subcategorias --> 
@@ -256,8 +256,10 @@ document.addEventListener('DOMContentLoaded', function() {
             actualizarCategoria(idCategoria){
 
                 let me = this;
+                console.log("estoy entrando a categoria actualizar",me.nombre);
+
                 let formData = new FormData();
-                formData.append('nombre', me.nombreCategoria);
+                formData.append('nombre', me.nombre);
                 formData.append('idCategoria',idCategoria);
                 formData.append('idCarac',me.arrayIdCaracteristica.map(item => item.idCaracteristica).join(','));
 
