@@ -189,6 +189,12 @@ nav.clean .breadcrumb {
   padding-right: 10%;
   padding-left: 10%;
 }
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
 @media only screen and (max-width: 768px) {
   .productosCard {
     margin-left:0% !important;

@@ -16,6 +16,7 @@ Route::group(['middleware'=>['guest']],function(){
     
 });
 
+
 Route::get('/', function () {
     return view('contenido/contenido');
 });
@@ -28,37 +29,48 @@ Route::group(['middleware'=>['auth']],function(){
         return view('contenido/consola');
     })->name('consola');
 
-    Route::get('/logout','Auth\LoginController@logout')->name('logout');
+    Route::group(['middleware'=>['Administrador']],function() {
+        Route::get('/categoria','CategoriaController@selectCategorias');
+        Route::post('/categoria/registrar','CategoriaController@store');
+        Route::post('/categoria/actualizar','CategoriaController@update');
+        Route::put('/categoria/desactivar','CategoriaController@desactivar');
+        Route::put('/categoria/activar','CategoriaController@activar');
+        
+        Route::get('/slider','SliderController@index');
+        Route::post('/slider/registrar','SliderController@store');
+        Route::post('/slider/actualizar','SliderController@update');
 
-    Route::get('/categoria','CategoriaController@selectCategorias');
-    Route::post('/categoria/registrar','CategoriaController@store');
-    Route::post('/categoria/actualizar','CategoriaController@update');
-    Route::put('/categoria/desactivar','CategoriaController@desactivar');
-    Route::put('/categoria/activar','CategoriaController@activar');
-    
-    Route::get('/slider','SliderController@index');
-    Route::post('/slider/registrar','SliderController@store');
-    Route::post('/slider/actualizar','SliderController@update');
-
-    Route::get('/productos','ProductoController@index');
-    Route::post('/productos/registrar','ProductoController@store');
-    Route::get('/productos/actualizar','ProductoController@update');
-    Route::get('/productos/desactivar','ProductoController@desactivar');
-    Route::get('/productos/activar','ProductoController@activar');
-
-    Route::get('/caracteristicas','CaracteristicaController@index');
+        Route::get('/productos','ProductoController@index');
+        Route::post('/productos/registrar','ProductoController@store');
+        Route::get('/productos/actualizar','ProductoController@update');
+        Route::get('/productos/desactivar','ProductoController@desactivar');
+        Route::get('/productos/activar','ProductoController@activar');
 
 
-
-    Route::post('/password/actualizar','PasswordController@update');
-
-    Route::get('/caracteristica_categoria','CaracteristicaCategoriaController@index');
-    Route::get('/caracteristicasDeCategoria','CaracteristicaCategoriaController@selectCaracteristicasCategorias');
-
-    
+        Route::post('/password/actualizar','PasswordController@update');
+        Route::get('/logout','Auth\LoginController@logout')->name('logout');
 
 
+        Route::get('/caracteristica_categoria','CaracteristicaCategoriaController@index');
+        Route::get('/caracteristicasDeCategoria','CaracteristicaCategoriaController@selectCaracteristicasCategorias');
+        
+        Route::get('/caracteristicas','CaracteristicaController@index');
 
+
+    });
+
+    Route::group(['middleware'=>['Marketing']],function() {
+        
+        Route::get('/slider','SliderController@index');
+        Route::post('/slider/registrar','SliderController@store');
+        Route::post('/slider/actualizar','SliderController@update');
+        
+        Route::post('/password/actualizar','PasswordController@update');
+        Route::get('/logout','Auth\LoginController@logout')->name('logout');
+
+
+    });
+    // Route::get('/logout','Auth\LoginController@logout')->name('logout');
 });
 
 // Route::get('/slider/desactivar','SliderController@desactivar');

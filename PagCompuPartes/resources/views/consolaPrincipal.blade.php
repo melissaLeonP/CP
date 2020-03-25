@@ -28,29 +28,22 @@
        }
       </style>
    </head>
-
-   <!-- <nav>
-    <div class="nav-wrapper "> -->
-      <!-- <a href="#" src="img/logoBlanco.png" class="brand-logo"></a> -->
-      <!-- <a href="#"><img id="navImagen" class="" src="img/logoBlanco.png" style="" alt=""></a>
-      <ul id="nav-mobile" class="right "> -->
-      <!-- <li><img class="" src="img/logoBlanco.png" alt=""></li> -->
-        <!-- <li><a href="sass.html"></a></li>
-        <li><a href="badges.html">slider</a></li>
-        <li><a href="collapsible.html">productos</a></li>
-        <li><a href="collapsible.html">categorias</a></li>
-        <li><a href="collapsible.html">cambiar contraseña </a></li>
-        <li><a href="collapsible.html">cerrar</a></li>
-      </ul>
-    </div>
-  </nav> -->
- 
   
   <body>
      <div id="app">
-       @include('plantilla.consolaNavBar')
+       @if(Auth::check())
+          @if(Auth::user()->tipo == 'Administrador')
+             @include('plantilla.consolaNavBarAdministrador')
+          @elseif(Auth::user()->tipo == 'Marketing')
+             @include('plantilla.consolaNavBarMarketing')
+          @else
 
+          @endif
+       @endif
+    <!-- Contenido principal -->
        @yield('consola')
+    <!-- Termina contenido principal -->
+
      </div>
 
     <footer class=" ">

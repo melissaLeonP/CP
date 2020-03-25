@@ -61,9 +61,9 @@
                  <table class="centered">
                     <thead>
                     <tr>
-                        <th>Nombre</th>
-                        <th>características</th>
-                        <th>Status</th>
+                        <th >Nombre</th>
+                        <th class="hide-on-small-only"  >características</th>
+                        <th class="hide-on-small-only"  >Status</th>
                         <th>Editar</th>
                         <th>Desactivar/Activar</th>
 
@@ -73,13 +73,13 @@
                     <tbody  v-for="categoria in arrayCategoria" :key="categoria.idCategoria">
                     <tr>
                         <td v-text="categoria.nombre"></td> 
-                        <td v-text="categoria.nombreCaracteristica"></td>
-                        <td v-if="categoria.status == 1">Activado</td>
-                        <td v-if="categoria.status == 0">Desactivado</td>
+                        <td class="hide-on-small-only"  v-text="categoria.nombreCaracteristica"></td>
+                        <td class="hide-on-small-only"  v-if="categoria.status == 1">Activado</td>
+                        <td class="hide-on-small-only"  v-if="categoria.status == 0">Desactivado</td>
                         <td>
                             <i class="material-icons color-text " @click="abrirModal('Categoria','actualizar',categoria,categoria.idCategoria)">create</i>
                         </td>
-                        <td class="center">
+                        <td class="desactivarActivar">
                             <a href="#!" class="secondary-content" v-if="categoria.status == 1">
                                 <i class="switch">
                                     <label><input type="checkbox" checked="checked" name="status" v-model="categoria.status" @click="desactivarCategoria(categoria.idCategoria)"><span class="lever"></span></label>
