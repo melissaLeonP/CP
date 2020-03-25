@@ -2009,7 +2009,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-<<<<<<< HEAD
 //
 //
 //
@@ -2023,8 +2022,6 @@ document.addEventListener('DOMContentLoaded', function () {
   var elems = document.querySelectorAll('select');
   var instances = M.FormSelect.init(elems);
 });
-=======
->>>>>>> jazmin
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
