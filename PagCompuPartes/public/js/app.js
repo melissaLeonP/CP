@@ -2009,6 +2009,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+<<<<<<< HEAD
 //
 //
 //
@@ -2022,6 +2023,8 @@ document.addEventListener('DOMContentLoaded', function () {
   var elems = document.querySelectorAll('select');
   var instances = M.FormSelect.init(elems);
 });
+=======
+>>>>>>> jazmin
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2474,6 +2477,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_0__);
 //
 //
 //
@@ -2572,8 +2577,22 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-// import Swal from 'sweetalert2';
-// import Multiselect from 'vue-multiselect'
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+ // import Multiselect from 'vue-multiselect'
+
 document.addEventListener('DOMContentLoaded', function () {
   var elems = document.querySelectorAll('select');
   var instances = M.FormSelect.init(elems);
@@ -2628,8 +2647,8 @@ document.addEventListener('DOMContentLoaded', function () {
                   this.modal = 1;
                   this.nombre = '';
                   this.descripcion = '';
-                  this.imagen = 'Selecciona imagen';
-                  this.arrayCategoria = 'Selecciona la categoria';
+                  this.imagen = 'Selecciona imagen'; // this.arrayCategoria= 'Selecciona la categoria';
+
                   this.tipoAccion = 1;
                   this.tituloModal = 'Registrar producto';
                   break;
@@ -2642,9 +2661,9 @@ document.addEventListener('DOMContentLoaded', function () {
                   this.tipoAccion = 2;
                   this.imagen = data['imagen'];
                   this.nombre = data['nombre'];
+                  this.idCate = data['idCategoria'];
                   this.descripcion = data['descripcion'];
-                  this.tituloModal = 'Actualizar producto';
-                  this.idCate = data['idCate'];
+                  this.tituloModal = 'Actualizar producto'; // this.idCate=data['idCate'];
                 }
             }
           }
@@ -2709,7 +2728,7 @@ document.addEventListener('DOMContentLoaded', function () {
       var me = this;
       me.errors.clear('new');
       me.errors.clear('update');
-      me.img = '';
+      me.imagen = '';
       me.descripcion = '';
       me.nombre = '';
       me.idCate = '';
@@ -2759,7 +2778,7 @@ document.addEventListener('DOMContentLoaded', function () {
     },
     desactivarProducto: function desactivarProducto(id) {
       var me = this;
-      Swal.fire({
+      sweetalert2__WEBPACK_IMPORTED_MODULE_0___default.a.fire({
         title: '¿Está seguro de desactivar este producto?',
         type: 'warning',
         showCancelButton: true,
@@ -2773,23 +2792,24 @@ document.addEventListener('DOMContentLoaded', function () {
         reverseButtons: true
       }).then(function (result) {
         if (result.value) {
+          console.log('id de producto', id);
           axios.put('/productos/desactivar', {
-            'id': id
+            'idProducto': id
           }).then(function (response) {
             me.listarProductos();
-            Swal.fire('Desactivado!', 'el producto ha sido desactivado con éxito.', 'success');
+            sweetalert2__WEBPACK_IMPORTED_MODULE_0___default.a.fire('Desactivado!', 'el producto ha sido desactivado con éxito.', 'success');
           })["catch"](function (error) {
             console.log(error);
           });
         } else if ( // Read more about handling dismissals
-        result.dismiss === Swal.DismissReason.cancel) {
+        result.dismiss === sweetalert2__WEBPACK_IMPORTED_MODULE_0___default.a.DismissReason.cancel) {
           me.listarProductos();
         }
       });
     },
     activarProducto: function activarProducto(id) {
       var me = this;
-      Swal.fire({
+      sweetalert2__WEBPACK_IMPORTED_MODULE_0___default.a.fire({
         title: '¿Está seguro de activar este producto?',
         type: 'warning',
         showCancelButton: true,
@@ -2804,15 +2824,15 @@ document.addEventListener('DOMContentLoaded', function () {
       }).then(function (result) {
         if (result.value) {
           axios.put('/productos/activar', {
-            'id': id
+            'idProducto': id
           }).then(function (response) {
             me.listarProductos();
-            Swal.fire('activado!', 'El producto ha sido activado con éxito.', 'success');
+            sweetalert2__WEBPACK_IMPORTED_MODULE_0___default.a.fire('activado!', 'El producto ha sido activado con éxito.', 'success');
           })["catch"](function (error) {
             console.log(error);
           });
         } else if ( // Read more about handling dismissals
-        result.dismiss === Swal.DismissReason.cancel) {
+        result.dismiss === sweetalert2__WEBPACK_IMPORTED_MODULE_0___default.a.DismissReason.cancel) {
           me.listarProductos();
         }
       });
@@ -3008,9 +3028,9 @@ __webpack_require__.r(__webpack_exports__);
       var me = this;
       var formData = new FormData();
       formData.append('file', me.file);
+      formData.append('idSlider', idSlider);
       formData.append('texto', me.texto);
-      formData.append('titulo', me.titulo);
-      formData.append('idSlider', idSlider); //Regresamos la informacion
+      formData.append('titulo', me.titulo); // Regresamos la informacion
 
       axios.post('/slider/actualizar', formData, {
         headers: {
@@ -3042,16 +3062,19 @@ __webpack_require__.r(__webpack_exports__);
               case 'registrar':
                 {
                   this.modal = 1;
-                  this.nombre = '';
+                  this.texto = '';
+                  this.texto = '';
                   this.tipoAccion = 1;
                   this.tituloModal = 'Registrar Sliders';
+                  this.img = '';
                   break;
                 }
 
               case 'actualizar':
                 {
                   this.modal = 2;
-                  this.nombre = '';
+                  this.titulo = data['titulo'];
+                  this.texto = data['texto'];
                   this.tipoAccion = 2;
                   this.tituloModal = 'Actualizar Slider';
                   this.idSlider = data['idSlider'];
@@ -42942,7 +42965,7 @@ var render = function() {
                 _vm.tipoAccion == 2
                   ? _c("img", {
                       staticClass: "imagenEdit",
-                      attrs: { src: "img/" + _vm.img, alt: "" }
+                      attrs: { src: "img/" + _vm.imagen, alt: "" }
                     })
                   : _vm._e()
               ]),
@@ -43056,36 +43079,34 @@ var render = function() {
                 _vm._v(" "),
                 _c("br"),
                 _vm._v(" "),
-                _vm.tipoAccion == 1
-                  ? _c("div", { staticClass: "col s10 center" }, [
-                      _c("div", { staticClass: "file-field input-field" }, [
-                        _c(
-                          "div",
-                          { staticClass: "waves-effect waves-light btn color" },
-                          [
-                            _c("span", [_vm._v("Imagen")]),
-                            _vm._v(" "),
-                            _c("input", {
-                              ref: "filea",
-                              staticClass: "productoAlta",
-                              attrs: {
-                                id: "file",
-                                type: "file",
-                                "data-vv-scope": "new"
-                              },
-                              on: {
-                                change: function($event) {
-                                  return _vm.seleccionarImagen(1)
-                                }
-                              }
-                            })
-                          ]
-                        ),
+                _c("div", { staticClass: "col s10 center" }, [
+                  _c("div", { staticClass: "file-field input-field" }, [
+                    _c(
+                      "div",
+                      { staticClass: "waves-effect waves-light btn color" },
+                      [
+                        _c("span", [_vm._v("Imagen")]),
                         _vm._v(" "),
-                        _vm._m(0)
-                      ])
-                    ])
-                  : _vm._e()
+                        _c("input", {
+                          ref: "filea",
+                          staticClass: "productoAlta",
+                          attrs: {
+                            id: "file",
+                            type: "file",
+                            "data-vv-scope": "new"
+                          },
+                          on: {
+                            change: function($event) {
+                              return _vm.seleccionarImagen(1)
+                            }
+                          }
+                        })
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _vm._m(0)
+                  ])
+                ])
               ]),
               _vm._v(" "),
               _c(
@@ -43189,219 +43210,220 @@ var render = function() {
             },
             [
               _c("i", { staticClass: "material-icons left" }, [_vm._v("add")]),
-              _vm._v("Registrar Productos")
+              _vm._v("Nuevo Productos")
             ]
           )
         ])
       ])
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "row" }, [
-      _c(
-        "div",
-        { staticClass: "center col s12  l12" },
-        _vm._l(_vm.arrayProducto, function(producto) {
-          return _c(
-            "ul",
-            { key: producto.idProducto, staticClass: "collection " },
-            [
-              _c("li", { staticClass: "collection-item avatar" }, [
-                _c("img", {
-                  staticClass: "circle",
-                  attrs: { src: "img/" + producto.imagen }
-                }),
-                _vm._v(" "),
-                _c("h5", {
-                  domProps: { textContent: _vm._s(producto.nombre) }
-                }),
-                _vm._v(" "),
-                _c("h6", [_vm._v("Descripción: ")]),
-                _vm._v(" "),
-                _c("h6", {
-                  domProps: { textContent: _vm._s(producto.descripcion) }
-                }),
-                _vm._v(" "),
-                producto.Status == 1
-                  ? _c(
-                      "a",
+    _c("div", { staticClass: "row tablaProductos" }, [
+      _c("div", { staticClass: "col s4 m10 l10 centro" }, [
+        _c(
+          "table",
+          { staticClass: "centered" },
+          [
+            _vm._m(1),
+            _vm._v(" "),
+            _vm._l(_vm.arrayProducto, function(producto) {
+              return _c("tbody", { key: producto.idProducto }, [
+                _c("tr", [
+                  _c("td", { staticClass: "hide-on-small-only" }, [
+                    _c("img", {
+                      staticClass: "square",
+                      attrs: { src: "img/" + producto.imagen }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("td", {
+                    domProps: { textContent: _vm._s(producto.nombre) }
+                  }),
+                  _vm._v(" "),
+                  _c("td", {
+                    staticClass: "hide-on-small-only",
+                    domProps: { textContent: _vm._s(producto.descripcion) }
+                  }),
+                  _vm._v(" "),
+                  producto.status == 1
+                    ? _c("td", { staticClass: "hide-on-small-only" }, [
+                        _vm._v("Activado")
+                      ])
+                    : _vm._e(),
+                  _vm._v(" "),
+                  producto.status == 0
+                    ? _c("td", { staticClass: "hide-on-small-only" }, [
+                        _vm._v("Desactivado")
+                      ])
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _c("td", [
+                    _c(
+                      "i",
                       {
-                        staticClass: "secondary-content",
-                        attrs: { href: "#!" }
+                        staticClass: "material-icons color-text ",
+                        on: {
+                          click: function($event) {
+                            return _vm.abrirModal(
+                              "productos",
+                              "actualizar",
+                              producto,
+                              producto.idProducto
+                            )
+                          }
+                        }
                       },
-                      [
-                        _c("i", { staticClass: "switch" }, [
-                          _c("label", [
-                            _c("input", {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value: producto.Status,
-                                  expression: "producto.Status"
-                                }
-                              ],
-                              attrs: {
-                                type: "checkbox",
-                                checked: "checked",
-                                name: "status"
-                              },
-                              domProps: {
-                                checked: Array.isArray(producto.Status)
-                                  ? _vm._i(producto.Status, null) > -1
-                                  : producto.Status
-                              },
-                              on: {
-                                click: function($event) {
-                                  return _vm.desactivarProducto(
-                                    producto.idProducto
-                                  )
-                                },
-                                change: function($event) {
-                                  var $$a = producto.Status,
-                                    $$el = $event.target,
-                                    $$c = $$el.checked ? true : false
-                                  if (Array.isArray($$a)) {
-                                    var $$v = null,
-                                      $$i = _vm._i($$a, $$v)
-                                    if ($$el.checked) {
-                                      $$i < 0 &&
-                                        _vm.$set(
-                                          producto,
-                                          "Status",
-                                          $$a.concat([$$v])
-                                        )
-                                    } else {
-                                      $$i > -1 &&
-                                        _vm.$set(
-                                          producto,
-                                          "Status",
-                                          $$a
-                                            .slice(0, $$i)
-                                            .concat($$a.slice($$i + 1))
-                                        )
-                                    }
-                                  } else {
-                                    _vm.$set(producto, "Status", $$c)
-                                  }
-                                }
-                              }
-                            }),
-                            _c("span", { staticClass: "lever" })
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "i",
-                          {
-                            staticClass: "material-icons brown-text ",
-                            on: {
-                              click: function($event) {
-                                return _vm.abrirModal(
-                                  "productos",
-                                  "actualizar",
-                                  producto,
-                                  producto.idProducto
-                                )
-                              }
-                            }
-                          },
-                          [_vm._v("create")]
-                        )
-                      ]
+                      [_vm._v("create")]
                     )
-                  : _vm._e(),
-                _vm._v(" "),
-                producto.Status == 0
-                  ? _c(
-                      "a",
-                      {
-                        staticClass: "secondary-content",
-                        attrs: { href: "#!" }
-                      },
-                      [
-                        _c("i", { staticClass: "switch" }, [
-                          _c("label", [
-                            _c("input", {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value: producto.Status,
-                                  expression: "producto.Status"
-                                }
-                              ],
-                              attrs: { type: "checkbox", name: "status" },
-                              domProps: {
-                                checked: Array.isArray(producto.Status)
-                                  ? _vm._i(producto.Status, null) > -1
-                                  : producto.Status
-                              },
-                              on: {
-                                click: function($event) {
-                                  return _vm.activarProducto(
-                                    producto.idProducto
-                                  )
-                                },
-                                change: function($event) {
-                                  var $$a = producto.Status,
-                                    $$el = $event.target,
-                                    $$c = $$el.checked ? true : false
-                                  if (Array.isArray($$a)) {
-                                    var $$v = null,
-                                      $$i = _vm._i($$a, $$v)
-                                    if ($$el.checked) {
-                                      $$i < 0 &&
-                                        _vm.$set(
-                                          producto,
-                                          "Status",
-                                          $$a.concat([$$v])
-                                        )
-                                    } else {
-                                      $$i > -1 &&
-                                        _vm.$set(
-                                          producto,
-                                          "Status",
-                                          $$a
-                                            .slice(0, $$i)
-                                            .concat($$a.slice($$i + 1))
-                                        )
-                                    }
-                                  } else {
-                                    _vm.$set(producto, "Status", $$c)
-                                  }
-                                }
-                              }
-                            }),
-                            _c("span", { staticClass: "lever" })
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "i",
+                  ]),
+                  _vm._v(" "),
+                  _c("td", { staticClass: "desactivarActivar" }, [
+                    producto.status == 1
+                      ? _c(
+                          "a",
                           {
-                            staticClass: "material-icons brown-text ",
-                            on: {
-                              click: function($event) {
-                                return _vm.abrirModal(
-                                  "productos",
-                                  "actualizar",
-                                  producto,
-                                  producto.idProducto
-                                )
-                              }
-                            }
+                            staticClass: "secondary-content",
+                            attrs: { href: "#!" }
                           },
-                          [_vm._v("create")]
+                          [
+                            _c("i", { staticClass: "switch" }, [
+                              _c("label", [
+                                _c("input", {
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model",
+                                      value: producto.status,
+                                      expression: "producto.status"
+                                    }
+                                  ],
+                                  attrs: {
+                                    type: "checkbox",
+                                    checked: "checked",
+                                    name: "status"
+                                  },
+                                  domProps: {
+                                    checked: Array.isArray(producto.status)
+                                      ? _vm._i(producto.status, null) > -1
+                                      : producto.status
+                                  },
+                                  on: {
+                                    click: function($event) {
+                                      return _vm.desactivarProducto(
+                                        producto.idProducto
+                                      )
+                                    },
+                                    change: function($event) {
+                                      var $$a = producto.status,
+                                        $$el = $event.target,
+                                        $$c = $$el.checked ? true : false
+                                      if (Array.isArray($$a)) {
+                                        var $$v = null,
+                                          $$i = _vm._i($$a, $$v)
+                                        if ($$el.checked) {
+                                          $$i < 0 &&
+                                            _vm.$set(
+                                              producto,
+                                              "status",
+                                              $$a.concat([$$v])
+                                            )
+                                        } else {
+                                          $$i > -1 &&
+                                            _vm.$set(
+                                              producto,
+                                              "status",
+                                              $$a
+                                                .slice(0, $$i)
+                                                .concat($$a.slice($$i + 1))
+                                            )
+                                        }
+                                      } else {
+                                        _vm.$set(producto, "status", $$c)
+                                      }
+                                    }
+                                  }
+                                }),
+                                _c("span", { staticClass: "lever" })
+                              ])
+                            ])
+                          ]
                         )
-                      ]
-                    )
-                  : _vm._e()
+                      : _vm._e(),
+                    _vm._v(" "),
+                    producto.status == 0
+                      ? _c(
+                          "a",
+                          {
+                            staticClass: "secondary-content",
+                            attrs: { href: "#!" }
+                          },
+                          [
+                            _c("i", { staticClass: "switch" }, [
+                              _c("label", [
+                                _c("input", {
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model",
+                                      value: producto.status,
+                                      expression: "producto.status"
+                                    }
+                                  ],
+                                  attrs: { type: "checkbox", name: "status" },
+                                  domProps: {
+                                    checked: Array.isArray(producto.status)
+                                      ? _vm._i(producto.status, null) > -1
+                                      : producto.status
+                                  },
+                                  on: {
+                                    click: function($event) {
+                                      return _vm.activarProducto(
+                                        producto.idProducto
+                                      )
+                                    },
+                                    change: function($event) {
+                                      var $$a = producto.status,
+                                        $$el = $event.target,
+                                        $$c = $$el.checked ? true : false
+                                      if (Array.isArray($$a)) {
+                                        var $$v = null,
+                                          $$i = _vm._i($$a, $$v)
+                                        if ($$el.checked) {
+                                          $$i < 0 &&
+                                            _vm.$set(
+                                              producto,
+                                              "status",
+                                              $$a.concat([$$v])
+                                            )
+                                        } else {
+                                          $$i > -1 &&
+                                            _vm.$set(
+                                              producto,
+                                              "status",
+                                              $$a
+                                                .slice(0, $$i)
+                                                .concat($$a.slice($$i + 1))
+                                            )
+                                        }
+                                      } else {
+                                        _vm.$set(producto, "status", $$c)
+                                      }
+                                    }
+                                  }
+                                }),
+                                _c("span", { staticClass: "lever" })
+                              ])
+                            ])
+                          ]
+                        )
+                      : _vm._e()
+                  ])
+                ])
               ])
-            ]
-          )
-        }),
-        0
-      )
+            })
+          ],
+          2
+        )
+      ])
     ])
   ])
 }
@@ -43415,6 +43437,28 @@ var staticRenderFns = [
         staticClass: "file-path validate",
         attrs: { type: "text" }
       })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", { staticClass: "hide-on-small-only" }, [_vm._v("imagen")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Nombre")]),
+        _vm._v(" "),
+        _c("th", { staticClass: "hide-on-small-only" }, [
+          _vm._v("Descripcion")
+        ]),
+        _vm._v(" "),
+        _c("th", { staticClass: "hide-on-small-only" }, [_vm._v("Status")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Editar")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Desactivar/Activar")])
+      ])
     ])
   }
 ]
@@ -43673,7 +43717,7 @@ var render = function() {
             },
             [
               _c("i", { staticClass: "material-icons left" }, [_vm._v("add")]),
-              _vm._v("Registrar Slider")
+              _vm._v("Nuevo Slider")
             ]
           )
         ])
@@ -43683,11 +43727,14 @@ var render = function() {
     _c("div", { staticClass: "row cardsSlider" }, [
       _c(
         "div",
-        { staticClass: "col 12" },
+        { staticClass: "col s12 m12 lg12" },
         _vm._l(_vm.arraySliders, function(slider) {
           return _c("div", { key: slider.idSlider, staticClass: "card" }, [
-            _c("div", { staticClass: "card-image small" }, [
-              _c("img", { attrs: { src: "img/" + slider.img } }),
+            _c("div", { staticClass: "card-image" }, [
+              _c("img", {
+                staticClass: "responsiveImg",
+                attrs: { src: "img/" + slider.img }
+              }),
               _vm._v(" "),
               _c(
                 "a",
@@ -43705,7 +43752,7 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "card-content" }, [
-              _c("h4", [_vm._v(_vm._s(slider.titulo))]),
+              _c("p", [_vm._v(_vm._s(slider.titulo))]),
               _vm._v(" "),
               _c("p", [_vm._v(_vm._s(slider.texto))])
             ])
@@ -56407,7 +56454,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/admin/Desktop/Proyectos/cp/CP/PagCompuPartes/resources/assets/js/app.js */"./resources/assets/js/app.js");
+module.exports = __webpack_require__(/*! /Users/jazminvalencia/Desktop/Proyectos/CP/PagCompuPartes/resources/assets/js/app.js */"./resources/assets/js/app.js");
 
 
 /***/ })
