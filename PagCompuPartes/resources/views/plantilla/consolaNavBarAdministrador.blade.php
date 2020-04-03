@@ -19,7 +19,7 @@
 
 
 <ul class="sidenav left " id="mobile-demo">
-    <li><img class="center" src="img/logo-250x50.png" alt=""></li>
+    <li id="imagenNavCel"><img class="" src="img/logo50x50.png" alt=""></li>
     <li @click="menu=0"><a class="black-text" href="#">Sliders</a></li>
     <li @click="menu=1"><a class="black-text" href="#">Productos</a></li>
     <li @click="menu=2"><a class="black-text" href="#">Categorias</a></li>
