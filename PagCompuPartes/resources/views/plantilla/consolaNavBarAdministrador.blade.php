@@ -1,7 +1,7 @@
 <nav  class="responsive">
   <div class="fixed finish nav-wrapper">
   <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-  <a href="#" class="hide-on-small-only"><img id="navImagen" class="" src="img/logoBlanco.png" style="" alt=""></a>
+  <a href="#" class="hide-on-small-only"><img id="imgNav" class="" src="img/logoBlanco.png" style="" alt=""></a>
     <ul class="right hide-on-small-only">
       <li @click="menu=0"><a>Sliders</a></li>
       <li @click="menu=1"><a >Productos</a></li>
@@ -19,7 +19,7 @@
 
 
 <ul class="sidenav left " id="mobile-demo">
-    <li id="imagenNavCel"><img class="" src="img/logo50x50.png" alt=""></li>
+    <li id="imagenNavCel"><img class="" src="img/logo100x100.png" alt=""></li>
     <li @click="menu=0"><a class="black-text" href="#">Sliders</a></li>
     <li @click="menu=1"><a class="black-text" href="#">Productos</a></li>
     <li @click="menu=2"><a class="black-text" href="#">Categorias</a></li>

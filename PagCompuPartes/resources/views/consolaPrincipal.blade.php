@@ -16,7 +16,7 @@
         <!-- Styles -->
       <style>
        
-       img{
+       #imgNav{
           width: 100px;
           height: 60px;
        }
