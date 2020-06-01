@@ -25,6 +25,8 @@ Vue.component('productos-component', require('./components/Productos.vue').defau
 Vue.component('categorias-component', require('./components/Categorias.vue').default);
 Vue.component('contraseña-component', require('./components/Contra.vue').default);
 
+Vue.component('index-component', require('./inicio/index.vue').default);
+
 
 // Vue.component('ropa-component', require('./components/Ropa.vue').default);
 // Vue.component('accesorios-component', require('./components/Accesorios.vue').default);

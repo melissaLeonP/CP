@@ -43794,6 +43794,1079 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/assets/js/inicio/index.vue?vue&type=template&id=26a26c4c&":
+/*!***********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/assets/js/inicio/index.vue?vue&type=template&id=26a26c4c& ***!
+  \***********************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("main", [
+      _c(
+        "section",
+        {
+          staticClass: "menu cid-rSk81IhPGX",
+          attrs: { once: "menu", id: "menu1-1" }
+        },
+        [
+          _c(
+            "nav",
+            {
+              staticClass:
+                "navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm bg-color transparent"
+            },
+            [
+              _c(
+                "button",
+                {
+                  staticClass: "navbar-toggler navbar-toggler-right",
+                  attrs: {
+                    type: "button",
+                    "data-toggle": "collapse",
+                    "data-target": "#navbarSupportedContent",
+                    "aria-controls": "navbarSupportedContent",
+                    "aria-expanded": "false",
+                    "aria-label": "Toggle navigation"
+                  }
+                },
+                [
+                  _c("div", { staticClass: "hamburger" }, [
+                    _c("span"),
+                    _vm._v(" "),
+                    _c("span"),
+                    _vm._v(" "),
+                    _c("span"),
+                    _vm._v(" "),
+                    _c("span")
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "menu-logo" }, [
+                _c("div", { staticClass: "navbar-brand" }, [
+                  _c("span", { staticClass: "navbar-logo" }, [
+                    _c("a", { attrs: { href: "index.html" } }, [
+                      _c("img", {
+                        staticStyle: { height: "3.8rem" },
+                        attrs: {
+                          src: "assets/images/logowhite250x50-250x50.png",
+                          title: ""
+                        }
+                      })
+                    ])
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "collapse navbar-collapse",
+                  attrs: { id: "navbarSupportedContent" }
+                },
+                [
+                  _c(
+                    "ul",
+                    {
+                      staticClass: "navbar-nav nav-dropdown nav-right",
+                      attrs: { "data-app-modern-menu": "true" }
+                    },
+                    [
+                      _c("li", { staticClass: "nav-item" }, [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "nav-link link text-white display-4",
+                            attrs: { href: "Nosotros.html" }
+                          },
+                          [
+                            _c("span", {
+                              staticClass:
+                                "mbrib-question mbr-iconfont mbr-iconfont-btn"
+                            }),
+                            _vm._v(
+                              "\n                        \n                        ¿Quiénes Somos?"
+                            )
+                          ]
+                        )
+                      ]),
+                      _c("li", { staticClass: "nav-item" }, [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "nav-link link text-white display-4",
+                            attrs: { href: "Soluciones.html" }
+                          },
+                          [
+                            _c("span", {
+                              staticClass:
+                                "mbrib-briefcase mbr-iconfont mbr-iconfont-btn"
+                            }),
+                            _vm._v(
+                              "\n                        \n                        Soluciones"
+                            )
+                          ]
+                        )
+                      ]),
+                      _c("li", { staticClass: "nav-item" }, [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "nav-link link text-white display-4",
+                            attrs: { href: "Outlet.html" }
+                          },
+                          [
+                            _c("span", {
+                              staticClass:
+                                "mbrib-sale mbr-iconfont mbr-iconfont-btn"
+                            }),
+                            _vm._v("\n                        Outlet")
+                          ]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("li", { staticClass: "nav-item" }, [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "nav-link link text-white display-4",
+                            attrs: { href: "Contacto.html" }
+                          },
+                          [
+                            _c("span", {
+                              staticClass:
+                                "mbrib-help mbr-iconfont mbr-iconfont-btn"
+                            }),
+                            _vm._v(
+                              "\n                        Contacto                     "
+                            )
+                          ]
+                        )
+                      ])
+                    ]
+                  )
+                ]
+              )
+            ]
+          )
+        ]
+      ),
+      _vm._v(" "),
+      _c("section", { staticClass: "engine" }, [
+        _c("a", { attrs: { href: "https://mobirise.info/t" } }, [
+          _vm._v("free amp templates")
+        ])
+      ]),
+      _c(
+        "section",
+        {
+          staticClass: "carousel slide cid-rSk7ZT3KT9",
+          attrs: { "data-interval": "false", id: "slider1-0" }
+        },
+        [
+          _c("div", { staticClass: "full-screen" }, [
+            _c(
+              "div",
+              {
+                staticClass: "mbr-slider slide carousel",
+                attrs: {
+                  "data-pause": "true",
+                  "data-keyboard": "false",
+                  "data-ride": "carousel",
+                  "data-interval": "6000"
+                }
+              },
+              [
+                _c("ol", { staticClass: "carousel-indicators" }, [
+                  _c("li", {
+                    attrs: {
+                      "data-app-prevent-settings": "",
+                      "data-target": "#slider1-0",
+                      "data-slide-to": "0"
+                    }
+                  }),
+                  _c("li", {
+                    attrs: {
+                      "data-app-prevent-settings": "",
+                      "data-target": "#slider1-0",
+                      "data-slide-to": "1"
+                    }
+                  }),
+                  _c("li", {
+                    staticClass: " active",
+                    attrs: {
+                      "data-app-prevent-settings": "",
+                      "data-target": "#slider1-0",
+                      "data-slide-to": "2"
+                    }
+                  })
+                ]),
+                _c(
+                  "div",
+                  { staticClass: "carousel-inner", attrs: { role: "listbox" } },
+                  [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "carousel-item slider-fullscreen-image",
+                        staticStyle: {
+                          "background-image":
+                            "url(assets/images/img-4695-2000x1333.jpg)"
+                        },
+                        attrs: { "data-bg-video-slide": "false" }
+                      },
+                      [
+                        _c(
+                          "div",
+                          { staticClass: "container container-slide" },
+                          [
+                            _c("div", { staticClass: "image_wrapper" }, [
+                              _c("div", { staticClass: "mbr-overlay" }),
+                              _c("img", {
+                                attrs: {
+                                  src: "assets/images/img-4695-2000x1333.jpg"
+                                }
+                              }),
+                              _c(
+                                "div",
+                                {
+                                  staticClass:
+                                    "carousel-caption justify-content-center"
+                                },
+                                [
+                                  _c(
+                                    "div",
+                                    { staticClass: "col-10 align-center" },
+                                    [
+                                      _c("h2", {
+                                        staticClass: "mbr-fonts-style display-1"
+                                      }),
+                                      _c(
+                                        "p",
+                                        {
+                                          staticClass:
+                                            "lead mbr-text mbr-fonts-style display-5"
+                                        },
+                                        [
+                                          _vm._v(
+                                            "HPE GreenLake es un conjunto de soluciones que ofrecen resultados de TI con hardware, software y experiencia en el centro de datos o en Edge y en un modelo de pago por consumo. "
+                                          )
+                                        ]
+                                      )
+                                    ]
+                                  )
+                                ]
+                              )
+                            ])
+                          ]
+                        )
+                      ]
+                    ),
+                    _c(
+                      "div",
+                      {
+                        staticClass: "carousel-item slider-fullscreen-image",
+                        staticStyle: {
+                          "background-image":
+                            "url(assets/images/bannervmware-1170x740.png)"
+                        },
+                        attrs: { "data-bg-video-slide": "false" }
+                      },
+                      [
+                        _c(
+                          "div",
+                          { staticClass: "container container-slide" },
+                          [
+                            _c("div", { staticClass: "image_wrapper" }, [
+                              _c("div", { staticClass: "mbr-overlay" }),
+                              _c("img", {
+                                attrs: {
+                                  src: "assets/images/bannervmware-1170x740.png"
+                                }
+                              }),
+                              _c(
+                                "div",
+                                {
+                                  staticClass:
+                                    "carousel-caption justify-content-center"
+                                },
+                                [
+                                  _c(
+                                    "div",
+                                    { staticClass: "col-10 align-left" },
+                                    [
+                                      _c("h2", {
+                                        staticClass: "mbr-fonts-style display-1"
+                                      }),
+                                      _c("p", {
+                                        staticClass:
+                                          "lead mbr-text mbr-fonts-style display-5"
+                                      })
+                                    ]
+                                  )
+                                ]
+                              )
+                            ])
+                          ]
+                        )
+                      ]
+                    ),
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "carousel-item slider-fullscreen-image active",
+                        staticStyle: {
+                          "background-image":
+                            "url(assets/images/img-4602-2000x1333.jpg)"
+                        },
+                        attrs: { "data-bg-video-slide": "false" }
+                      },
+                      [
+                        _c(
+                          "div",
+                          { staticClass: "container container-slide" },
+                          [
+                            _c("div", { staticClass: "image_wrapper" }, [
+                              _c("div", { staticClass: "mbr-overlay" }),
+                              _c("img", {
+                                attrs: {
+                                  src: "assets/images/img-4602-2000x1333.jpg"
+                                }
+                              }),
+                              _c(
+                                "div",
+                                {
+                                  staticClass:
+                                    "carousel-caption justify-content-center"
+                                },
+                                [
+                                  _c(
+                                    "div",
+                                    { staticClass: "col-10 align-right" },
+                                    [
+                                      _c("h2", {
+                                        staticClass: "mbr-fonts-style display-1"
+                                      }),
+                                      _c(
+                                        "p",
+                                        {
+                                          staticClass:
+                                            "lead mbr-text mbr-fonts-style display-5"
+                                        },
+                                        [
+                                          _vm._v(
+                                            "Junto a nuestros aliados, HPE ofrece soluciones que permiten que pequeñas y medianas empresas prioricen sus necesidades. "
+                                          )
+                                        ]
+                                      ),
+                                      _c(
+                                        "div",
+                                        {
+                                          staticClass: "mbr-section-btn",
+                                          attrs: { buttons: "0" }
+                                        },
+                                        [
+                                          _c(
+                                            "a",
+                                            {
+                                              staticClass:
+                                                "btn display-4 btn-primary",
+                                              attrs: {
+                                                href:
+                                                  "https://www.hpe.com/mx/es/home.html"
+                                              }
+                                            },
+                                            [_vm._v("Visitar HPE")]
+                                          )
+                                        ]
+                                      )
+                                    ]
+                                  )
+                                ]
+                              )
+                            ])
+                          ]
+                        )
+                      ]
+                    )
+                  ]
+                ),
+                _c(
+                  "a",
+                  {
+                    staticClass: "carousel-control carousel-control-prev",
+                    attrs: {
+                      "data-app-prevent-settings": "",
+                      role: "button",
+                      "data-slide": "prev",
+                      href: "#slider1-0"
+                    }
+                  },
+                  [
+                    _c("span", {
+                      staticClass: "mbri-left mbr-iconfont",
+                      attrs: { "aria-hidden": "true" }
+                    }),
+                    _c("span", { staticClass: "sr-only" }, [_vm._v("Previous")])
+                  ]
+                ),
+                _c(
+                  "a",
+                  {
+                    staticClass: "carousel-control carousel-control-next",
+                    attrs: {
+                      "data-app-prevent-settings": "",
+                      role: "button",
+                      "data-slide": "next",
+                      href: "#slider1-0"
+                    }
+                  },
+                  [
+                    _c("span", {
+                      staticClass: "mbri-right mbr-iconfont",
+                      attrs: { "aria-hidden": "true" }
+                    }),
+                    _c("span", { staticClass: "sr-only" }, [_vm._v("Next")])
+                  ]
+                )
+              ]
+            )
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "section",
+        {
+          staticClass: "mbr-section article content9 cid-rSk8s9FhkU",
+          attrs: { id: "content9-2" }
+        },
+        [
+          _c("div", { staticClass: "container" }, [
+            _c(
+              "div",
+              {
+                staticClass: "inner-container",
+                staticStyle: { width: "100%" }
+              },
+              [
+                _c("hr", {
+                  staticClass: "line",
+                  staticStyle: { width: "25%" }
+                }),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "section-text align-center mbr-fonts-style display-5"
+                  },
+                  [
+                    _vm._v(
+                      "El equipo experimentado que te entrega soluciones tecnológicas para cubrir tus necesidades estratégicas y alcanzar tus metas."
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c("hr", { staticClass: "line", staticStyle: { width: "25%" } })
+              ]
+            )
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "section",
+        {
+          staticClass: "features12 cid-rSkcCkneB4",
+          attrs: { id: "features12-6" }
+        },
+        [
+          _c("div", { staticClass: "container" }, [
+            _c("div", { staticClass: "media-container-row pt-5" }, [
+              _c("div", { staticClass: "block-content align-right" }, [
+                _c("div", { staticClass: "card pl-3 pr-3 pb-5" }, [
+                  _c("div", { staticClass: "mbr-card-img-title" }, [
+                    _c("div", { staticClass: "card-img pb-3" }, [
+                      _c("span", { staticClass: "mbri-upload mbr-iconfont" })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "mbr-crt-title" })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "card-box" }, [
+                    _c(
+                      "p",
+                      {
+                        staticClass:
+                          "mbr-text mbr-section-text mbr-fonts-style display-7"
+                      },
+                      [
+                        _vm._v(
+                          "\n                            Estrategia de TI\n                        "
+                        )
+                      ]
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "card pl-3 pr-3" }, [
+                  _c("div", { staticClass: "mbr-card-img-title" }, [
+                    _c("div", { staticClass: "card-img pb-3" }, [
+                      _c("span", {
+                        staticClass: "mbr-iconfont mobi-mbri-database mobi-mbri"
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "mbr-crt-title" })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "card-box" }, [
+                    _c(
+                      "p",
+                      {
+                        staticClass:
+                          "mbr-text mbr-section-text mbr-fonts-style display-7"
+                      },
+                      [
+                        _vm._v(
+                          "\n                            Infraestructura Tecnologica\n                        "
+                        )
+                      ]
+                    )
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "mbr-figure m-auto",
+                  staticStyle: { width: "50%" }
+                },
+                [
+                  _c("img", {
+                    attrs: { src: "assets/images/background6.jpg", title: "" }
+                  })
+                ]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "block-content align-left" }, [
+                _c("div", { staticClass: "card pl-3 pr-3 pb-5" }, [
+                  _c("div", { staticClass: "mbr-card-img-title" }, [
+                    _c("div", { staticClass: "card-img pb-3" }, [
+                      _c("span", { staticClass: "mbri-features mbr-iconfont" })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "mbr-crt-title" })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "card-box" }, [
+                    _c(
+                      "p",
+                      {
+                        staticClass:
+                          "mbr-text mbr-section-text mbr-fonts-style display-7"
+                      },
+                      [_vm._v("Operaciones de TI"), _c("br")]
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "card pl-3 pr-3" }, [
+                  _c("div", { staticClass: "mbr-card-img-title" }, [
+                    _c("div", { staticClass: "card-img pb-3" }, [
+                      _c("span", { staticClass: "mbr-iconfont mbri-lock" })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "mbr-crt-title" })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "card-box" }, [
+                    _c(
+                      "p",
+                      {
+                        staticClass:
+                          "mbr-text mbr-section-text mbr-fonts-style display-7"
+                      },
+                      [_vm._v("Seguridad de Información"), _c("br")]
+                    )
+                  ])
+                ])
+              ])
+            ])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "section",
+        {
+          staticClass: "clients cid-rSk8V5NLND mbr-parallax-background",
+          attrs: { "data-interval": "false", id: "clients-4" }
+        },
+        [
+          _c("div", {
+            staticClass: "mbr-overlay",
+            staticStyle: {
+              opacity: "0.9",
+              "background-color": "rgb(20, 157, 204)"
+            }
+          }),
+          _vm._v(" "),
+          _c("div", { staticClass: "container mb-5" }, [
+            _c("div", { staticClass: "media-container-row" }, [
+              _c("div", { staticClass: "col-12 align-center" }, [
+                _c(
+                  "h2",
+                  {
+                    staticClass:
+                      "mbr-section-title pb-3 mbr-fonts-style display-2"
+                  },
+                  [_vm._v("\n                        Socios Comerciales")]
+                )
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "container" }, [
+            _c(
+              "div",
+              {
+                staticClass: "carousel slide",
+                attrs: {
+                  role: "listbox",
+                  "data-pause": "true",
+                  "data-keyboard": "false",
+                  "data-ride": "false",
+                  "data-interval": "false"
+                }
+              },
+              [
+                _c(
+                  "div",
+                  {
+                    staticClass: "carousel-inner",
+                    attrs: { "data-visible": "3" }
+                  },
+                  [
+                    _c("div", { staticClass: "carousel-item " }, [
+                      _c("div", { staticClass: "media-container-row" }, [
+                        _c("div", { staticClass: "col-md-12" }, [
+                          _c("div", { staticClass: "wrap-img " }, [
+                            _c("img", {
+                              staticClass: "img-responsive clients-img",
+                              attrs: {
+                                src: "assets/images/vmware-480x570.png",
+                                alt: "",
+                                title: ""
+                              }
+                            })
+                          ])
+                        ])
+                      ])
+                    ]),
+                    _c("div", { staticClass: "carousel-item " }, [
+                      _c("div", { staticClass: "media-container-row" }, [
+                        _c("div", { staticClass: "col-md-12" }, [
+                          _c("div", { staticClass: "wrap-img " }, [
+                            _c(
+                              "a",
+                              {
+                                attrs: {
+                                  href: "https://www.hpe.com/mx/es/home.html"
+                                }
+                              },
+                              [
+                                _c("img", {
+                                  staticClass: "img-responsive clients-img",
+                                  attrs: {
+                                    src: "assets/images/hpe-1-1200x1424.png",
+                                    alt: "",
+                                    title: ""
+                                  }
+                                })
+                              ]
+                            )
+                          ])
+                        ])
+                      ])
+                    ]),
+                    _c("div", { staticClass: "carousel-item " }, [
+                      _c("div", { staticClass: "media-container-row" }, [
+                        _c("div", { staticClass: "col-md-12" }, [
+                          _c("div", { staticClass: "wrap-img " }, [
+                            _c("img", {
+                              staticClass: "img-responsive clients-img",
+                              attrs: {
+                                src: "assets/images/apple-1200x1424.png",
+                                alt: "",
+                                title: ""
+                              }
+                            })
+                          ])
+                        ])
+                      ])
+                    ]),
+                    _c("div", { staticClass: "carousel-item " }, [
+                      _c("div", { staticClass: "media-container-row" }, [
+                        _c("div", { staticClass: "col-md-12" }, [
+                          _c("div", { staticClass: "wrap-img " }, [
+                            _c("img", {
+                              staticClass: "img-responsive clients-img",
+                              attrs: {
+                                src:
+                                  "assets/images/impervalogo-3-1200x1424.png",
+                                alt: "",
+                                title: ""
+                              }
+                            })
+                          ])
+                        ])
+                      ])
+                    ]),
+                    _c("div", { staticClass: "carousel-item " }, [
+                      _c("div", { staticClass: "media-container-row" }, [
+                        _c("div", { staticClass: "col-md-12" }, [
+                          _c("div", { staticClass: "wrap-img " }, [
+                            _c("img", {
+                              staticClass: "img-responsive clients-img",
+                              attrs: {
+                                src: "assets/images/microsoft-1200x1424.png",
+                                alt: "",
+                                title: ""
+                              }
+                            })
+                          ])
+                        ])
+                      ])
+                    ]),
+                    _c("div", { staticClass: "carousel-item " }, [
+                      _c("div", { staticClass: "media-container-row" }, [
+                        _c("div", { staticClass: "col-md-12" }, [
+                          _c("div", { staticClass: "wrap-img " }, [
+                            _c("img", {
+                              staticClass: "img-responsive clients-img",
+                              attrs: {
+                                src:
+                                  "assets/images/checkpoint.-1-1200x1424.png",
+                                alt: "",
+                                title: ""
+                              }
+                            })
+                          ])
+                        ])
+                      ])
+                    ]),
+                    _c("div", { staticClass: "carousel-item " }, [
+                      _c("div", { staticClass: "media-container-row" }, [
+                        _c("div", { staticClass: "col-md-12" }, [
+                          _c("div", { staticClass: "wrap-img " }, [
+                            _c("img", {
+                              staticClass: "img-responsive clients-img",
+                              attrs: {
+                                src: "assets/images/apclogo-1200x1424.png",
+                                alt: "",
+                                title: ""
+                              }
+                            })
+                          ])
+                        ])
+                      ])
+                    ]),
+                    _c("div", { staticClass: "carousel-item " }, [
+                      _c("div", { staticClass: "media-container-row" }, [
+                        _c("div", { staticClass: "col-md-12" }, [
+                          _c("div", { staticClass: "wrap-img " }, [
+                            _c("img", {
+                              staticClass: "img-responsive clients-img",
+                              attrs: {
+                                src: "assets/images/logoredhat-1-680x807.png",
+                                alt: "",
+                                title: ""
+                              }
+                            })
+                          ])
+                        ])
+                      ])
+                    ]),
+                    _c("div", { staticClass: "carousel-item " }, [
+                      _c("div", { staticClass: "media-container-row" }, [
+                        _c("div", { staticClass: "col-md-12" }, [
+                          _c("div", { staticClass: "wrap-img " }, [
+                            _c("img", {
+                              staticClass: "img-responsive clients-img",
+                              attrs: {
+                                src: "assets/images/logofortinet-2-680x807.png",
+                                alt: "",
+                                title: ""
+                              }
+                            })
+                          ])
+                        ])
+                      ])
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "carousel-controls" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "carousel-control carousel-control-prev",
+                      attrs: {
+                        "data-app-prevent-settings": "",
+                        role: "button",
+                        "data-slide": "prev"
+                      }
+                    },
+                    [
+                      _c("span", {
+                        staticClass: "mbri-left mbr-iconfont",
+                        attrs: { "aria-hidden": "true" }
+                      }),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "sr-only" }, [
+                        _vm._v("Previous")
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass: "carousel-control carousel-control-next",
+                      attrs: {
+                        "data-app-prevent-settings": "",
+                        role: "button",
+                        "data-slide": "next"
+                      }
+                    },
+                    [
+                      _c("span", {
+                        staticClass: "mbri-right mbr-iconfont",
+                        attrs: { "aria-hidden": "true" }
+                      }),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "sr-only" }, [_vm._v("Next")])
+                    ]
+                  )
+                ])
+              ]
+            )
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "section",
+        { staticClass: "cid-rSk8ZA7DKp", attrs: { id: "footer1-5" } },
+        [
+          _c("div", { staticClass: "container" }, [
+            _c(
+              "div",
+              { staticClass: "media-container-row content text-white" },
+              [
+                _c("div", { staticClass: "col-12 col-md-3" }, [
+                  _c("div", { staticClass: "media-wrap" }, [
+                    _c("a", { attrs: { href: "index.html" } }, [
+                      _c("img", {
+                        attrs: {
+                          src:
+                            "assets/images/logo-whiteline-horizontal-724x192.png",
+                          alt: "Mobirise",
+                          title: ""
+                        }
+                      })
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "col-12 col-md-3 mbr-fonts-style display-7" },
+                  [
+                    _c("h5", { staticClass: "pb-3" }),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "mbr-text" }, [_c("br"), _c("br")])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "col-12 col-md-3 mbr-fonts-style display-7" },
+                  [
+                    _c("h5", { staticClass: "pb-3" }, [
+                      _vm._v("\n                    Matriz")
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "mbr-text" }, [
+                      _vm._v("Matriz Culiacán:"),
+                      _c("br"),
+                      _vm._v("Bvd. Constitución #1061 interior 106 PTE."),
+                      _c("br"),
+                      _vm._v("Col. Jorge Almada C.P.80200"),
+                      _c("br"),
+                      _vm._v("Culiacán, Sinaloa"),
+                      _c("br"),
+                      _vm._v("Teléfono: (667) 716-93-95"),
+                      _c("br"),
+                      _vm._v("FAX: (667) 713-02-60"),
+                      _c("br"),
+                      _c("br"),
+                      _vm._v("contacto@compupartes.com.mx"),
+                      _c("br"),
+                      _vm._v("ventas@compupartes.com.mx"),
+                      _c("br")
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "col-12 col-md-3 mbr-fonts-style display-7" },
+                  [
+                    _c("h5", { staticClass: "pb-3" }, [
+                      _vm._v("\n                    Sucursales")
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "mbr-text" }, [
+                      _vm._v("Mexicali:"),
+                      _c("br"),
+                      _vm._v("Mar Baltico #217"),
+                      _c("br"),
+                      _vm._v("Col. Anahuac C. P. 21060"),
+                      _c("br"),
+                      _vm._v("Mexicali, Baja California, México."),
+                      _c("br"),
+                      _vm._v("Teléfono: (686) 555-6995"),
+                      _c("br"),
+                      _c("br"),
+                      _vm._v("Hermosillo:"),
+                      _c("br"),
+                      _vm._v("Londres 381 Esquina Jesus Ma. Ávila"),
+                      _c("br"),
+                      _vm._v("Col. Centenario C.P. 83270"),
+                      _c("br"),
+                      _vm._v("Hermosillo, Sonora, México"),
+                      _c("br"),
+                      _vm._v("Teléfono: (662) 212-1615")
+                    ])
+                  ]
+                )
+              ]
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "footer-lower" }, [
+              _c("div", { staticClass: "media-container-row" }, [
+                _c("div", { staticClass: "col-sm-12" }, [_c("hr")])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "media-container-row mbr-white" }, [
+                _c("div", { staticClass: "col-sm-6 copyright" }, [
+                  _c(
+                    "p",
+                    { staticClass: "mbr-text mbr-fonts-style display-7" },
+                    [
+                      _c("a", { attrs: { href: "AvisoPrivacidad.html" } }, [
+                        _vm._v("Aviso de Privacidad ")
+                      ]),
+                      _c("br"),
+                      _vm._v(
+                        "Copyright © 2020 Compupartes y Accesorios S.A. de C.V"
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-md-6" }, [
+                  _c("div", { staticClass: "social-list align-right" }, [
+                    _c("div", { staticClass: "soc-item" }, [
+                      _c(
+                        "a",
+                        {
+                          attrs: {
+                            href: "https://twitter.com/mobirise",
+                            target: "_blank"
+                          }
+                        },
+                        [
+                          _c("span", {
+                            staticClass:
+                              "socicon-twitter socicon mbr-iconfont mbr-iconfont-social"
+                          })
+                        ]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "soc-item" }, [
+                      _c(
+                        "a",
+                        {
+                          attrs: {
+                            href:
+                              "https://www.facebook.com/pages/Mobirise/1616226671953247",
+                            target: "_blank"
+                          }
+                        },
+                        [
+                          _c("span", {
+                            staticClass:
+                              "socicon-facebook socicon mbr-iconfont mbr-iconfont-social"
+                          })
+                        ]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "soc-item" }, [
+                      _c(
+                        "a",
+                        {
+                          attrs: {
+                            href: "https://www.youtube.com/c/mobirise",
+                            target: "_blank"
+                          }
+                        },
+                        [
+                          _c("span", {
+                            staticClass:
+                              "socicon-youtube socicon mbr-iconfont mbr-iconfont-social"
+                          })
+                        ]
+                      )
+                    ])
+                  ])
+                ])
+              ])
+            ])
+          ])
+        ]
+      )
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js":
 /*!********************************************************************!*\
   !*** ./node_modules/vue-loader/lib/runtime/componentNormalizer.js ***!
@@ -55991,7 +57064,8 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
 Vue.component('slider-component', __webpack_require__(/*! ./components/Sliders.vue */ "./resources/assets/js/components/Sliders.vue")["default"]);
 Vue.component('productos-component', __webpack_require__(/*! ./components/Productos.vue */ "./resources/assets/js/components/Productos.vue")["default"]);
 Vue.component('categorias-component', __webpack_require__(/*! ./components/Categorias.vue */ "./resources/assets/js/components/Categorias.vue")["default"]);
-Vue.component('contraseña-component', __webpack_require__(/*! ./components/Contra.vue */ "./resources/assets/js/components/Contra.vue")["default"]); // Vue.component('ropa-component', require('./components/Ropa.vue').default);
+Vue.component('contraseña-component', __webpack_require__(/*! ./components/Contra.vue */ "./resources/assets/js/components/Contra.vue")["default"]);
+Vue.component('index-component', __webpack_require__(/*! ./inicio/index.vue */ "./resources/assets/js/inicio/index.vue")["default"]); // Vue.component('ropa-component', require('./components/Ropa.vue').default);
 // Vue.component('accesorios-component', require('./components/Accesorios.vue').default);
 // Vue.component('cosmeticos-component', require('./components/Cosmeticos.vue').default);g
 // Vue.component('productost-component', require('./components/ProductosT.vue').default);
@@ -56454,6 +57528,59 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Sliders_vue_vue_type_template_id_3edf96cb___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Sliders_vue_vue_type_template_id_3edf96cb___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/assets/js/inicio/index.vue":
+/*!**********************************************!*\
+  !*** ./resources/assets/js/inicio/index.vue ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _index_vue_vue_type_template_id_26a26c4c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.vue?vue&type=template&id=26a26c4c& */ "./resources/assets/js/inicio/index.vue?vue&type=template&id=26a26c4c&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+var script = {}
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
+  script,
+  _index_vue_vue_type_template_id_26a26c4c___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _index_vue_vue_type_template_id_26a26c4c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/assets/js/inicio/index.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/assets/js/inicio/index.vue?vue&type=template&id=26a26c4c&":
+/*!*****************************************************************************!*\
+  !*** ./resources/assets/js/inicio/index.vue?vue&type=template&id=26a26c4c& ***!
+  \*****************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_template_id_26a26c4c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./index.vue?vue&type=template&id=26a26c4c& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/assets/js/inicio/index.vue?vue&type=template&id=26a26c4c&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_template_id_26a26c4c___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_template_id_26a26c4c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
