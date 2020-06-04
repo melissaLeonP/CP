@@ -24,11 +24,6 @@
         "vue-template-compiler": "^2.6.11"
     },
     "dependencies": {
-<<<<<<< HEAD
-        "@babel/core": "^7.9.0",
-        "@babel/preset-env": "^7.9.0",
-=======
->>>>>>> melissa
         "sweetalert2": "^9.10.3",
         "vue-multiselect": "^2.1.6"
     }

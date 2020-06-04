@@ -24,6 +24,15 @@ Vue.component('slider-component', require('./components/Sliders.vue').default);
 Vue.component('productos-component', require('./components/Productos.vue').default);
 Vue.component('categorias-component', require('./components/Categorias.vue').default);
 Vue.component('contraseña-component', require('./components/Contra.vue').default);
+Vue.component('index-component', require('./principal/index.vue').default);
+Vue.component('nosotros-component', require('./principal/nosotros.vue').default);
+Vue.component('outlet-component', require('./principal/outlet.vue').default);
+Vue.component('contacto-component', require('./principal/contacto.vue').default);
+Vue.component('soluciones-component', require('./principal/soluciones.vue').default);
+
+
+
+
 
 
 // Vue.component('ropa-component', require('./components/Ropa.vue').default);
