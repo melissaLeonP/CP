@@ -1,0 +1,212 @@
+
+ body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+  main {
+    flex: 1 0 auto;
+    font-family: sans-serif;
+  }
+  a{
+    color: rgb(7, 6, 6);
+  }
+  .tImagen{
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+  }
+  
+  .logoNav{
+    width: 80px;  
+  }
+  .tLogo{
+      height:200px;
+      width: 500px;
+  
+   }
+  
+  
+   .menuCentradoConsola{
+    padding-left: 10%;
+  
+  }
+  .centerTextConsola{
+    margin-right: 90px;
+   }
+  .borde{
+     border: 1px solid black;
+     color: black;
+   }
+   .contenedorCard{
+     max-width: 100% !important;
+     min-width: 100% !important;
+     max-height: 100% !important;
+     min-height: 100% !important;
+  
+     padding-left: 3% !important;
+     padding-right: 3% !important;
+     margin-right: 0px ;
+     margin-left: 0px ;
+     margin-bottom: 0px;
+    
+     /* border: 2px solid blue; */
+  
+  }
+  .tamañoCarousel{
+   max-width: 600px;
+   width: 80%;
+  }
+  .tamañoMedio{
+   font-size: 2em;
+  }
+  .page-footer {
+    position: flex;
+    bottom: 0;
+    width: 100%;
+  }
+  .centro{
+     margin-left: 5% !important;
+     margin-right: 5% !important;
+  }
+  nav.clean {
+    background: none;
+    box-shadow: none;
+  }
+  nav.clean .breadcrumb {
+    color: black;
+  }
+  .colorDireccion{
+    color: rgba(0, 0, 0, 0.7);
+  }
+  
+  .muestraP{
+   margin-left: 3% !important;
+  
+  }
+  .carrusel{
+    display: block;
+      height: 500px;
+      object-fit: cover;
+      width: 100%;
+  }
+  .imagenProducto{
+    max-width: 400px !important;
+    max-height: 350px !important;
+  }
+  
+  .login{
+    margin-top: 5%;
+  }
+  #imagenCard{
+    max-width: 350px;
+    min-width: 100%;
+    max-height: 250px;
+    min-height: 50%;
+  } 
+  
+  #estiloImagenCard{
+    margin-right: 5%;
+    margin-left: 5%;
+  }
+  #DescripcionCard{
+    max-width: 100% !important;
+    min-width: 50% !important;
+    max-height: 25% !important;
+    min-height: 15% !important;
+    /* border: 2px solid green; */
+  }
+  #espacioCard{
+    /* border: 2px solid red; */
+  
+    /* max-width: 100% !important; */
+    max-width: 430px;
+    min-width: 25% !important;
+    max-height: 100% !important;
+    min-height: 198px !important;
+  
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-left: 8px;
+    margin-right: 8px;
+    /* border: 2px solid green; */
+  
+  
+  }
+  .productosCard {
+    margin-left: 5% !important;
+  }
+  
+  .opacity{
+    background-color : white;
+    width:900px;
+    height:600px;
+  }
+  
+  .padre {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .color{
+    background-color: #0277bd !important;
+  }
+  .color-text{
+    color:  #0277bd !important;
+  }
+  
+  .contraseñas{
+    padding-left: 30%;
+    padding-right: 30%;
+  }
+  .botonContraseña{
+    padding-right: 35%;
+    padding-left: 35%;
+  }
+  
+  .cardsSlider{
+    padding-left: 20%;
+    padding-right: 20%;
+    /* border: 1px solid red; */
+  }
+  .tablaProductos{
+    padding-left: 5%;
+    padding-right: 5%;
+    /* border: 1px solid red; */
+  }
+  .card .card-image img {
+    /* width: auto; */
+    /* border: 1px solid blue; */
+  }
+  .responsiveImg{
+    max-width: 100%;
+    height: 70%;
+  }
+  .desactivarActivar{
+    height: 40%;
+    width: 10%;
+    padding-right: 10%;
+    padding-left: 10%;
+  }
+  
+  footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  #imagenNavCel{
+    padding-left: 35%;
+    padding-right: 35%;
+  
+  }
+  
+  
+  @media only screen and (max-width: 768px) {
+    .productosCard {
+      margin-left:0% !important;
+      /* padding-right: 3% !important; */
+    }
+  }
+  

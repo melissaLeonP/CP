@@ -4,7 +4,11 @@
       <!--Import Google Icon Font-->
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->
-      <link rel="stylesheet" href='css/plantilla.css' >
+      <!-- <link rel="stylesheet" href='css/plantilla.css' > -->
+      <link rel="stylesheet" href='css/estilos.css' >
+      <link rel="stylesheet" href='css/materialize.css' >
+      <link rel="stylesheet" href='css/materialize.min.css' >
+
       <!-- <link rel="stylesheet" href='css/estilos.css' > -->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css"> 
       <!--Let browser know website is optimized for mobile-->
@@ -59,7 +63,9 @@
 
 
       <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-      <script src="js/plantilla.js"></script>
+      <!-- <script src="js/plantilla.js"></script> -->
+      <script src="js/materialize.js"></script>
+      <script src="js/materialize.min.js"></script>
       <script src="js/app.js"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
       <script src="https://unpkg.com/vue"></script>
@@ -71,7 +77,7 @@
             var elems = document.querySelectorAll('select');
             var instances = M.FormSelect.init(elems);
         });
-        document.addEventListener('DOMContentLoaded', function() {
+      document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.sidenav');
     var instances = M.Sidenav.init(elems, {closeOnClick: true});
   });

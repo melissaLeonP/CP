@@ -43238,7 +43238,7 @@ var render = function() {
                 _c("tr", [
                   _c("td", { staticClass: "hide-on-small-only" }, [
                     _c("img", {
-                      staticClass: "circle",
+                      staticClass: "square",
                       attrs: { src: "img/" + producto.imagen }
                     })
                   ]),
@@ -43785,6 +43785,2419 @@ var staticRenderFns = [
         staticClass: "file-path validate",
         attrs: { type: "text" }
       })
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/assets/js/principal/contacto.vue?vue&type=template&id=6f3322c2&":
+/*!*****************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/assets/js/principal/contacto.vue?vue&type=template&id=6f3322c2& ***!
+  \*****************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("main", [
+      _c("section", { staticClass: "engine" }, [
+        _c("a", { attrs: { href: "https://mobirise.info/j" } }, [
+          _vm._v("website templates")
+        ])
+      ]),
+      _c(
+        "section",
+        {
+          staticClass: "header1 cid-rSu9iNdwKY mbr-parallax-background",
+          attrs: { id: "header1-r" }
+        },
+        [
+          _c("div", {
+            staticClass: "mbr-overlay",
+            staticStyle: {
+              opacity: "0.3",
+              "background-color": "rgb(85, 180, 212)"
+            }
+          }),
+          _vm._v(" "),
+          _c("div", { staticClass: "container" }, [
+            _c("div", { staticClass: "row justify-content-md-center" }, [
+              _c("div", { staticClass: "mbr-white col-md-10" }, [
+                _c(
+                  "h1",
+                  {
+                    staticClass:
+                      "mbr-section-title align-center mbr-bold pb-3 mbr-fonts-style display-1"
+                  },
+                  [_vm._v("\n                    Contacto")]
+                )
+              ])
+            ])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "section",
+        {
+          staticClass: "mbr-section form4 cid-rSu8CtjXTZ",
+          attrs: { id: "form4-p" }
+        },
+        [
+          _c("div", { staticClass: "container" }, [
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-md-6" }, [
+                _c("div", { staticClass: "google-map" }, [
+                  _c("iframe", {
+                    staticStyle: { border: "0" },
+                    attrs: {
+                      frameborder: "0",
+                      src:
+                        "https://www.google.com/maps/embed/v1/place?key=AIzaSyCy9r70T3NYf3PhvVflTo0_zdif2_IoIYs&q=place_id:ChIJjwsSfUzXvIYR9THPwmVKAYE",
+                      allowfullscreen: ""
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-6" }, [
+                _c(
+                  "h2",
+                  { staticClass: "pb-3 align-left mbr-fonts-style display-2" },
+                  [_vm._v("\n                    Contáctanos")]
+                ),
+                _vm._v(" "),
+                _c("div", [
+                  _c("div", { staticClass: "icon-block pb-3 align-left" }, [
+                    _c("span", { staticClass: "icon-block__icon" }, [
+                      _c("span", { staticClass: "mbri-letter mbr-iconfont" })
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "h4",
+                      {
+                        staticClass:
+                          "icon-block__title align-left mbr-fonts-style display-5"
+                      },
+                      [_vm._v("Para cotización o información")]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "icon-contacts pb-3" }, [
+                    _c(
+                      "p",
+                      {
+                        staticClass:
+                          "mbr-text align-left mbr-fonts-style display-7"
+                      },
+                      [
+                        _vm._v("Matriz Culiacán:"),
+                        _c("br"),
+                        _vm._v("Bvd. Constitución #1061 interior 106 PTE."),
+                        _c("br"),
+                        _vm._v("Col. Jorge Almada C.P.80200"),
+                        _c("br"),
+                        _vm._v("Culiacán, Sinaloa"),
+                        _c("br"),
+                        _vm._v("Teléfono: (667) 716-93-95"),
+                        _c("br"),
+                        _vm._v("FAX: (667) 713-02-60"),
+                        _c("br"),
+                        _c("br"),
+                        _vm._v("Mexicali:"),
+                        _c("br"),
+                        _vm._v("Mar Baltico #217"),
+                        _c("br"),
+                        _vm._v("Col. Anahuac C. P. 21060"),
+                        _c("br"),
+                        _vm._v("Mexicali, Baja California, México."),
+                        _c("br"),
+                        _vm._v("Teléfono: (686) 555-6995"),
+                        _c("br"),
+                        _c("br"),
+                        _vm._v("Hermosillo:"),
+                        _c("br"),
+                        _vm._v("Londres 381 Esquina Jesus Ma. Ávila"),
+                        _c("br"),
+                        _vm._v("Col. Centenario C.P. 83270"),
+                        _c("br"),
+                        _vm._v("Hermosillo, Sonora, México"),
+                        _c("br"),
+                        _vm._v("Teléfono: (662) 212-1615"),
+                        _c("br")
+                      ]
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { attrs: { "data-form-type": "formoid" } }, [
+                  _c(
+                    "form",
+                    {
+                      staticClass: "mbr-form form-with-styler",
+                      attrs: {
+                        action: "https://mobirise.com/",
+                        method: "POST",
+                        "data-form-title": "Mobirise Form"
+                      }
+                    },
+                    [
+                      _c("input", {
+                        attrs: {
+                          type: "hidden",
+                          name: "email",
+                          "data-form-email": "true",
+                          value:
+                            "xFccwjDlLgkEzBCsiA68OEdoGSMCPJ3DPZ/csmEEBuVoYYKZesm3FEO2TfgZTpsXIpu2lfd56aA1sRzy1ccul17rW7M9N8UONeks8eO6jev48z61QY9rJOdS/lcRfZaT"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "row" }, [
+                        _c(
+                          "div",
+                          {
+                            staticClass: "alert alert-success col-12",
+                            attrs: { hidden: "hidden", "data-form-alert": "" }
+                          },
+                          [_vm._v("Gracias por contactarnos!")]
+                        ),
+                        _vm._v(" "),
+                        _c("div", {
+                          staticClass: "alert alert-danger col-12",
+                          attrs: {
+                            hidden: "hidden",
+                            "data-form-alert-danger": ""
+                          }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "dragArea row" }, [
+                        _c(
+                          "div",
+                          {
+                            staticClass: "col-md-6  form-group",
+                            attrs: { "data-for": "name" }
+                          },
+                          [
+                            _c("input", {
+                              staticClass: "form-control input display-7",
+                              attrs: {
+                                type: "text",
+                                name: "name",
+                                placeholder: "Nombre",
+                                "data-form-field": "Name",
+                                required: "required",
+                                id: "name-form4-p"
+                              }
+                            })
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            staticClass: "col-md-6  form-group",
+                            attrs: { "data-for": "phone" }
+                          },
+                          [
+                            _c("input", {
+                              staticClass: "form-control input display-7",
+                              attrs: {
+                                type: "text",
+                                name: "phone",
+                                placeholder: "Teléfono",
+                                "data-form-field": "Phone",
+                                required: "required",
+                                id: "phone-form4-p"
+                              }
+                            })
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            staticClass: "col-md-12  form-group",
+                            attrs: { "data-for": "email" }
+                          },
+                          [
+                            _c("input", {
+                              staticClass: "form-control input display-7",
+                              attrs: {
+                                type: "text",
+                                name: "email",
+                                placeholder: "Correo",
+                                "data-form-field": "Email",
+                                required: "required",
+                                id: "email-form4-p"
+                              }
+                            })
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            staticClass: "col-md-12  form-group",
+                            attrs: { "data-for": "message" }
+                          },
+                          [
+                            _c("textarea", {
+                              staticClass: "form-control input display-7",
+                              attrs: {
+                                name: "message",
+                                placeholder: "Mensaje",
+                                "data-form-field": "Message",
+                                id: "message-form4-p"
+                              }
+                            })
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "col-md-12 input-group-btn  mt-2 align-center"
+                          },
+                          [
+                            _c(
+                              "button",
+                              {
+                                staticClass:
+                                  "btn btn-primary btn-form display-4",
+                                attrs: { type: "submit" }
+                              },
+                              [_vm._v("Enviar mensaje")]
+                            )
+                          ]
+                        )
+                      ])
+                    ]
+                  )
+                ])
+              ])
+            ])
+          ])
+        ]
+      )
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/assets/js/principal/index.vue?vue&type=template&id=305bee22&":
+/*!**************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/assets/js/principal/index.vue?vue&type=template&id=305bee22& ***!
+  \**************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("main", [
+      _c(
+        "section",
+        {
+          staticClass: "carousel slide cid-rSk7ZT3KT9",
+          attrs: { "data-interval": "false", id: "slider1-0" }
+        },
+        [
+          _c("div", { staticClass: "full-screen" }, [
+            _c(
+              "div",
+              {
+                staticClass: "mbr-slider slide carousel",
+                attrs: {
+                  "data-pause": "true",
+                  "data-keyboard": "false",
+                  "data-ride": "carousel",
+                  "data-interval": "6000"
+                }
+              },
+              [
+                _c("ol", { staticClass: "carousel-indicators" }, [
+                  _c("li", {
+                    attrs: {
+                      "data-app-prevent-settings": "",
+                      "data-target": "#slider1-0",
+                      "data-slide-to": "0"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("li", {
+                    attrs: {
+                      "data-app-prevent-settings": "",
+                      "data-target": "#slider1-0",
+                      "data-slide-to": "1"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("li", {
+                    staticClass: " active",
+                    attrs: {
+                      "data-app-prevent-settings": "",
+                      "data-target": "#slider1-0",
+                      "data-slide-to": "2"
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "carousel-inner", attrs: { role: "listbox" } },
+                  [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "carousel-item slider-fullscreen-image",
+                        staticStyle: {
+                          "background-image": "url(img/img-4695-2000x1333.jpg)"
+                        },
+                        attrs: { "data-bg-video-slide": "false" }
+                      },
+                      [
+                        _c(
+                          "div",
+                          { staticClass: "container container-slide" },
+                          [
+                            _c("div", { staticClass: "image_wrapper" }, [
+                              _c("div", { staticClass: "mbr-overlay" }),
+                              _vm._v(" "),
+                              _c("img", {
+                                attrs: { src: "img/img-4695-2000x1333.jpg" }
+                              }),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                {
+                                  staticClass:
+                                    "carousel-caption justify-content-center"
+                                },
+                                [
+                                  _c(
+                                    "div",
+                                    { staticClass: "col-10 align-center" },
+                                    [
+                                      _c("h2", {
+                                        staticClass: "mbr-fonts-style display-1"
+                                      }),
+                                      _vm._v(" "),
+                                      _c(
+                                        "p",
+                                        {
+                                          staticClass:
+                                            "lead mbr-text mbr-fonts-style display-5"
+                                        },
+                                        [
+                                          _vm._v(
+                                            "HPE GreenLake es un conjunto de soluciones que ofrecen resultados de TI con hardware, software y experiencia en el centro de datos o en Edge y en un modelo de pago por consumo. "
+                                          )
+                                        ]
+                                      )
+                                    ]
+                                  )
+                                ]
+                              )
+                            ])
+                          ]
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass: "carousel-item slider-fullscreen-image",
+                        staticStyle: {
+                          "background-image":
+                            "url(img/bannervmware-1170x740.png)"
+                        },
+                        attrs: { "data-bg-video-slide": "false" }
+                      },
+                      [
+                        _c(
+                          "div",
+                          { staticClass: "container container-slide" },
+                          [
+                            _c("div", { staticClass: "image_wrapper" }, [
+                              _c("div", { staticClass: "mbr-overlay" }),
+                              _vm._v(" "),
+                              _c("img", {
+                                attrs: { src: "img/bannervmware-1170x740.png" }
+                              }),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                {
+                                  staticClass:
+                                    "carousel-caption justify-content-center"
+                                },
+                                [
+                                  _c(
+                                    "div",
+                                    { staticClass: "col-10 align-left" },
+                                    [
+                                      _c("h2", {
+                                        staticClass: "mbr-fonts-style display-1"
+                                      }),
+                                      _c("p", {
+                                        staticClass:
+                                          "lead mbr-text mbr-fonts-style display-5"
+                                      })
+                                    ]
+                                  )
+                                ]
+                              )
+                            ])
+                          ]
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "carousel-item slider-fullscreen-image active",
+                        staticStyle: {
+                          "background-image": "url(img/img-4695-2000x1333.jpg)"
+                        },
+                        attrs: { "data-bg-video-slide": "false" }
+                      },
+                      [
+                        _c(
+                          "div",
+                          { staticClass: "container container-slide" },
+                          [
+                            _c("div", { staticClass: "image_wrapper" }, [
+                              _c("div", { staticClass: "mbr-overlay" }),
+                              _vm._v(" "),
+                              _c("img", {
+                                attrs: { src: "img/img-4695-2000x1333.jpg" }
+                              }),
+                              _c(
+                                "div",
+                                {
+                                  staticClass:
+                                    "carousel-caption justify-content-center"
+                                },
+                                [
+                                  _c(
+                                    "div",
+                                    { staticClass: "col-10 align-right" },
+                                    [
+                                      _c("h2", {
+                                        staticClass: "mbr-fonts-style display-1"
+                                      }),
+                                      _vm._v(" "),
+                                      _c(
+                                        "p",
+                                        {
+                                          staticClass:
+                                            "lead mbr-text mbr-fonts-style display-5"
+                                        },
+                                        [
+                                          _vm._v(
+                                            "Junto a nuestros aliados, HPE ofrece soluciones que permiten que pequeñas y medianas empresas prioricen sus necesidades. "
+                                          )
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "div",
+                                        {
+                                          staticClass: "mbr-section-btn",
+                                          attrs: { buttons: "0" }
+                                        },
+                                        [
+                                          _c(
+                                            "a",
+                                            {
+                                              staticClass:
+                                                "btn display-4 btn-primary",
+                                              attrs: {
+                                                href:
+                                                  "https://www.hpe.com/mx/es/home.html"
+                                              }
+                                            },
+                                            [_vm._v("Visitar HPE")]
+                                          )
+                                        ]
+                                      )
+                                    ]
+                                  )
+                                ]
+                              )
+                            ])
+                          ]
+                        )
+                      ]
+                    )
+                  ]
+                ),
+                _c(
+                  "a",
+                  {
+                    staticClass: "carousel-control carousel-control-prev",
+                    attrs: {
+                      "data-app-prevent-settings": "",
+                      role: "button",
+                      "data-slide": "prev",
+                      href: "#slider1-0"
+                    }
+                  },
+                  [
+                    _c("span", {
+                      staticClass: "mbri-left mbr-iconfont",
+                      attrs: { "aria-hidden": "true" }
+                    }),
+                    _c("span", { staticClass: "sr-only" }, [_vm._v("Previous")])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "a",
+                  {
+                    staticClass: "carousel-control carousel-control-next",
+                    attrs: {
+                      "data-app-prevent-settings": "",
+                      role: "button",
+                      "data-slide": "next",
+                      href: "#slider1-0"
+                    }
+                  },
+                  [
+                    _c("span", {
+                      staticClass: "mbri-right mbr-iconfont",
+                      attrs: { "aria-hidden": "true" }
+                    }),
+                    _c("span", { staticClass: "sr-only" }, [_vm._v("Next")])
+                  ]
+                )
+              ]
+            )
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "section",
+        {
+          staticClass: "mbr-section article content9 cid-rSk8s9FhkU",
+          attrs: { id: "content9-2" }
+        },
+        [
+          _c("div", { staticClass: "container" }, [
+            _c(
+              "div",
+              {
+                staticClass: "inner-container",
+                staticStyle: { width: "100%" }
+              },
+              [
+                _c("hr", {
+                  staticClass: "line",
+                  staticStyle: { width: "25%" }
+                }),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "section-text align-center mbr-fonts-style display-5"
+                  },
+                  [
+                    _vm._v(
+                      "El equipo experimentado que te entrega soluciones tecnológicas para cubrir tus necesidades estratégicas y alcanzar tus metas."
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c("hr", { staticClass: "line", staticStyle: { width: "25%" } })
+              ]
+            )
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "section",
+        {
+          staticClass: "features12 cid-rSkcCkneB4",
+          attrs: { id: "features12-6" }
+        },
+        [
+          _c("div", { staticClass: "container" }, [
+            _c("div", { staticClass: "media-container-row pt-5" }, [
+              _c("div", { staticClass: "block-content align-right" }, [
+                _c("div", { staticClass: "card pl-3 pr-3 pb-5" }, [
+                  _c("div", { staticClass: "mbr-card-img-title" }, [
+                    _c("div", { staticClass: "card-img pb-3" }, [
+                      _c("span", { staticClass: "mbri-upload mbr-iconfont" })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "mbr-crt-title" })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "card-box" }, [
+                    _c(
+                      "p",
+                      {
+                        staticClass:
+                          "mbr-text mbr-section-text mbr-fonts-style display-7"
+                      },
+                      [
+                        _vm._v(
+                          "\n                            Estrategia de TI\n                        "
+                        )
+                      ]
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "card pl-3 pr-3" }, [
+                  _c("div", { staticClass: "mbr-card-img-title" }, [
+                    _c("div", { staticClass: "card-img pb-3" }, [
+                      _c("span", {
+                        staticClass: "mbr-iconfont mobi-mbri-database mobi-mbri"
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "mbr-crt-title" })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "card-box" }, [
+                    _c(
+                      "p",
+                      {
+                        staticClass:
+                          "mbr-text mbr-section-text mbr-fonts-style display-7"
+                      },
+                      [
+                        _vm._v(
+                          "\n                            Infraestructura Tecnologica\n                        "
+                        )
+                      ]
+                    )
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "mbr-figure m-auto",
+                  staticStyle: { width: "50%" }
+                },
+                [
+                  _c("img", {
+                    attrs: {
+                      src: "img/background6.jpg",
+                      alt: "Mobirise",
+                      title: ""
+                    }
+                  })
+                ]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "block-content align-left" }, [
+                _c("div", { staticClass: "card pl-3 pr-3 pb-5" }, [
+                  _c("div", { staticClass: "mbr-card-img-title" }, [
+                    _c("div", { staticClass: "card-img pb-3" }, [
+                      _c("span", { staticClass: "mbri-features mbr-iconfont" })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "mbr-crt-title" })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "card-box" }, [
+                    _c(
+                      "p",
+                      {
+                        staticClass:
+                          "mbr-text mbr-section-text mbr-fonts-style display-7"
+                      },
+                      [_vm._v("Operaciones de TI"), _c("br")]
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "card pl-3 pr-3" }, [
+                  _c("div", { staticClass: "mbr-card-img-title" }, [
+                    _c("div", { staticClass: "card-img pb-3" }, [
+                      _c("span", { staticClass: "mbr-iconfont mbri-lock" })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "mbr-crt-title" })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "card-box" }, [
+                    _c(
+                      "p",
+                      {
+                        staticClass:
+                          "mbr-text mbr-section-text mbr-fonts-style display-7"
+                      },
+                      [_vm._v("Seguridad de Información"), _c("br")]
+                    )
+                  ])
+                ])
+              ])
+            ])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "section",
+        {
+          staticClass: "clients cid-rSk8V5NLND mbr-parallax-background",
+          attrs: { "data-interval": "false", id: "clients-4" }
+        },
+        [
+          _c("div", {
+            staticClass: "mbr-overlay",
+            staticStyle: {
+              opacity: "0.9",
+              "background-color": "rgb(20, 157, 204)"
+            }
+          }),
+          _vm._v(" "),
+          _c("div", { staticClass: "container mb-5" }, [
+            _c("div", { staticClass: "media-container-row" }, [
+              _c("div", { staticClass: "col-12 align-center" }, [
+                _c(
+                  "h2",
+                  {
+                    staticClass:
+                      "mbr-section-title pb-3 mbr-fonts-style display-2"
+                  },
+                  [_vm._v("\n                        Socios Comerciales")]
+                )
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "container" }, [
+            _c(
+              "div",
+              {
+                staticClass: "carousel slide",
+                attrs: {
+                  role: "listbox",
+                  "data-pause": "true",
+                  "data-keyboard": "false",
+                  "data-ride": "false",
+                  "data-interval": "false"
+                }
+              },
+              [
+                _c(
+                  "div",
+                  {
+                    staticClass: "carousel-inner",
+                    attrs: { "data-visible": "3" }
+                  },
+                  [
+                    _c("div", { staticClass: "carousel-item " }, [
+                      _c("div", { staticClass: "media-container-row" }, [
+                        _c("div", { staticClass: "col-md-12" }, [
+                          _c("div", { staticClass: "wrap-img " }, [
+                            _c("img", {
+                              staticClass: "img-responsive clients-img",
+                              attrs: {
+                                src: "img/vmware-480x570.png",
+                                alt: "",
+                                title: ""
+                              }
+                            })
+                          ])
+                        ])
+                      ])
+                    ]),
+                    _c("div", { staticClass: "carousel-item " }, [
+                      _c("div", { staticClass: "media-container-row" }, [
+                        _c("div", { staticClass: "col-md-12" }, [
+                          _c("div", { staticClass: "wrap-img " }, [
+                            _c(
+                              "a",
+                              {
+                                attrs: {
+                                  href: "https://www.hpe.com/mx/es/home.html"
+                                }
+                              },
+                              [
+                                _c("img", {
+                                  staticClass: "img-responsive clients-img",
+                                  attrs: {
+                                    src: "img/hpe-1-1200x1424.png",
+                                    alt: "",
+                                    title: ""
+                                  }
+                                })
+                              ]
+                            )
+                          ])
+                        ])
+                      ])
+                    ]),
+                    _c("div", { staticClass: "carousel-item " }, [
+                      _c("div", { staticClass: "media-container-row" }, [
+                        _c("div", { staticClass: "col-md-12" }, [
+                          _c("div", { staticClass: "wrap-img " }, [
+                            _c("img", {
+                              staticClass: "img-responsive clients-img",
+                              attrs: {
+                                src: "img/apple-1200x1424.png",
+                                alt: "",
+                                title: ""
+                              }
+                            })
+                          ])
+                        ])
+                      ])
+                    ]),
+                    _c("div", { staticClass: "carousel-item " }, [
+                      _c("div", { staticClass: "media-container-row" }, [
+                        _c("div", { staticClass: "col-md-12" }, [
+                          _c("div", { staticClass: "wrap-img " }, [
+                            _c("img", {
+                              staticClass: "img-responsive clients-img",
+                              attrs: {
+                                src: "img/impervalogo-3-1200x1424.png",
+                                alt: "",
+                                title: ""
+                              }
+                            })
+                          ])
+                        ])
+                      ])
+                    ]),
+                    _c("div", { staticClass: "carousel-item " }, [
+                      _c("div", { staticClass: "media-container-row" }, [
+                        _c("div", { staticClass: "col-md-12" }, [
+                          _c("div", { staticClass: "wrap-img " }, [
+                            _c("img", {
+                              staticClass: "img-responsive clients-img",
+                              attrs: {
+                                src: "img/microsoft-1200x1424.png",
+                                alt: "",
+                                title: ""
+                              }
+                            })
+                          ])
+                        ])
+                      ])
+                    ]),
+                    _c("div", { staticClass: "carousel-item " }, [
+                      _c("div", { staticClass: "media-container-row" }, [
+                        _c("div", { staticClass: "col-md-12" }, [
+                          _c("div", { staticClass: "wrap-img " }, [
+                            _c("img", {
+                              staticClass: "img-responsive clients-img",
+                              attrs: {
+                                src: "img/checkpoint.-1-1200x1424.png",
+                                alt: "",
+                                title: ""
+                              }
+                            })
+                          ])
+                        ])
+                      ])
+                    ]),
+                    _c("div", { staticClass: "carousel-item " }, [
+                      _c("div", { staticClass: "media-container-row" }, [
+                        _c("div", { staticClass: "col-md-12" }, [
+                          _c("div", { staticClass: "wrap-img " }, [
+                            _c("img", {
+                              staticClass: "img-responsive clients-img",
+                              attrs: {
+                                src: "img/apclogo-1200x1424.png",
+                                alt: "",
+                                title: ""
+                              }
+                            })
+                          ])
+                        ])
+                      ])
+                    ]),
+                    _c("div", { staticClass: "carousel-item " }, [
+                      _c("div", { staticClass: "media-container-row" }, [
+                        _c("div", { staticClass: "col-md-12" }, [
+                          _c("div", { staticClass: "wrap-img " }, [
+                            _c("img", {
+                              staticClass: "img-responsive clients-img",
+                              attrs: {
+                                src: "img/logoredhat-1-680x807.png",
+                                alt: "",
+                                title: ""
+                              }
+                            })
+                          ])
+                        ])
+                      ])
+                    ]),
+                    _c("div", { staticClass: "carousel-item " }, [
+                      _c("div", { staticClass: "media-container-row" }, [
+                        _c("div", { staticClass: "col-md-12" }, [
+                          _c("div", { staticClass: "wrap-img " }, [
+                            _c("img", {
+                              staticClass: "img-responsive clients-img",
+                              attrs: {
+                                src: "img/logofortinet-2-680x807.png",
+                                alt: "",
+                                title: ""
+                              }
+                            })
+                          ])
+                        ])
+                      ])
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "carousel-controls" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "carousel-control carousel-control-prev",
+                      attrs: {
+                        "data-app-prevent-settings": "",
+                        role: "button",
+                        "data-slide": "prev"
+                      }
+                    },
+                    [
+                      _c("span", {
+                        staticClass: "mbri-left mbr-iconfont",
+                        attrs: { "aria-hidden": "true" }
+                      }),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "sr-only" }, [
+                        _vm._v("Previous")
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass: "carousel-control carousel-control-next",
+                      attrs: {
+                        "data-app-prevent-settings": "",
+                        role: "button",
+                        "data-slide": "next"
+                      }
+                    },
+                    [
+                      _c("span", {
+                        staticClass: "mbri-right mbr-iconfont",
+                        attrs: { "aria-hidden": "true" }
+                      }),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "sr-only" }, [_vm._v("Next")])
+                    ]
+                  )
+                ])
+              ]
+            )
+          ])
+        ]
+      )
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/assets/js/principal/nosotros.vue?vue&type=template&id=6ad238b2&":
+/*!*****************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/assets/js/principal/nosotros.vue?vue&type=template&id=6ad238b2& ***!
+  \*****************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("main", [
+      _c("section", { staticClass: "engine" }, [
+        _c("a", { attrs: { href: "https://mobirise.info/v" } }, [
+          _vm._v("html templates")
+        ])
+      ]),
+      _c(
+        "section",
+        {
+          staticClass:
+            "mbr-section content5 cid-rSkdsOu9oZ mbr-parallax-background",
+          attrs: { id: "content5-8" }
+        },
+        [
+          _c("div", {
+            staticClass: "mbr-overlay",
+            staticStyle: {
+              opacity: "0.3",
+              "background-color": "rgb(85, 180, 212)"
+            }
+          }),
+          _vm._v(" "),
+          _c("div", { staticClass: "container" }, [
+            _c("div", { staticClass: "media-container-row" }, [
+              _c("div", { staticClass: "title col-12 col-md-8" }, [
+                _c(
+                  "h2",
+                  {
+                    staticClass:
+                      "align-center mbr-bold mbr-white pb-3 mbr-fonts-style display-1"
+                  },
+                  [_vm._v("\n                    ¿Quiénes Somos?")]
+                )
+              ])
+            ])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "section",
+        {
+          staticClass: "mbr-section content4 cid-rSkfLnmv2b",
+          attrs: { id: "content4-j" }
+        },
+        [
+          _c("div", { staticClass: "container" }, [
+            _c("div", { staticClass: "media-container-row" }, [
+              _c("div", { staticClass: "title col-12 col-md-8" }, [
+                _c(
+                  "h2",
+                  {
+                    staticClass: "align-center pb-3 mbr-fonts-style display-2"
+                  },
+                  [_vm._v("\n                    Soluciones Integrales")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "h3",
+                  {
+                    staticClass:
+                      "mbr-section-subtitle align-center mbr-light mbr-fonts-style display-5"
+                  },
+                  [
+                    _c("em", [
+                      _vm._v(
+                        "El reto siempre será la entera satisfacción de nuestros clientes."
+                      )
+                    ])
+                  ]
+                )
+              ])
+            ])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "section",
+        {
+          staticClass: "mbr-section article content9 cid-rSkfsfwbM8",
+          attrs: { id: "content9-h" }
+        },
+        [
+          _c("div", { staticClass: "container" }, [
+            _c(
+              "div",
+              {
+                staticClass: "inner-container",
+                staticStyle: { width: "100%" }
+              },
+              [
+                _c("hr", {
+                  staticClass: "line",
+                  staticStyle: { width: "25%" }
+                }),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "section-text align-center mbr-fonts-style display-5"
+                  },
+                  [
+                    _c("div", [_c("br")]),
+                    _c("div", [
+                      _vm._v(
+                        "Basamos la calidad de nuestro trabajo en normas y estándares internacionales que garantizan los servicios que entregamos."
+                      )
+                    ]),
+                    _c("div", [_c("br")]),
+                    _c("div", [
+                      _vm._v(
+                        "Más que una empresa, somos un concepto de solución integral de tecnología. La alianza con los más prestigiosos fabricantes de la industria nos ha posicionado como una empresa líder y con sólida trayectoria en el mercado de TI."
+                      )
+                    ]),
+                    _c("br"),
+                    _c("div", [
+                      _vm._v(
+                        "Ponemos a su disposición una experiencia de más de 32 años en el mercado, que se encuentra conformada por diversas áreas de negocio, que al trabajar en equipo, pueden cumplir con los más ambiciosos proyectos tecnológicos."
+                      )
+                    ]),
+                    _c("br"),
+                    _c("div", [
+                      _vm._v(
+                        "En Compupartes y Accesorios reconocemos que el éxito se logra trabajando juntos por eso nos sentimos orgullosos de compartir con nuestros clientes, proveedores y amigos los éxitos que día a día cosechamos en nuestro trabajo."
+                      )
+                    ]),
+                    _c("div", [_c("br")])
+                  ]
+                ),
+                _vm._v(" "),
+                _c("hr", { staticClass: "line", staticStyle: { width: "25%" } })
+              ]
+            )
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "section",
+        {
+          staticClass: "features1 cid-rSkdVqT7ip",
+          attrs: { id: "features1-c" }
+        },
+        [
+          _c("div", { staticClass: "container" }, [
+            _c("div", { staticClass: "media-container-row" }, [
+              _c("div", { staticClass: "card p-3 col-12 col-md-6 col-lg-4" }, [
+                _c("div", { staticClass: "card-img pb-3" }, [
+                  _c("span", { staticClass: "mbr-iconfont mbrib-features" })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "card-box" }, [
+                  _c(
+                    "h4",
+                    {
+                      staticClass: "card-title py-3 mbr-fonts-style display-5"
+                    },
+                    [_vm._v("\n                        VALOR AGREGADO")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "p",
+                    { staticClass: "mbr-text mbr-fonts-style display-7" },
+                    [
+                      _vm._v(
+                        "\n                        Le brindamos una clara propuesta corporativa, calidad en nuestros productos y servicios.\n                    "
+                      )
+                    ]
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "card p-3 col-12 col-md-6 col-lg-4" }, [
+                _c("div", { staticClass: "card-img pb-3" }, [
+                  _c("span", { staticClass: "mbr-iconfont mbrib-flag" })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "card-box" }, [
+                  _c(
+                    "h4",
+                    {
+                      staticClass: "card-title py-3 mbr-fonts-style display-5"
+                    },
+                    [_vm._v("\n                        MISIÓN")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "p",
+                    { staticClass: "mbr-text mbr-fonts-style display-7" },
+                    [
+                      _vm._v(
+                        "Ser una organización competitiva en calidad y buen servicio."
+                      ),
+                      _c("br")
+                    ]
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "card p-3 col-12 col-md-6 col-lg-4" }, [
+                _c("div", { staticClass: "card-img pb-3" }, [
+                  _c("span", { staticClass: "mbr-iconfont mbrib-preview" })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "card-box" }, [
+                  _c(
+                    "h4",
+                    {
+                      staticClass: "card-title py-3 mbr-fonts-style display-5"
+                    },
+                    [_vm._v("\n                        VISIÓN")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "p",
+                    { staticClass: "mbr-text mbr-fonts-style display-7" },
+                    [
+                      _vm._v(
+                        "Continuar siendo una organización líder, competitiva, vanguardista y en permanente innovación tecnológica."
+                      ),
+                      _c("br")
+                    ]
+                  )
+                ])
+              ])
+            ])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "section",
+        {
+          staticClass: "timeline1 cid-rSkdKsbate",
+          attrs: { id: "timeline1-b" }
+        },
+        [
+          _c("div", { staticClass: "container align-center" }, [
+            _c(
+              "h2",
+              {
+                staticClass: "mbr-section-title pb-3 mbr-fonts-style display-2"
+              },
+              [_vm._v("\n            NUESTRA HISTORIA")]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "container timelines-container",
+                attrs: { "mbri-timelines": "" }
+              },
+              [
+                _c(
+                  "div",
+                  { staticClass: "row timeline-element reverse separline" },
+                  [
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "timeline-date-panel col-xs-12 col-md-6  align-left"
+                      },
+                      [
+                        _c("div", { staticClass: "time-line-date-content" }, [
+                          _c(
+                            "p",
+                            {
+                              staticClass:
+                                "mbr-timeline-date mbr-fonts-style display-5"
+                            },
+                            [_vm._v("Año 1988")]
+                          )
+                        ])
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "iconBackground" }),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "col-xs-12 col-md-6 align-right" },
+                      [
+                        _c("div", { staticClass: "timeline-text-content" }, [
+                          _c(
+                            "h4",
+                            {
+                              staticClass:
+                                "mbr-timeline-title pb-3 mbr-fonts-style display-5"
+                            },
+                            [_vm._v("FUNDACION DE COMPUPARTES Y ACCESORIOS")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "p",
+                            {
+                              staticClass:
+                                "mbr-timeline-text mbr-fonts-style display-7"
+                            },
+                            [
+                              _vm._v(
+                                "Inicia negocio con venta de equipo de computo"
+                              ),
+                              _c("br"),
+                              _vm._v(
+                                "y accesorios, en un pequeño local en Culiacán"
+                              )
+                            ]
+                          )
+                        ])
+                      ]
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "row timeline-element  separline" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "timeline-date-panel col-xs-12 col-md-6 align-right"
+                    },
+                    [
+                      _c("div", { staticClass: "time-line-date-content" }, [
+                        _c(
+                          "p",
+                          {
+                            staticClass:
+                              "mbr-timeline-date mbr-fonts-style display-5"
+                          },
+                          [_vm._v("Año 2001")]
+                        )
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "iconBackground" }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-xs-12 col-md-6 align-left " }, [
+                    _c("div", { staticClass: "timeline-text-content" }, [
+                      _c(
+                        "h4",
+                        {
+                          staticClass:
+                            "mbr-timeline-title pb-3 mbr-fonts-style display-5"
+                        },
+                        [_vm._v("CONSOLIDACIÓN DE VALOR")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "p",
+                        {
+                          staticClass:
+                            "mbr-timeline-text mbr-fonts-style display-7"
+                        },
+                        [
+                          _vm._v(
+                            "Consolidación como empresa que vende Propuestas de Valor, tales como proyectos corporativos y servidores aliados a las marcas más importantes del país, dejando de vender a público en general, piezas o accesorios."
+                          )
+                        ]
+                      )
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "row timeline-element reverse separline" },
+                  [
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "timeline-date-panel col-xs-12 col-md-6  align-left"
+                      },
+                      [
+                        _c("div", { staticClass: "time-line-date-content" }, [
+                          _c(
+                            "p",
+                            {
+                              staticClass:
+                                "mbr-timeline-date mbr-fonts-style display-5"
+                            },
+                            [_vm._v("Año 2006")]
+                          )
+                        ])
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "iconBackground" }),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "col-xs-12 col-md-6 align-right" },
+                      [
+                        _c("div", { staticClass: "timeline-text-content" }, [
+                          _c(
+                            "h4",
+                            {
+                              staticClass:
+                                "mbr-timeline-title pb-3 mbr-fonts-style display-5"
+                            },
+                            [
+                              _vm._v(
+                                "\n                            Primer Discovery Center"
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "p",
+                            {
+                              staticClass:
+                                "mbr-timeline-text mbr-fonts-style display-7"
+                            },
+                            [
+                              _vm._v(
+                                "Inauguración del primer Centro de Datos a nivel Regional en la Matriz, Culiacán."
+                              )
+                            ]
+                          )
+                        ])
+                      ]
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "row timeline-element  separline" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "timeline-date-panel col-xs-12 col-md-6 align-right"
+                    },
+                    [
+                      _c("div", { staticClass: "time-line-date-content" }, [
+                        _c(
+                          "p",
+                          {
+                            staticClass:
+                              "mbr-timeline-date mbr-fonts-style display-5"
+                          },
+                          [_vm._v("Año 2007")]
+                        )
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "iconBackground" }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-xs-12 col-md-6 align-left " }, [
+                    _c("div", { staticClass: "timeline-text-content" }, [
+                      _c(
+                        "h4",
+                        {
+                          staticClass:
+                            "mbr-timeline-title pb-3 mbr-fonts-style display-5"
+                        },
+                        [_vm._v("Expansión a Sonora")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "p",
+                        {
+                          staticClass:
+                            "mbr-timeline-text mbr-fonts-style display-7"
+                        },
+                        [
+                          _vm._v(
+                            "Se instala un nuevo Centro de Datos de la empresa con     el  equipo más sofisticado del mercado en        Hermosillo, Sonora, abarcando la Región Norte del País"
+                          )
+                        ]
+                      )
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row timeline-element reverse" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "timeline-date-panel col-xs-12 col-md-6  align-left"
+                    },
+                    [
+                      _c("div", { staticClass: "time-line-date-content" }, [
+                        _c(
+                          "p",
+                          {
+                            staticClass:
+                              "mbr-timeline-date mbr-fonts-style display-5"
+                          },
+                          [_vm._v("Año 2014")]
+                        )
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "iconBackground" }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-xs-12 col-md-6 align-right" }, [
+                    _c("div", { staticClass: "timeline-text-content" }, [
+                      _c(
+                        "h4",
+                        {
+                          staticClass:
+                            "mbr-timeline-title pb-3 mbr-fonts-style display-5"
+                        },
+                        [_vm._v("Desarrollo en Baja California")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "p",
+                        {
+                          staticClass:
+                            "mbr-timeline-text mbr-fonts-style display-7"
+                        },
+                        [
+                          _vm._v(
+                            "Abrimos Oficina de atención en Mexicali creciendo en"
+                          ),
+                          _c("br"),
+                          _vm._v("Cuerpo laboral")
+                        ]
+                      )
+                    ])
+                  ])
+                ])
+              ]
+            )
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "section",
+        {
+          staticClass: "counters2 counters cid-rSkhdhPadb",
+          attrs: { id: "counters2-k" }
+        },
+        [
+          _c("div", { staticClass: "container pt-4 mt-2" }, [
+            _c("div", { staticClass: "media-container-row" }, [
+              _c(
+                "div",
+                { staticClass: "media-block", staticStyle: { width: "39%" } },
+                [
+                  _c(
+                    "h3",
+                    {
+                      staticClass:
+                        "mbr-section-subtitle pb-5 align-left mbr-fonts-style display-5"
+                    },
+                    [
+                      _vm._v(
+                        "\n                    Nuestros números nos avalan"
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "mbr-figure" }, [
+                    _c("img", {
+                      attrs: {
+                        src:
+                          "img/problemas-en-mi-vida-soluciones-psicologos-centro-psicologia-barcelona-capia-1024x427.jpg",
+                        alt: "",
+                        title: ""
+                      }
+                    })
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "cards-block" }, [
+                _c("div", { staticClass: "cards-container" }, [
+                  _c(
+                    "div",
+                    { staticClass: "card px-3 align-left col-12 col-md-6" },
+                    [
+                      _c("div", { staticClass: "panel-item p-3" }, [
+                        _c("div", { staticClass: "card-img pb-3" }, [
+                          _c("span", {
+                            staticClass: "mbr-iconfont pr-2 mbri-briefcase"
+                          }),
+                          _vm._v(" "),
+                          _c(
+                            "h3",
+                            {
+                              staticClass:
+                                "count py-3 mbr-fonts-style display-2"
+                            },
+                            [_vm._v("32")]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "card-text" }, [
+                          _c(
+                            "h4",
+                            {
+                              staticClass:
+                                "mbr-content-title mbr-bold mbr-fonts-style display-7"
+                            },
+                            [
+                              _vm._v(
+                                "\n                                    Años de Experiencia"
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("p", {
+                            staticClass:
+                              "mbr-content-text mbr-fonts-style display-7"
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "card px-3 align-left col-12 col-md-6" },
+                    [
+                      _c("div", { staticClass: "panel-item p-3" }, [
+                        _c("div", { staticClass: "card-img pb-3" }, [
+                          _c("span", {
+                            staticClass: "mbr-iconfont pr-2 mbri-responsive"
+                          }),
+                          _vm._v(" "),
+                          _c(
+                            "h3",
+                            {
+                              staticClass:
+                                "count py-3 mbr-fonts-style display-2"
+                            },
+                            [_vm._v("+10")]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "card-text" }, [
+                          _c(
+                            "h4",
+                            {
+                              staticClass:
+                                "mbr-content-title mbr-bold mbr-fonts-style display-7"
+                            },
+                            [
+                              _vm._v(
+                                "\n                                    Alianzas comerciales"
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("p", {
+                            staticClass:
+                              "mbr-content-text mbr-fonts-style display-7"
+                          })
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "card px-3 align-left col-12 col-md-6" },
+                    [
+                      _c("div", { staticClass: "panel-item p-3" }, [
+                        _c("div", { staticClass: "card-img pb-3" }, [
+                          _c("span", {
+                            staticClass: "mbr-iconfont pr-2 mbri-growing-chart"
+                          }),
+                          _vm._v(" "),
+                          _c(
+                            "h3",
+                            {
+                              staticClass:
+                                "count py-3 mbr-fonts-style display-2"
+                            },
+                            [
+                              _vm._v(
+                                "\n                                    5\n                                "
+                              )
+                            ]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "card-text" }, [
+                          _c(
+                            "h4",
+                            {
+                              staticClass:
+                                "mbr-content-title mbr-bold mbr-fonts-style display-7"
+                            },
+                            [
+                              _vm._v(
+                                "\n                                    Años de lider de ventas en México"
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("p", {
+                            staticClass:
+                              "mbr-content-text mbr-fonts-style display-7"
+                          })
+                        ])
+                      ])
+                    ]
+                  )
+                ])
+              ])
+            ])
+          ])
+        ]
+      )
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/assets/js/principal/outlet.vue?vue&type=template&id=a49a5380&":
+/*!***************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/assets/js/principal/outlet.vue?vue&type=template&id=a49a5380& ***!
+  \***************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("main", [
+      _c("section", { staticClass: "engine" }, [
+        _c("a", { attrs: { href: "https://mobirise.info/x" } }, [
+          _vm._v("css templates")
+        ])
+      ]),
+      _c(
+        "section",
+        {
+          staticClass: "header1 cid-s07PNQhdN1 mbr-parallax-background",
+          attrs: { id: "header1-24" }
+        },
+        [
+          _c("div", { staticClass: "container" }, [
+            _c("div", { staticClass: "row justify-content-md-center" }, [
+              _c("div", { staticClass: "mbr-white col-md-10" }, [
+                _c("h1", {
+                  staticClass:
+                    "mbr-section-title align-center mbr-bold pb-3 mbr-fonts-style display-1"
+                }),
+                _vm._v(" "),
+                _c("h3", {
+                  staticClass:
+                    "mbr-section-subtitle align-center mbr-light pb-3 mbr-fonts-style display-2"
+                }),
+                _vm._v(" "),
+                _c(
+                  "p",
+                  {
+                    staticClass:
+                      "mbr-text align-center pb-3 mbr-fonts-style display-5"
+                  },
+                  [_vm._v("   ")]
+                )
+              ])
+            ])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "section",
+        {
+          staticClass: "features18 popup-btn-cards cid-rVACXOF7Ba",
+          attrs: { id: "features18-18" }
+        },
+        [
+          _c("div", { staticClass: "container" }, [
+            _c("div", { staticClass: "media-container-row pt-5 " }, [
+              _c("div", { staticClass: "card p-3 col-12 col-md-6" }, [
+                _c("div", { staticClass: "card-wrapper " }, [
+                  _c("div", { staticClass: "card-img" }, [
+                    _c("div", { staticClass: "mbr-overlay" }),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "mbr-section-btn text-center" }, [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "btn btn-primary display-4",
+                          attrs: { href: "page6.html" }
+                        },
+                        [_vm._v("Ver más")]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("img", {
+                      attrs: {
+                        src: "img/categoriaservers-5-600x500.png",
+                        alt: "Mobirise",
+                        title: ""
+                      }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "card-box" }, [
+                    _c(
+                      "h4",
+                      { staticClass: "card-title mbr-fonts-style display-7" },
+                      [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "text-black",
+                            attrs: { href: "page6.html" }
+                          },
+                          [_vm._v("\n                            Servidores")]
+                        )
+                      ]
+                    )
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "card p-3 col-12 col-md-6" }, [
+                _c("div", { staticClass: "card-wrapper" }, [
+                  _c("div", { staticClass: "card-img" }, [
+                    _c("div", { staticClass: "mbr-overlay" }),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "mbr-section-btn text-center" }, [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "btn btn-primary display-4",
+                          attrs: { href: "page7.html" }
+                        },
+                        [_vm._v("Ver más")]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("img", {
+                      attrs: {
+                        src: "img/monitorhp-3-573x430.png",
+                        alt: "Mobirise",
+                        title: ""
+                      }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "card-box" }, [
+                    _c(
+                      "h4",
+                      { staticClass: "card-title mbr-fonts-style display-7" },
+                      [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "text-black",
+                            attrs: { href: "page7.html" }
+                          },
+                          [_vm._v("\n                            Monitores")]
+                        )
+                      ]
+                    )
+                  ])
+                ])
+              ])
+            ])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "section",
+        {
+          staticClass: "features18 popup-btn-cards cid-rW475vhYLT",
+          attrs: { id: "features18-1y" }
+        },
+        [
+          _c("div", { staticClass: "container" }, [
+            _c("div", { staticClass: "media-container-row pt-5 " }, [
+              _c("div", { staticClass: "card p-3 col-12 col-md-6" }, [
+                _c("div", { staticClass: "card-wrapper " }, [
+                  _c("div", { staticClass: "card-img" }, [
+                    _c("div", { staticClass: "mbr-overlay" }),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "mbr-section-btn text-center" }, [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "btn btn-primary display-4",
+                          attrs: { href: "page9.html" }
+                        },
+                        [_vm._v("Ver más")]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("img", {
+                      attrs: {
+                        src:
+                          "img/computadoras-de-nueva-generacion-hp-600x380.jpg",
+                        alt: "Mobirise",
+                        title: ""
+                      }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "card-box" }, [
+                    _c(
+                      "h4",
+                      { staticClass: "card-title mbr-fonts-style display-7" },
+                      [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "text-black",
+                            attrs: { href: "page9.html" }
+                          },
+                          [_vm._v("\n                            Laptops")]
+                        )
+                      ]
+                    )
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "card p-3 col-12 col-md-6" }, [
+                _c("div", { staticClass: "card-wrapper" }, [
+                  _c("div", { staticClass: "card-img" }, [
+                    _c("div", { staticClass: "mbr-overlay" }),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "mbr-section-btn text-center" }, [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "btn btn-primary display-4",
+                          attrs: { href: "page8.html" }
+                        },
+                        [_vm._v("Ver más")]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("img", {
+                      attrs: {
+                        src: "img/computadorahp-5.webp",
+                        alt: "Mobirise",
+                        title: ""
+                      }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "card-box" }, [
+                    _c(
+                      "h4",
+                      { staticClass: "card-title mbr-fonts-style display-7" },
+                      [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "text-black",
+                            attrs: { href: "page8.html" }
+                          },
+                          [_vm._v("\n                            Computadoras")]
+                        )
+                      ]
+                    )
+                  ])
+                ])
+              ])
+            ])
+          ])
+        ]
+      )
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/assets/js/principal/soluciones.vue?vue&type=template&id=d475aeea&":
+/*!*******************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/assets/js/principal/soluciones.vue?vue&type=template&id=d475aeea& ***!
+  \*******************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("main", [
+      _c(
+        "section",
+        {
+          staticClass: "header1 cid-rVp8J7jCi2 mbr-parallax-background",
+          attrs: { id: "header1-11" }
+        },
+        [
+          _c("div", {
+            staticClass: "mbr-overlay",
+            staticStyle: {
+              opacity: "0.3",
+              "background-color": "rgb(85, 180, 212)"
+            }
+          }),
+          _vm._v(" "),
+          _c("div", { staticClass: "container" }, [
+            _c("div", { staticClass: "row justify-content-md-center" }, [
+              _c("div", { staticClass: "mbr-white col-md-10" }, [
+                _c(
+                  "h1",
+                  {
+                    staticClass:
+                      "mbr-section-title align-center mbr-bold pb-3 mbr-fonts-style display-1"
+                  },
+                  [_vm._v("\n                    Soluciones")]
+                )
+              ])
+            ])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "section",
+        {
+          staticClass: "features15 cid-rVp81cJULa",
+          attrs: { id: "features15-10" }
+        },
+        [
+          _c("div", { staticClass: "container" }, [
+            _c(
+              "h2",
+              {
+                staticClass:
+                  "mbr-section-title pb-3 align-center mbr-fonts-style display-2"
+              },
+              [_vm._v("\n            Nuestras Soluciones")]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "media-container-row container pt-5 mt-2" },
+              [
+                _c("div", { staticClass: "col-12 col-md-6 mb-4 col-lg-4" }, [
+                  _c(
+                    "div",
+                    { staticClass: "card flip-card p-5 align-center" },
+                    [
+                      _c("div", { staticClass: "card-front card_cont" }, [
+                        _c("img", {
+                          attrs: {
+                            src: "img/cardsi-330x300.png",
+                            alt: "Mobirise",
+                            title: ""
+                          }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "card_back card_cont" }, [
+                        _c(
+                          "h4",
+                          {
+                            staticClass:
+                              "card-title display-5 py-2 mbr-fonts-style"
+                          },
+                          [_vm._v("Seguridad de Información")]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "p",
+                          { staticClass: "mbr-text mbr-fonts-style display-7" },
+                          [
+                            _vm._v(
+                              "Nuestra especialidad está enfocada en el diseño de sistemas tecnológicos eficientes y fiables que auxilian en la labor de protección de los recursos humanos, activos y propiedad intelectual"
+                            )
+                          ]
+                        )
+                      ])
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-12 col-md-6 mb-4 col-lg-4" }, [
+                  _c(
+                    "div",
+                    { staticClass: "card flip-card p-5 align-center" },
+                    [
+                      _c("div", { staticClass: "card-front card_cont" }, [
+                        _c("img", {
+                          attrs: {
+                            src: "img/cardit-330x300.png",
+                            alt: "Mobirise",
+                            title: ""
+                          }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "card_back card_cont" }, [
+                        _c(
+                          "h4",
+                          {
+                            staticClass:
+                              "card-title py-2 mbr-fonts-style display-5"
+                          },
+                          [_vm._v("Infraestructura Tecnologica")]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "p",
+                          { staticClass: "mbr-text mbr-fonts-style display-7" },
+                          [
+                            _vm._v(
+                              "\n                            Evaluamos la necesidad de nuestros clientes brindando valor a sus proyectos integrales, presentando la mejor propuesta bajo un análisis de costo beneficio, con el respaldo de los mejores fabricantes del mercado.\n                        "
+                            )
+                          ]
+                        )
+                      ])
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-12 col-md-6 mb-4 col-lg-4" }, [
+                  _c(
+                    "div",
+                    { staticClass: "card flip-card p-5 align-center" },
+                    [
+                      _c("div", { staticClass: "card-front card_cont" }, [
+                        _c("img", {
+                          attrs: {
+                            src: "img/cardop-330x300.png",
+                            alt: "Mobirise",
+                            title: ""
+                          }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "card_back card_cont" }, [
+                        _c(
+                          "h4",
+                          {
+                            staticClass:
+                              "card-title py-2 mbr-fonts-style display-5"
+                          },
+                          [_vm._v("Operaciones de TI")]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "p",
+                          { staticClass: "mbr-text mbr-fonts-style display-7" },
+                          [
+                            _vm._v(
+                              "\n                            Somos un aliado que te acompaña en el camino con nuevas ideas, conocimiento profundo de la industria y un amplio rango de capacidades.\n                        "
+                            )
+                          ]
+                        )
+                      ])
+                    ]
+                  )
+                ])
+              ]
+            )
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "section",
+        {
+          staticClass: "features15 cid-rVplEUhClb",
+          attrs: { id: "features15-12" }
+        },
+        [
+          _c("div", { staticClass: "container" }, [
+            _c(
+              "div",
+              { staticClass: "media-container-row container pt-5 mt-2" },
+              [
+                _c("div", { staticClass: "col-12 col-md-6 mb-4 col-lg-4" }, [
+                  _c(
+                    "div",
+                    { staticClass: "card flip-card p-5 align-center" },
+                    [
+                      _c("div", { staticClass: "card-front card_cont" }, [
+                        _c("img", {
+                          attrs: {
+                            src: "img/cardet-330x300.png",
+                            alt: "Mobirise",
+                            title: ""
+                          }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "card_back card_cont" }, [
+                        _c(
+                          "h4",
+                          {
+                            staticClass:
+                              "card-title display-5 py-2 mbr-fonts-style"
+                          },
+                          [_vm._v("Estrategia de TI")]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "p",
+                          { staticClass: "mbr-text mbr-fonts-style display-7" },
+                          [
+                            _vm._v(
+                              "\n                            Nuestra orientación es ser parte de la solución de su empresa en la búsqueda de la construcción y actualización de su infraestructura de TI con proyección hacia el futuro.​\n                        "
+                            )
+                          ]
+                        )
+                      ])
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-12 col-md-6 mb-4 col-lg-4" }, [
+                  _c(
+                    "div",
+                    { staticClass: "card flip-card p-5 align-center" },
+                    [
+                      _c("div", { staticClass: "card-front card_cont" }, [
+                        _c("img", {
+                          attrs: {
+                            src: "img/carddc-330x300.png",
+                            alt: "Mobirise",
+                            title: ""
+                          }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "card_back card_cont" }, [
+                        _c(
+                          "h4",
+                          {
+                            staticClass:
+                              "card-title py-2 mbr-fonts-style display-5"
+                          },
+                          [_vm._v("Cloud + Data Center")]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "p",
+                          { staticClass: "mbr-text mbr-fonts-style display-7" },
+                          [
+                            _vm._v(
+                              "\n                            Transforma tu negocio con una estrategia de nube y centro de datos que genere agilidad, reducción de costos y simplificación de procesos.\n                        "
+                            )
+                          ]
+                        )
+                      ])
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-12 col-md-6 mb-4 col-lg-4" }, [
+                  _c(
+                    "div",
+                    { staticClass: "card flip-card p-5 align-center" },
+                    [
+                      _c("div", { staticClass: "card-front card_cont" }, [
+                        _c("img", {
+                          attrs: {
+                            src: "img/cardcw-330x300.png",
+                            alt: "Mobirise",
+                            title: ""
+                          }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "card_back card_cont" }, [
+                        _c(
+                          "h4",
+                          {
+                            staticClass:
+                              "card-title py-2 mbr-fonts-style display-5"
+                          },
+                          [_vm._v("Connected Workspace")]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "p",
+                          { staticClass: "mbr-text mbr-fonts-style display-7" },
+                          [
+                            _vm._v(
+                              "\n                            Conecta por completo tu entorno, instalaciones, fuerza de trabajo y clientes con la tecnología requerida para las dinámicas de negocio actuales.\n                        "
+                            )
+                          ]
+                        )
+                      ])
+                    ]
+                  )
+                ])
+              ]
+            )
+          ])
+        ]
+      )
     ])
   }
 ]
@@ -55991,7 +58404,12 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
 Vue.component('slider-component', __webpack_require__(/*! ./components/Sliders.vue */ "./resources/assets/js/components/Sliders.vue")["default"]);
 Vue.component('productos-component', __webpack_require__(/*! ./components/Productos.vue */ "./resources/assets/js/components/Productos.vue")["default"]);
 Vue.component('categorias-component', __webpack_require__(/*! ./components/Categorias.vue */ "./resources/assets/js/components/Categorias.vue")["default"]);
-Vue.component('contraseña-component', __webpack_require__(/*! ./components/Contra.vue */ "./resources/assets/js/components/Contra.vue")["default"]); // Vue.component('ropa-component', require('./components/Ropa.vue').default);
+Vue.component('contraseña-component', __webpack_require__(/*! ./components/Contra.vue */ "./resources/assets/js/components/Contra.vue")["default"]);
+Vue.component('index-component', __webpack_require__(/*! ./principal/index.vue */ "./resources/assets/js/principal/index.vue")["default"]);
+Vue.component('nosotros-component', __webpack_require__(/*! ./principal/nosotros.vue */ "./resources/assets/js/principal/nosotros.vue")["default"]);
+Vue.component('outlet-component', __webpack_require__(/*! ./principal/outlet.vue */ "./resources/assets/js/principal/outlet.vue")["default"]);
+Vue.component('contacto-component', __webpack_require__(/*! ./principal/contacto.vue */ "./resources/assets/js/principal/contacto.vue")["default"]);
+Vue.component('soluciones-component', __webpack_require__(/*! ./principal/soluciones.vue */ "./resources/assets/js/principal/soluciones.vue")["default"]); // Vue.component('ropa-component', require('./components/Ropa.vue').default);
 // Vue.component('accesorios-component', require('./components/Accesorios.vue').default);
 // Vue.component('cosmeticos-component', require('./components/Cosmeticos.vue').default);g
 // Vue.component('productost-component', require('./components/ProductosT.vue').default);
@@ -56454,6 +58872,271 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Sliders_vue_vue_type_template_id_3edf96cb___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Sliders_vue_vue_type_template_id_3edf96cb___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/assets/js/principal/contacto.vue":
+/*!****************************************************!*\
+  !*** ./resources/assets/js/principal/contacto.vue ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _contacto_vue_vue_type_template_id_6f3322c2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./contacto.vue?vue&type=template&id=6f3322c2& */ "./resources/assets/js/principal/contacto.vue?vue&type=template&id=6f3322c2&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+var script = {}
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
+  script,
+  _contacto_vue_vue_type_template_id_6f3322c2___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _contacto_vue_vue_type_template_id_6f3322c2___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/assets/js/principal/contacto.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/assets/js/principal/contacto.vue?vue&type=template&id=6f3322c2&":
+/*!***********************************************************************************!*\
+  !*** ./resources/assets/js/principal/contacto.vue?vue&type=template&id=6f3322c2& ***!
+  \***********************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_contacto_vue_vue_type_template_id_6f3322c2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./contacto.vue?vue&type=template&id=6f3322c2& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/assets/js/principal/contacto.vue?vue&type=template&id=6f3322c2&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_contacto_vue_vue_type_template_id_6f3322c2___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_contacto_vue_vue_type_template_id_6f3322c2___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/assets/js/principal/index.vue":
+/*!*************************************************!*\
+  !*** ./resources/assets/js/principal/index.vue ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _index_vue_vue_type_template_id_305bee22___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.vue?vue&type=template&id=305bee22& */ "./resources/assets/js/principal/index.vue?vue&type=template&id=305bee22&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+var script = {}
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
+  script,
+  _index_vue_vue_type_template_id_305bee22___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _index_vue_vue_type_template_id_305bee22___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/assets/js/principal/index.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/assets/js/principal/index.vue?vue&type=template&id=305bee22&":
+/*!********************************************************************************!*\
+  !*** ./resources/assets/js/principal/index.vue?vue&type=template&id=305bee22& ***!
+  \********************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_template_id_305bee22___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./index.vue?vue&type=template&id=305bee22& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/assets/js/principal/index.vue?vue&type=template&id=305bee22&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_template_id_305bee22___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_template_id_305bee22___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/assets/js/principal/nosotros.vue":
+/*!****************************************************!*\
+  !*** ./resources/assets/js/principal/nosotros.vue ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _nosotros_vue_vue_type_template_id_6ad238b2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./nosotros.vue?vue&type=template&id=6ad238b2& */ "./resources/assets/js/principal/nosotros.vue?vue&type=template&id=6ad238b2&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+var script = {}
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
+  script,
+  _nosotros_vue_vue_type_template_id_6ad238b2___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _nosotros_vue_vue_type_template_id_6ad238b2___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/assets/js/principal/nosotros.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/assets/js/principal/nosotros.vue?vue&type=template&id=6ad238b2&":
+/*!***********************************************************************************!*\
+  !*** ./resources/assets/js/principal/nosotros.vue?vue&type=template&id=6ad238b2& ***!
+  \***********************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_nosotros_vue_vue_type_template_id_6ad238b2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./nosotros.vue?vue&type=template&id=6ad238b2& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/assets/js/principal/nosotros.vue?vue&type=template&id=6ad238b2&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_nosotros_vue_vue_type_template_id_6ad238b2___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_nosotros_vue_vue_type_template_id_6ad238b2___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/assets/js/principal/outlet.vue":
+/*!**************************************************!*\
+  !*** ./resources/assets/js/principal/outlet.vue ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _outlet_vue_vue_type_template_id_a49a5380___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./outlet.vue?vue&type=template&id=a49a5380& */ "./resources/assets/js/principal/outlet.vue?vue&type=template&id=a49a5380&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+var script = {}
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
+  script,
+  _outlet_vue_vue_type_template_id_a49a5380___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _outlet_vue_vue_type_template_id_a49a5380___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/assets/js/principal/outlet.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/assets/js/principal/outlet.vue?vue&type=template&id=a49a5380&":
+/*!*********************************************************************************!*\
+  !*** ./resources/assets/js/principal/outlet.vue?vue&type=template&id=a49a5380& ***!
+  \*********************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_outlet_vue_vue_type_template_id_a49a5380___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./outlet.vue?vue&type=template&id=a49a5380& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/assets/js/principal/outlet.vue?vue&type=template&id=a49a5380&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_outlet_vue_vue_type_template_id_a49a5380___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_outlet_vue_vue_type_template_id_a49a5380___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/assets/js/principal/soluciones.vue":
+/*!******************************************************!*\
+  !*** ./resources/assets/js/principal/soluciones.vue ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _soluciones_vue_vue_type_template_id_d475aeea___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./soluciones.vue?vue&type=template&id=d475aeea& */ "./resources/assets/js/principal/soluciones.vue?vue&type=template&id=d475aeea&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+var script = {}
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
+  script,
+  _soluciones_vue_vue_type_template_id_d475aeea___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _soluciones_vue_vue_type_template_id_d475aeea___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/assets/js/principal/soluciones.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/assets/js/principal/soluciones.vue?vue&type=template&id=d475aeea&":
+/*!*************************************************************************************!*\
+  !*** ./resources/assets/js/principal/soluciones.vue?vue&type=template&id=d475aeea& ***!
+  \*************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_soluciones_vue_vue_type_template_id_d475aeea___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./soluciones.vue?vue&type=template&id=d475aeea& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/assets/js/principal/soluciones.vue?vue&type=template&id=d475aeea&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_soluciones_vue_vue_type_template_id_d475aeea___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_soluciones_vue_vue_type_template_id_d475aeea___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
