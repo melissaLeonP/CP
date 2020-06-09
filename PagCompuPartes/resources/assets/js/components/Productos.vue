@@ -82,7 +82,7 @@
                     </thead>
                     <tbody  v-for="producto in arrayProducto" :key="producto.idProducto">
                         <tr>
-                            <td class="hide-on-small-only" ><img :src="'img/'+producto.imagen" class="square"></td>
+                            <td class="hide-on-small-only" ><img :src="'img/'+producto.imagen" class="circle"></td>
                             <td v-text="producto.nombre"></td>
                             <td class="hide-on-small-only" v-text="producto.descripcion"></td>
                             <td class="hide-on-small-only" v-if="producto.status == 1">Activado</td>
