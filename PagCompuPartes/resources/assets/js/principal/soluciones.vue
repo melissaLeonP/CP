@@ -30,7 +30,7 @@
         <h2 class="mbr-section-title pb-3 align-center mbr-fonts-style display-2">
             Nuestras Soluciones</h2>
         
-
+  
         <div class="media-container-row container pt-5 mt-2">
 
             <div class="col-12 col-md-6 mb-4 col-lg-4">

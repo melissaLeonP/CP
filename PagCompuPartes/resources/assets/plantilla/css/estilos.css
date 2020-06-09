@@ -1,5 +1,4 @@
-
- body {
+body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
@@ -26,7 +25,7 @@ a{
 
  }
 
- 
+
  .menuCentradoConsola{
   padding-left: 10%;
 
@@ -189,6 +188,20 @@ nav.clean .breadcrumb {
   padding-right: 10%;
   padding-left: 10%;
 }
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+#imagenNavCel{
+  padding-left: 35%;
+  padding-right: 35%;
+
+}
+
+
 @media only screen and (max-width: 768px) {
   .productosCard {
     margin-left:0% !important;

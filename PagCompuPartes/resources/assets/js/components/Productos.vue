@@ -113,7 +113,6 @@
     <script>
     import Swal from 'sweetalert2';
     // import Multiselect from 'vue-multiselect'
-
     
     document.addEventListener('DOMContentLoaded', function() {
         var elems = document.querySelectorAll('select');
@@ -169,7 +168,6 @@
                                 this.tipoAccion = 1;
                                 this.tituloModal = 'Registrar producto';
                                 break;
-
                             }
                             case 'actualizar':{
                                 this.modal = 2;
@@ -191,9 +189,7 @@
                     return;
                 }
                 let me = this;
-
                 let formData = new FormData();
-
                 formData.append('file', me.file);
                 formData.append('idCate', me.idCate);
                 formData.append('nombre', me.nombre);
@@ -219,7 +215,6 @@
             actualizarProducto(idProducto){
                 
                 let me = this;
-
                 let formData = new FormData();
                 
                 formData.append('file', me.file);
@@ -227,7 +222,6 @@
                 formData.append('idCate', me.idCate);
                 formData.append('nombre', me.nombre);
                 formData.append('descripcion', me.descripcion);
-
                 // Regresamos la informacion
                 axios.post('/productos/actualizar', formData,{
                     headers: {
@@ -285,7 +279,6 @@
                     readURL(document.getElementsByClassName("productoEdit")[0], 2);
                 }
                 this.cambio = 1;
-
                 function readURL(input, img) {
                     if (input.files && input.files[0]) {
                         var reader = new FileReader();
@@ -303,7 +296,6 @@
             },
             desactivarProducto(id){
                 let me = this;
-
                 Swal.fire({
                 title: '¿Está seguro de desactivar este producto?',
                 type: 'warning',
@@ -318,7 +310,6 @@
                 reverseButtons: true
                 }).then((result) => {
                     if (result.value) {
-
                         console.log('id de producto', id);
                         axios.put('/productos/desactivar',{
                             'idProducto': id
@@ -343,7 +334,6 @@
             },
             activarProducto(id){
                 let me = this;
-
                 Swal.fire({
                 title: '¿Está seguro de activar este producto?',
                 type: 'warning',
@@ -383,17 +373,13 @@
             validarProducto(){
                 this.errorProducto=0;
                 this.errorMostrarMsjProducto =[];
-
                 if (this.arrayCategoria==0) this.errorMostrarMsjProducto.push("Seleccione una Categoria.");
                 if (!this.nombre) this.errorMostrarMsjProducto.push("El nombre del Producto no puede estar vacío.");
                 if (!this.descripcion) this.errorMostrarMsjProducto.push("La descripción del Producto no puede estar vacía.");
                 
-
                 if(!isNaN(this.nombre))this.errorMostrarMsjProducto.push("El nombre del producto no puede ser numérico.");
                 if(!isNaN(this.descripcion))this.errorMostrarMsjProducto.push("La descripción del producto no puede ser numérico.");
-
                 if (this.errorMostrarMsjProducto.length) this.errorProducto = 1;
-
                 return this.errorProducto;
             }
         },components: {
@@ -425,7 +411,3 @@
         margin-left: 10px !important;
     }
 </style>
-
-
-
-

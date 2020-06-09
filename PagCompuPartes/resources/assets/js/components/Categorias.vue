@@ -12,11 +12,12 @@
                    
                     <div class="form-group row">
                         <!-- input para el nombre del producto --> 
-                        <input id="nombreCategoria" type="text" v-model="nombreCategoria" placeholder="Nombre de la categoría"  class="validate" >
+                        <input id="nombre" type="text" v-model="nombre" placeholder="Nombre de la categoría"  class="validate" >
                         <!-- <label  for="nombre">Nombre</label> -->
                         <br>  
                         <!-- select Subcategorias --> 
                         <div>
+                            
                             <label class="typo__label">Selecciona las características</label>
                             <multiselect v-model="arrayIdCaracteristica" :options="arrayCaracteristicas" label="nombre" track-by="idCaracteristica" :multiple="true">
                                 <!-- <pre class="language-json"><code>{{ idTalla.Talla }}</code></pre> -->
@@ -60,9 +61,9 @@
                  <table class="centered">
                     <thead>
                     <tr>
-                        <th>Nombre</th>
-                        <th>características</th>
-                        <th>Status</th>
+                        <th >Nombre</th>
+                        <th class="hide-on-small-only"  >Características</th>
+                        <th class="hide-on-small-only"  >Status</th>
                         <th>Editar</th>
                         <th>Desactivar/Activar</th>
 
@@ -72,13 +73,13 @@
                     <tbody  v-for="categoria in arrayCategoria" :key="categoria.idCategoria">
                     <tr>
                         <td v-text="categoria.nombre"></td> 
-                        <td v-text="categoria.nombreCaracteristica"></td>
-                        <td v-if="categoria.status == 1">Activado</td>
-                        <td v-if="categoria.status == 0">Desactivado</td>
+                        <td class="hide-on-small-only"  v-text="categoria.nombreCaracteristica"></td>
+                        <td class="hide-on-small-only"  v-if="categoria.status == 1">Activado</td>
+                        <td class="hide-on-small-only"  v-if="categoria.status == 0">Desactivado</td>
                         <td>
                             <i class="material-icons color-text " @click="abrirModal('Categoria','actualizar',categoria,categoria.idCategoria)">create</i>
                         </td>
-                        <td class="center">
+                        <td class="desactivarActivar">
                             <a href="#!" class="secondary-content" v-if="categoria.status == 1">
                                 <i class="switch">
                                     <label><input type="checkbox" checked="checked" name="status" v-model="categoria.status" @click="desactivarCategoria(categoria.idCategoria)"><span class="lever"></span></label>
@@ -104,12 +105,10 @@
 <script>
 import Swal from 'sweetalert2';
 import Multiselect from 'vue-multiselect'
-
 document.addEventListener('DOMContentLoaded', function() {
                         var elems = document.querySelectorAll('select');
                         var instances = M.FormSelect.init(elems);
                     });
-
     export default {
         data(){
             return{
@@ -145,10 +144,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 .catch(function(error){
                     console.log(error);
                 });
-
                 // axios.get('/caracteristicasDeCategoria').then(function(response){
                 //     m.arrayCaracteristicaCategoria = response.data;
-
                 // })
                 // .catch(function(error){
                 //     console.log(error);
@@ -173,7 +170,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 let formData = new FormData();
                 formData.append('nombre', me.nombre);
                 formData.append('idCarac', me.arrayIdCaracteristica.map(item => item.idCaracteristica).join(','));
-
                 //Registramos la informacion
                 axios.post('/categoria/registrar', formData, {
                     
@@ -211,7 +207,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 this.errorCategoria=0;
                this. arrayIdCaracteristica=[];
                 
-
             },
             abrirModal(modelo,accion, data = [],idCategoria){
                 let m=this;
@@ -235,17 +230,14 @@ document.addEventListener('DOMContentLoaded', function() {
                                     this.nombre = data['nombre'];
                                     this.idCaracteristica=data['idCaracteristica'];
                                     this.tituloModal = 'Actualizar categoría';
-
                                 var urld= '/caracteristica_categoria?idCategoria='+idCategoria;
                                 axios.get(urld).then(function (response) {
                                     console.log('estoy asignando los datos al array');
                                     m.arrayIdCaracteristica = response.data;
-
                                 })
                                 .catch(function (error) {
                                     console.log(error);
                                 });
-
                                     // break;
                                 }
                         }
@@ -253,15 +245,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             },
             actualizarCategoria(idCategoria){
-
                 let me = this;
+                console.log("estoy entrando a categoria actualizar",me.nombre);
                 let formData = new FormData();
-                formData.append('nombre', me.nombreCategoria);
+                formData.append('nombre', me.nombre);
                 formData.append('idCategoria',idCategoria);
                 formData.append('idCarac',me.arrayIdCaracteristica.map(item => item.idCaracteristica).join(','));
-
                 console.log("estoy entrando a categoria actualizar",me.arrayIdCaracteristica);
-
                 //Registramos la informacion
                 axios.post('/categoria/actualizar',formData,{
                     headers: {

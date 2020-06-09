@@ -2015,6 +2015,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -2160,8 +2161,9 @@ document.addEventListener('DOMContentLoaded', function () {
     },
     actualizarCategoria: function actualizarCategoria(idCategoria) {
       var me = this;
+      console.log("estoy entrando a categoria actualizar", me.nombre);
       var formData = new FormData();
-      formData.append('nombre', me.nombreCategoria);
+      formData.append('nombre', me.nombre);
       formData.append('idCategoria', idCategoria);
       formData.append('idCarac', me.arrayIdCaracteristica.map(function (item) {
         return item.idCaracteristica;
@@ -2864,6 +2866,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
 //
 //
 //
@@ -42307,23 +42312,23 @@ var render = function() {
                     {
                       name: "model",
                       rawName: "v-model",
-                      value: _vm.nombreCategoria,
-                      expression: "nombreCategoria"
+                      value: _vm.nombre,
+                      expression: "nombre"
                     }
                   ],
                   staticClass: "validate",
                   attrs: {
-                    id: "nombreCategoria",
+                    id: "nombre",
                     type: "text",
                     placeholder: "Nombre de la categoría"
                   },
-                  domProps: { value: _vm.nombreCategoria },
+                  domProps: { value: _vm.nombre },
                   on: {
                     input: function($event) {
                       if ($event.target.composing) {
                         return
                       }
-                      _vm.nombreCategoria = $event.target.value
+                      _vm.nombre = $event.target.value
                     }
                   }
                 }),
@@ -42480,17 +42485,22 @@ var render = function() {
                   }),
                   _vm._v(" "),
                   _c("td", {
+                    staticClass: "hide-on-small-only",
                     domProps: {
                       textContent: _vm._s(categoria.nombreCaracteristica)
                     }
                   }),
                   _vm._v(" "),
                   categoria.status == 1
-                    ? _c("td", [_vm._v("Activado")])
+                    ? _c("td", { staticClass: "hide-on-small-only" }, [
+                        _vm._v("Activado")
+                      ])
                     : _vm._e(),
                   _vm._v(" "),
                   categoria.status == 0
-                    ? _c("td", [_vm._v("Desactivado")])
+                    ? _c("td", { staticClass: "hide-on-small-only" }, [
+                        _vm._v("Desactivado")
+                      ])
                     : _vm._e(),
                   _vm._v(" "),
                   _c("td", [
@@ -42513,7 +42523,7 @@ var render = function() {
                     )
                   ]),
                   _vm._v(" "),
-                  _c("td", { staticClass: "center" }, [
+                  _c("td", { staticClass: "desactivarActivar" }, [
                     categoria.status == 1
                       ? _c(
                           "a",
@@ -42673,9 +42683,11 @@ var staticRenderFns = [
       _c("tr", [
         _c("th", [_vm._v("Nombre")]),
         _vm._v(" "),
-        _c("th", [_vm._v("características")]),
+        _c("th", { staticClass: "hide-on-small-only" }, [
+          _vm._v("Características")
+        ]),
         _vm._v(" "),
-        _c("th", [_vm._v("Status")]),
+        _c("th", { staticClass: "hide-on-small-only" }, [_vm._v("Status")]),
         _vm._v(" "),
         _c("th", [_vm._v("Editar")]),
         _vm._v(" "),
@@ -43756,7 +43768,11 @@ var render = function() {
         }),
         0
       )
-    ])
+    ]),
+    _vm._v(" "),
+    _c("br"),
+    _vm._v(" "),
+    _c("br")
   ])
 }
 var staticRenderFns = [
