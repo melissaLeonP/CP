@@ -29,15 +29,43 @@ class ProductoController extends Controller
         ->distinct()
         ->get();
     }
+    public function productosSub(Request $request){
+        $id = $request->id;
+        return  $productos = DB::table('producto')
+        ->join('caracteristica_categoria','producto_talla.idProduc','=','producto.idProducto')
+        ->join('tallas','tallas.idTalla', '=','producto_talla.idTalla')
+        ->join('imagenes','imagenes.idImagen', '=','producto.idImg')
+        ->join('sub_categorias','sub_categorias.idSubCategorias', '=','producto.idSubCat')
+        ->select('producto.NombreProducto','producto.Descripcion','producto.Status',
+        'producto.Precio','producto.idProducto','producto.Existencia','imagenes.idImagen','imagenes.Imagen','sub_categorias.idSubCategorias',
+        'sub_categorias.NombreSub')
+        ->where([
+            ['producto.idSubcat','=',$id],
+            ['producto.Status','=',1]   
+        ])
+        ->distinct()
+        ->get();
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    }
+
+    public function show(Request $request)
     {
-        //
+        //  return view('productos');
+
+        $id = $request->id;
+
+        return  $productos = DB::table('productos')
+        ->join('categorias','categorias.idCategoria','=', 'productos.idCate')
+        ->join('caracteristica_categoria','caracteristica_categoria.idCate','=','categorias.idCategoria')
+        ->join('caracteristicas','caracteristicas.idCaracteristica', '=','caracteristica_categoria.idCarac')
+        ->select('productos.idProducto','productos.nombre','productos.descripcion','productos.status',
+        'productos.imagen','categorias.idCategoria','categorias.nombre AS nombreCategoria', DB::raw('group_concat(caracteristicas.nombre) as nombreCaracteristica'))
+        ->groupBy('categorias.idCategoria','categorias.nombre','productos.idProducto','productos.nombre','productos.descripcion','productos.status',
+        'productos.imagen')
+        ->where('productos.status','=','1')
+        ->where('productos.idCate','=',$id)
+        ->distinct()
+        ->get();
     }
 
     /**
@@ -66,28 +94,6 @@ class ProductoController extends Controller
         $producto->idCate = $request->idCate;
         $producto->status = 1;
         $producto->save();
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
     }
 
     /**
@@ -121,17 +127,6 @@ class ProductoController extends Controller
         $producto->save();
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
-
     public function ProductosSelect(Request $request){
         if (!$request->ajax()) return redirect('/administrador');
 
@@ -144,6 +139,21 @@ class ProductoController extends Controller
         ->distinct()
         ->get();
     }
+
+    public function computadoras(Request $request){
+
+        return  $computadoras = DB::table('productos')
+        ->join('caracteristica_categoria','caracteristica_categoria.idcate', '=','productos.idCate')
+        ->join('caracteristicas','caracteristicas.idCaracteristica', '=','caracteristica_categoria.idCarac')        
+        ->join('categorias','categorias.idCategoria', '=','productos.idCate')
+        ->select('productos.idProducto','productos.nombre','productos.descripcion','productos.status',
+        'productos.imagen','categorias.idCategoria','caracteristicas.nombre AS caracteristicas')
+        ->get();
+
+        return $computadoras = Producto::all()->where('idCate','=','3')->where('status','=','1');
+
+    }
+   
 
     public function desactivar(Request $request)
     {

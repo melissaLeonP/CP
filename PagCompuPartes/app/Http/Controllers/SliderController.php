@@ -22,7 +22,14 @@ class SliderController extends Controller
         $slider = Slider::all();
         return $slider;
     }
+    public function mostrar()
+    {
+        // $slider = Slider::all()->orderBy('idSlider', 'desc')->take(3);
+        // return $slider;
 
+        $slider = Slider::limit(3)->orderBy('idSlider', 'asc')->get();
+        return $slider;
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -43,7 +50,6 @@ class SliderController extends Controller
     {
         $slider = new Slider();
         $img = Peticion::file('file');
-        
         $extension = $img->guessExtension();
         $date = date('d-m-Y_h-i-s-ms-a');
         $prefijo = 'Image';
@@ -51,32 +57,19 @@ class SliderController extends Controller
         $img->move('img', $nombreImagen);
        
         $slider->img = $nombreImagen;
-        $slider->titulo = $request->titulo;
+        // $slider->titulo = $request->titulo;
+        if($request->radio == 'si'){
+        $slider->textoBoton = $request->textoBoton;
+        $slider->linkBoton = $request->linkBoton;
+        }else{
+        $slider->textoBoton = "";
+        $slider->linkBoton = "";
+        }
+         
         $slider->texto = $request->texto;
         $slider->save();
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
 
     /**
      * Update the specified resource in storage.
@@ -98,22 +91,22 @@ class SliderController extends Controller
         File::delete('img/' . $slider->Imagen);
 
         $slider->img = $nombreImagen;
-        $slider->titulo = $request->titulo;
+        if($request->radio == 'si'){
+            $slider->textoBoton = $request->textoBoton;
+            $slider->linkBoton = $request->linkBoton;
+            }else{
+            $slider->textoBoton = "";
+            $slider->linkBoton = "";
+            }
+        // $slider->textoBoton = $request->textoBoton;
+        // $slider->linkBoton = $request->linkBoton;
+
         $slider->texto = $request->texto;
 
         $slider->save(); 
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
+
 
     // public function desactivar(Request $request){
     //     $slider = slider::findOrFail($request->id);

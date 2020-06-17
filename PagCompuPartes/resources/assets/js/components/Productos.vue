@@ -9,7 +9,7 @@
                         <h3 v-text="tituloModal"></h3>
                     </div>
                     <div class="col s5 center">
-                        <img v-if="tipoAccion==2" :src="'img/'+imagen"  class="imagenEdit" alt="">
+                        <img v-if="tipoAccion==2" :src="'img/'+imagen"  class="imagenEdit tImagen" alt="">
                     </div>
                     <div class="form-group row">
                         <!-- input para el nombre del producto --> 
@@ -72,9 +72,9 @@
                  <table class="centered">
                     <thead>
                     <tr>
-                        <th class="hide-on-small-only">imagen</th>
+                        <th class="hide-on-small-only">Imagen</th>
                         <th>Nombre</th>
-                        <th class="hide-on-small-only">Descripcion</th>
+                        <th class="hide-on-small-only">Descripción</th>
                         <th class="hide-on-small-only">Status</th>
                         <th>Editar</th>
                         <th>Desactivar/Activar</th>
@@ -82,7 +82,7 @@
                     </thead>
                     <tbody  v-for="producto in arrayProducto" :key="producto.idProducto">
                         <tr>
-                            <td class="hide-on-small-only" ><img :src="'img/'+producto.imagen" class="square"></td>
+                            <td class="hide-on-small-only" ><img :src="'img/'+producto.imagen" class="tImagen"></td>
                             <td v-text="producto.nombre"></td>
                             <td class="hide-on-small-only" v-text="producto.descripcion"></td>
                             <td class="hide-on-small-only" v-if="producto.status == 1">Activado</td>

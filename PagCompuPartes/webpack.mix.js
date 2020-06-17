@@ -25,8 +25,11 @@ mix.styles([
     'resources/assets/plantilla/css/styles.css',
     'resources/assets/plantilla/css/styleT.css',
     'resources/assets/plantilla/css/tether.css',
+    'resources/assets/plantilla/css/estilos.css',
+
 ],'public/css/plantilla.css')
 .scripts([
+    'resources/assets/plantilla/js/tether.min.js',
     'resources/assets/plantilla/js/bootstrap-carousel-swipe.js',
     'resources/assets/plantilla/js/bootstrap.min.js',
     'resources/assets/plantilla/js/formoid.min.js',
@@ -45,6 +48,5 @@ mix.styles([
     'resources/assets/plantilla/js/script.js',
     'resources/assets/plantilla/js/scriptSV.js',
     'resources/assets/plantilla/js/smooth-scroll.js',
-    'resources/assets/plantilla/js/tether.min.js',
 ],'public/js/plantilla.js')
 .js(['resources/assets/js/app.js'],'public/js/app.js');

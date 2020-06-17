@@ -6,16 +6,34 @@
                 <div  class = "container">
                     <h4 class="modal-title center" v-text="tituloModal"></h4>   
                     <div class="col s5 center">
-                        <img v-if="tipoAccion==2" :src="'img/'+img"  class="imagenEdit" alt="">
+                        <img v-if="tipoAccion==2" :src="'img/'+img"  class="imagenEdit tImagen" alt="">
                     </div>
-                    <input  id="nombre" type="text" v-model="titulo" placeholder="Titulo Slider" class="validate">
-                            <label class="activate" for="Titulo"></label>
+                    
 
                     <br> 
-                    <input  id="nombre" type="text" v-model="texto" placeholder="Texto Slider" class="validate">
+                    <input  id="nombre" type="text" v-model="texto" placeholder="Texto del slider" class="validate">
                             <label class="activate" for="Texto"></label>
 
                     <br> 
+                   ¿Desea agregar botón?
+                    <p>
+
+                     <label>
+                        <input class="with-gap" name="group1"  value="si" type="radio" checked />
+                        <span>Si</span>
+                    </label>
+                    
+                    <label>
+                        <input name="group1" value="no" type="radio" />
+                        <span>No</span>
+                    </label>
+                    </p>
+                     <input  id="boton" type="text" v-model="textoBoton" placeholder="Texto del botón" class="validate">
+                            <label class="activate" for="boton"></label>
+                    <br>
+                    <input  id="boton" type="text" v-model="linkBoton" placeholder="Link del botón" class="validate">
+                            <label class="activate" for="boton"></label>
+                    <br>
                     <div class="form-group row">
                         <div class="col s10 center">
                             <div class="file-field input-field">
@@ -66,6 +84,10 @@
                     <div class="card-content">
                         <p>{{slider.titulo}}</p>
                         <p>{{slider.texto}}</p>
+                        <p v-if="slider.textoBoton">Botón: {{slider.textoBoton}}</p>
+                        <p>{{slider.linkBoton}}</p>
+
+
                     </div>
                 </div> 
             </div>
@@ -82,13 +104,15 @@ export default {
             arraySliders:[],
             img: '', 
             modal : 0,
-            titulo: '',
             texto: '',
+            textoBoton: '',
+            linkBoton:'',
             tituloModal : '' ,
             cambio : 0,
             tipoAccion : 0,
             idSlider: 0,
             file: '',
+            radio:'',
             errorSlider:'',
             errorMostrarMsjSlider: [],
         }
@@ -110,7 +134,8 @@ export default {
             me.img = '';
             me.tipoAccion = 0;
             me.Cambio = 0;
-            me.titulo='';
+            me.textoBoton='';
+            me.linkBoton='';
             me.texto='';
             $("#file").val("");
         },
@@ -141,12 +166,26 @@ export default {
             }
         },
         nuevoSlider() {
+            if (this.validarSlider()){
+                    return;
+                }
             let me = this;
             let formData = new FormData();
+            radio = $('input[name="group1"]:checked').val();
+            if(radio == "si"){
+                formData.append('radio',radio);
+                formData.append('file', me.file);
+                formData.append('textoBoton', me.textoBoton);
+                formData.append('linkBoton', me.linkBoton);
+                formData.append('texto', me.texto);
+            }else{
+                formData.append('file', me.file);
+                // formData.append('textoBoton', me.textoBoton);
+                // formData.append('linkBoton', me.linkBoton);
+                formData.append('texto', me.texto);
+            }
 
-            formData.append('file', me.file);
-            formData.append('titulo', me.titulo);
-            formData.append('texto', me.texto);
+            
             
             axios.post('/slider/registrar', formData, {
             headers: {
@@ -163,15 +202,34 @@ export default {
             });
         },
        actualizarSlider(idSlider){
-                
+                if (this.validarSlider()){
+                    return;
+                }
                 let me = this;
 
                 let formData = new FormData();
-                
-                formData.append('file', me.file);
+
+            let radio = $('input[name="group1"]:checked').val();
+             if(radio == "si"){
+                formData.append('radio',radio);
                 formData.append('idSlider',idSlider);
+                formData.append('file', me.file);
+                formData.append('textoBoton', me.textoBoton);
+                formData.append('linkBoton', me.linkBoton);
                 formData.append('texto', me.texto);
-                formData.append('titulo', me.titulo);
+            }else{
+                formData.append('idSlider',idSlider);
+                formData.append('file', me.file);
+                // formData.append('textoBoton', me.textoBoton);
+                // formData.append('linkBoton', me.linkBoton);
+                formData.append('texto', me.texto);
+            }
+                
+                // formData.append('file', me.file);
+                // formData.append('idSlider',idSlider);
+                // formData.append('texto', me.texto);
+                // formData.append('textoBoton', me.textoBoton);
+                // formData.append('linkBoton', me.linkBoton);
 
                 // Regresamos la informacion
                 axios.post('/slider/actualizar', formData,{
@@ -203,8 +261,10 @@ export default {
                     switch(accion){
                         case 'registrar':{
                             this.modal = 1;
-                            this.texto ='';
+                            this.textoBoton ='';
+                            this.linkBoton ='';
                             this.texto = '';
+                            this.file='';
                             this.tipoAccion = 1;
                             this.tituloModal = 'Registrar Sliders';
                             this.img = '';
@@ -212,9 +272,11 @@ export default {
                         }
                         case 'actualizar':{
                             this.modal = 2;
-                            this.titulo = data['titulo'];
+                            this.textoBoton = data['textoBoton'];
+                            this.linkBoton = data['linkBoton'];
                             this.texto = data['texto'];
                             this.tipoAccion = 2;
+                            this.file='';
                             this.tituloModal = 'Actualizar Slider';
                             this.idSlider=data['idSlider'];
                             this.img=data['img'];
@@ -229,9 +291,14 @@ export default {
         validarSlider(){
             this.errorSlider=0;
             this.errorMostrarMsjSlider =[];
-            
             if (!this.file ) this.errorMostrarMsjSlider.push("Se tiene que ingresar una imagen.");
-            if (!this.titulo) this.errorMostrarMsjSubcategoria.push("El titulo del Slider no puede estar vacío.");   
+            if (!this.texto) this.errorMostrarMsjSlider.push("El texto del Slider no puede estar vacío.");  
+            let radio = $('input[name="group1"]:checked').val();
+            if(radio == 'si'){
+                if (!this.textoBoton) this.errorMostrarMsjSlider.push("El texto del botón no puede estar vacío.");  
+                if (!this.linkBoton) this.errorMostrarMsjSlider.push("El link del botón no puede estar vacío.");  
+
+            }
             if (this.errorMostrarMsjSlider.length) this.errorSlider = 1;
 
             return this.errorSlider;

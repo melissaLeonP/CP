@@ -4487,7 +4487,7 @@ body {
 }
 .cid-rW475vhYLT .card-wrapper .card-img {
   display: -webkit-flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   position: relative;
@@ -7581,4 +7581,24 @@ body {
 }
 .cid-rSk8ZA7DKp P {
   text-align: left;
+}
+
+
+@media (max-width: 767px) {
+  .tarjeta{
+    max-width: 350px !important ;
+    height: 100% !important;
+    min-width: 100% !important;
+    padding: 5% !important;
+  }
+}
+.tarjeta{
+  width: 500px ;
+  height: 500px ;
+  padding: 10% !important;
+}
+
+.espacio{
+padding: 0px !important;
+margin-bottom: 0px !important;
 }

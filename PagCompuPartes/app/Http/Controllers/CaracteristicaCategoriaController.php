@@ -31,22 +31,31 @@ class CaracteristicaCategoriaController extends Controller
 
 
 
+
     }
 
     public function selectCaracteristicasCategorias(Request $request)
     {
-        if (!$request->ajax()) return redirect('/administrador');
 
-       
+        
+        $id = $request->id;    
 
-        return  $caracteristicas = DB::table('caracteristica_categoria')
+
+        $caracteristicas = DB::table('caracteristica_categoria')
         ->join('categorias','categorias.idCategoria', '=','caracteristica_categoria.idCate')
         ->join('caracteristicas','caracteristicas.idCaracteristica', '=','caracteristica_categoria.idCarac')
-        ->select('categorias.idCategoria','caracteristica_categoria.idCarac','caracteristicas.nombre AS nombreCaracteristicas')
+        ->select('categorias.idCategoria','categorias.nombre','caracteristica_categoria.idCarac','caracteristicas.nombre AS nombreCaracteristicas')
         ->where([
-            ['categorias.status','=',1]   
+            ['categorias.status','=','1'] ,
+            ['caracteristica_categoria.idCate','=',$id]
         ])
         ->get();
+        // error_log($caracteristicas);
+
+        return $caracteristicas;
+
+        // printf($caracteristicas);
+
     }
 
 

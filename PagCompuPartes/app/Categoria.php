@@ -9,6 +9,6 @@ class Categoria extends Model
    protected $primaryKey = 'idCategoria';
    protected $fillable = 
    [
-    'nombre', 'status'
+    'imagen','nombre', 'status'
    ];
 }

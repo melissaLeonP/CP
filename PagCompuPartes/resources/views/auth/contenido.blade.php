@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href='css/plantilla.css' >
+    <link rel="stylesheet" href='css/estilos.css' >
+      <link rel="stylesheet" href='css/materialize.css' >
+      <link rel="stylesheet" href='css/materialize.min.css' >
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="csrf-token" content="{{ csrf_token()  }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js">

@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Categoria;
 use App\Caracteristica_categoria;
 use Illuminate\Support\Facades\DB;
+use File;
+use Request as Peticion ;
 
 
 class CategoriaController extends Controller
@@ -26,9 +28,36 @@ class CategoriaController extends Controller
         return  $categorias = DB::table('categorias')
         ->join('caracteristica_categoria','caracteristica_categoria.idCate','=','categorias.idCategoria')
         ->join('caracteristicas','caracteristicas.idCaracteristica', '=','caracteristica_categoria.idCarac')
-        ->select('categorias.idCategoria','categorias.nombre','categorias.status', DB::raw('group_concat(caracteristicas.nombre) as nombreCaracteristica'))
-        ->groupBy('categorias.idCategoria','categorias.nombre','categorias.status')
+        ->select('categorias.idCategoria','categorias.imagen','categorias.nombre','categorias.status', DB::raw('group_concat(caracteristicas.nombre) as nombreCaracteristica'))
+        ->groupBy('categorias.idCategoria','categorias.imagen','categorias.nombre','categorias.status')
         ->distinct()
+        ->get();
+    }
+
+
+    public function selectCategoriasTienda()
+    {
+        return  $categorias = DB::table('categorias')
+        ->join('caracteristica_categoria','caracteristica_categoria.idCate','=','categorias.idCategoria')
+        ->join('caracteristicas','caracteristicas.idCaracteristica', '=','caracteristica_categoria.idCarac')
+        ->select('categorias.idCategoria','categorias.imagen','categorias.nombre','categorias.status', DB::raw('group_concat(caracteristicas.nombre) as nombreCaracteristica'))
+        ->groupBy('categorias.idCategoria','categorias.imagen','categorias.nombre','categorias.status')
+        ->distinct()
+        ->where('categorias.status','=','1')
+        ->get();
+    }
+    public function categoriasProducto(Request $request)
+    {
+        $idCategoria = $request->idCategoria;
+        
+        return  $categorias = DB::table('categorias')
+        ->join('caracteristica_categoria','caracteristica_categoria.idCate','=','categorias.idCategoria')
+        ->join('caracteristicas','caracteristicas.idCaracteristica', '=','caracteristica_categoria.idCarac')
+        ->select('categorias.idCategoria','categorias.imagen','categorias.nombre', DB::raw('group_concat(caracteristicas.nombre) as nombreCaracteristica'))
+        ->groupBy('categorias.idCategoria','categorias.nombre')
+        ->distinct()
+        ->where('status','=','1')
+        ->where('categorias.idCategoria','=',$id)
         ->get();
     }
 
@@ -44,16 +73,15 @@ class CategoriaController extends Controller
        
         $categoria = new Categoria();        
         
-        // $img = Peticion::file('file');
-        // $extension = $img -> guessExtension();
-        // $date = date('d-m-Y_h-i-s-ms-a');
-        // $prefijo = 'Image';
-        // $nombreImagen = $prefijo.'_'.$date.'.'.$extension;
-        // $img->move('img', $nombreImagen);
-        // $imagenes->Imagen = $nombreImagen;        
-        // $imagenes->Tipo = 'P';
+        $img = Peticion::file('file');
+        $extension = $img -> guessExtension();
+        $date = date('d-m-Y_h-i-s-ms-a');
+        $prefijo = 'Image';
+        $nombreImagen = $prefijo.'_'.$date.'.'.$extension;
+        $img->move('img', $nombreImagen);
+        $categoria->imagen = $nombreImagen;        
         // $imagenes->save();
-        // $idImg = $imagenes->idImagen;
+   
 
 
 
@@ -96,6 +124,16 @@ class CategoriaController extends Controller
         
         $idCategoria = $request->idCategoria;
         $categoria = Categoria::findOrFail($idCategoria);
+
+        $imagen = Peticion::file('file');
+        $extension = $imagen -> guessExtension();
+        $date = date('d-m-Y_h-i-s-ms-a');
+        $prefijo = 'Image';
+        $nombreImagen = $prefijo.'_'.$date.'.'.$extension;
+        $imagen->move('img', $nombreImagen);
+        File::delete('img/' . $categoria->imagen);
+
+        $categoria->imagen = $nombreImagen;
         $categoria->nombre = $request->nombre;
      
 

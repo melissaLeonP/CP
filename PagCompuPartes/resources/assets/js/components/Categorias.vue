@@ -9,7 +9,9 @@
                     <div class="center">
                         <h3 v-text="tituloModal"></h3>
                     </div>
-                   
+                   <div class="col s5 center">
+                        <img v-if="tipoAccion==2" :src="'img/'+imagen"  class="imagenEdit tImagen" alt="">
+                    </div>
                     <div class="form-group row">
                         <!-- input para el nombre del producto --> 
                         <input id="nombre" type="text" v-model="nombre" placeholder="Nombre de la categoría"  class="validate" >
@@ -24,7 +26,20 @@
                             </multiselect>
                         <!-- </div> -->
                         <br>
-                    </div> 
+                       </div> 
+                        <div class="form-group row">
+                            <div class="col s10 center">
+                                <div class="file-field input-field">
+                                    <div class="waves-effect waves-light btn color">
+                                        <span>Imagen</span>
+                                        <input id="file" ref="filea"  type="file" data-vv-scope="new"  required="true" aria-required="true"  v-on:change="seleccionarImagen(1)" class="sliderAlta">
+                                    </div>
+                                    <div class="file-path-wrapper">
+                                        <input class="file-path validate" type="text">
+                                    </div>
+                                </div>
+                            </div> 
+                        </div> 
                     <div v-show="errorCategoria" class="form-group row div-error">
                         <div class="text-center text-error">
                             <div v-for="error in errorMostrarMsjCategoria" :key="error" v-text="error">
@@ -61,9 +76,10 @@
                  <table class="centered">
                     <thead>
                     <tr>
+                        <th class="hide-on-small-only">Imagen</th>
                         <th >Nombre</th>
-                        <th class="hide-on-small-only"  >Características</th>
-                        <th class="hide-on-small-only"  >Status</th>
+                        <th class="hide-on-small-only">Características</th>
+                        <th class="hide-on-small-only">Status</th>
                         <th>Editar</th>
                         <th>Desactivar/Activar</th>
 
@@ -72,6 +88,7 @@
                     </thead>
                     <tbody  v-for="categoria in arrayCategoria" :key="categoria.idCategoria">
                     <tr>
+                        <td class="hide-on-small-only" ><img :src="'img/'+categoria.imagen" class=" tImagen" ></td>
                         <td v-text="categoria.nombre"></td> 
                         <td class="hide-on-small-only"  v-text="categoria.nombreCaracteristica"></td>
                         <td class="hide-on-small-only"  v-if="categoria.status == 1">Activado</td>
@@ -116,6 +133,8 @@ document.addEventListener('DOMContentLoaded', function() {
             return{
                 idCategoria: 0,
                 nombre: '',
+                imagen: '', 
+                file: '',
                 status : true,
                 arrayCategoria:[],
                 idCaracteristica: 0,
@@ -131,6 +150,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         },
         methods: {
+            // Asignar los datos de las categorías al array
             listarCategoria(){
              let m=this;
              axios.get('/categoria').then(function (response){
@@ -146,14 +166,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 .catch(function(error){
                     console.log(error);
                 });
-
-                // axios.get('/caracteristicasDeCategoria').then(function(response){
-                //     m.arrayCaracteristicaCategoria = response.data;
-
-                // })
-                // .catch(function(error){
-                //     console.log(error);
-                // });
             },
             limpiar() {
                 let me = this;
@@ -165,6 +177,32 @@ document.addEventListener('DOMContentLoaded', function() {
                 me.errorMostrarMsjCategoria = [];
                 me.Cambio = 0;
             },
+            seleccionarImagen(img){
+                if (img == 1) {            
+                    this.file = this.$refs.filea.files[0];
+                    readURL(document.getElementsByClassName("sliderAlta")[0], 1);
+                }
+                else {
+                    this.file = this.$refs.filec.files[0];
+                    readURL(document.getElementsByClassName("sliderEdit")[0], 2);
+                }
+                this.cambio = 1;
+
+                function readURL(input, img) {
+                    if (input.files && input.files[0]) {
+                        var reader = new FileReader();
+                        reader.onload = function (e) {
+                            if (img == 1) {
+                                $('.imgAlta').attr('src', e.target.result);
+                            }
+                            else {
+                                $('.imgCambio').attr('src', e.target.result);
+                            }
+                        };
+                        reader.readAsDataURL(input.files[0]);
+                    }
+                }
+            },
             nuevaCategoria() {
                 if (this.validarCategoria()){
                     return;
@@ -172,12 +210,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 let me = this;
                 
                 let formData = new FormData();
+                formData.append('file', me.file);
                 formData.append('nombre', me.nombre);
                 formData.append('idCarac', me.arrayIdCaracteristica.map(item => item.idCaracteristica).join(','));
 
                 //Registramos la informacion
                 axios.post('/categoria/registrar', formData, {
-                    
                     headers: {
                         'Content-Type': 'multipart/form-data'
                     }
@@ -234,6 +272,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                     this.tipoAccion = 2;
                                     this.idCategoria = data['idCategoria'];
                                     this.nombre = data['nombre'];
+                                    this.imagen=data['imagen'];
                                     this.idCaracteristica=data['idCaracteristica'];
                                     this.tituloModal = 'Actualizar categoría';
 
@@ -254,16 +293,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             },
             actualizarCategoria(idCategoria){
-
                 let me = this;
-                console.log("estoy entrando a categoria actualizar",me.nombre);
 
                 let formData = new FormData();
+                formData.append('file', me.file);
                 formData.append('nombre', me.nombre);
                 formData.append('idCategoria',idCategoria);
                 formData.append('idCarac',me.arrayIdCaracteristica.map(item => item.idCaracteristica).join(','));
-
-                console.log("estoy entrando a categoria actualizar",me.arrayIdCaracteristica);
 
                 //Registramos la informacion
                 axios.post('/categoria/actualizar',formData,{

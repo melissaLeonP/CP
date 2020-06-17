@@ -1,25 +1,13 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 Route::group(['middleware'=>['guest']],function(){
     Route::get('/login','Auth\LoginController@showLoginForm');
     
 });
 
-
 Route::get('/', function () {
     return view('contenido/contenido');
-});
+})->name('contenido');
 
 Auth::routes();
 
@@ -52,8 +40,7 @@ Route::group(['middleware'=>['auth']],function(){
 
 
         Route::get('/caracteristica_categoria','CaracteristicaCategoriaController@index');
-        Route::get('/caracteristicasDeCategoria','CaracteristicaCategoriaController@selectCaracteristicasCategorias');
-        
+        // Route::get('/caracteristicasDeCategoria','CaracteristicaCategoriaController@selectCaracteristicasCategorias');
         Route::get('/caracteristicas','CaracteristicaController@index');
 
 
@@ -67,14 +54,24 @@ Route::group(['middleware'=>['auth']],function(){
         
         Route::post('/password/actualizar','PasswordController@update');
         Route::get('/logout','Auth\LoginController@logout')->name('logout');
-
-
     });
     // Route::get('/logout','Auth\LoginController@logout')->name('logout');
 });
 
-// Route::get('/slider/desactivar','SliderController@desactivar');
-// Route::get('/slider/activar','SliderController@activar');
+
+Route::get('/productos/computadoras', 'ProductoController@computadoras');
+Route::get('/productos/{id}', 'ProductoController@show')->name('productos');
+Route::get('/productos/laptops', 'ProductoController@laptops');
+Route::get('/productos/monitores', 'ProductoController@monitores');
+Route::get('/productos/servidores', 'ProductoController@servidores');
+
+Route::get('/categoriaT','CategoriaController@selectCategoriasTienda');
+Route::put('/categoria/productos/{id}','CategoriaController@categoriasProducto');
+
+Route::get('/slider/index','SliderController@mostrar');
+
+Route::get('/caracteristicasDeCategoria/{id}','CaracteristicaCategoriaController@selectCaracteristicasCategorias');
 
 
-// Route::get('/home', 'HomeController@index')->name('home');
+
+Route::post('contacto','MessageController@store');

@@ -19,29 +19,22 @@ window.Vue = require('vue');
 // const files = require.context('./', true, /\.vue$/i);
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
+// Consola
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('slider-component', require('./components/Sliders.vue').default);
 Vue.component('productos-component', require('./components/Productos.vue').default);
 Vue.component('categorias-component', require('./components/Categorias.vue').default);
 Vue.component('contraseña-component', require('./components/Contra.vue').default);
+
+// Pagina principal
 Vue.component('index-component', require('./principal/index.vue').default);
 Vue.component('nosotros-component', require('./principal/nosotros.vue').default);
 Vue.component('outlet-component', require('./principal/outlet.vue').default);
 Vue.component('contacto-component', require('./principal/contacto.vue').default);
 Vue.component('soluciones-component', require('./principal/soluciones.vue').default);
-
-
-// Vue.component('ropa-component', require('./components/Ropa.vue').default);
-// Vue.component('accesorios-component', require('./components/Accesorios.vue').default);
-// Vue.component('cosmeticos-component', require('./components/Cosmeticos.vue').default);g
-// Vue.component('productost-component', require('./components/ProductosT.vue').default);
-
-// Vue.component('subcategorias-component', require('./consoleComponents/Subcategorias.vue').default);
-// Vue.component('sliders-component', require('./components/Sliders.vue').default);
-// Vue.component('productos-component', require('./consoleComponents/Productos.vue').default);
-// Vue.component('colores-component', require('./consoleComponents/Colores.vue').default);
-
-
+Vue.component('avisoprivacidad-component', require('./principal/avisoPrivacidad.vue').default);
+Vue.component('productosprincipal-component', require('./principal/ProductosT.vue').default);
+ 
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -52,6 +45,14 @@ Vue.component('soluciones-component', require('./principal/soluciones.vue').defa
 const app = new Vue({
     el: '#app',
     data :{
-        menu : 0
+        menu : 0,
+        outletIdCate: 0
+    },
+    methods:{
+        mostrarMenu(objeto){
+            let m = this;
+         m.menu = objeto.valorMenu;
+         m.outletIdCate = objeto.valorId;
+        }
     }
 });
